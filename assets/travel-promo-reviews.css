@@ -1,0 +1,427 @@
+/* ==========================================================================
+   TRAVEL PROMO BANNER & CUSTOMER REVIEWS
+   Tour & Travel Wings
+   ========================================================================== */
+
+:root {
+  --tpr-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --tpr-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --tpr-color-navy: #0a2e5c;
+  --tpr-color-navy-dark: #071f3f;
+  --tpr-color-gold: #f5a623;
+  --tpr-color-gold-hover: #d9921b;
+  --tpr-color-star: #f59e0b;
+  --tpr-color-quote: #93c5fd;
+  --tpr-color-text-dark: #1e293b;
+  --tpr-color-text-muted: #64748b;
+  --tpr-color-border: #e2e8f0;
+  --tpr-shadow-card: 0 4px 20px -2px rgba(10, 46, 92, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  --tpr-shadow-card-hover: 0 12px 28px -4px rgba(10, 46, 92, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+  --tpr-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.travel-promo-reviews-section {
+  width: 100%;
+  background-color: #ffffff;
+  font-family: var(--tpr-font-sans);
+  color: var(--tpr-color-text-dark);
+  box-sizing: border-box;
+}
+
+.travel-promo-reviews-section *,
+.travel-promo-reviews-section *::before,
+.travel-promo-reviews-section *::after {
+  box-sizing: border-box;
+}
+
+.travel-promo-reviews-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ==========================================================================
+   1. PROMOTIONAL MOUNTAIN BANNER
+   ========================================================================== */
+.travel-promo-banner-wrap {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.travel-promo-banner {
+  position: relative;
+  width: 100%;
+  min-height: 190px;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 48px;
+  box-shadow: 0 12px 32px -4px rgba(10, 46, 92, 0.18);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+}
+
+/* Banner Overlay */
+.travel-promo-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 46, 92, 0.5) 0%,
+    rgba(10, 46, 92, 0.3) 48%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Banner Content */
+.travel-promo-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  color: #ffffff;
+}
+
+/* Special Offer Badge */
+.travel-promo-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1.5px solid var(--tpr-color-gold);
+  border-radius: 4px;
+  background: rgba(245, 166, 35, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: #ffd058;
+  font-family: var(--tpr-font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Banner Heading */
+.travel-promo-heading {
+  font-family: var(--tpr-font-sans);
+  font-size: clamp(24px, 2.5vw, 34px);
+  font-weight: 700;
+  line-height: 1.22;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  letter-spacing: -0.2px;
+}
+
+/* Banner Subheading */
+.travel-promo-subheading {
+  font-family: var(--tpr-font-sans);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Banner Action Button (View Offers) */
+.travel-promo-btn-wrap {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  margin-left: 24px;
+}
+
+.travel-promo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 32px;
+  border-radius: 10px;
+  background: var(--tpr-color-gold);
+  color: #1a2b49;
+  font-family: var(--tpr-font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: var(--tpr-transition);
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.35);
+  white-space: nowrap;
+}
+
+.travel-promo-btn:hover {
+  background: #ffffff;
+  color: var(--tpr-color-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+/* ==========================================================================
+   2. REVIEWS SECTION
+   ========================================================================== */
+.travel-reviews-header {
+  margin-bottom: 28px;
+}
+
+.travel-reviews-title {
+  font-family: var(--tpr-font-heading);
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--tpr-color-navy);
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+/* Reviews Grid */
+.travel-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--tpr-columns, 3), 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Review Card */
+.travel-review-card {
+  background: #ffffff;
+  border: 1px solid var(--tpr-color-border);
+  border-radius: 16px;
+  padding: 28px 24px 24px 24px;
+  box-shadow: var(--tpr-shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--tpr-transition);
+  position: relative;
+}
+
+.travel-review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--tpr-shadow-card-hover);
+  border-color: #cbd5e1;
+}
+
+/* Quote Mark & Quote Text */
+.travel-review-body {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.travel-review-quote-icon {
+  flex-shrink: 0;
+  color: var(--tpr-color-quote);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-review-quote-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.travel-review-quote-text {
+  font-family: var(--tpr-font-sans);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Reviewer Info Footer (Avatar + Name & Location + Stars) */
+.travel-reviewer-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.travel-reviewer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+  background-color: #f1f5f9;
+}
+
+.travel-reviewer-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.travel-reviewer-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tpr-color-navy);
+  line-height: 1.25;
+  margin-bottom: 2px;
+}
+
+.travel-reviewer-location {
+  font-size: 12px;
+  color: var(--tpr-color-text-muted);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+/* Star Rating */
+.travel-reviewer-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--tpr-color-star);
+}
+
+.travel-reviewer-stars svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+/* Slider Controls for Mobile */
+.travel-reviews-slider-dots {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.travel-reviews-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: var(--tpr-transition);
+}
+
+.travel-reviews-dot.is-active {
+  width: 24px;
+  border-radius: 6px;
+  background: var(--tpr-color-navy);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (DESKTOP, TABLET, MOBILE)
+   ========================================================================== */
+
+/* --- Tablet View (768px - 1023px) --- */
+@media (max-width: 1023px) {
+  .travel-promo-reviews-container {
+    padding: 0 24px;
+  }
+
+  .travel-promo-banner {
+    padding: 28px 32px;
+  }
+
+  .travel-reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* --- Mobile View (< 768px) --- */
+@media (max-width: 767px) {
+  .travel-promo-reviews-container {
+    padding: 0 16px;
+  }
+
+  /* Stacked Banner */
+  .travel-promo-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    gap: 20px;
+    border-radius: 16px;
+  }
+
+  .travel-promo-banner-content {
+    max-width: 100%;
+  }
+
+  .travel-promo-heading {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .travel-promo-subheading {
+    font-size: 13px;
+  }
+
+  .travel-promo-btn-wrap {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .travel-promo-btn {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .travel-promo-banner-wrap {
+    margin-bottom: 36px;
+  }
+
+  .travel-reviews-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  /* Reviews: Smooth Horizontal Swipe Slider or Stacked */
+  .travel-reviews-grid.is-slider-mobile {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding-bottom: 12px;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    scrollbar-width: none;
+  }
+
+  .travel-reviews-grid.is-slider-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .travel-reviews-grid.is-slider-mobile .travel-review-card {
+    flex: 0 0 calc(100% - 32px);
+    max-width: 340px;
+    scroll-snap-align: center;
+    border-radius: 14px;
+    padding: 22px 18px;
+  }
+
+  .travel-reviews-slider-dots {
+    display: flex;
+  }
+}
+

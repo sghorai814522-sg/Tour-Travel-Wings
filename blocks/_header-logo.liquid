@@ -57,14 +57,23 @@
     {% endif %}
     data-testid="header-logo"
   >
-    {% render 'image',
-      image: settings.logo,
-      class: 'header-logo__image',
-      height: settings.logo_height,
-      alt_text_fallback: alt_text_fallback,
-      text_fallback: shop.name,
-      style: logo_style
-    %}
+    {% if settings.logo != blank %}
+      {% render 'image',
+        image: settings.logo,
+        class: 'header-logo__image',
+        height: settings.logo_height,
+        alt_text_fallback: alt_text_fallback,
+        text_fallback: shop.name,
+        style: logo_style
+      %}
+    {% else %}
+      <img
+        src="{{ 'tour-travel-logo.png' | asset_url }}"
+        alt="Tour and Travel Wings"
+        class="header-logo__image"
+        style="height: 48px; width: auto; max-width: 260px; object-fit: contain;"
+      >
+    {% endif %}
   </span>
 
   {% if use_inverse_logo %}
@@ -72,14 +81,23 @@
       class="header-logo__transparent-header-image-container"
       data-testid="header-logo-inverse"
     >
-      {% render 'image',
-        image: inverse_logo,
-        class: 'header-logo__image',
-        height: settings.logo_height,
-        alt_text_fallback: alt_text_fallback,
-        text_fallback: shop.name,
-        style: inverse_logo_style
-      %}
+      {% if inverse_logo != blank %}
+        {% render 'image',
+          image: inverse_logo,
+          class: 'header-logo__image',
+          height: settings.logo_height,
+          alt_text_fallback: alt_text_fallback,
+          text_fallback: shop.name,
+          style: inverse_logo_style
+        %}
+      {% else %}
+        <img
+          src="{{ 'tour-travel-logo.png' | asset_url }}"
+          alt="Tour and Travel Wings"
+          class="header-logo__image"
+          style="height: 48px; width: auto; max-width: 260px; object-fit: contain;"
+        >
+      {% endif %}
     </span>
   {% endif %}
 </a>

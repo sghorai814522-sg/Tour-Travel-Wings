@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour and Travel Wings - Hero Slider Preview</title>
+  <link rel="stylesheet" href="travel-hero-slider.css">
+  <style>
+    /* Reset & Base Preview Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Mock Header to Match the Reference Image */
+    .mock-header {
+      width: 100%;
+      height: 70px;
+      background: #ffffff;
+      border-bottom: 1px solid #edf2f7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .mock-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .mock-logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mock-nav a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #334155;
+      transition: color 0.2s;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .mock-nav a:hover,
+    .mock-nav a.active {
+      color: #0a2e5c;
+      font-weight: 600;
+    }
+
+    .mock-nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #f5a623;
+      border-radius: 2px;
+    }
+
+    .mock-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #1e293b;
+    }
+
+    .mock-header-action-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+    }
+
+    .mock-header-action-btn:hover {
+      background-color: #f1f5f9;
+    }
+
+    @media (max-width: 900px) {
+      .mock-header {
+        padding: 0 20px;
+      }
+      .mock-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Matching Reference Image -->
+  <header class="mock-header">
+    <a href="#" class="mock-logo">
+      <img src="tour-travel-logo.png" alt="Tour and Travel Wings - Journeys Beyond Destinations">
+    </a>
+
+    <nav>
+      <ul class="mock-nav">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Tours</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="mock-header-actions">
+      <!-- Search Icon -->
+      <button class="mock-header-action-btn" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+
+      <!-- User / Profile Icon -->
+      <button class="mock-header-action-btn" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </button>
+
+      <!-- Menu / Hamburger Icon -->
+      <button class="mock-header-action-btn" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Travel Hero Section -->
+  <div
+    id="travel-hero-section-preview"
+    class="travel-hero-section"
+    style="--ths-desktop-height: 660px; --ths-mobile-height: 540px;"
+  >
+    <!-- Hero Carousel Viewport -->
+    <div
+      class="travel-hero-slider"
+      data-autoplay="true"
+      data-interval="5"
+    >
+      <div class="travel-hero-slides-wrapper">
+        <!-- Slide 1: Santorini Greece (Exact Image Match) -->
+        <div id="slide-1" class="travel-hero-slide is-active">
+          <div class="travel-hero-slide-bg" style="background-image: url('hero-santorini.jpg');"></div>
+          <div class="travel-hero-slide-overlay" style="opacity: 0.25;"></div>
+
+          <div class="travel-hero-content-container">
+            <div class="travel-hero-text-block">
+              <div class="travel-hero-kicker">
+                <span>EXPLORE</span>
+                <span class="travel-hero-kicker-dot"></span>
+                <span>DISCOVER</span>
+                <span class="travel-hero-kicker-dot"></span>
+                <span>EXPERIENCE</span>
+              </div>
+
+              <h1 class="travel-hero-heading">
+                <span class="travel-hero-heading-line1">Journeys Beyond</span>
+                <span class="travel-hero-heading-line2" style="color: #f5a623;">Destinations</span>
+              </h1>
+
+              <div class="travel-hero-heading-accent-line" style="background-color: #f5a623;"></div>
+
+              <p class="travel-hero-description">
+                Handpicked tours, unforgettable experiences and destinations that stay with you forever.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Maldives Luxury -->
+        <div id="slide-2" class="travel-hero-slide">
+          <div class="travel-hero-slide-bg" style="background-image: url('hero-maldives.jpg');"></div>
+          <div class="travel-hero-slide-overlay" style="opacity: 0.25;"></div>
+
+          <div class="travel-hero-content-container">
+            <div class="travel-hero-text-block">
+              <div class="travel-hero-kicker">
+                <span>ESCAPE</span>
+                <span class="travel-hero-kicker-dot"></span>
+                <span>UNWIND</span>
+                <span class="travel-hero-kicker-dot"></span>
+                <span>INDULGE</span>
+              </div>
+
+              <h1 class="travel-hero-heading">
+                <span class="travel-hero-heading-line1">Tropical Paradise</span>
+                <span class="travel-hero-heading-line2" style="color: #f5a623;">Getaways</span>
+              </h1>
+
+              <div class="travel-hero-heading-accent-line" style="background-color: #f5a623;"></div>
+
+              <p class="travel-hero-description">
+                Immerse yourself in crystal turquoise waters, private luxury villas, and breathtaking sunset horizons.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Swiss Alps Adventure -->
+        <div id="slide-3" class="travel-hero-slide">
+          <div class="travel-hero-slide-bg" style="background-image: url('hero-alps.jpg');"></div>
+          <div class="travel-hero-slide-overlay" style="opacity: 0.25;"></div>
+
+          <div class="travel-hero-content-container">
+            <div class="travel-hero-text-block">
+              <div class="travel-hero-kicker">
+                <span>DISCOVER</span>
+                <span class="travel-hero-kicker-dot"></span>
+                <span>ADVENTURE</span>
+                <span class="travel-hero-kicker-dot"></span>
+                <span>BREATHE</span>
+              </div>
+
+              <h1 class="travel-hero-heading">
+                <span class="travel-hero-heading-line1">Majestic Alpine</span>
+                <span class="travel-hero-heading-line2" style="color: #f5a623;">Adventures</span>
+              </h1>
+
+              <div class="travel-hero-heading-accent-line" style="background-color: #f5a623;"></div>
+
+              <p class="travel-hero-description">
+                Traverse dramatic mountain passes, panoramic vistas, and alpine lakes crafted for daring explorers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom-Left Decorative Wave Swoosh -->
+      <div class="travel-hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 700 160" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="thsBlueGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#072042" />
+              <stop offset="45%" stop-color="#0c3a72" />
+              <stop offset="85%" stop-color="#0f5298" />
+              <stop offset="100%" stop-color="#1467bd" />
+            </linearGradient>
+            <linearGradient id="thsGoldGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d98914" />
+              <stop offset="50%" stop-color="#f5a623" />
+              <stop offset="100%" stop-color="#ffd058" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M-20 180 L-20 40 C 120 70, 240 130, 480 148 C 580 155, 660 158, 720 160 L 720 180 Z"
+            fill="url(#thsBlueGrad)"
+          />
+          <path
+            d="M-20 40 C 130 68, 260 126, 510 144 C 600 150, 670 154, 720 156 L 720 160 C 660 158, 580 154, 480 147 C 240 128, 110 66, -20 36 Z"
+            fill="url(#thsGoldGrad)"
+          />
+        </svg>
+      </div>
+
+      <!-- Slide Nav Arrows -->
+      <div class="travel-hero-slider-arrows">
+        <button type="button" class="travel-hero-arrow-btn travel-hero-prev-btn" aria-label="Previous Slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button type="button" class="travel-hero-arrow-btn travel-hero-next-btn" aria-label="Next Slide">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Slide Indicator Dots -->
+      <div class="travel-hero-dots-container">
+        <button type="button" class="travel-hero-dot is-active" aria-label="Go to slide 1"></button>
+        <button type="button" class="travel-hero-dot" aria-label="Go to slide 2"></button>
+        <button type="button" class="travel-hero-dot" aria-label="Go to slide 3"></button>
+      </div>
+
+      <!-- Dynamic & Functional Booking / Search Bar (Inside Slider) -->
+      <div class="travel-search-bar-wrapper">
+      <div class="travel-search-bar-container">
+        <form action="/search" method="get" role="search" class="travel-search-form">
+          <input type="hidden" name="type" value="product">
+          <input type="hidden" name="q" id="travel-search-query-input" value="Santorini Greece">
+          <input type="hidden" name="destination" id="travel-input-destination" value="Santorini, Greece">
+          <input type="hidden" name="date_start" id="travel-input-date-start" value="">
+          <input type="hidden" name="date_end" id="travel-input-date-end" value="">
+          <input type="hidden" name="adults" id="travel-input-adults" value="2">
+          <input type="hidden" name="children" id="travel-input-children" value="0">
+          <input type="hidden" name="rooms" id="travel-input-rooms" value="1">
+
+          <!-- 1. Destination Field -->
+          <div
+            class="travel-search-field has-selection"
+            data-search-field="destination"
+            tabindex="0"
+            role="button"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+          >
+            <div class="travel-search-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="travel-search-text-group">
+              <span class="travel-search-label">Destination</span>
+              <span class="travel-search-value">Where to?</span>
+            </div>
+            <div class="travel-search-caret">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+
+            <!-- Destination Dropdown Popover -->
+            <div class="travel-popover travel-dest-popover" role="dialog">
+              <div class="travel-dest-search-wrap">
+                <svg class="travel-dest-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                  type="text"
+                  class="travel-dest-search-input"
+                  placeholder="Where do you want to go?"
+                  autocomplete="off"
+                >
+              </div>
+
+              <div class="travel-dest-category-title">Popular Destinations</div>
+
+              <ul class="travel-dest-list">
+                <li class="travel-dest-item is-selected" data-name="Santorini" data-country="Greece">
+                  <div class="travel-dest-item-icon">🏛️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Santorini</span>
+                    <span class="travel-dest-country">Greece • Aegean Sea</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Amalfi Coast" data-country="Italy">
+                  <div class="travel-dest-item-icon">🍋</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Amalfi Coast</span>
+                    <span class="travel-dest-country">Italy • Mediterranean</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Maldives" data-country="Indian Ocean">
+                  <div class="travel-dest-item-icon">🏝️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Maldives</span>
+                    <span class="travel-dest-country">Overwater Villas & Reefs</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Bali" data-country="Indonesia">
+                  <div class="travel-dest-item-icon">🌺</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Bali</span>
+                    <span class="travel-dest-country">Indonesia • Tropical Bliss</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Swiss Alps" data-country="Switzerland">
+                  <div class="travel-dest-item-icon">🏔️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Swiss Alps</span>
+                    <span class="travel-dest-country">Switzerland • Zermatt & Peaks</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Dubai" data-country="UAE">
+                  <div class="travel-dest-item-icon">✨</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Dubai</span>
+                    <span class="travel-dest-country">UAE • Luxury & Desert Safari</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Kyoto" data-country="Japan">
+                  <div class="travel-dest-item-icon">⛩️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Kyoto</span>
+                    <span class="travel-dest-country">Japan • Historic Shrines</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Paris" data-country="France">
+                  <div class="travel-dest-item-icon">🗼</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Paris</span>
+                    <span class="travel-dest-country">France • City of Lights</span>
+                  </div>
+                </li>
+              </ul>
+              <div class="travel-dest-empty">No destinations match your search. Press Enter to search anyway.</div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="travel-search-divider"></div>
+
+          <!-- 2. Travel Dates Field -->
+          <div
+            class="travel-search-field"
+            data-search-field="calendar"
+            tabindex="0"
+            role="button"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+          >
+            <div class="travel-search-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <div class="travel-search-text-group">
+              <span class="travel-search-label">Travel Dates</span>
+              <span class="travel-search-value">Select dates</span>
+            </div>
+            <div class="travel-search-caret">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+
+            <!-- Calendar Popover -->
+            <div class="travel-popover travel-calendar-popover" role="dialog">
+              <div class="travel-cal-header">
+                <button type="button" class="travel-cal-nav-btn travel-cal-prev-btn" aria-label="Previous Month">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <div class="travel-cal-month-title">November 2026</div>
+                <button type="button" class="travel-cal-nav-btn travel-cal-next-btn" aria-label="Next Month">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="travel-cal-weekdays">
+                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+              </div>
+
+              <div class="travel-cal-days-grid">
+                <!-- Dynamically rendered via JS -->
+              </div>
+
+              <!-- Quick Presets -->
+              <div class="travel-cal-presets">
+                <button type="button" class="travel-cal-preset-btn" data-preset="weekend">Weekend</button>
+                <button type="button" class="travel-cal-preset-btn" data-preset="next_week">Next Week</button>
+                <button type="button" class="travel-cal-preset-btn" data-preset="next_month">Next Month</button>
+                <button type="button" class="travel-cal-preset-btn" data-preset="flexible">Flexible</button>
+              </div>
+
+              <!-- Footer Actions -->
+              <div class="travel-cal-footer">
+                <button type="button" class="travel-cal-btn-clear">Clear</button>
+                <button type="button" class="travel-cal-btn-apply">Apply Dates</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="travel-search-divider"></div>
+
+          <!-- 3. Travelers Field -->
+          <div
+            class="travel-search-field has-selection"
+            data-search-field="travelers"
+            tabindex="0"
+            role="button"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+          >
+            <div class="travel-search-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="travel-search-text-group">
+              <span class="travel-search-label">Travelers</span>
+              <span class="travel-search-value">2 Adults</span>
+            </div>
+            <div class="travel-search-caret">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+
+            <!-- Travelers Popover -->
+            <div class="travel-popover travel-travelers-popover" role="dialog">
+              <!-- Adults -->
+              <div class="travel-guest-row" data-type="adults" data-min="1" data-max="10">
+                <div class="travel-guest-info">
+                  <span class="travel-guest-title">Adults</span>
+                  <span class="travel-guest-sub">Ages 13 or above</span>
+                </div>
+                <div class="travel-guest-counter">
+                  <button type="button" class="travel-counter-btn travel-counter-minus" aria-label="Decrease Adults">−</button>
+                  <span class="travel-counter-value">2</span>
+                  <button type="button" class="travel-counter-btn travel-counter-plus" aria-label="Increase Adults">+</button>
+                </div>
+              </div>
+
+              <!-- Children -->
+              <div class="travel-guest-row" data-type="children" data-min="0" data-max="8">
+                <div class="travel-guest-info">
+                  <span class="travel-guest-title">Children</span>
+                  <span class="travel-guest-sub">Ages 2–12</span>
+                </div>
+                <div class="travel-guest-counter">
+                  <button type="button" class="travel-counter-btn travel-counter-minus" aria-label="Decrease Children">−</button>
+                  <span class="travel-counter-value">0</span>
+                  <button type="button" class="travel-counter-btn travel-counter-plus" aria-label="Increase Children">+</button>
+                </div>
+              </div>
+
+              <!-- Infants -->
+              <div class="travel-guest-row" data-type="infants" data-min="0" data-max="4">
+                <div class="travel-guest-info">
+                  <span class="travel-guest-title">Infants</span>
+                  <span class="travel-guest-sub">Under 2</span>
+                </div>
+                <div class="travel-guest-counter">
+                  <button type="button" class="travel-counter-btn travel-counter-minus" aria-label="Decrease Infants">−</button>
+                  <span class="travel-counter-value">0</span>
+                  <button type="button" class="travel-counter-btn travel-counter-plus" aria-label="Increase Infants">+</button>
+                </div>
+              </div>
+
+              <!-- Rooms -->
+              <div class="travel-guest-row" data-type="rooms" data-min="1" data-max="6">
+                <div class="travel-guest-info">
+                  <span class="travel-guest-title">Rooms</span>
+                  <span class="travel-guest-sub">Hotel / Villa accommodations</span>
+                </div>
+                <div class="travel-guest-counter">
+                  <button type="button" class="travel-counter-btn travel-counter-minus" aria-label="Decrease Rooms">−</button>
+                  <span class="travel-counter-value">1</span>
+                  <button type="button" class="travel-counter-btn travel-counter-plus" aria-label="Increase Rooms">+</button>
+                </div>
+              </div>
+
+              <div class="travel-travelers-footer">
+                <button type="button" class="travel-travelers-btn-done">Done</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Submit Search Tours Button -->
+          <button type="submit" class="travel-search-submit-btn" aria-label="Search Tours">
+            <span class="travel-btn-spinner" aria-hidden="true"></span>
+            <svg viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search Tours</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Backdrop for closing popovers -->
+  <div class="travel-popover-backdrop" aria-hidden="true"></div>
+
+    <!-- Bottom 4 Benefit Features -->
+    <div class="travel-features-bar">
+      <div class="travel-features-container">
+        <!-- Feature 1: Best Price Guarantee -->
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.9-.2-1.8.1-2.4.7l-.4.4c-.6.6-.6 1.6 0 2.2l5.7 4.1L6 16.5l-2.4-.6c-.5-.1-1.1.1-1.5.5l-.3.3c-.4.4-.4 1.1 0 1.5l2.8 2.8c.4.4 1.1.4 1.5 0l.3-.3c.4-.4.6-1 .5-1.5L6.3 16.8l2.4-2.2 4.1 5.7c.6.6 1.6.6 2.2 0l.4-.4c.6-.6.9-1.5.7-2.4l-.3-.3z"></path>
+            </svg>
+          </div>
+          <div class="travel-feature-content">
+            <span class="travel-feature-title">Best Price Guarantee</span>
+            <span class="travel-feature-sub">Get the best value for your money</span>
+          </div>
+        </div>
+
+        <!-- Feature 2: Safe & Secure -->
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <div class="travel-feature-content">
+            <span class="travel-feature-title">Safe & Secure</span>
+            <span class="travel-feature-sub">Your safety is our priority</span>
+          </div>
+        </div>
+
+        <!-- Feature 3: 24/7 Support -->
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              <text x="12" y="14" font-size="7" font-weight="bold" fill="currentColor" text-anchor="middle" font-family="sans-serif">24/7</text>
+            </svg>
+          </div>
+          <div class="travel-feature-content">
+            <span class="travel-feature-title">24/7 Support</span>
+            <span class="travel-feature-sub">We're here for you, always</span>
+          </div>
+        </div>
+
+        <!-- Feature 4: Trusted by Travelers -->
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="travel-feature-content">
+            <span class="travel-feature-title">Trusted by Travelers</span>
+            <span class="travel-feature-sub">Thousands of happy customers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="travel-hero-slider.js"></script>
+</body>
+</html>
+

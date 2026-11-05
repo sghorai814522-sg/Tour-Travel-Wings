@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "type": "header",
   "name": "t:names.header",
@@ -17,7 +8,7 @@
         "announcement_KMAGKG": {
           "type": "_announcement",
           "settings": {
-            "text": "Shop the bedroom event - on now!",
+            "text": "Explore • Discover • Experience the World with Tour & Travel Wings",
             "link": "shopify://collections/all",
             "font": "var(--font-accent--family)",
             "font_size": "0.75rem",
@@ -75,15 +66,15 @@
         }
       },
       "settings": {
-        "logo_position": "center",
+        "logo_position": "left",
         "menu_position": "center",
-        "menu_row": "bottom",
+        "menu_row": "top",
         "show_search": true,
-        "search_position": "left",
+        "search_position": "right",
         "search_row": "top",
-        "show_country": true,
+        "show_country": false,
         "country_selector_style": true,
-        "show_language": true,
+        "show_language": false,
         "localization_font": "heading",
         "localization_font_size": "0.875rem",
         "localization_position": "right",
@@ -95,8 +86,8 @@
         "divider_size": "page-width",
         "divider_color": "{{ settings.color_palette.color3 }}",
         "border_width": 1,
-        "bottom_border_color": "{{ settings.color_palette.color3 }}",
-        "background_color_top": "{{ settings.color_palette.background }}",
+        "bottom_border_color": "#edf2f7",
+        "background_color_top": "#ffffff",
         "enable_transparent_header_home": false,
         "enable_transparent_header_product": false,
         "enable_transparent_header_collection": false
@@ -104,7 +95,6 @@
     }
   },
   "order": [
-    "header_announcements_pbXTDf",
     "header_section"
   ]
 }
