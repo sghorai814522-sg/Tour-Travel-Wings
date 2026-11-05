@@ -977,7 +977,6 @@
       "block_order": [
         "group_JWrF3Q"
       ],
-      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [],
@@ -1314,9 +1313,9 @@
     "section_BkdmxX",
     "product_hotspots_RzCyE8",
     "collection_list_3ejxRy",
-    "collection_list_XaY9C3",
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
+    "collection_list_XaY9C3",
     "travel_promo_reviews_rJBwH9"
   ]
 }
