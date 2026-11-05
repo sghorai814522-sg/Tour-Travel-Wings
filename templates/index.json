@@ -808,196 +808,6 @@
         "padding-block-end": 24
       }
     },
-    "collection_list_XaY9C3": {
-      "type": "collection-list",
-      "blocks": {
-        "group_JWrF3Q": {
-          "type": "group",
-          "name": "t:names.header",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_kW34Li": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>COMPLETE YOUR HOME WITH</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_zjYTMm": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<h3><em>Accessories</em></h3>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_kW34Li",
-            "text_zjYTMm"
-          ]
-        },
-        "static-collection-card": {
-          "type": "_collection-card",
-          "name": "t:names.collection_card",
-          "static": true,
-          "settings": {
-            "placement": "below_image",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "flex-start",
-            "collection_card_gap": 8,
-            "background_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0
-          },
-          "blocks": {
-            "collection_title_kkgEBG": {
-              "type": "collection-title",
-              "name": "t:names.collection_title",
-              "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "text_color": "{{ settings.color_palette.foreground }}",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "static": true,
-              "settings": {
-                "image_ratio": "square",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collection_title_kkgEBG"
-          ]
-        }
-      },
-      "block_order": [
-        "group_JWrF3Q"
-      ],
-      "name": "t:names.collections_grid",
-      "settings": {
-        "collection_list": [],
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "columns": 5,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 22,
-        "bento_gap": 4,
-        "rows_gap": 52,
-        "max_collections": 4,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "gap": 12,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
     "media_with_content_HP7Qpp": {
       "type": "media-with-content",
       "blocks": {
@@ -1249,6 +1059,94 @@
         "show_features": true
       }
     },
+    "popular_tours": {
+      "type": "popular-tours",
+      "blocks": {
+        "tour_bali": {
+          "type": "tour_card",
+          "settings": {
+            "fallback_image": "tour-bali.jpg",
+            "badge": "",
+            "title": "Bali Escape",
+            "location": "Indonesia",
+            "days": "7 Days",
+            "nights": "6 Nights",
+            "price": "$799",
+            "compare_price": "",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "tour_swiss": {
+          "type": "tour_card",
+          "settings": {
+            "fallback_image": "tour-swiss-alps.jpg",
+            "badge": "",
+            "title": "Swiss Alps Adventure",
+            "location": "Switzerland",
+            "days": "9 Days",
+            "nights": "7 Nights",
+            "price": "$1,299",
+            "compare_price": "",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "tour_dubai": {
+          "type": "tour_card",
+          "settings": {
+            "fallback_image": "tour-dubai.jpg",
+            "badge": "",
+            "title": "Dubai Getaway",
+            "location": "UAE",
+            "days": "5 Days",
+            "nights": "4 Nights",
+            "price": "$899",
+            "compare_price": "",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "tour_thailand": {
+          "type": "tour_card",
+          "settings": {
+            "fallback_image": "tour-thailand.jpg",
+            "badge": "",
+            "title": "Thailand Discovery",
+            "location": "Thailand",
+            "days": "6 Days",
+            "nights": "5 Nights",
+            "price": "$749",
+            "compare_price": "",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "tour_bali",
+        "tour_swiss",
+        "tour_dubai",
+        "tour_thailand"
+      ],
+      "settings": {
+        "heading": "Popular Tours",
+        "view_all_text": "View All Tours",
+        "view_all_link": "shopify://collections/all",
+        "source": "blocks",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "enable_mobile_scroll": true,
+        "background_color": "#ffffff",
+        "title_color": "#0a2e5c",
+        "card_background": "#ffffff",
+        "button_bg_color": "#f5a623",
+        "button_hover_bg_color": "#d9921b",
+        "padding_top": 56,
+        "padding_bottom": 64
+      }
+    },
     "travel_promo_reviews_rJBwH9": {
       "type": "travel-promo-reviews",
       "blocks": {
@@ -1304,84 +1202,6 @@
         "padding_top": 40,
         "padding_bottom": 60
       }
-    },
-    "popular_tours": {
-      "type": "popular-tours",
-      "blocks": {
-        "tour_bali": {
-          "type": "tour_card",
-          "settings": {
-            "title": "Bali Escape",
-            "location": "Indonesia",
-            "days": "7 Days",
-            "nights": "6 Nights",
-            "price": "$799",
-            "fallback_image": "tour-bali.jpg",
-            "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
-          }
-        },
-        "tour_swiss": {
-          "type": "tour_card",
-          "settings": {
-            "title": "Swiss Alps Adventure",
-            "location": "Switzerland",
-            "days": "9 Days",
-            "nights": "7 Nights",
-            "price": "$1,299",
-            "fallback_image": "tour-swiss-alps.jpg",
-            "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
-          }
-        },
-        "tour_dubai": {
-          "type": "tour_card",
-          "settings": {
-            "title": "Dubai Getaway",
-            "location": "UAE",
-            "days": "5 Days",
-            "nights": "4 Nights",
-            "price": "$899",
-            "fallback_image": "tour-dubai.jpg",
-            "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
-          }
-        },
-        "tour_thailand": {
-          "type": "tour_card",
-          "settings": {
-            "title": "Thailand Discovery",
-            "location": "Thailand",
-            "days": "6 Days",
-            "nights": "5 Nights",
-            "price": "$749",
-            "fallback_image": "tour-thailand.jpg",
-            "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "tour_bali",
-        "tour_swiss",
-        "tour_dubai",
-        "tour_thailand"
-      ],
-      "settings": {
-        "heading": "Popular Tours",
-        "view_all_text": "View All Tours",
-        "view_all_link": "shopify://collections/all",
-        "source": "blocks",
-        "columns_desktop": 4,
-        "enable_mobile_scroll": true,
-        "background_color": "#ffffff",
-        "title_color": "#0a2e5c",
-        "card_background": "#ffffff",
-        "button_bg_color": "#f5a623",
-        "button_hover_bg_color": "#d9921b",
-        "padding_top": 56,
-        "padding_bottom": 64
-      }
     }
   },
   "order": [
@@ -1394,7 +1214,6 @@
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
     "popular_tours",
-    "collection_list_XaY9C3",
     "travel_promo_reviews_rJBwH9"
   ]
 }
