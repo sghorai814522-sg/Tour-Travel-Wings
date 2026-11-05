@@ -1304,6 +1304,84 @@
         "padding_top": 40,
         "padding_bottom": 60
       }
+    },
+    "popular_tours": {
+      "type": "popular-tours",
+      "blocks": {
+        "tour_bali": {
+          "type": "tour_card",
+          "settings": {
+            "title": "Bali Escape",
+            "location": "Indonesia",
+            "days": "7 Days",
+            "nights": "6 Nights",
+            "price": "$799",
+            "fallback_image": "tour-bali.jpg",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "tour_swiss": {
+          "type": "tour_card",
+          "settings": {
+            "title": "Swiss Alps Adventure",
+            "location": "Switzerland",
+            "days": "9 Days",
+            "nights": "7 Nights",
+            "price": "$1,299",
+            "fallback_image": "tour-swiss-alps.jpg",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "tour_dubai": {
+          "type": "tour_card",
+          "settings": {
+            "title": "Dubai Getaway",
+            "location": "UAE",
+            "days": "5 Days",
+            "nights": "4 Nights",
+            "price": "$899",
+            "fallback_image": "tour-dubai.jpg",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "tour_thailand": {
+          "type": "tour_card",
+          "settings": {
+            "title": "Thailand Discovery",
+            "location": "Thailand",
+            "days": "6 Days",
+            "nights": "5 Nights",
+            "price": "$749",
+            "fallback_image": "tour-thailand.jpg",
+            "button_label": "Book Now",
+            "button_link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "tour_bali",
+        "tour_swiss",
+        "tour_dubai",
+        "tour_thailand"
+      ],
+      "settings": {
+        "heading": "Popular Tours",
+        "view_all_text": "View All Tours",
+        "view_all_link": "shopify://collections/all",
+        "source": "blocks",
+        "columns_desktop": 4,
+        "enable_mobile_scroll": true,
+        "background_color": "#ffffff",
+        "title_color": "#0a2e5c",
+        "card_background": "#ffffff",
+        "button_bg_color": "#f5a623",
+        "button_hover_bg_color": "#d9921b",
+        "padding_top": 56,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
@@ -1315,6 +1393,7 @@
     "collection_list_3ejxRy",
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
+    "popular_tours",
     "collection_list_XaY9C3",
     "travel_promo_reviews_rJBwH9"
   ]

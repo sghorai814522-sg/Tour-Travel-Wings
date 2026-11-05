@@ -1,0 +1,348 @@
+/* ==========================================================================
+   POPULAR TOURS SECTION
+   Tour & Travel Wings
+   ========================================================================== */
+
+:root {
+  --pt-color-navy: #0a2e5c;
+  --pt-color-navy-dark: #071f3f;
+  --pt-color-blue: #1d4ed8;
+  --pt-color-blue-hover: #1e40af;
+  --pt-color-gold: #f5a623;
+  --pt-color-gold-hover: #d9921b;
+  --pt-color-text-dark: #0f172a;
+  --pt-color-text-muted: #64748b;
+  --pt-color-border: #e2e8f0;
+  --pt-card-bg: #ffffff;
+  --pt-card-radius: 16px;
+  --pt-card-shadow: 0 6px 20px -2px rgba(10, 46, 92, 0.07), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --pt-card-shadow-hover: 0 16px 36px -4px rgba(10, 46, 92, 0.15), 0 6px 14px -2px rgba(0, 0, 0, 0.06);
+  --pt-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popular-tours-section {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.popular-tours-section *,
+.popular-tours-section *::before,
+.popular-tours-section *::after {
+  box-sizing: border-box;
+}
+
+.popular-tours-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .popular-tours-container {
+    padding: 0 32px;
+  }
+}
+
+/* ==========================================================================
+   HEADER ROW (Title + View All Link)
+   ========================================================================== */
+.popular-tours-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.popular-tours-title {
+  margin: 0;
+  font-family: var(--font-heading--family, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.65rem, 2.5vw, 2.25rem);
+  font-weight: 700;
+  color: var(--pt-color-navy);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.popular-tours-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body--family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pt-color-blue);
+  text-decoration: none;
+  transition: var(--pt-transition);
+}
+
+.popular-tours-view-all:hover {
+  color: var(--pt-color-blue-hover);
+  transform: translateX(3px);
+}
+
+.popular-tours-view-all svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.popular-tours-view-all:hover svg {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   TOURS GRID
+   ========================================================================== */
+.popular-tours-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--pt-columns-desktop, 4), 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 1024px) {
+  .popular-tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .popular-tours-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Optional mobile horizontal swipe mode */
+  .popular-tours-grid.is-mobile-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 24px;
+    padding-bottom: 16px;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .popular-tours-grid.is-mobile-scroll .popular-tour-card {
+    flex: 0 0 85%;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+
+/* ==========================================================================
+   TOUR CARD
+   ========================================================================== */
+.popular-tour-card {
+  position: relative;
+  background-color: var(--pt-card-bg);
+  border: 1px solid var(--pt-color-border);
+  border-radius: var(--pt-card-radius);
+  overflow: hidden;
+  box-shadow: var(--pt-card-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: var(--pt-transition);
+}
+
+.popular-tour-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--pt-card-shadow-hover);
+  border-color: rgba(10, 46, 92, 0.15);
+}
+
+/* Media Area */
+.popular-tour-media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #f1f5f9;
+}
+
+.popular-tour-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.popular-tour-card:hover .popular-tour-media {
+  transform: scale(1.06);
+}
+
+/* Media Overlay Badge */
+.popular-tour-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(10, 46, 92, 0.85);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  z-index: 2;
+}
+
+/* Card Content */
+.popular-tour-content {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Tour Title */
+.popular-tour-title-wrap {
+  margin-bottom: 8px;
+}
+
+.popular-tour-title {
+  margin: 0;
+  font-family: var(--font-heading--family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--pt-color-navy);
+  line-height: 1.3;
+}
+
+.popular-tour-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.popular-tour-title a:hover {
+  color: var(--pt-color-blue);
+}
+
+/* Location Row */
+.popular-tour-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pt-color-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.popular-tour-meta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: #6366f1;
+  flex-shrink: 0;
+}
+
+.popular-tour-meta-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.popular-tour-location-text {
+  font-weight: 500;
+  color: #475569;
+}
+
+/* Duration Row (Days & Nights) */
+.popular-tour-duration-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--pt-color-text-muted);
+  font-size: 0.825rem;
+  margin-bottom: 18px;
+}
+
+.popular-tour-duration-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.popular-tour-duration-icon {
+  width: 15px;
+  height: 15px;
+  color: #64748b;
+  display: inline-flex;
+}
+
+.popular-tour-duration-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Card Footer (Price + CTA Button) */
+.popular-tour-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+/* Price */
+.popular-tour-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-tour-price {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--pt-color-navy);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.popular-tour-compare-price {
+  font-size: 0.85rem;
+  text-decoration: line-through;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Book Now Button */
+.popular-tour-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+  background: var(--pt-color-gold);
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(245, 166, 35, 0.35);
+  transition: var(--pt-transition);
+  white-space: nowrap;
+}
+
+.popular-tour-btn:hover {
+  background: var(--pt-color-gold-hover);
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.45);
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.popular-tour-btn:active {
+  transform: translateY(0);
+}
