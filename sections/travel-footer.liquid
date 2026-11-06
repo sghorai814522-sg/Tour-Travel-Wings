@@ -1,0 +1,375 @@
+{{ 'travel-footer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'travel-footer.js' | asset_url }}" defer="defer"></script>
+
+<footer
+  id="TravelFooter-{{ section.id }}"
+  class="travel-footer"
+  style="--travel-footer-bg: {{ section.settings.background_color }};"
+>
+  <div class="travel-footer__container">
+    <div class="travel-footer__grid">
+      <!-- Col 1: Brand & Logo -->
+      <div class="travel-footer__col travel-footer__col--brand">
+        <div class="travel-footer__brand">
+          <a href="{{ routes.root_url }}" class="travel-footer__logo-link" aria-label="{{ shop.name }}">
+            {%- if section.settings.logo != blank -%}
+              {{
+                section.settings.logo
+                | image_url: width: 600
+                | image_tag:
+                  width: section.settings.logo_width,
+                  class: 'travel-footer__logo-img',
+                  alt: shop.name,
+                  loading: 'lazy'
+              }}
+            {%- else -%}
+              <div class="travel-footer__brand-vector">
+                <svg class="travel-footer__brand-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- Outer Wing Arcs (White) -->
+                  <path d="M12 55C14 42 22 28 36 20C28 29 25 39 26 50C20 46 15 50 12 55Z" fill="#FFFFFF"/>
+                  <path d="M18 64C21 52 28 38 42 30C35 38 33 48 34 58C28 55 22 59 18 64Z" fill="#FFFFFF" fill-opacity="0.9"/>
+                  <path d="M25 72C28 62 36 49 50 42C43 49 42 58 43 67C37 64 30 67 25 72Z" fill="#FFFFFF" fill-opacity="0.8"/>
+                  
+                  <!-- Globe Circle & Gold Ring -->
+                  <circle cx="56" cy="54" r="28" fill="#0c4a85"/>
+                  <circle cx="56" cy="54" r="27" stroke="#f5a623" stroke-width="2.5"/>
+                  
+                  <!-- Continents / Grid Lines -->
+                  <path d="M38 54C42 45 52 42 56 42C62 42 70 47 72 54C68 62 58 66 56 66C48 66 40 60 38 54Z" fill="#f5a623" fill-opacity="0.75"/>
+                  <ellipse cx="56" cy="54" rx="26" ry="12" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.6"/>
+                  <line x1="56" y1="27" x2="56" y2="81" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.6"/>
+                  <line x1="29" y1="54" x2="83" y2="54" stroke="#FFFFFF" stroke-width="1.2" stroke-opacity="0.6"/>
+                  
+                  <!-- Airplane & Golden Arc Flight Path -->
+                  <path d="M28 75C36 82 50 84 66 80C78 76 86 66 90 52" stroke="#f5a623" stroke-width="2.2" stroke-dasharray="3 3"/>
+                  <path d="M86 42L94 38L91 47L88 45L84 48L85 44L83 43L86 42Z" fill="#FFFFFF"/>
+                </svg>
+                <div class="travel-footer__brand-text">
+                  <div class="travel-footer__brand-main">
+                    <span>TOUR</span>
+                    <span class="travel-footer__brand-and">AND</span>
+                    <span>TRAVEL</span>
+                  </div>
+                  <div class="travel-footer__brand-sub">WINGS</div>
+                </div>
+              </div>
+            {%- endif -%}
+          </a>
+          {%- if section.settings.tagline != blank -%}
+            <p class="travel-footer__tagline">{{ section.settings.tagline }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="travel-footer__col travel-footer__col--menu">
+        <h3 class="travel-footer__heading">
+          {{ section.settings.quick_links_heading | escape }}
+        </h3>
+        <ul class="travel-footer__menu">
+          {%- if section.settings.quick_links_menu != blank and linklists[section.settings.quick_links_menu].links.size > 0 -%}
+            {%- for link in linklists[section.settings.quick_links_menu].links -%}
+              <li class="travel-footer__menu-item">
+                <a href="{{ link.url }}" class="travel-footer__menu-link">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          {%- else -%}
+            <li class="travel-footer__menu-item">
+              <a href="{{ routes.root_url }}" class="travel-footer__menu-link">Home</a>
+            </li>
+            <li class="travel-footer__menu-item">
+              <a href="{{ routes.all_products_collection_url | default: '/collections/all' }}" class="travel-footer__menu-link">Tours</a>
+            </li>
+            <li class="travel-footer__menu-item">
+              <a href="{{ routes.collections_url }}" class="travel-footer__menu-link">Destinations</a>
+            </li>
+            <li class="travel-footer__menu-item">
+              <a href="/pages/about-us" class="travel-footer__menu-link">About Us</a>
+            </li>
+            <li class="travel-footer__menu-item">
+              <a href="/pages/contact" class="travel-footer__menu-link">Contact</a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <!-- Col 3: Customer Care -->
+      <div class="travel-footer__col travel-footer__col--menu">
+        <h3 class="travel-footer__heading">
+          {{ section.settings.customer_care_heading | escape }}
+        </h3>
+        <ul class="travel-footer__menu">
+          {%- if section.settings.customer_care_menu != blank and linklists[section.settings.customer_care_menu].links.size > 0 -%}
+            {%- for link in linklists[section.settings.customer_care_menu].links -%}
+              <li class="travel-footer__menu-item">
+                <a href="{{ link.url }}" class="travel-footer__menu-link">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          {%- else -%}
+            <li class="travel-footer__menu-item">
+              <a href="/pages/faq" class="travel-footer__menu-link">FAQ</a>
+            </li>
+            <li class="travel-footer__menu-item">
+              <a href="/policies/terms-of-service" class="travel-footer__menu-link">Terms & Conditions</a>
+            </li>
+            <li class="travel-footer__menu-item">
+              <a href="/policies/privacy-policy" class="travel-footer__menu-link">Privacy Policy</a>
+            </li>
+            <li class="travel-footer__menu-item">
+              <a href="/policies/shipping-policy" class="travel-footer__menu-link">Shipping Policy</a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <!-- Col 4: Follow Us -->
+      <div class="travel-footer__col travel-footer__col--social">
+        <h3 class="travel-footer__heading">
+          {{ section.settings.follow_us_heading | escape }}
+        </h3>
+        <ul class="travel-footer__social-list">
+          <!-- Facebook -->
+          {%- assign fb_link = section.settings.social_facebook | default: 'https://facebook.com' -%}
+          <li class="travel-footer__social-item">
+            <a href="{{ fb_link }}" target="_blank" rel="noopener noreferrer" class="travel-footer__social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 13.5h2.5l1-4H14v-2c0-1.03.34-1.75 1.75-1.75H17.5V2.14C16.89 2.06 15.82 2 14.6 2 11.66 2 9.7 3.79 9.7 7.1v2.4H6.5v4h3.2V22h4.3v-8.5z"/>
+              </svg>
+            </a>
+          </li>
+
+          <!-- Twitter / X -->
+          {%- assign tw_link = section.settings.social_twitter | default: 'https://twitter.com' -%}
+          <li class="travel-footer__social-item">
+            <a href="{{ tw_link }}" target="_blank" rel="noopener noreferrer" class="travel-footer__social-link" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.05c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+          </li>
+
+          <!-- Pinterest -->
+          {%- assign pin_link = section.settings.social_pinterest | default: 'https://pinterest.com' -%}
+          <li class="travel-footer__social-item">
+            <a href="{{ pin_link }}" target="_blank" rel="noopener noreferrer" class="travel-footer__social-link" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.79-.17-2 .04-2.87.19-.8 1.2-5.08 1.2-5.08s-.3-.62-.3-1.53c0-1.43.83-2.5 1.87-2.5.88 0 1.3.66 1.3 1.45 0 .89-.57 2.21-.86 3.44-.24 1.03.52 1.87 1.53 1.87 1.84 0 3.25-1.94 3.25-4.74 0-2.48-1.78-4.21-4.33-4.21-2.95 0-4.68 2.21-4.68 4.49 0 .89.34 1.84.77 2.36.08.1.1.19.07.3-.08.33-.26 1.05-.3 1.2-.05.21-.17.26-.38.16-1.42-.66-2.31-2.73-2.31-4.4 0-3.58 2.6-6.87 7.5-6.87 3.94 0 7 2.81 7 6.56 0 3.91-2.47 7.07-5.9 7.07-1.15 0-2.24-.6-2.61-1.31l-.71 2.71c-.26 1-.96 2.24-1.43 3 1.06.33 2.19.51 3.36.51 5.52 0 10-4.48 10-10S17.52 2 12 2z"/>
+              </svg>
+            </a>
+          </li>
+
+          <!-- Instagram -->
+          {%- assign ig_link = section.settings.social_instagram | default: 'https://instagram.com' -%}
+          <li class="travel-footer__social-item">
+            <a href="{{ ig_link }}" target="_blank" rel="noopener noreferrer" class="travel-footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 5: Newsletter Subscription -->
+      <div class="travel-footer__col travel-footer__col--newsletter">
+        <h3 class="travel-footer__heading">
+          {{ section.settings.newsletter_heading | escape }}
+        </h3>
+        <div class="travel-footer__newsletter">
+          {%- form 'customer', id: 'TravelFooterForm', class: 'travel-footer__newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="travel-footer__input-group">
+              <input
+                type="email"
+                name="contact[email]"
+                class="travel-footer__input"
+                value="{{ form.email }}"
+                placeholder="{{ section.settings.newsletter_placeholder | escape }}"
+                aria-label="{{ section.settings.newsletter_placeholder | escape }}"
+                required
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+              >
+              <button type="submit" class="travel-footer__submit-btn" name="commit">
+                {{ section.settings.newsletter_button_text | escape }}
+              </button>
+            </div>
+            {%- if form.posted_successfully? -%}
+              <p class="travel-footer__form-message travel-footer__form-message--success" role="status">
+                Thanks for subscribing! Check your email for details.
+              </p>
+            {%- elsif form.errors -%}
+              <p class="travel-footer__form-message travel-footer__form-message--error" role="alert">
+                {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
+              </p>
+            {%- endif -%}
+          {%- endform -%}
+        </div>
+      </div>
+    </div>
+
+    <!-- Divider Line -->
+    <hr class="travel-footer__divider" aria-hidden="true">
+
+    <!-- Bottom Bar -->
+    <div class="travel-footer__bottom">
+      <p class="travel-footer__copyright">
+        &copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_text | escape }}
+      </p>
+      <div class="travel-footer__security">
+        <svg class="travel-footer__lock-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+        </svg>
+        <span>{{ section.settings.security_text | escape }}</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Travel Footer",
+  "class": "travel-footer-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#071f3f"
+    },
+    {
+      "type": "header",
+      "content": "Brand & Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Custom Logo Image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Custom Logo Width",
+      "min": 100,
+      "max": 320,
+      "step": 10,
+      "unit": "px",
+      "default": 210
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline / Slogan",
+      "default": "Journeys Beyond Destinations"
+    },
+    {
+      "type": "header",
+      "content": "Quick Links Menu"
+    },
+    {
+      "type": "text",
+      "id": "quick_links_heading",
+      "label": "Heading",
+      "default": "Quick Links"
+    },
+    {
+      "type": "link_list",
+      "id": "quick_links_menu",
+      "label": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Customer Care Menu"
+    },
+    {
+      "type": "text",
+      "id": "customer_care_heading",
+      "label": "Heading",
+      "default": "Customer Care"
+    },
+    {
+      "type": "link_list",
+      "id": "customer_care_menu",
+      "label": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Follow Us (Social Media)"
+    },
+    {
+      "type": "text",
+      "id": "follow_us_heading",
+      "label": "Heading",
+      "default": "Follow Us"
+    },
+    {
+      "type": "url",
+      "id": "social_facebook",
+      "label": "Facebook Link"
+    },
+    {
+      "type": "url",
+      "id": "social_twitter",
+      "label": "Twitter / X Link"
+    },
+    {
+      "type": "url",
+      "id": "social_pinterest",
+      "label": "Pinterest Link"
+    },
+    {
+      "type": "url",
+      "id": "social_instagram",
+      "label": "Instagram Link"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter Subscription"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Heading",
+      "default": "Subscribe & Get 10% Off"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Input Placeholder",
+      "default": "Insert email..."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button_text",
+      "label": "Button Text",
+      "default": "Subscribe"
+    },
+    {
+      "type": "header",
+      "content": "Bottom Bar"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "Tour and Travel Wings. All rights reserved."
+    },
+    {
+      "type": "text",
+      "id": "security_text",
+      "label": "Security Checkout Text",
+      "default": "Secured & Encrypted Checkout"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Travel Footer"
+    }
+  ]
+}
+{% endschema %}
+

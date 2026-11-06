@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Image Showcase - Tour & Travel Wings</title>
+  <link rel="stylesheet" href="gallery-showcase.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 0;
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gallery Showcase Section (Single Horizontal Row with Consistent Height) -->
+  <section
+    class="gallery-showcase-section"
+    data-drag="true"
+    data-autoplay="false"
+    data-speed="4"
+    data-lightbox="true"
+    style="
+      padding-top: 40px;
+      padding-bottom: 60px;
+      --gsc-height-desktop: 340px;
+      --gsc-height-mobile: 260px;
+      --gsc-border-radius: 16px;
+      --gsc-gap: 16px;
+      --gsc-gap-mobile: 12px;
+      --gsc-aspect-ratio: 4 / 3;
+    "
+  >
+    <div class="gallery-showcase-container is-page-width">
+      
+      <!-- Section Header -->
+      <div class="gallery-showcase-header text-left">
+        <div class="gallery-showcase-header-row">
+          <div class="gallery-showcase-header-content">
+            <span class="gallery-showcase-kicker">EXPLORE • DISCOVER • CAPTURE</span>
+            <h2 class="gallery-showcase-heading">Moments Beyond Destinations</h2>
+            <p class="gallery-showcase-description">
+              A visual showcase of unforgettable travel highlights and breathtaking locations from around the globe.
+            </p>
+          </div>
+
+          <!-- Top Navigation Controls -->
+          <div class="gallery-showcase-controls-top" aria-hidden="true">
+            <button type="button" class="gallery-showcase-nav-btn gallery-showcase-prev-btn" aria-label="Previous image">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button type="button" class="gallery-showcase-nav-btn gallery-showcase-next-btn" aria-label="Next image">
+              <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal Track -->
+      <div class="gallery-showcase-track-wrapper">
+        <div class="gallery-showcase-track" tabindex="0" role="region" aria-label="Image gallery showcase">
+          
+          <!-- Card 1: Santorini -->
+          <div class="gallery-showcase-card" data-full-image="hero-santorini.jpg" data-title="Santorini Caldera" data-desc="Iconic cobalt blue domes overlooking the deep Aegean sea.">
+            <img src="hero-santorini.jpg" alt="Santorini Caldera" class="gallery-showcase-img" loading="lazy" draggable="false">
+            <div class="gallery-showcase-overlay" aria-hidden="true"></div>
+            <button type="button" class="gallery-showcase-zoom-btn" aria-label="Enlarge image">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </button>
+            <div class="gallery-showcase-caption">
+              <span class="gallery-showcase-card-kicker">GREECE</span>
+              <h3 class="gallery-showcase-card-title">Santorini Caldera</h3>
+              <p class="gallery-showcase-card-text">Iconic cobalt blue domes overlooking the deep Aegean sea.</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Bali -->
+          <div class="gallery-showcase-card" data-full-image="tour-bali.jpg" data-title="Bali Island Haven" data-desc="Lush tropical terraces, volcanic peaks, and serene beach temples.">
+            <img src="tour-bali.jpg" alt="Bali Island Haven" class="gallery-showcase-img" loading="lazy" draggable="false">
+            <div class="gallery-showcase-overlay" aria-hidden="true"></div>
+            <button type="button" class="gallery-showcase-zoom-btn" aria-label="Enlarge image">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </button>
+            <div class="gallery-showcase-caption">
+              <span class="gallery-showcase-card-kicker">INDONESIA</span>
+              <h3 class="gallery-showcase-card-title">Bali Island Haven</h3>
+              <p class="gallery-showcase-card-text">Lush tropical terraces, volcanic peaks, and serene beach temples.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Swiss Alps -->
+          <div class="gallery-showcase-card" data-full-image="tour-swiss-alps.jpg" data-title="Swiss Alpine Peaks" data-desc="Majestic snow-dusted summits, alpine meadows, and wooden chalets.">
+            <img src="tour-swiss-alps.jpg" alt="Swiss Alpine Peaks" class="gallery-showcase-img" loading="lazy" draggable="false">
+            <div class="gallery-showcase-overlay" aria-hidden="true"></div>
+            <button type="button" class="gallery-showcase-zoom-btn" aria-label="Enlarge image">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </button>
+            <div class="gallery-showcase-caption">
+              <span class="gallery-showcase-card-kicker">SWITZERLAND</span>
+              <h3 class="gallery-showcase-card-title">Swiss Alpine Peaks</h3>
+              <p class="gallery-showcase-card-text">Majestic snow-dusted summits, alpine meadows, and wooden chalets.</p>
+            </div>
+          </div>
+
+          <!-- Card 4: Maldives -->
+          <div class="gallery-showcase-card" data-full-image="hero-maldives.jpg" data-title="Overwater Luxury" data-desc="Private turquoise lagoons and pure powdery coral sand beaches.">
+            <img src="hero-maldives.jpg" alt="Overwater Luxury" class="gallery-showcase-img" loading="lazy" draggable="false">
+            <div class="gallery-showcase-overlay" aria-hidden="true"></div>
+            <button type="button" class="gallery-showcase-zoom-btn" aria-label="Enlarge image">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </button>
+            <div class="gallery-showcase-caption">
+              <span class="gallery-showcase-card-kicker">MALDIVES</span>
+              <h3 class="gallery-showcase-card-title">Overwater Luxury</h3>
+              <p class="gallery-showcase-card-text">Private turquoise lagoons and pure powdery coral sand beaches.</p>
+            </div>
+          </div>
+
+          <!-- Card 5: Dubai -->
+          <div class="gallery-showcase-card" data-full-image="tour-dubai.jpg" data-title="Dubai Oasis & Skyline" data-desc="Golden desert dune safaris meeting futuristic architectural wonder.">
+            <img src="tour-dubai.jpg" alt="Dubai Oasis & Skyline" class="gallery-showcase-img" loading="lazy" draggable="false">
+            <div class="gallery-showcase-overlay" aria-hidden="true"></div>
+            <button type="button" class="gallery-showcase-zoom-btn" aria-label="Enlarge image">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </button>
+            <div class="gallery-showcase-caption">
+              <span class="gallery-showcase-card-kicker">UAE</span>
+              <h3 class="gallery-showcase-card-title">Dubai Oasis & Skyline</h3>
+              <p class="gallery-showcase-card-text">Golden desert dune safaris meeting futuristic architectural wonder.</p>
+            </div>
+          </div>
+
+          <!-- Card 6: Thailand -->
+          <div class="gallery-showcase-card" data-full-image="tour-thailand.jpg" data-title="Phuket & Krabi Bays" data-desc="Limestone karst islands rising from emerald waters.">
+            <img src="tour-thailand.jpg" alt="Phuket & Krabi Bays" class="gallery-showcase-img" loading="lazy" draggable="false">
+            <div class="gallery-showcase-overlay" aria-hidden="true"></div>
+            <button type="button" class="gallery-showcase-zoom-btn" aria-label="Enlarge image">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </button>
+            <div class="gallery-showcase-caption">
+              <span class="gallery-showcase-card-kicker">THAILAND</span>
+              <h3 class="gallery-showcase-card-title">Phuket & Krabi Bays</h3>
+              <p class="gallery-showcase-card-text">Limestone karst islands rising from emerald waters.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Progress Bar Tracker -->
+      <div class="gallery-showcase-progress-wrap" aria-hidden="true">
+        <div class="gallery-showcase-progress-bar">
+          <div class="gallery-showcase-progress-fill"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="gallery-lightbox-modal" role="dialog" aria-modal="true" aria-label="Enlarged photo preview">
+      <button type="button" class="gallery-lightbox-prev-btn" aria-label="Previous photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
+      <button type="button" class="gallery-lightbox-next-btn" aria-label="Next photo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+      <div class="gallery-lightbox-container">
+        <button type="button" class="gallery-lightbox-close-btn" aria-label="Close photo preview">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="gallery-lightbox-img-wrap">
+          <img src="" alt="" class="gallery-lightbox-img">
+        </div>
+        <div class="gallery-lightbox-caption">
+          <h4 class="gallery-lightbox-title"></h4>
+          <p class="gallery-lightbox-desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="gallery-showcase.js"></script>
+</body>
+</html>
+
