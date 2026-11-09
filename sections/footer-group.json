@@ -1,7 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
+    "travel_footer_TjUUwm": {
+      "type": "travel-footer",
+      "name": "Travel Footer",
+      "settings": {
+        "background_color": "#071f3f",
+        "logo_width": 210,
+        "tagline": "Journeys Beyond Destinations",
+        "quick_links_heading": "Quick Links",
+        "quick_links_menu": "",
+        "customer_care_heading": "Customer Care",
+        "customer_care_menu": "",
+        "follow_us_heading": "Follow Us",
+        "social_facebook": "",
+        "social_twitter": "",
+        "social_pinterest": "",
+        "social_instagram": "",
+        "newsletter_heading": "Subscribe & Get 10% Off",
+        "newsletter_placeholder": "Insert email...",
+        "newsletter_button_text": "Subscribe",
+        "copyright_text": "Tour and Travel Wings. All rights reserved.",
+        "security_text": "Secured & Encrypted Checkout"
+      }
+    },
     "section_bfa9EJ": {
       "type": "section",
       "blocks": {
@@ -12,6 +44,7 @@
             "width": "fill",
             "custom_width": 100,
             "heading": "NEWSLETTER",
+            "heading_text_color": "",
             "heading_preset": "h6",
             "border_style": "underline",
             "input_style": "custom",
@@ -22,6 +55,10 @@
             "input_border_color": "{{ settings.color_palette.color4 }}",
             "input_type_preset": "h3",
             "style_class": "button-unstyled",
+            "custom_button_background": "{{ settings.color_palette.foreground }}",
+            "custom_button_text": "{{ settings.color_palette.background }}",
+            "custom_button_border": "{{ settings.color_palette.background }}",
+            "link_text_color": "",
             "display_type": "text",
             "label": "Subscribe",
             "integrated_button": false,
@@ -37,6 +74,7 @@
       "block_order": [
         "email_signup_aMpHhb"
       ],
+      "disabled": true,
       "name": "t:names.email_signup",
       "settings": {
         "content_direction": "column",
@@ -48,19 +86,21 @@
         "vertical_alignment_flex_direction_column": "center",
         "gap": 16,
         "section_width": "page-width",
+        "section_height": "",
         "section_height_custom": 50,
         "background_media": "none",
         "background_color": "{{ settings.color_palette.color3 }}",
         "video_position": "cover",
         "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
         "toggle_overlay": false,
         "overlay_color": "#00000026",
         "overlay_style": "solid",
         "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -87,17 +127,21 @@
             "height": "fit",
             "custom_height": 100,
             "background_media": "none",
+            "background_color": "",
             "video_position": "cover",
             "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
             "toggle_overlay": false,
             "overlay_color": "#00000026",
             "overlay_style": "solid",
             "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
             "open_in_new_tab": false,
+            "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 60,
             "padding-inline-start": 0,
@@ -123,17 +167,21 @@
                 "height": "fit",
                 "custom_height": 100,
                 "background_media": "none",
+                "background_color": "",
                 "video_position": "cover",
                 "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
                 "toggle_overlay": false,
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -146,6 +194,7 @@
                   "settings": {
                     "inverse": false,
                     "font": "heading",
+                    "text_color": "",
                     "unit": "percent",
                     "percent_width": 70,
                     "pixel_height": 48,
@@ -184,17 +233,21 @@
                 "height": "fit",
                 "custom_height": 100,
                 "background_media": "none",
+                "background_color": "",
                 "video_position": "cover",
                 "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
                 "toggle_overlay": false,
                 "overlay_color": "#00000026",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -207,8 +260,8 @@
                   "settings": {
                     "thickness": 1,
                     "corner_radius": "square",
-                    "width_percent": 100,
                     "divider_color": "{{ settings.color_palette.color4 }}",
+                    "width_percent": 100,
                     "padding-block-start": 0,
                     "padding-block-end": 0
                   },
@@ -233,17 +286,21 @@
                     "height": "fit",
                     "custom_height": 100,
                     "background_media": "none",
+                    "background_color": "",
                     "video_position": "cover",
                     "background_image_position": "cover",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
                     "toggle_overlay": false,
                     "overlay_color": "#00000026",
                     "overlay_style": "solid",
                     "gradient_direction": "to top",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_color": "",
+                    "border_radius": 0,
+                    "link": "",
                     "open_in_new_tab": false,
+                    "placeholder": "",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -260,6 +317,7 @@
                         "show_as_accordion": false,
                         "accordion_icon": "caret",
                         "accordion_dividers": false,
+                        "background_color": "",
                         "text_color": "{{ settings.color_palette.foreground }}",
                         "heading_preset": "h6",
                         "link_preset": "paragraph",
@@ -281,8 +339,8 @@
                   "settings": {
                     "thickness": 1,
                     "corner_radius": "square",
-                    "width_percent": 100,
                     "divider_color": "{{ settings.color_palette.color4 }}",
+                    "width_percent": 100,
                     "padding-block-start": 0,
                     "padding-block-end": 0
                   },
@@ -307,17 +365,21 @@
                     "height": "fit",
                     "custom_height": 100,
                     "background_media": "none",
+                    "background_color": "",
                     "video_position": "cover",
                     "background_image_position": "cover",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
                     "toggle_overlay": false,
                     "overlay_color": "#00000026",
                     "overlay_style": "solid",
                     "gradient_direction": "to top",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_color": "",
+                    "border_radius": 0,
+                    "link": "",
                     "open_in_new_tab": false,
+                    "placeholder": "",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -334,9 +396,10 @@
                         "show_as_accordion": false,
                         "accordion_icon": "caret",
                         "accordion_dividers": false,
+                        "background_color": "",
+                        "text_color": "{{ settings.color_palette.foreground }}",
                         "heading_preset": "h6",
                         "link_preset": "paragraph",
-                        "text_color": "{{ settings.color_palette.foreground }}",
                         "padding-block-start": 0,
                         "padding-block-end": 0,
                         "padding-inline-start": 0,
@@ -355,8 +418,8 @@
                   "settings": {
                     "thickness": 1,
                     "corner_radius": "square",
-                    "width_percent": 100,
                     "divider_color": "{{ settings.color_palette.color4 }}",
+                    "width_percent": 100,
                     "padding-block-start": 0,
                     "padding-block-end": 0
                   },
@@ -381,17 +444,21 @@
                     "height": "fit",
                     "custom_height": 100,
                     "background_media": "none",
+                    "background_color": "",
                     "video_position": "cover",
                     "background_image_position": "cover",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_radius": 0,
                     "toggle_overlay": false,
                     "overlay_color": "#00000026",
                     "overlay_style": "solid",
                     "gradient_direction": "to top",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_color": "",
+                    "border_radius": 0,
+                    "link": "",
                     "open_in_new_tab": false,
+                    "placeholder": "",
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -408,6 +475,7 @@
                         "show_as_accordion": false,
                         "accordion_icon": "caret",
                         "accordion_dividers": false,
+                        "background_color": "",
                         "text_color": "{{ settings.color_palette.foreground }}",
                         "heading_preset": "h6",
                         "link_preset": "paragraph",
@@ -443,6 +511,7 @@
       "block_order": [
         "group_WWji7T"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "page-width",
         "gap": 12,
@@ -458,6 +527,7 @@
           "type": "footer-copyright",
           "settings": {
             "show_powered_by": true,
+            "text_color": "",
             "font_size": "0.75rem",
             "case": "none"
           },
@@ -466,6 +536,7 @@
         "policy_list": {
           "type": "footer-policy-list",
           "settings": {
+            "text_color": "",
             "font_size": "0.75rem",
             "case": "none"
           },
@@ -474,11 +545,20 @@
         "social_icons": {
           "type": "social-links",
           "settings": {
+            "icon_color": "",
             "facebook_url": "https://www.facebook.com",
             "instagram_url": "https://www.instagram.com",
             "youtube_url": "https://www.youtube.com",
             "tiktok_url": "https://www.tiktok.com",
-            "twitter_url": "https://www.twitter.com"
+            "twitter_url": "https://www.twitter.com",
+            "threads_url": "",
+            "linkedin_url": "",
+            "bluesky_url": "",
+            "snapchat_url": "",
+            "pinterest_url": "",
+            "tumblr_url": "",
+            "vimeo_url": "",
+            "custom_url": ""
           },
           "blocks": {}
         }
@@ -488,33 +568,22 @@
         "policy_list",
         "social_icons"
       ],
+      "disabled": true,
       "settings": {
         "section_width": "page-width",
         "gap": 24,
+        "background_color": "{{ settings.color_palette.color3 }}",
         "divider_thickness": 1,
         "divider_color": "{{ settings.color_palette.color4 }}",
-        "background_color": "{{ settings.color_palette.color3 }}",
         "padding-block-start": 20,
         "padding-block-end": 20
-      }
-    },
-    "travel_footer": {
-      "type": "travel-footer",
-      "settings": {
-        "background_color": "#071f3f",
-        "tagline": "Journeys Beyond Destinations",
-        "quick_links_heading": "Quick Links",
-        "customer_care_heading": "Customer Care",
-        "follow_us_heading": "Follow Us",
-        "newsletter_heading": "Subscribe & Get 10% Off",
-        "newsletter_placeholder": "Insert email...",
-        "newsletter_button_text": "Subscribe",
-        "copyright_text": "Tour and Travel Wings. All rights reserved.",
-        "security_text": "Secured & Encrypted Checkout"
       }
     }
   },
   "order": [
-    "travel_footer"
+    "travel_footer_TjUUwm",
+    "section_bfa9EJ",
+    "footer",
+    "utilities"
   ]
 }
