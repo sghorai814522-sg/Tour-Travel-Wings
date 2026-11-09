@@ -172,13 +172,14 @@
         {%- endfor -%}
       </div>
     {%- endif -%}
+  </div>
 
-    <!-- Dynamic & Functional Booking / Search Bar (Inside Hero Slider) -->
+  <!-- Dynamic & Functional Booking / Search Bar -->
   {%- if section.settings.show_search_bar -%}
     <div class="travel-search-bar-wrapper">
       <div class="travel-search-bar-container">
         <form
-          action="/search"
+          action="{{ routes.search_url }}"
           method="get"
           role="search"
           class="travel-search-form"
@@ -474,7 +475,6 @@
       </div>
     </div>
   {%- endif -%}
-  </div>
 
   <!-- Global Backdrop for closing dropdowns on outside click -->
   <div class="travel-popover-backdrop" aria-hidden="true"></div>

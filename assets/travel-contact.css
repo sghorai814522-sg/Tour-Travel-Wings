@@ -1,0 +1,649 @@
+/* ==========================================================================
+   TRAVEL CONTACT PAGE STYLES
+   Tour & Travel Wings - High Fidelity Custom Contact Template
+   ========================================================================== */
+
+:root {
+  --tc-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --tc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --tc-color-navy: #0a2e5c;
+  --tc-color-navy-dark: #071f3f;
+  --tc-color-gold: #f5a623;
+  --tc-color-gold-hover: #d9921b;
+  --tc-color-text-dark: #1e293b;
+  --tc-color-text-muted: #64748b;
+  --tc-color-border: #e2e8f0;
+  --tc-color-bg-light: #f8fafc;
+  --tc-shadow-card: 0 4px 20px -2px rgba(10, 46, 92, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  --tc-shadow-hover: 0 10px 28px -4px rgba(10, 46, 92, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+  --tc-radius-card: 18px;
+  --tc-radius-input: 10px;
+  --tc-transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.travel-contact-section {
+  width: 100%;
+  background-color: #ffffff;
+  font-family: var(--tc-font-sans);
+  color: var(--tc-color-text-dark);
+  box-sizing: border-box;
+  padding-top: var(--tc-padding-top, 0px);
+  padding-bottom: var(--tc-padding-bottom, 40px);
+  overflow: hidden;
+}
+
+.travel-contact-section *,
+.travel-contact-section *::before,
+.travel-contact-section *::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. HERO BANNER
+   ========================================================================== */
+.travel-contact-hero {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #0c1a2e;
+  overflow: hidden;
+}
+
+.travel-contact-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  transition: transform 3s ease-out;
+}
+
+.travel-contact-hero:hover .travel-contact-hero-bg {
+  transform: scale(1.05);
+}
+
+.travel-contact-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 25, 52, 0.45) 0%,
+    rgba(10, 46, 92, 0.55) 60%,
+    rgba(7, 31, 63, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+.travel-contact-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+  max-width: 800px;
+  color: #ffffff;
+  animation: tcHeroFadeIn 0.7s ease-out forwards;
+}
+
+@keyframes tcHeroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.travel-contact-hero-title {
+  font-family: var(--tc-font-heading);
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.travel-contact-hero-sub {
+  font-family: var(--tc-font-sans);
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   2. MAIN CONTAINER & 2-COLUMN GRID
+   ========================================================================== */
+.travel-contact-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 44px 24px 20px 24px;
+}
+
+.travel-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.18fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.travel-contact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Base Card Style */
+.travel-contact-card {
+  background: #ffffff;
+  border-radius: var(--tc-radius-card);
+  border: 1px solid var(--tc-color-border);
+  box-shadow: var(--tc-shadow-card);
+  padding: 34px 32px;
+  transition: var(--tc-transition);
+}
+
+.travel-contact-heading {
+  font-family: var(--tc-font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--tc-color-navy);
+  margin: 0 0 24px 0;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   3. LEFT COLUMN: GET IN TOUCH INFO
+   ========================================================================== */
+.travel-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.travel-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.travel-contact-item-icon {
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  color: var(--tc-color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.travel-contact-item-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.travel-contact-item-content {
+  flex: 1;
+}
+
+.travel-contact-item-title {
+  font-family: var(--tc-font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tc-color-navy);
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.travel-contact-item-text {
+  font-size: 14px;
+  color: var(--tc-color-text-muted);
+  line-height: 1.55;
+}
+
+.travel-contact-item-text a {
+  color: var(--tc-color-navy);
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.travel-contact-item-text a:hover {
+  color: var(--tc-color-gold);
+}
+
+.travel-contact-wa-link {
+  color: #16a34a !important;
+  font-weight: 600 !important;
+  margin-top: 2px;
+}
+
+.travel-contact-wa-link:hover {
+  color: #15803d !important;
+}
+
+/* ==========================================================================
+   4. ACTION CTAS (WHATSAPP & CALL CARDS)
+   ========================================================================== */
+.travel-contact-action-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.travel-contact-action-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  border-radius: 16px;
+  border: 1px solid var(--tc-color-border);
+  transition: var(--tc-transition);
+}
+
+.travel-contact-action-card--wa {
+  background: #f0fdf4;
+  border-color: #dcfce7;
+}
+
+.travel-contact-action-card--wa:hover {
+  background: #e8faed;
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.12);
+  transform: translateY(-2px);
+}
+
+.travel-contact-action-card--call {
+  background: #f0f7ff;
+  border-color: #e0f2fe;
+}
+
+.travel-contact-action-card--call:hover {
+  background: #e6f2fd;
+  box-shadow: 0 6px 20px rgba(10, 46, 92, 0.1);
+  transform: translateY(-2px);
+}
+
+.travel-action-icon-circle {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-action-icon-circle--wa {
+  background-color: #22c55e;
+  color: #ffffff;
+}
+
+.travel-action-icon-circle--wa svg {
+  width: 26px;
+  height: 26px;
+}
+
+.travel-action-icon-circle--call {
+  background-color: #0a2e5c;
+  color: #ffffff;
+}
+
+.travel-action-icon-circle--call svg {
+  width: 22px;
+  height: 22px;
+}
+
+.travel-action-content {
+  flex: 1;
+}
+
+.travel-action-title {
+  font-family: var(--tc-font-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--tc-color-navy-dark);
+  margin: 0 0 3px 0;
+  line-height: 1.25;
+}
+
+.travel-action-sub {
+  font-size: 12.5px;
+  color: var(--tc-color-text-muted);
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.travel-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--tc-transition);
+}
+
+.travel-action-btn--wa {
+  background-color: #16a34a;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);
+}
+
+.travel-action-btn--wa:hover {
+  background-color: #15803d;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.35);
+}
+
+.travel-action-btn--call {
+  background-color: #0a2e5c;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(10, 46, 92, 0.25);
+}
+
+.travel-action-btn--call:hover {
+  background-color: #071f3f;
+  box-shadow: 0 4px 12px rgba(10, 46, 92, 0.35);
+}
+
+/* ==========================================================================
+   5. RIGHT COLUMN: CONTACT FORM CARD
+   ========================================================================== */
+.travel-contact-form-card {
+  padding: 34px 34px 36px 34px;
+}
+
+.travel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.travel-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.travel-form-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--tc-color-navy-dark);
+  margin-bottom: 7px;
+  display: block;
+}
+
+.travel-form-required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.travel-form-input,
+.travel-form-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--tc-radius-input);
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  font-family: inherit;
+  font-size: 14.5px;
+  color: var(--tc-color-text-dark);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.travel-form-input:focus,
+.travel-form-textarea:focus {
+  border-color: var(--tc-color-navy);
+  box-shadow: 0 0 0 3px rgba(10, 46, 92, 0.12);
+}
+
+.travel-form-input::placeholder,
+.travel-form-textarea::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.travel-form-textarea {
+  resize: vertical;
+  min-height: 105px;
+  line-height: 1.5;
+}
+
+/* Phone input with +91 indicator box */
+.travel-phone-input-wrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--tc-radius-input);
+  background-color: #ffffff;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.travel-phone-input-wrap:focus-within {
+  border-color: var(--tc-color-navy);
+  box-shadow: 0 0 0 3px rgba(10, 46, 92, 0.12);
+}
+
+.travel-phone-prefix {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  background-color: #f8fafc;
+  border-right: 1px solid #cbd5e1;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tc-color-navy-dark);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.travel-form-input--phone {
+  border: none;
+  border-radius: 0;
+  padding: 12px 14px;
+  box-shadow: none !important;
+}
+
+/* Submit Button */
+.travel-form-submit-btn {
+  width: 100%;
+  height: 50px;
+  margin-top: 6px;
+  border: none;
+  border-radius: var(--tc-radius-input);
+  background: linear-gradient(135deg, #f5a623 0%, #e29418 100%);
+  color: #ffffff;
+  font-family: var(--tc-font-sans);
+  font-size: 15.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-form-submit-btn:hover {
+  background: linear-gradient(135deg, #e59918 0%, #d4870f 100%);
+  box-shadow: 0 6px 20px rgba(245, 166, 35, 0.45);
+  transform: translateY(-1px);
+}
+
+.travel-form-submit-btn:active {
+  transform: translateY(1px);
+}
+
+/* Form Status Messages */
+.travel-form-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.travel-form-status svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.travel-form-status--success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.travel-form-status--error {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ==========================================================================
+   6. MAP & LOCATION CARD
+   ========================================================================== */
+.travel-contact-map-card {
+  background: #ffffff;
+  border-radius: var(--tc-radius-card);
+  border: 1px solid var(--tc-color-border);
+  box-shadow: var(--tc-shadow-card);
+  overflow: hidden;
+  transition: var(--tc-transition);
+}
+
+.travel-map-frame-wrap {
+  width: 100%;
+  height: 220px;
+  background-color: #e2e8f0;
+  position: relative;
+}
+
+.travel-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.travel-map-location-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.travel-map-pin-icon {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background-color: #e6f2fb;
+  color: var(--tc-color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.travel-map-pin-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.travel-map-location-info {
+  flex: 1;
+}
+
+.travel-map-location-title {
+  font-family: var(--tc-font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tc-color-navy);
+  margin: 0 0 2px 0;
+}
+
+.travel-map-location-address {
+  font-size: 13px;
+  color: var(--tc-color-text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 960px) {
+  .travel-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .travel-contact-action-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .travel-contact-hero {
+    height: 200px;
+  }
+
+  .travel-contact-hero-title {
+    font-size: 32px;
+  }
+
+  .travel-contact-hero-sub {
+    font-size: 15px;
+  }
+
+  .travel-contact-container {
+    padding: 28px 16px 20px 16px;
+  }
+
+  .travel-contact-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .travel-contact-action-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-contact-action-card {
+    padding: 16px 18px;
+  }
+
+  .travel-map-frame-wrap {
+    height: 190px;
+  }
+}
+

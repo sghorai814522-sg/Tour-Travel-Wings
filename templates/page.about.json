@@ -1,0 +1,73 @@
+{
+  "sections": {
+    "travel_about": {
+      "type": "travel-about",
+      "blocks": {
+        "member_1": {
+          "type": "team_member",
+          "settings": {
+            "name": "Arjun Mehta",
+            "role": "Founder & CEO",
+            "fallback_image": "avatar-rahul.jpg"
+          }
+        },
+        "member_2": {
+          "type": "team_member",
+          "settings": {
+            "name": "Priya Nair",
+            "role": "Travel Specialist",
+            "fallback_image": "avatar-priya.jpg"
+          }
+        },
+        "member_3": {
+          "type": "team_member",
+          "settings": {
+            "name": "Rohan Singh",
+            "role": "Operations Manager",
+            "fallback_image": "avatar-rohan.jpg"
+          }
+        },
+        "member_4": {
+          "type": "team_member",
+          "settings": {
+            "name": "Ananya Das",
+            "role": "Customer Relations",
+            "fallback_image": "avatar-sneha.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "member_1",
+        "member_2",
+        "member_3",
+        "member_4"
+      ],
+      "settings": {
+        "hero_title": "About Us",
+        "hero_subtitle": "Your Trusted Travel Partner",
+        "story_heading": "Our Story",
+        "story_p1": "Tour and Travel Wings was founded with a simple belief — that travel has the power to change lives. We started with a passion for exploring the world and a commitment to helping others experience its beauty, culture and people.",
+        "story_p2": "Today, we are a team of travel enthusiasts, planners and experts dedicated to creating seamless, memorable and hassle-free travel experiences for our customers.",
+        "story_fallback_image": "promo-mountain-bg.jpg",
+        "stat_1_num": "500+",
+        "stat_1_label": "Happy Travelers",
+        "stat_2_num": "50+",
+        "stat_2_label": "Destinations",
+        "stat_3_num": "5+",
+        "stat_3_label": "Years of Experience",
+        "stat_4_num": "24/7",
+        "stat_4_label": "Support",
+        "mission_heading": "Our Mission",
+        "mission_text": "To make travel simple, safe and extraordinary for every traveler, everywhere.",
+        "vision_heading": "Our Vision",
+        "vision_text": "To be a globally trusted travel brand, creating unforgettable journeys.",
+        "team_heading": "Meet Our Team",
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "travel_about"
+  ]
+}

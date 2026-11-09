@@ -68,17 +68,6 @@
       font-weight: 600;
     }
 
-    .mock-nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #f5a623;
-      border-radius: 2px;
-    }
-
     .mock-header-actions {
       display: flex;
       align-items: center;
@@ -307,9 +296,10 @@
         <button type="button" class="travel-hero-dot" aria-label="Go to slide 2"></button>
         <button type="button" class="travel-hero-dot" aria-label="Go to slide 3"></button>
       </div>
+    </div>
 
-      <!-- Dynamic & Functional Booking / Search Bar (Inside Slider) -->
-      <div class="travel-search-bar-wrapper">
+    <!-- Dynamic & Functional Booking / Search Bar -->
+    <div class="travel-search-bar-wrapper">
       <div class="travel-search-bar-container">
         <form action="/search" method="get" role="search" class="travel-search-form">
           <input type="hidden" name="type" value="product">
@@ -597,7 +587,6 @@
         </form>
       </div>
     </div>
-  </div>
 
   <!-- Backdrop for closing popovers -->
   <div class="travel-popover-backdrop" aria-hidden="true"></div>

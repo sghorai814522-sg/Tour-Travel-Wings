@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Tour and Travel Wings</title>
+  <link rel="stylesheet" href="travel-about.css">
+  <style>
+    /* Reset & Base Preview Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #1e293b;
+    }
+
+    /* Mock Announcement Bar */
+    .mock-announcement {
+      background: #734c38;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Mock Header */
+    .mock-header {
+      width: 100%;
+      height: 70px;
+      background: #ffffff;
+      border-bottom: 1px solid #edf2f7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .mock-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .mock-logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mock-nav a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #334155;
+      transition: color 0.2s;
+      padding: 6px 0;
+    }
+
+    .mock-nav a:hover,
+    .mock-nav a.active {
+      color: #0a2e5c;
+      font-weight: 700;
+    }
+
+    .mock-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #334155;
+    }
+
+    .mock-actions svg {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    /* Mock Footer */
+    .mock-footer {
+      background: #0a2e5c;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    .mock-footer-text {
+      margin: 0;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .mock-header {
+        padding: 0 16px;
+      }
+      .mock-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mock Announcement Bar -->
+  <div class="mock-announcement">
+    EXPLORE • DISCOVER • EXPERIENCE THE WORLD WITH TOUR & TRAVEL WINGS
+  </div>
+
+  <!-- Mock Header -->
+  <header class="mock-header">
+    <a href="#" class="mock-logo">
+      <img src="tour-travel-logo.png" alt="Tour and Travel Wings" width="260" height="48">
+    </a>
+
+    <ul class="mock-nav">
+      <li><a href="preview-travel-hero-slider.html">Home</a></li>
+      <li><a href="preview-travel-about.html" class="active">About Us</a></li>
+      <li><a href="#">Catalog</a></li>
+      <li><a href="preview-travel-contact.html">Contact</a></li>
+    </ul>
+
+    <div class="mock-actions">
+      <!-- Search Icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <!-- Account Icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <!-- Cart Icon -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       START: Travel About Us Section
+       ========================================== -->
+  <div
+    id="travel-about-section-preview"
+    class="travel-about-section"
+    style="--ta-padding-top: 0px; --ta-padding-bottom: 40px;"
+  >
+    <!-- 1. Top Hero Banner (Airplane Wing Flight Sky View) -->
+    <div class="travel-about-hero">
+      
+      <!-- Airplane Wing Silhouette / Illustration Graphic -->
+      <div class="travel-about-hero-wing-wrap" aria-hidden="true">
+        <svg
+          class="travel-about-hero-wing-svg"
+          viewBox="0 0 460 260"
+          fill="none"
+          preserveAspectRatio="xMaxYMid slice"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="wingGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#475569" stop-opacity="0.95" />
+              <stop offset="60%" stop-color="#334155" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#1e293b" stop-opacity="0.85" />
+            </linearGradient>
+            <linearGradient id="wingEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#94a3b8" />
+              <stop offset="100%" stop-color="#cbd5e1" />
+            </linearGradient>
+            <linearGradient id="wingletGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stop-color="#334155" />
+              <stop offset="50%" stop-color="#0284c7" />
+              <stop offset="100%" stop-color="#38bdf8" />
+            </linearGradient>
+          </defs>
+          <!-- Main Wing Body -->
+          <path
+            d="M 460 0 L 160 140 L 190 170 L 460 70 Z"
+            fill="url(#wingGrad)"
+          />
+          <!-- Wing Leading Edge Highlight Line -->
+          <path
+            d="M 460 0 L 160 140"
+            stroke="url(#wingEdge)"
+            stroke-width="3"
+          />
+          <!-- Vertical Winglet at the Wing Tip -->
+          <path
+            d="M 160 140 L 150 90 L 168 85 L 180 132 Z"
+            fill="url(#wingletGrad)"
+          />
+          <!-- Navigation Light Accent on Wing Tip -->
+          <circle cx="154" cy="88" r="3.5" fill="#38bdf8" />
+        </svg>
+      </div>
+
+      <!-- Soft Cloud Horizon Overlay -->
+      <div class="travel-about-hero-cloud-overlay"></div>
+
+      <!-- Hero Content -->
+      <div class="travel-about-hero-content">
+        <h1 class="travel-about-hero-title">About Us</h1>
+        <p class="travel-about-hero-sub">Your Trusted Travel Partner</p>
+      </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="travel-about-container">
+      
+      <!-- 2. Section: Our Story -->
+      <div class="travel-about-story-section">
+        <div class="travel-about-story-grid">
+          
+          <!-- Story Text -->
+          <div class="travel-about-story-text-col">
+            <h2 class="travel-about-section-heading">Our Story</h2>
+            <div class="travel-about-story-paragraphs">
+              <p class="travel-about-p">
+                Tour and Travel Wings was founded with a simple belief — that travel has the power to change lives. We started with a passion for exploring the world and a commitment to helping others experience its beauty, culture and people.
+              </p>
+              <p class="travel-about-p">
+                Today, we are a team of travel enthusiasts, planners and experts dedicated to creating seamless, memorable and hassle-free travel experiences for our customers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Story Image -->
+          <div class="travel-about-story-image-col">
+            <div class="travel-about-story-image-wrap">
+              <img
+                src="promo-mountain-bg.jpg"
+                alt="Our Story Traveler"
+                class="travel-about-story-img"
+                width="600"
+                height="420"
+              >
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. Section: Stats & Highlights Bar (Soft Light Blue Card) -->
+      <div class="travel-about-stats-card">
+        <div class="travel-about-stats-grid">
+          
+          <!-- Stat 1: Travelers -->
+          <div class="travel-about-stat-item">
+            <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="travel-about-stat-number">500+</div>
+            <div class="travel-about-stat-label">Happy Travelers</div>
+          </div>
+
+          <!-- Stat 2: Destinations -->
+          <div class="travel-about-stat-item">
+            <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="travel-about-stat-number">50+</div>
+            <div class="travel-about-stat-label">Destinations</div>
+          </div>
+
+          <!-- Stat 3: Years Experience -->
+          <div class="travel-about-stat-item">
+            <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="travel-about-stat-number">5+</div>
+            <div class="travel-about-stat-label">Years of Experience</div>
+          </div>
+
+          <!-- Stat 4: Support -->
+          <div class="travel-about-stat-item">
+            <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+            </div>
+            <div class="travel-about-stat-number">24/7</div>
+            <div class="travel-about-stat-label">Support</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4. Section: Mission & Vision -->
+      <div class="travel-about-mission-section">
+        <div class="travel-about-mission-grid">
+          
+          <!-- Mission Item -->
+          <div class="travel-about-mv-col travel-about-mv-col--mission">
+            <div class="travel-about-mv-icon travel-about-mv-icon--gold" aria-hidden="true">
+              <!-- Golden Compass Badge -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+            </div>
+            <div class="travel-about-mv-text-wrap">
+              <h3 class="travel-about-mv-title">Our Mission</h3>
+              <p class="travel-about-mv-desc">
+                To make travel simple, safe and extraordinary for every traveler, everywhere.
+              </p>
+            </div>
+          </div>
+
+          <div class="travel-about-mv-divider" aria-hidden="true"></div>
+
+          <!-- Vision Item -->
+          <div class="travel-about-mv-col travel-about-mv-col--vision">
+            <div class="travel-about-mv-icon travel-about-mv-icon--blue" aria-hidden="true">
+              <!-- Blue Vision Badge -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <div class="travel-about-mv-text-wrap">
+              <h3 class="travel-about-mv-title">Our Vision</h3>
+              <p class="travel-about-mv-desc">
+                To be a globally trusted travel brand, creating unforgettable journeys.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 5. Section: Meet Our Team -->
+      <div class="travel-about-team-section">
+        <h2 class="travel-about-section-heading travel-about-team-heading">Meet Our Team</h2>
+
+        <div class="travel-about-team-grid">
+          
+          <!-- Team Member 1 -->
+          <div class="travel-about-team-card">
+            <div class="travel-about-team-avatar-wrap">
+              <img
+                src="avatar-rahul.jpg"
+                alt="Arjun Mehta"
+                class="travel-about-team-avatar"
+                width="120"
+                height="120"
+              >
+            </div>
+            <h3 class="travel-about-team-name">Arjun Mehta</h3>
+            <p class="travel-about-team-role">Founder & CEO</p>
+          </div>
+
+          <!-- Team Member 2 -->
+          <div class="travel-about-team-card">
+            <div class="travel-about-team-avatar-wrap">
+              <img
+                src="avatar-priya.jpg"
+                alt="Priya Nair"
+                class="travel-about-team-avatar"
+                width="120"
+                height="120"
+              >
+            </div>
+            <h3 class="travel-about-team-name">Priya Nair</h3>
+            <p class="travel-about-team-role">Travel Specialist</p>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="travel-about-team-card">
+            <div class="travel-about-team-avatar-wrap">
+              <img
+                src="avatar-rohan.jpg"
+                alt="Rohan Singh"
+                class="travel-about-team-avatar"
+                width="120"
+                height="120"
+              >
+            </div>
+            <h3 class="travel-about-team-name">Rohan Singh</h3>
+            <p class="travel-about-team-role">Operations Manager</p>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="travel-about-team-card">
+            <div class="travel-about-team-avatar-wrap">
+              <img
+                src="avatar-sneha.jpg"
+                alt="Ananya Das"
+                class="travel-about-team-avatar"
+                width="120"
+                height="120"
+              >
+            </div>
+            <h3 class="travel-about-team-name">Ananya Das</h3>
+            <p class="travel-about-team-role">Customer Relations</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ==========================================
+       END: Travel About Us Section
+       ========================================== -->
+
+  <!-- Mock Footer -->
+  <footer class="mock-footer">
+    <p class="mock-footer-text">&copy; 2026 Tour and Travel Wings. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,535 @@
+{% comment %}
+  Travel About Us Page Section
+  Tour & Travel Wings - High Fidelity Custom About Template
+{% endcomment %}
+
+{{ 'travel-about.css' | asset_url | stylesheet_tag }}
+
+{%- assign hero_bg = section.settings.hero_image -%}
+{%- assign hero_fallback = section.settings.hero_fallback_image | default: '' -%}
+{%- if hero_bg != blank -%}
+  {%- assign hero_url = hero_bg | image_url: width: 2400 -%}
+{%- elsif hero_fallback != blank -%}
+  {%- assign hero_url = hero_fallback | asset_url -%}
+{%- else -%}
+  {%- assign hero_url = '' -%}
+{%- endif -%}
+
+<div
+  id="travel-about-section-{{ section.id }}"
+  class="travel-about-section"
+  data-section-id="{{ section.id }}"
+  style="
+    --ta-padding-top: {{ section.settings.padding_top }}px;
+    --ta-padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <!-- 1. Top Hero Banner (Airplane Wing Flight Sky View) -->
+  <div class="travel-about-hero{% if hero_url != blank %} has-bg-image{% endif %}">
+    {%- if hero_url != blank -%}
+      <div
+        class="travel-about-hero-bg"
+        style="background-image: url('{{ hero_url }}');"
+      ></div>
+    {%- endif -%}
+
+    <!-- Airplane Wing Silhouette / Illustration Graphic -->
+    <div class="travel-about-hero-wing-wrap" aria-hidden="true">
+      <svg
+        class="travel-about-hero-wing-svg"
+        viewBox="0 0 460 260"
+        fill="none"
+        preserveAspectRatio="xMaxYMid slice"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="wingGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#475569" stop-opacity="0.95" />
+            <stop offset="60%" stop-color="#334155" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#1e293b" stop-opacity="0.85" />
+          </linearGradient>
+          <linearGradient id="wingEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#94a3b8" />
+            <stop offset="100%" stop-color="#cbd5e1" />
+          </linearGradient>
+          <linearGradient id="wingletGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stop-color="#334155" />
+            <stop offset="50%" stop-color="#0284c7" />
+            <stop offset="100%" stop-color="#38bdf8" />
+          </linearGradient>
+        </defs>
+        <!-- Main Wing Body reaching from top-right to bottom-center -->
+        <path
+          d="M 460 0 L 160 140 L 190 170 L 460 70 Z"
+          fill="url(#wingGrad)"
+        />
+        <!-- Wing Leading Edge Highlight Line -->
+        <path
+          d="M 460 0 L 160 140"
+          stroke="url(#wingEdge)"
+          stroke-width="3"
+        />
+        <!-- Vertical Winglet at the Wing Tip -->
+        <path
+          d="M 160 140 L 150 90 L 168 85 L 180 132 Z"
+          fill="url(#wingletGrad)"
+        />
+        <!-- Navigation Light Accent on Wing Tip -->
+        <circle cx="154" cy="88" r="3.5" fill="#38bdf8" />
+      </svg>
+    </div>
+
+    <!-- Soft Cloud Horizon Overlay -->
+    <div class="travel-about-hero-cloud-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="travel-about-hero-content">
+      <h1 class="travel-about-hero-title">{{ section.settings.hero_title | escape }}</h1>
+      {%- if section.settings.hero_subtitle != blank -%}
+        <p class="travel-about-hero-sub">{{ section.settings.hero_subtitle | escape }}</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="travel-about-container">
+    
+    <!-- 2. Section: Our Story (Text on Left, Traveler Photo on Right) -->
+    <div class="travel-about-story-section">
+      <div class="travel-about-story-grid">
+        
+        <!-- Story Text -->
+        <div class="travel-about-story-text-col">
+          <h2 class="travel-about-section-heading">{{ section.settings.story_heading | escape }}</h2>
+          <div class="travel-about-story-paragraphs">
+            {%- if section.settings.story_p1 != blank -%}
+              <p class="travel-about-p">{{ section.settings.story_p1 | newline_to_br }}</p>
+            {%- endif -%}
+            {%- if section.settings.story_p2 != blank -%}
+              <p class="travel-about-p">{{ section.settings.story_p2 | newline_to_br }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <!-- Story Image -->
+        <div class="travel-about-story-image-col">
+          {%- assign story_img = section.settings.story_image -%}
+          {%- assign story_fallback = section.settings.story_fallback_image | default: 'promo-mountain-bg.jpg' -%}
+          <div class="travel-about-story-image-wrap">
+            {%- if story_img != blank -%}
+              <img
+                src="{{ story_img | image_url: width: 1000 }}"
+                alt="{{ section.settings.story_heading | escape }}"
+                loading="lazy"
+                class="travel-about-story-img"
+                width="600"
+                height="420"
+              >
+            {%- else -%}
+              <img
+                src="{{ story_fallback | asset_url }}"
+                alt="{{ section.settings.story_heading | escape }}"
+                loading="lazy"
+                class="travel-about-story-img"
+                width="600"
+                height="420"
+              >
+            {%- endif -%}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. Section: Stats & Highlights Bar (Soft Light Blue Card) -->
+    <div class="travel-about-stats-card">
+      <div class="travel-about-stats-grid">
+        
+        <!-- Stat 1: Travelers -->
+        <div class="travel-about-stat-item">
+          <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="travel-about-stat-number">{{ section.settings.stat_1_num | escape }}</div>
+          <div class="travel-about-stat-label">{{ section.settings.stat_1_label | escape }}</div>
+        </div>
+
+        <!-- Stat 2: Destinations -->
+        <div class="travel-about-stat-item">
+          <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="travel-about-stat-number">{{ section.settings.stat_2_num | escape }}</div>
+          <div class="travel-about-stat-label">{{ section.settings.stat_2_label | escape }}</div>
+        </div>
+
+        <!-- Stat 3: Years Experience -->
+        <div class="travel-about-stat-item">
+          <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <div class="travel-about-stat-number">{{ section.settings.stat_3_num | escape }}</div>
+          <div class="travel-about-stat-label">{{ section.settings.stat_3_label | escape }}</div>
+        </div>
+
+        <!-- Stat 4: Support -->
+        <div class="travel-about-stat-item">
+          <div class="travel-about-stat-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </div>
+          <div class="travel-about-stat-number">{{ section.settings.stat_4_num | escape }}</div>
+          <div class="travel-about-stat-label">{{ section.settings.stat_4_label | escape }}</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. Section: Mission & Vision (2-Column Cards with Center Divider) -->
+    <div class="travel-about-mission-section">
+      <div class="travel-about-mission-grid">
+        
+        <!-- Mission Item -->
+        <div class="travel-about-mv-col travel-about-mv-col--mission">
+          <div class="travel-about-mv-icon travel-about-mv-icon--gold" aria-hidden="true">
+            <!-- Golden Compass / Target Badge -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <div class="travel-about-mv-text-wrap">
+            <h3 class="travel-about-mv-title">{{ section.settings.mission_heading | escape }}</h3>
+            <p class="travel-about-mv-desc">{{ section.settings.mission_text | escape }}</p>
+          </div>
+        </div>
+
+        <div class="travel-about-mv-divider" aria-hidden="true"></div>
+
+        <!-- Vision Item -->
+        <div class="travel-about-mv-col travel-about-mv-col--vision">
+          <div class="travel-about-mv-icon travel-about-mv-icon--blue" aria-hidden="true">
+            <!-- Blue Vision / Lightbulb / Eye Badge -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <div class="travel-about-mv-text-wrap">
+            <h3 class="travel-about-mv-title">{{ section.settings.vision_heading | escape }}</h3>
+            <p class="travel-about-mv-desc">{{ section.settings.vision_text | escape }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 5. Section: Meet Our Team -->
+    <div class="travel-about-team-section">
+      <h2 class="travel-about-section-heading travel-about-team-heading">
+        {{ section.settings.team_heading | escape }}
+      </h2>
+
+      <div class="travel-about-team-grid">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'team_member' -%}
+            <div class="travel-about-team-card" {{ block.shopify_attributes }}>
+              <div class="travel-about-team-avatar-wrap">
+                {%- if block.settings.image != blank -%}
+                  <img
+                    src="{{ block.settings.image | image_url: width: 300 }}"
+                    alt="{{ block.settings.name | escape }}"
+                    loading="lazy"
+                    class="travel-about-team-avatar"
+                    width="120"
+                    height="120"
+                  >
+                {%- elsif block.settings.fallback_image != blank -%}
+                  <img
+                    src="{{ block.settings.fallback_image | asset_url }}"
+                    alt="{{ block.settings.name | escape }}"
+                    loading="lazy"
+                    class="travel-about-team-avatar"
+                    width="120"
+                    height="120"
+                  >
+                {%- else -%}
+                  <div class="travel-about-team-avatar-placeholder" aria-hidden="true">
+                    <span>{{ block.settings.name | slice: 0, 1 | upcase }}</span>
+                  </div>
+                {%- endif -%}
+              </div>
+              <h3 class="travel-about-team-name">{{ block.settings.name | escape }}</h3>
+              <p class="travel-about-team-role">{{ block.settings.role | escape }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Travel About Page",
+  "class": "travel-about-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Image (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "hero_fallback_image",
+      "label": "Hero Fallback Image Asset",
+      "default": "promo-mountain-bg.jpg"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "About Us"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Your Trusted Travel Partner"
+    },
+    {
+      "type": "header",
+      "content": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "story_heading",
+      "label": "Story Heading",
+      "default": "Our Story"
+    },
+    {
+      "type": "textarea",
+      "id": "story_p1",
+      "label": "Paragraph 1",
+      "default": "Tour and Travel Wings was founded with a simple belief — that travel has the power to change lives. We started with a passion for exploring the world and a commitment to helping others experience its beauty, culture and people."
+    },
+    {
+      "type": "textarea",
+      "id": "story_p2",
+      "label": "Paragraph 2",
+      "default": "Today, we are a team of travel enthusiasts, planners and experts dedicated to creating seamless, memorable and hassle-free travel experiences for our customers."
+    },
+    {
+      "type": "image_picker",
+      "id": "story_image",
+      "label": "Story Image"
+    },
+    {
+      "type": "text",
+      "id": "story_fallback_image",
+      "label": "Story Fallback Asset",
+      "default": "promo-mountain-bg.jpg"
+    },
+    {
+      "type": "header",
+      "content": "Stats / Highlights"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_num",
+      "label": "Stat 1 Number",
+      "default": "500+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 Label",
+      "default": "Happy Travelers"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_num",
+      "label": "Stat 2 Number",
+      "default": "50+"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 Label",
+      "default": "Destinations"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_num",
+      "label": "Stat 3 Number",
+      "default": "5+"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 Label",
+      "default": "Years of Experience"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_num",
+      "label": "Stat 4 Number",
+      "default": "24/7"
+    },
+    {
+      "type": "text",
+      "id": "stat_4_label",
+      "label": "Stat 4 Label",
+      "default": "Support"
+    },
+    {
+      "type": "header",
+      "content": "Mission & Vision"
+    },
+    {
+      "type": "text",
+      "id": "mission_heading",
+      "label": "Mission Heading",
+      "default": "Our Mission"
+    },
+    {
+      "type": "textarea",
+      "id": "mission_text",
+      "label": "Mission Description",
+      "default": "To make travel simple, safe and extraordinary for every traveler, everywhere."
+    },
+    {
+      "type": "text",
+      "id": "vision_heading",
+      "label": "Vision Heading",
+      "default": "Our Vision"
+    },
+    {
+      "type": "textarea",
+      "id": "vision_text",
+      "label": "Vision Description",
+      "default": "To be a globally trusted travel brand, creating unforgettable journeys."
+    },
+    {
+      "type": "header",
+      "content": "Team Section"
+    },
+    {
+      "type": "text",
+      "id": "team_heading",
+      "label": "Team Heading",
+      "default": "Meet Our Team"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Member Name",
+          "default": "Team Member"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Member Role",
+          "default": "Travel Specialist"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "Fallback Asset Filename",
+          "default": "avatar-rahul.jpg"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Travel About Page",
+      "blocks": [
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Arjun Mehta",
+            "role": "Founder & CEO",
+            "fallback_image": "avatar-rahul.jpg"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Priya Nair",
+            "role": "Travel Specialist",
+            "fallback_image": "avatar-priya.jpg"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Rohan Singh",
+            "role": "Operations Manager",
+            "fallback_image": "avatar-rohan.jpg"
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Ananya Das",
+            "role": "Customer Relations",
+            "fallback_image": "avatar-sneha.jpg"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

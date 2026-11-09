@@ -26,6 +26,7 @@
   font-family: var(--tpr-font-sans);
   color: var(--tpr-color-text-dark);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .travel-promo-reviews-section *,
@@ -45,7 +46,7 @@
    ========================================================================== */
 .travel-promo-banner-wrap {
   width: 100%;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 
 .travel-promo-banner {
@@ -385,7 +386,7 @@
   }
 
   .travel-promo-banner-wrap {
-    margin-bottom: 36px;
+    margin-bottom: 20px;
   }
 
   .travel-reviews-title {
