@@ -1355,6 +1355,66 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "journal_accordion_JwwcJL": {
+      "type": "journal-accordion",
+      "blocks": {
+        "journal_entry_m6DmCd": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/Ancient_Temples_Amidst_Lush_Landscapes.png",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        },
+        "journal_entry_FYrfft": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/Tropical_Coastal_Temple_Paradise.png",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        },
+        "journal_entry_EWy7CK": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/Dubai_Skyline_at_Golden_Hour.png",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        },
+        "journal_entry_UiEYCf": {
+          "type": "journal_entry",
+          "settings": {
+            "image": "shopify://shop_images/Dubai_Skyline_Reflections_at_Sunset.png",
+            "subtitle": "Weaver Story - 4 Min Read",
+            "title": "The Making of a Paithani",
+            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "link_text": "Read the Story",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "journal_entry_m6DmCd",
+        "journal_entry_FYrfft",
+        "journal_entry_EWy7CK",
+        "journal_entry_UiEYCf"
+      ],
+      "name": "Journal Accordion",
+      "settings": {
+        "title": "The Journal",
+        "subtitle": "Weaver Stories, Drape Guides, And The Craft Behind Every Very Much Indian Saree."
+      }
     }
   },
   "order": [
@@ -1369,6 +1429,7 @@
     "popular_tours",
     "vmi_arch_collections_njKKwm",
     "travel_promo_reviews_rJBwH9",
-    "gallery_showcase"
+    "gallery_showcase",
+    "journal_accordion_JwwcJL"
   ]
 }
