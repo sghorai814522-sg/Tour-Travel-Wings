@@ -1,0 +1,508 @@
+{%- comment -%}
+  VMI Trust Section — Sankalp (Our Promise to the Artisans)
+  Left side: Seamless artisan weaver graphic with botanical block-print artwork.
+  Right side: Sankalp script & serif logo, subtitle, and cream 4-sided scalloped box with mission text.
+  Full section background image or gradient options.
+{%- endcomment -%}
+
+{%- if section.settings.enable_section -%}
+<section
+  class="vmi-trust vmi-section--full"
+  id="vmi-trust-{{ section.id }}"
+  style="
+    {%- if section.settings.bg_image != blank -%}
+      background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');
+      background-size: cover;
+      background-position: center;
+    {%- else -%}
+      background: {{ section.settings.bg_gradient | default: 'linear-gradient(135deg, #CFDAE5 0%, #7B90A3 45%, #2B3E52 100%)' }};
+    {%- endif -%}
+    --vmi-card-bg: {{ section.settings.card_bg_color | default: '#F4EFE6' }};
+    --vmi-trust-text: {{ section.settings.text_color | default: '#1E354D' }};
+  "
+>
+  <div class="vmi-trust__split">
+
+    {%- comment -%} LEFT COLUMN: Seamless Artisan Weaver Artwork {%- endcomment -%}
+    <div class="vmi-trust__left-media">
+      {%- if section.settings.left_image != blank -%}
+        <img
+          src="{{ section.settings.left_image | image_url: width: 1200 }}"
+          alt="{{ section.settings.heading | escape }}"
+          loading="lazy"
+          class="vmi-trust__weaver-img"
+        >
+      {%- else -%}
+        <img
+          src="{{ 'vmi-sankalp-artisan-seamless.png' | asset_url }}"
+          alt="Sankalp Artisan Weaver"
+          loading="lazy"
+          class="vmi-trust__weaver-img"
+        >
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} RIGHT COLUMN: Sankalp Header & Scalloped Mission Box {%- endcomment -%}
+    <div class="vmi-trust__right-content">
+
+      {%- comment -%} Sankalp Logo & Subtitle {%- endcomment -%}
+      <div class="vmi-trust__header">
+        <div class="vmi-trust__logo-wrap">
+          {%- if section.settings.sankalp_logo_image != blank -%}
+            <img src="{{ section.settings.sankalp_logo_image | image_url: width: 600 }}" alt="{{ section.settings.heading }}" class="vmi-trust__logo-img" style="max-width: {{ section.settings.logo_max_width | default: 240 }}px;">
+          {%- else -%}
+            {%- assign heading_text = section.settings.heading | default: 'Sankalp' -%}
+            {%- assign first_char = heading_text | slice: 0, 1 -%}
+            {%- assign rest_chars = heading_text | slice: 1, 100 -%}
+            <div class="vmi-trust__logo-brand">
+              <div class="vmi-trust__logo-text">
+                <span class="vmi-trust__first-letter">{{ first_char }}</span>
+                <span class="vmi-trust__rest-letters">{{ rest_chars }}</span>
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.subtitle != blank -%}
+          <div class="vmi-trust__subtitle">
+            {{ section.settings.subtitle | upcase }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Exact SVG Scalloped Frame {%- endcomment -%}
+      {% comment %} <div class="vmi-trust__scalloped-box">
+        <img
+          src="{{ 'decorative_frame_bg_exact.svg' | asset_url }}"
+          alt=""
+          loading="lazy"
+          class="vmi-trust__scallop-svg"
+        > {% endcomment %}
+<div 
+  class="vmi-trust__scalloped-box"
+  style="background-image: url('https://cdn.shopify.com/s/files/1/0993/9274/9871/files/ChatGPT_Image_Jul_25_2026_07_10_52_AM_1.png?v=1786622256');"
+>
+        <div class="vmi-trust__scallop-inner">
+          {%- if section.settings.small_heading != blank -%}
+            <div class="vmi-trust__small-heading">
+              {{ section.settings.small_heading }}
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.mission != blank -%}
+            <div class="vmi-trust__mission-wrapper">
+              <div class="vmi-trust__mission-text" id="vmi-trust-mission-{{ section.id }}">
+                {{ section.settings.mission }}
+              </div>
+              <button type="button" class="vmi-trust__read-more-btn" onclick="toggleVmiTrustText('{{ section.id }}')">Read More</button>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .vmi-trust {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-top:50px;
+  }
+
+  .vmi-trust__split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 640px;
+    width: 100%;
+    align-items: center;
+  }
+
+  /* ════════════════════════════════
+     LEFT COLUMN: SEAMLESS ARTISAN GRAPHIC
+  ════════════════════════════════ */
+  .vmi-trust__left-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 580px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem 1rem 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .vmi-trust__weaver-img {
+    max-width: 100%;
+    max-height: 780px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 8px 24px rgba(15, 30, 45, 0.25));
+  }
+
+  /* ════════════════════════════════
+     RIGHT COLUMN: SANKALP & CARD
+  ════════════════════════════════ */
+  .vmi-trust__right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2.5rem 3.5rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .vmi-trust__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Logo Typography: Pinyon Script First Letter + Playfair Display Rest */
+  .vmi-trust__logo-brand {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vmi-trust__logo-text {
+    display: flex;
+    align-items: baseline;
+    line-height: 1;
+  }
+
+  .vmi-trust__first-letter {
+    font-family: var(--font-accent--family);
+    font-size: 3.8rem;
+    line-height: 0.8;
+    color: var(--vmi-trust-text);
+    margin-right: -0.08em;
+  }
+
+  .vmi-trust__rest-letters {
+    font-family: var(--font-heading--family);
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--vmi-trust-text);
+  }
+
+  .vmi-trust__swash-svg {
+    width: 92%;
+    height: 10px;
+    margin-top: -4px;
+
+  }
+
+  .vmi-trust__logo-img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+  }
+
+  .vmi-trust__subtitle {
+    font-family: var(--font-body--family);
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.32em;
+    color: var(--vmi-trust-text);
+    text-transform: uppercase;
+    opacity: 0.92;
+    margin-top: 0.4rem;
+  }
+
+  /* Scalloped Card */
+  .vmi-trust__scalloped-box {
+ position: relative;
+    max-width: 650px;
+    width: 100%;
+    height: 600px;
+    padding: 6.2rem 7rem 3rem 7rem;
+    box-sizing: border-box;
+    background-size: 100%;
+  }
+
+  .vmi-trust__scallop-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    object-fit: fill;
+  }
+
+  .vmi-trust__scallop-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .vmi-trust__small-heading {
+  font-family: var(--font-heading--family);
+    font-size: 23px;
+    color: #333333;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.01em;
+    max-width: 300px;
+    font-weight: 400;
+    margin: 0 auto 0px;
+    line-height: normal;
+  }
+
+  .vmi-trust__mission-text {
+    font-family: var(--font-body--family);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: #3A3A3A;
+        text-align: justify;
+    font-weight: 400;
+  }
+
+  .vmi-trust__mission-text p {
+    margin: 0 0 1rem 0;
+    color: #545454;
+  }
+
+  .vmi-trust__mission-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  .vmi-trust__mission-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vmi-trust__mission-text {
+    transition: all 0.3s ease;
+  }
+
+  .vmi-trust__read-more-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--vmi-trust-text, #1E354D);
+    font-family: var(--font-body--family);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 12px auto 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s ease;
+  }
+  
+  .vmi-trust__read-more-btn:hover {
+    opacity: 0.7;
+  }
+
+  /* ════════════════════════════════
+     RESPONSIVE
+  ════════════════════════════════ */
+  @media (max-width: 1024px) {
+    .vmi-trust__right-content {
+      padding: 2.5rem 1.8rem;
+    }
+    .vmi-trust__small-heading{
+    margin-bottom:0 !important;
+  }
+
+    .vmi-trust__scalloped-box {      
+      position: relative;
+      max-width: 650px;
+      width: 100%;
+      height: 100%;
+      padding: 4.2rem 4rem 3rem 4rem;
+      box-sizing: border-box;
+      background-size: 100% 100%;
+      padding-bottom: 66px !important;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media (max-width: 749px) {
+ 
+    .vmi-trust{
+        margin-top:40px;
+     }
+    .vmi-trust__split {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .vmi-trust__left-media {
+      min-height: 380px;
+      padding: 1.5rem 1rem 0;
+    }
+
+    .vmi-trust__weaver-img {
+      max-height: 360px;
+    }
+
+    .vmi-trust__right-content {
+      padding: 2.5rem 0;
+    }
+
+    .vmi-trust__scalloped-box {
+      max-width: 100%;
+    }
+
+    .vmi-trust__mission-text {
+      font-size: 0.88rem;
+      line-height: 1.72;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .vmi-trust__mission-text.is-expanded {
+      -webkit-line-clamp: unset;
+    }
+
+    .vmi-trust__read-more-btn {
+      display: inline-block;
+    }
+  }
+</style>
+
+<script>
+  function toggleVmiTrustText(sectionId) {
+    var textContainer = document.getElementById('vmi-trust-mission-' + sectionId);
+    var btn = textContainer.nextElementSibling;
+    if (textContainer.classList.contains('is-expanded')) {
+      textContainer.classList.remove('is-expanded');
+      btn.innerText = 'Read More';
+    } else {
+      textContainer.classList.add('is-expanded');
+      btn.innerText = 'Read Less';
+    }
+  }
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "VMI Trust",
+  "tag": "div",
+  "class": "vmi-trust-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Full Section Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Full section background image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "bg_gradient",
+      "label": "Full section background gradient / color",
+      "default": "linear-gradient(135deg, #CFDAE5 0%, #7B90A3 45%, #2B3E52 100%)"
+    },
+    {
+      "type": "header",
+      "content": "Section Header & Logo"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading / Logo text",
+      "default": "Sankalp"
+    },
+    {
+      "type": "image_picker",
+      "id": "sankalp_logo_image",
+      "label": "Upload Logo Image (SVG / Transparent PNG)",
+      "info": "Upload an SVG or high-res transparent PNG logo. Overrides live text."
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo image width",
+      "default": 240
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "OUR PROMISE TO THE ARTISANS"
+    },
+    {
+      "type": "header",
+      "content": "Left Side Artwork"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left side artisan weaver graphic"
+    },
+    {
+      "type": "header",
+      "content": "Mission Box & Content"
+    },
+    {
+      "type": "text",
+      "id": "small_heading",
+      "label": "Small card heading",
+      "default": "Celebrating India's Craftsmanship"
+    },
+    {
+      "type": "richtext",
+      "id": "mission",
+      "label": "Mission statement text",
+      "default": "<p>At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Color Customizations"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Scalloped card background",
+      "default": "#F4EFE6"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1E354D"
+    }
+  ],
+  "presets": [
+    {
+      "name": "VMI Trust"
+    }
+  ]
+}
+{% endschema %}
