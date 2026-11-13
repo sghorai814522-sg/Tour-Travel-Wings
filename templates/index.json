@@ -1140,8 +1140,8 @@
         "show_hover_text": true,
         "desktop_columns": 3,
         "mobile_columns": 3,
-        "heading": "Season Finest: Festive Collection",
-        "subtitle": "Every fête has its colour, and every colour has its wonder – from island vibes to majestic peaks."
+        "heading": "World’s Finest Destinations",
+        "subtitle": "Discover extraordinary landscapes, pristine beaches, and vibrant cultures — handcrafted holiday getaways across the globe."
       }
     },
     "popular_tours": {
@@ -1218,7 +1218,7 @@
         "heading": "Popular Tours",
         "view_all_text": "View All Tours",
         "view_all_link": "shopify://collections/all",
-        "source": "blocks",
+        "source": "collection",
         "collection": "",
         "products_to_show": 4,
         "columns_desktop": 4,
@@ -1240,7 +1240,8 @@
           "settings": {
             "collection": "",
             "label": "THAILAND",
-            "fallback_image": "tour-thailand.jpg"
+            "fallback_image": "tour-thailand.jpg",
+            "url": "shopify://collections/all"
           }
         },
         "arch_switzerland": {
@@ -1248,7 +1249,8 @@
           "settings": {
             "collection": "",
             "label": "SWITZERLAND",
-            "fallback_image": "tour-swiss-alps.jpg"
+            "fallback_image": "tour-swiss-alps.jpg",
+            "url": "shopify://collections/all"
           }
         },
         "arch_bali": {
@@ -1256,7 +1258,8 @@
           "settings": {
             "collection": "",
             "label": "BALI",
-            "fallback_image": "tour-bali.jpg"
+            "fallback_image": "tour-bali.jpg",
+            "url": "shopify://collections/all"
           }
         },
         "arch_dubai": {
@@ -1264,7 +1267,8 @@
           "settings": {
             "collection": "",
             "label": "DUBAI",
-            "fallback_image": "tour-dubai.jpg"
+            "fallback_image": "tour-dubai.jpg",
+            "url": "shopify://collections/all"
           }
         },
         "arch_maldives": {
@@ -1272,7 +1276,8 @@
           "settings": {
             "collection": "",
             "label": "MALDIVES",
-            "fallback_image": "hero-maldives.jpg"
+            "fallback_image": "hero-maldives.jpg",
+            "url": "shopify://collections/all"
           }
         }
       },
@@ -1361,7 +1366,7 @@
             "kicker": "GREECE",
             "title": "Santorini Caldera",
             "caption": "Iconic cobalt blue domes overlooking the deep Aegean sea.",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
         "item_2": {
@@ -1371,7 +1376,7 @@
             "kicker": "INDONESIA",
             "title": "Bali Island Haven",
             "caption": "Lush tropical terraces, volcanic peaks, and serene beach temples.",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
         "item_3": {
@@ -1381,7 +1386,7 @@
             "kicker": "SWITZERLAND",
             "title": "Swiss Alpine Peaks",
             "caption": "Majestic snow-dusted summits, alpine meadows, and wooden chalets.",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
         "item_4": {
@@ -1391,7 +1396,7 @@
             "kicker": "MALDIVES",
             "title": "Overwater Luxury",
             "caption": "Private turquoise lagoons and pure powdery coral sand beaches.",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
         "item_5": {
@@ -1401,7 +1406,7 @@
             "kicker": "UAE",
             "title": "Dubai Oasis & Skyline",
             "caption": "Golden desert dune safaris meeting futuristic architectural wonder.",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
         "item_6": {
@@ -1411,7 +1416,7 @@
             "kicker": "THAILAND",
             "title": "Phuket & Krabi Bays",
             "caption": "Limestone karst islands rising from emerald waters.",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         }
       },

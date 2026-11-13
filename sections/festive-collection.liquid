@@ -36,7 +36,7 @@
             assign title_text = block.settings.title | default: target_collection.title | default: 'Festive'
             assign subtitle_text = block.settings.subtitle | default: 'Collection'
             assign button_text = block.settings.button_text | default: 'Shop Now'
-            assign card_url = block.settings.url | default: target_collection.url | default: '#'
+            assign card_url = block.settings.url | default: target_collection.url | default: routes.all_products_collection_url
             
             assign card_image = null
             if block.settings.image != blank
@@ -151,13 +151,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading Title",
-      "default": "Season Finest: Festive Collection"
+      "default": "World’s Finest Destinations"
     },
     {
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle Line",
-      "default": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
+      "default": "Discover extraordinary landscapes, pristine beaches, and vibrant cultures — handcrafted holiday getaways across the globe."
     }
   ],
   "blocks": [

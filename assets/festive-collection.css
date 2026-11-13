@@ -94,9 +94,27 @@
   cursor: pointer;
 }
 
-.fc-card:hover {
+.fc-card:hover,
+.fc-card.is-active {
   transform: translateY(-6px);
   box-shadow: 0 20px 45px rgba(30, 36, 71, 0.18);
+}
+
+/* Rich Dark High-Contrast Gradient Backdrop on Hover */
+.fc-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 46, 92, 0.15) 0%, rgba(10, 46, 92, 0.55) 45%, rgba(10, 46, 92, 0.92) 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fc-card:hover::before,
+.fc-card.is-active::before {
+  opacity: 1;
 }
 
 .fc-image-wrapper {
@@ -115,7 +133,8 @@
   filter: none !important;
 }
 
-.fc-card:hover .fc-image {
+.fc-card:hover .fc-image,
+.fc-card.is-active .fc-image {
   transform: scale(1.05);
 }
 
@@ -139,7 +158,8 @@
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.fc-card:hover .fc-glass-bar {
+.fc-card:hover .fc-glass-bar,
+.fc-card.is-active .fc-glass-bar {
   opacity: 0;
   transform: translateY(10px);
   pointer-events: none;
@@ -164,103 +184,108 @@
   display: none;
 }
 
-/* Lower Position Hover Overlay (Card 2 Design) */
+/* Lower Position Hover Overlay */
 .fc-hover-overlay {
   position: absolute;
-  bottom: 24px;
-  left: 20px;
-  right: 20px;
+  inset: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   text-align: center;
-  padding: 0;
+  padding: 24px 20px;
+  box-sizing: border-box;
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 3;
-  color: var(--vmi-navy);
+  color: #ffffff;
+  pointer-events: none;
 }
 
-.fc-card:hover .fc-hover-overlay {
+.fc-card:hover .fc-hover-overlay,
+.fc-card.is-active .fc-hover-overlay {
   opacity: 1;
   transform: translateY(0);
 }
 
 .fc-hover-tag {
-  font-size: 16px;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--vmi-white);
-  letter-spacing: 0px;
-  margin-bottom: 2px;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  color: #f5a623 !important; /* Luxury Gold */
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.85);
 }
 
 .fc-hover-title {
-  font-family: var(--font-heading--family);
+  font-family: var(--font-heading--family), Georgia, serif;
   font-size: 28px;
-  font-weight: 400;
-  color: var(--vmi-white);
-  margin: 0;
-  line-height: 1.1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-weight: 700;
+  color: #ffffff !important; /* Crystal clear pure white */
+  margin: 0 0 4px 0;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 24px rgba(0, 0, 0, 0.6);
 }
 
 .fc-hover-subtitle {
-  font-size: 16px;
-  color: #f0ebe4;
-  margin-top: 2px;
-  margin-bottom: 14px;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+  color: #f4f4f4 !important; /* Soft bright white */
+  margin: 0 0 14px 0;
+  line-height: 1.35;
+  max-width: 92%;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
 }
 
-/* White Pill "Shop Now ->" Button */
+/* White Pill "Explore" / "Shop Now" Button */
 .fc-shop-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
   background: #ffffff;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 24px;
-  border-radius: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  color: #0a2e5c !important; /* Luxury brand navy */
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 8px 22px;
+  border-radius: 9999px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+  pointer-events: auto;
+  text-decoration: none;
 }
 
-.fc-card:hover .fc-shop-button {
-  transform: scale(1.04);
+.fc-card:hover .fc-shop-button,
+.fc-card.is-active .fc-shop-button {
+  transform: translateY(-2px);
+  background: #f5a623;
+  color: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(245, 166, 35, 0.45);
 }
 
 .fc-shop-button-icon {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  border: 1.5px solid var(--vmi-navy);
-  display: flex;
+  border: 1.5px solid currentColor;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
-}
-
-.fc-shop-button:hover .fc-shop-button-icon {
-  background-color: var(--vmi-navy);
-}
-
-.fc-shop-button:hover .fc-shop-button-icon svg {
-  stroke: #ffffff;
+  transition: border-color 0.25s ease;
 }
 
 .fc-shop-button-icon svg {
-  width: 12px;
-  height: 12px;
-  stroke: var(--vmi-navy);
-  stroke-width: 2;
+  width: 10px;
+  height: 10px;
+  stroke: currentColor;
+  stroke-width: 2.4;
   fill: none;
-  transition: stroke 0.3s ease;
+  display: block;
 }
 
 /* Responsive Styles */
@@ -271,10 +296,6 @@
 }
 
 @media (min-width: 769px) {
-  .festive-collection-section {
-    /* padding: 50px 0 50px 0; */
-  }
-
   .fc-grid {
     grid-template-columns: repeat(var(--desktop-cols, 3), 1fr);
     gap: 20px;
@@ -285,7 +306,7 @@
   }
 
   .fc-hover-title {
-    font-size: 34px;
+    font-size: 30px;
   }
 }
 
@@ -297,40 +318,75 @@
 
 @media (max-width: 1024px) {
   .fc-hover-overlay {
-    left: 0 !important;
-    right: 0 !important;
+    padding: 16px 12px;
   }
 
   .fc-hover-title {
-    font-size: 9px !important;
+    font-size: 20px !important;
+    margin-bottom: 2px !important;
   }
 
   .fc-hover-subtitle {
-    font-size: 11px;
-    padding: 5px;
-  }
-
-  .fc-shop-button .fc-shop-button-icon {
-    display: none;
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+    padding: 0;
   }
 
   .fc-hover-tag {
-    font-size: 11px;
+    font-size: 10px !important;
+    margin-bottom: 2px !important;
   }
 
   .fc-shop-button {
-    font-size: 10px;
-    padding: 2px 5px;
+    font-size: 11px !important;
+    padding: 6px 14px !important;
+  }
+
+  .fc-shop-button-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .fc-shop-button-icon svg {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fc-hover-overlay {
+    padding: 12px 8px;
+  }
+
+  .fc-hover-title {
+    font-size: 15px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .fc-hover-subtitle {
+    font-size: 10px !important;
+    line-height: 1.25;
+    margin-bottom: 6px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .fc-hover-tag {
+    font-size: 9px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .fc-shop-button {
+    font-size: 10px !important;
+    padding: 4px 10px !important;
   }
 }
 
 @media (max-width: 480px) {
   .fc-title {
     font-size: 28px;
-  }
-
-  .fc-hover-title {
-    font-size: 20px;
   }
 
   .fc-container {

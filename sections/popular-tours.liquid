@@ -43,9 +43,14 @@
 
     <!-- Tours Grid -->
     <div class="popular-tours-grid{% if section.settings.enable_mobile_scroll %} is-mobile-scroll{% endif %}">
-      {%- if section.settings.source == 'collection' and section.settings.collection != blank -%}
+      {%- assign tour_collection = section.settings.collection -%}
+      {%- if tour_collection == blank -%}
+        {%- assign tour_collection = collections.all -%}
+      {%- endif -%}
+
+      {%- if section.settings.source == 'collection' and tour_collection != blank and tour_collection.products_count > 0 -%}
         <!-- Render from Shopify Collection -->
-        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
+        {%- for product in tour_collection.products limit: section.settings.products_to_show -%}
           <div class="popular-tour-card" data-product-id="{{ product.id }}">
             <div class="popular-tour-media-wrap">
               {%- if product.featured_image != blank -%}
@@ -70,7 +75,7 @@
               </div>
 
               <!-- Location Meta -->
-              {%- assign location_val = product.metafields.custom.location | default: product.vendor -%}
+              {%- assign location_val = product.metafields.custom.location | default: product.type | default: product.vendor -%}
               {%- if location_val != blank -%}
                 <div class="popular-tour-meta-row">
                   <span class="popular-tour-meta-icon" aria-hidden="true">
@@ -124,7 +129,7 @@
 
       {%- else -%}
         <!-- Render from Custom Blocks -->
-        {%- for block in section.blocks -%}
+        {%- for block in section.blocks limit: section.settings.products_to_show -%}
           {%- assign card_img = block.settings.image -%}
           {%- assign fallback_img = block.settings.fallback_image -%}
           {%- if card_img != blank -%}

@@ -53,6 +53,9 @@
             src="{{ section.settings.logo_image | image_url: width: 400 }}"
             alt="{{ section.settings.heading | default: 'Sangrah' }}"
             class="vmi-arch__logo-img"
+            width="220"
+            height="60"
+            loading="lazy"
             style="max-width: {{ section.settings.logo_max_width | default: 220 }}px;"
           >
         {%- else -%}
@@ -89,9 +92,10 @@
               {%- elsif section.settings.desktop_bg_image != blank -%}
                 {%- assign mob_bg_url = section.settings.desktop_bg_image | image_url: width: 1400 -%}
               {%- else -%}
-                {%- assign mob_bg_url = 'vmi-sangrah-bg-desktop.png' | asset_url -%}
+                {%- assign mob_bg_url = 'hero-alps.jpg' | asset_url -%}
               {%- endif -%}
 
+              {%- assign card_link = block.settings.url | default: col.url | default: routes.all_products_collection_url -%}
               <div
                 class="vmi-arch-card {% if set_i == 2 and forloop.index == 3 or set_i == 2 and forloop.first and section.blocks.size < 3 %}active{% endif %}"
                 data-real-index="{{ forloop.index0 }}"
@@ -99,7 +103,7 @@
                 data-mobile-bg="{{ mob_bg_url }}"
                 {{ block.shopify_attributes }}
               >
-                <a href="{% if col != blank %}{{ col.url }}{% else %}#{% endif %}" class="vmi-arch-card__inner">
+                <a href="{{ card_link }}" class="vmi-arch-card__inner">
                   <div class="vmi-arch-card__frame-box">
 
                     {%- comment -%} Photo clipped to inner arch window via SVG clipPath {%- endcomment -%}
@@ -949,6 +953,12 @@
           "id": "mobile_bg_image",
           "label": "Mobile Background Image when active",
           "info": "Changes mobile section background when this card is centered/active."
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Custom Link URL",
+          "info": "Direct link URL. Defaults to collection URL or all tours if empty."
         }
       ]
     }

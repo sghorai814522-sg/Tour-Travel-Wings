@@ -186,8 +186,8 @@
         >
           <!-- Hidden inputs for form submission -->
           <input type="hidden" name="type" value="product">
-          <input type="hidden" name="q" id="travel-search-query-input" value="Santorini Greece">
-          <input type="hidden" name="destination" id="travel-input-destination" value="Santorini, Greece">
+          <input type="hidden" name="q" id="travel-search-query-input" value="">
+          <input type="hidden" name="destination" id="travel-input-destination" value="">
           <input type="hidden" name="date_start" id="travel-input-date-start" value="">
           <input type="hidden" name="date_end" id="travel-input-date-end" value="">
           <input type="hidden" name="adults" id="travel-input-adults" value="2">
@@ -238,60 +238,74 @@
               <div class="travel-dest-category-title">Popular Destinations</div>
 
               <ul class="travel-dest-list">
-                <li class="travel-dest-item is-selected" data-name="Santorini" data-country="Greece">
+                <li class="travel-dest-item" data-name="Thailand" data-search="Thailand" data-country="Asia • Tropical Bays & Temples">
+                  <div class="travel-dest-item-icon">🛕</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Thailand</span>
+                    <span class="travel-dest-country">Phuket • Bangkok • Krabi</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Bali" data-search="Bali" data-country="Indonesia • Tropical Bliss">
+                  <div class="travel-dest-item-icon">🌺</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Bali</span>
+                    <span class="travel-dest-country">Indonesia • Island of the Gods</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Swiss Alps" data-search="Swiss" data-country="Switzerland • Zermatt & Peaks">
+                  <div class="travel-dest-item-icon">🏔️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Swiss Alps</span>
+                    <span class="travel-dest-country">Switzerland • Alpine Chalets</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Maldives" data-country="Indian Ocean • Coral Reefs" data-search="Maldives">
+                  <div class="travel-dest-item-icon">🏝️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Maldives</span>
+                    <span class="travel-dest-country">Overwater Villas & Turquoise Lagoons</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Vietnam" data-search="Vietnam" data-country="Southeast Asia • Karst Bays">
+                  <div class="travel-dest-item-icon">⛵</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Vietnam</span>
+                    <span class="travel-dest-country">Ha Long Bay • Da Nang • Hoi An</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Dubai" data-search="Dubai" data-country="UAE • Luxury & Desert Safari">
+                  <div class="travel-dest-item-icon">✨</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Dubai</span>
+                    <span class="travel-dest-country">UAE • Burj Khalifa & Desert Dunes</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Santorini" data-search="Santorini" data-country="Greece • Aegean Sea">
                   <div class="travel-dest-item-icon">🏛️</div>
                   <div class="travel-dest-item-info">
                     <span class="travel-dest-name">Santorini</span>
                     <span class="travel-dest-country">Greece • Aegean Sea</span>
                   </div>
                 </li>
-                <li class="travel-dest-item" data-name="Amalfi Coast" data-country="Italy">
+                <li class="travel-dest-item" data-name="Amalfi Coast" data-search="Amalfi" data-country="Italy • Mediterranean">
                   <div class="travel-dest-item-icon">🍋</div>
                   <div class="travel-dest-item-info">
                     <span class="travel-dest-name">Amalfi Coast</span>
                     <span class="travel-dest-country">Italy • Mediterranean</span>
                   </div>
                 </li>
-                <li class="travel-dest-item" data-name="Maldives" data-country="Indian Ocean">
-                  <div class="travel-dest-item-icon">🏝️</div>
+                <li class="travel-dest-item" data-name="Paris" data-search="Paris" data-country="France • City of Lights">
+                  <div class="travel-dest-item-icon">🗼</div>
                   <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Maldives</span>
-                    <span class="travel-dest-country">Overwater Villas & Reefs</span>
+                    <span class="travel-dest-name">Paris</span>
+                    <span class="travel-dest-country">France • City of Lights</span>
                   </div>
                 </li>
-                <li class="travel-dest-item" data-name="Bali" data-country="Indonesia">
-                  <div class="travel-dest-item-icon">🌺</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Bali</span>
-                    <span class="travel-dest-country">Indonesia • Tropical Bliss</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Swiss Alps" data-country="Switzerland">
-                  <div class="travel-dest-item-icon">🏔️</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Swiss Alps</span>
-                    <span class="travel-dest-country">Switzerland • Zermatt & Peaks</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Dubai" data-country="UAE">
-                  <div class="travel-dest-item-icon">✨</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Dubai</span>
-                    <span class="travel-dest-country">UAE • Luxury & Desert Safari</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Kyoto" data-country="Japan">
+                <li class="travel-dest-item" data-name="Kyoto" data-search="Kyoto" data-country="Japan • Historic Shrines">
                   <div class="travel-dest-item-icon">⛩️</div>
                   <div class="travel-dest-item-info">
                     <span class="travel-dest-name">Kyoto</span>
                     <span class="travel-dest-country">Japan • Historic Shrines</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Paris" data-country="France">
-                  <div class="travel-dest-item-info">🗼</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Paris</span>
-                    <span class="travel-dest-country">France • City of Lights</span>
                   </div>
                 </li>
               </ul>

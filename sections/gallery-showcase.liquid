@@ -130,14 +130,12 @@
               </button>
             {%- endif -%}
 
-            <!-- Optional Destination Link -->
-            {%- if block.settings.link != blank -%}
-              <a
-                href="{{ block.settings.link }}"
-                class="gallery-showcase-card-link"
-                aria-label="View {{ block.settings.title | escape }}"
-              ></a>
-            {%- endif -%}
+            <!-- Destination Link -->
+            <a
+              href="{{ block.settings.link | default: routes.all_products_collection_url }}"
+              class="gallery-showcase-card-link"
+              aria-label="View {{ block.settings.title | escape }}"
+            ></a>
 
             <!-- Caption Overlay -->
             {%- if section.settings.show_caption_overlay and block.settings.title != blank -%}

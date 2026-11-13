@@ -11,7 +11,10 @@
   <link rel="stylesheet" href="gallery-showcase.css">
   <link rel="stylesheet" href="journal-accordion.css">
   <link rel="stylesheet" href="travel-footer.css">
+  <link rel="stylesheet" href="travel-chatbot.css">
   <script src="journal-accordion.js" defer></script>
+  <script src="travel-hero-slider.js" defer></script>
+  <script src="travel-chatbot.js" defer></script>
   <style>
     /* Reset & Page Base */
     * { box-sizing: border-box; }
@@ -191,9 +194,13 @@
     <!-- Booking Search Bar -->
     <div class="travel-search-bar-wrapper">
       <div class="travel-search-bar-container">
-        <div class="travel-search-form">
+        <form action="/collections/all" method="get" class="travel-search-form">
+          <input type="hidden" name="type" value="product">
+          <input type="hidden" name="q" id="travel-search-query-input" value="">
+          <input type="hidden" name="destination" id="travel-input-destination" value="">
+
           <!-- Destination -->
-          <div class="travel-search-field">
+          <div class="travel-search-field" data-search-field="destination" role="button" tabindex="0">
             <div class="travel-search-icon">
               <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
@@ -201,11 +208,56 @@
               <span class="travel-search-label">Destination</span>
               <span class="travel-search-value">Where to?</span>
             </div>
+            <div class="travel-search-caret">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+
+            <!-- Destination Dropdown Popover -->
+            <div class="travel-popover travel-dest-popover" role="dialog">
+              <div class="travel-dest-search-wrap">
+                <svg class="travel-dest-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" class="travel-dest-search-input" placeholder="Where do you want to go?" autocomplete="off">
+              </div>
+
+              <div class="travel-dest-category-title">Popular Destinations</div>
+
+              <ul class="travel-dest-list">
+                <li class="travel-dest-item" data-name="Thailand" data-search="Thailand" data-country="Asia • Tropical Bays & Temples">
+                  <div class="travel-dest-item-icon">🛕</div>
+                  <div class="travel-dest-item-info"><span class="travel-dest-name">Thailand</span><span class="travel-dest-country">Phuket • Bangkok • Krabi</span></div>
+                </li>
+                <li class="travel-dest-item" data-name="Bali" data-search="Bali" data-country="Indonesia • Tropical Bliss">
+                  <div class="travel-dest-item-icon">🌺</div>
+                  <div class="travel-dest-item-info"><span class="travel-dest-name">Bali</span><span class="travel-dest-country">Indonesia • Island of the Gods</span></div>
+                </li>
+                <li class="travel-dest-item" data-name="Swiss Alps" data-search="Swiss" data-country="Switzerland • Zermatt & Peaks">
+                  <div class="travel-dest-item-icon">🏔️</div>
+                  <div class="travel-dest-item-info"><span class="travel-dest-name">Swiss Alps</span><span class="travel-dest-country">Switzerland • Alpine Chalets</span></div>
+                </li>
+                <li class="travel-dest-item" data-name="Maldives" data-search="Maldives" data-country="Indian Ocean • Coral Reefs">
+                  <div class="travel-dest-item-icon">🏝️</div>
+                  <div class="travel-dest-item-info"><span class="travel-dest-name">Maldives</span><span class="travel-dest-country">Overwater Villas & Turquoise Lagoons</span></div>
+                </li>
+                <li class="travel-dest-item" data-name="Vietnam" data-search="Vietnam" data-country="Southeast Asia • Karst Bays">
+                  <div class="travel-dest-item-icon">⛵</div>
+                  <div class="travel-dest-item-info"><span class="travel-dest-name">Vietnam</span><span class="travel-dest-country">Ha Long Bay • Da Nang • Hoi An</span></div>
+                </li>
+                <li class="travel-dest-item" data-name="Dubai" data-search="Dubai" data-country="UAE • Luxury & Desert Safari">
+                  <div class="travel-dest-item-icon">✨</div>
+                  <div class="travel-dest-item-info"><span class="travel-dest-name">Dubai</span><span class="travel-dest-country">UAE • Burj Khalifa & Desert Dunes</span></div>
+                </li>
+                <li class="travel-dest-item" data-name="Santorini" data-search="Santorini" data-country="Greece • Aegean Sea">
+                  <div class="travel-dest-item-icon">🏛️</div>
+                  <div class="travel-dest-item-info"><span class="travel-dest-name">Santorini</span><span class="travel-dest-country">Greece • Aegean Sea</span></div>
+                </li>
+              </ul>
+              <div class="travel-dest-empty">No destinations match your search. Press Enter to search anyway.</div>
+            </div>
           </div>
           <div class="travel-search-divider"></div>
 
           <!-- Travel Dates -->
-          <div class="travel-search-field">
+          <div class="travel-search-field" data-search-field="calendar" role="button" tabindex="0">
             <div class="travel-search-icon">
               <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             </div>
@@ -217,7 +269,7 @@
           <div class="travel-search-divider"></div>
 
           <!-- Travelers -->
-          <div class="travel-search-field">
+          <div class="travel-search-field" data-search-field="travelers" role="button" tabindex="0">
             <div class="travel-search-icon">
               <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
@@ -228,13 +280,14 @@
           </div>
 
           <!-- Submit Button -->
-          <button type="button" class="travel-search-submit-btn">
+          <button type="submit" class="travel-search-submit-btn">
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <span>Search Tours</span>
           </button>
-        </div>
+        </form>
       </div>
     </div>
+    <div class="travel-popover-backdrop" aria-hidden="true"></div>
 
     <!-- Section 4: Trust / USP Bar -->
     <div class="travel-features-bar">
@@ -263,8 +316,8 @@
   <div class="festive-collection-section" style="padding-top: 40px; padding-bottom: 20px;">
     <div class="fc-container">
       <div class="fc-header">
-        <h2 class="section-title">Season Finest: Festive Collection</h2>
-        <p class="section-subtitle">Every fête has its colour, and every colour has its wonder – from island vibes to majestic peaks.</p>
+        <h2 class="section-title">World’s Finest Destinations</h2>
+        <p class="section-subtitle">Discover extraordinary landscapes, pristine beaches, and vibrant cultures — handcrafted holiday getaways across the globe.</p>
         <div class="fc-divider"></div>
       </div>
 
@@ -273,31 +326,67 @@
         <a href="#" class="fc-card">
           <div class="fc-image-wrapper"><img class="fc-image" src="tour-thailand.jpg" alt="Thailand" width="800" height="1000"></div>
           <div class="fc-glass-bar"><div class="fc-bar-tag">POPULAR</div><h3 class="fc-bar-title">Thailand</h3><div class="fc-bar-subtitle">Temples & Tropical Bays</div></div>
+          <div class="fc-hover-overlay">
+            <div class="fc-hover-tag">POPULAR</div>
+            <h3 class="fc-hover-title">Thailand</h3>
+            <div class="fc-hover-subtitle">Temples & Tropical Bays</div>
+            <div class="fc-shop-button"><span>Explore</span><div class="fc-shop-button-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          </div>
         </a>
         <!-- 2. Bali -->
         <a href="#" class="fc-card">
           <div class="fc-image-wrapper"><img class="fc-image" src="tour-bali.jpg" alt="Bali" width="800" height="1000"></div>
           <div class="fc-glass-bar"><div class="fc-bar-tag">TRENDING</div><h3 class="fc-bar-title">Bali</h3><div class="fc-bar-subtitle">Island of the Gods</div></div>
+          <div class="fc-hover-overlay">
+            <div class="fc-hover-tag">TRENDING</div>
+            <h3 class="fc-hover-title">Bali</h3>
+            <div class="fc-hover-subtitle">Island of the Gods</div>
+            <div class="fc-shop-button"><span>Explore</span><div class="fc-shop-button-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          </div>
         </a>
         <!-- 3. Switzerland -->
         <a href="#" class="fc-card">
           <div class="fc-image-wrapper"><img class="fc-image" src="tour-swiss-alps.jpg" alt="Switzerland" width="800" height="1000"></div>
           <div class="fc-glass-bar"><div class="fc-bar-tag">TOP RATED</div><h3 class="fc-bar-title">Switzerland</h3><div class="fc-bar-subtitle">Alpine Peaks & Chalets</div></div>
+          <div class="fc-hover-overlay">
+            <div class="fc-hover-tag">TOP RATED</div>
+            <h3 class="fc-hover-title">Switzerland</h3>
+            <div class="fc-hover-subtitle">Alpine Peaks & Chalets</div>
+            <div class="fc-shop-button"><span>Explore</span><div class="fc-shop-button-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          </div>
         </a>
         <!-- 4. Maldives -->
         <a href="#" class="fc-card">
           <div class="fc-image-wrapper"><img class="fc-image" src="hero-maldives.jpg" alt="Maldives" width="800" height="1000"></div>
           <div class="fc-glass-bar"><div class="fc-bar-tag">LUXURY</div><h3 class="fc-bar-title">Maldives</h3><div class="fc-bar-subtitle">Overwater Villa Paradise</div></div>
+          <div class="fc-hover-overlay">
+            <div class="fc-hover-tag">LUXURY</div>
+            <h3 class="fc-hover-title">Maldives</h3>
+            <div class="fc-hover-subtitle">Overwater Villa Paradise</div>
+            <div class="fc-shop-button"><span>Explore</span><div class="fc-shop-button-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          </div>
         </a>
         <!-- 5. Vietnam -->
         <a href="#" class="fc-card">
           <div class="fc-image-wrapper"><img class="fc-image" src="tour-vietnam.jpg" alt="Vietnam" width="800" height="1000"></div>
           <div class="fc-glass-bar"><div class="fc-bar-tag">EXOTIC</div><h3 class="fc-bar-title">Vietnam</h3><div class="fc-bar-subtitle">Karst Bays & Historic Towns</div></div>
+          <div class="fc-hover-overlay">
+            <div class="fc-hover-tag">EXOTIC</div>
+            <h3 class="fc-hover-title">Vietnam</h3>
+            <div class="fc-hover-subtitle">Karst Bays & Historic Towns</div>
+            <div class="fc-shop-button"><span>Explore</span><div class="fc-shop-button-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          </div>
         </a>
         <!-- 6. Dubai -->
         <a href="#" class="fc-card">
           <div class="fc-image-wrapper"><img class="fc-image" src="tour-dubai.jpg" alt="Dubai" width="800" height="1000"></div>
           <div class="fc-glass-bar"><div class="fc-bar-tag">MODERN</div><h3 class="fc-bar-title">Dubai</h3><div class="fc-bar-subtitle">Desert Safari & Skyline</div></div>
+          <div class="fc-hover-overlay">
+            <div class="fc-hover-tag">MODERN</div>
+            <h3 class="fc-hover-title">Dubai</h3>
+            <div class="fc-hover-subtitle">Desert Safari & Skyline</div>
+            <div class="fc-shop-button"><span>Explore</span><div class="fc-shop-button-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+          </div>
         </a>
       </div>
     </div>
@@ -547,6 +636,75 @@
       </div>
     </div>
   </footer>
+
+  <!-- Travel Wings AI Chatbot Widget (Speak to our Experts Design) -->
+  <div class="travel-chatbot-widget" data-bot-avatar="travel-bot-mascot.png">
+    <button type="button" class="travel-chatbot-toggle" aria-label="Speak to our Experts">
+      <span class="travel-chatbot-peeking-mascot" aria-hidden="true">
+        <img src="travel-bot-mascot.png" alt="" class="travel-chatbot-mascot-img" width="76" height="76">
+      </span>
+      <span class="travel-chatbot-status-dot" aria-hidden="true"></span>
+      <span class="travel-chatbot-toggle-text">Speak to our Experts</span>
+      <span class="travel-chatbot-close-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </span>
+    </button>
+
+    <div class="travel-chatbot-modal" role="dialog" aria-modal="true">
+      <div class="travel-chatbot-header">
+        <div class="travel-chatbot-header-brand">
+          <div class="travel-chatbot-avatar">
+            <img src="travel-bot-mascot.png" alt="Travel Wings Concierge" class="travel-chatbot-avatar-img" width="44" height="44">
+          </div>
+          <div class="travel-chatbot-header-info">
+            <h3 class="travel-chatbot-header-title">Speak to our Experts</h3>
+            <span class="travel-chatbot-header-sub">Online • Instant Travel Support</span>
+          </div>
+        </div>
+        <button type="button" class="travel-chatbot-btn-minimize" aria-label="Minimize Chat">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="travel-chatbot-body">
+        <div class="travel-chatbot-msg bot">
+          <div class="travel-chatbot-msg-author">
+            <img src="travel-bot-mascot.png" alt="Travel Wings Expert" class="travel-chatbot-msg-avatar" width="26" height="26">
+            <span class="travel-chatbot-msg-author-name">Wings Travel Expert</span>
+          </div>
+          <div class="travel-chatbot-bubble">
+            👋 <strong>Hello! Welcome to Tour & Travel Wings!</strong><br><br>
+            I'm your dedicated Travel Expert. Which destination are you dreaming of, or how can I assist in tailoring your journey today?
+          </div>
+          <div class="travel-chatbot-msg-time">Just now</div>
+          <div class="travel-chatbot-chips">
+            <button type="button" class="travel-chatbot-chip" data-query="Bali Escape">🌴 Bali Escape</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Swiss Alps">🏔️ Swiss Alps</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Thailand Discovery">🛕 Thailand</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Dubai Getaway">✨ Dubai Getaway</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Maldives Packages">🏝️ Maldives</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Vietnam Tour">⛵ Vietnam</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Contact Support">📞 Contact Us</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="travel-chatbot-footer">
+        <form class="travel-chatbot-form" autocomplete="off">
+          <input type="text" class="travel-chatbot-input" placeholder="Ask about tours, destinations, dates..." aria-label="Type your message">
+          <button type="submit" class="travel-chatbot-send-btn" aria-label="Send message">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

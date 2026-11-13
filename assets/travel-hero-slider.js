@@ -176,9 +176,12 @@
       const allPopovers = Array.from(this.section.querySelectorAll('.travel-popover'));
       const allFields = Array.from(this.section.querySelectorAll('.travel-search-field'));
 
+      const wrapper = this.section.querySelector('.travel-search-bar-wrapper');
+
       const closeAllPopovers = () => {
         allPopovers.forEach((p) => p.classList.remove('is-visible'));
         allFields.forEach((f) => f.classList.remove('is-open'));
+        if (wrapper) wrapper.classList.remove('has-open-popover');
         if (backdrop) backdrop.classList.remove('is-active');
         this.isInteractingWithSearch = false;
         this.startAutoplay();
@@ -198,6 +201,7 @@
         if (!isOpen) {
           popover.classList.add('is-visible');
           field.classList.add('is-open');
+          if (wrapper) wrapper.classList.add('has-open-popover');
           if (backdrop) backdrop.classList.add('is-active');
           this.isInteractingWithSearch = true;
           this.pauseAutoplay();
@@ -234,7 +238,13 @@
       const items = Array.from(popover.querySelectorAll('.travel-dest-item'));
       const emptyState = popover.querySelector('.travel-dest-empty');
 
+      // Stop propagation inside popover so clicks don't bubble to field
+      popover.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
       field.addEventListener('click', (e) => {
+        if (e.target.closest('.travel-popover')) return;
         e.stopPropagation();
         openPopover(field, popover);
         if (searchInput) {
@@ -242,7 +252,7 @@
         }
       });
 
-      // Destination search filter
+      // Allow pressing Enter in destination search input to choose directly
       if (searchInput) {
         searchInput.addEventListener('input', () => {
           const term = searchInput.value.trim().toLowerCase();
@@ -264,7 +274,6 @@
           }
         });
 
-        // Allow pressing Enter in destination search input to choose directly
         searchInput.addEventListener('keydown', (e) => {
           if (e.key === 'Enter') {
             e.preventDefault();
@@ -294,11 +303,11 @@
 
       items.forEach((item) => {
         item.addEventListener('click', (e) => {
+          e.preventDefault();
           e.stopPropagation();
-          const name = item.dataset.name;
-          const country = item.dataset.country;
-          const display = `${name}, ${country}`;
-          setDestination(display, `${name} ${country}`);
+          const name = item.dataset.name || item.querySelector('.travel-dest-name')?.textContent?.trim() || '';
+          const searchVal = item.dataset.search || name;
+          setDestination(name, searchVal);
           closeAllPopovers();
         });
       });
@@ -311,6 +320,10 @@
       const field = form.querySelector('[data-search-field="calendar"]');
       const popover = form.querySelector('.travel-calendar-popover');
       if (!field || !popover) return;
+
+      popover.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
 
       const valueEl = field.querySelector('.travel-search-value');
       const inputStart = form.querySelector('#travel-input-date-start');
@@ -325,6 +338,7 @@
       const presets = Array.from(popover.querySelectorAll('.travel-cal-preset-btn'));
 
       field.addEventListener('click', (e) => {
+        if (e.target.closest('.travel-popover')) return;
         e.stopPropagation();
         openPopover(field, popover);
       });
@@ -539,6 +553,10 @@
       const popover = form.querySelector('.travel-travelers-popover');
       if (!field || !popover) return;
 
+      popover.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
       const valueEl = field.querySelector('.travel-search-value');
       const inputAdults = form.querySelector('#travel-input-adults');
       const inputChildren = form.querySelector('#travel-input-children');
@@ -553,6 +571,7 @@
       };
 
       field.addEventListener('click', (e) => {
+        if (e.target.closest('.travel-popover')) return;
         e.stopPropagation();
         openPopover(field, popover);
       });
@@ -675,20 +694,33 @@
       });
       this.section.dispatchEvent(searchEvent);
 
-      // Construct Shopify Search Query URL
-      let queryTerms = [];
-      if (destination) {
-        queryTerms.push(destination);
-      } else {
-        queryTerms.push('Tour');
+      // Construct Target All Products URL with all selected filters
+      const params = new URLSearchParams();
+      if (destination && destination.trim() !== '') {
+        params.append('destination', destination.trim());
+        params.append('q', destination.trim());
       }
+      if (dateStart) params.append('date_start', dateStart);
+      if (dateEnd) params.append('date_end', dateEnd);
+      if (adults) params.append('adults', adults);
+      if (children && children !== '0') params.append('children', children);
+      if (rooms && rooms !== '1') params.append('rooms', rooms);
 
-      const queryString = encodeURIComponent(queryTerms.join(' '));
-      const targetUrl = `/search?type=product&q=${queryString}&options%5Bprefix%5D=last`;
+      const qs = params.toString();
+      const targetUrl = qs ? `/collections/all?${qs}` : '/collections/all';
+
+      if (window.location.protocol === 'file:') {
+        const pt = document.querySelector('.popular-tours-section');
+        if (pt) {
+          submitBtn?.classList.remove('is-loading');
+          pt.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      }
 
       setTimeout(() => {
         window.location.href = targetUrl;
-      }, 350);
+      }, 250);
     }
   }
 

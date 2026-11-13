@@ -6,6 +6,9 @@
   fetchpriority="low"
 ></script>
 
+{{ 'travel-collection-filter.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'travel-collection-filter.js' | asset_url }}" defer="defer"></script>
+
 {% javascript %}
   const url = new URL(window.location.href);
   if (url.hash) {
@@ -67,6 +70,9 @@
               class="product-grid__item product-grid__item--{{ forloop.index0 }}"
               data-page="{{ paginate.current_page }}"
               data-product-id="{{ product.id }}"
+              data-product-title="{{ product.title | escape }}"
+              data-product-vendor="{{ product.vendor | escape }}"
+              data-product-type="{{ product.type | escape }}"
               ref="cards[]"
             >
               {% content_for 'block',

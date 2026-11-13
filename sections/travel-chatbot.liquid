@@ -1,0 +1,194 @@
+{% comment %}
+  Travel Wings AI Concierge & Chatbot Widget
+  Tour & Travel Wings
+{% endcomment %}
+
+{%- if section.settings.enable_chatbot -%}
+  {{ 'travel-chatbot.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'travel-chatbot.js' | asset_url }}" defer="defer"></script>
+
+  {%- assign bot_avatar_url = 'travel-bot-mascot.png' | asset_url -%}
+  {%- if section.settings.bot_avatar != blank -%}
+    {%- assign bot_avatar_url = section.settings.bot_avatar | image_url: width: 300 -%}
+  {%- endif -%}
+
+  <div
+    id="travel-chatbot-widget-{{ section.id }}"
+    class="travel-chatbot-widget"
+    data-section-id="{{ section.id }}"
+    data-bot-avatar="{{ bot_avatar_url }}"
+  >
+    <!-- Combined Clickable Floating Button (Peeking Mascot + Compact Text) -->
+    <button
+      type="button"
+      class="travel-chatbot-toggle"
+      aria-label="Speak to our Experts"
+      aria-haspopup="dialog"
+      aria-expanded="false"
+    >
+      <!-- 3D Mascot Character (Centered & Clickable) -->
+      <span class="travel-chatbot-peeking-mascot" aria-hidden="true">
+        <img
+          src="{{ bot_avatar_url }}"
+          alt=""
+          class="travel-chatbot-mascot-img"
+          width="76"
+          height="76"
+          loading="lazy"
+        >
+      </span>
+
+      <span class="travel-chatbot-status-dot" aria-hidden="true"></span>
+      <span class="travel-chatbot-toggle-text">{{ section.settings.button_text | default: 'Speak to our Experts' }}</span>
+      <!-- Close icon when modal is open -->
+      <span class="travel-chatbot-close-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </span>
+    </button>
+
+    <!-- Chat Modal Window -->
+    <div
+      class="travel-chatbot-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="travel-chatbot-title-{{ section.id }}"
+    >
+      <!-- Header -->
+      <div class="travel-chatbot-header">
+        <div class="travel-chatbot-header-brand">
+          <div class="travel-chatbot-avatar">
+            <img
+              src="{{ bot_avatar_url }}"
+              alt="Travel Wings Concierge"
+              class="travel-chatbot-avatar-img"
+              width="44"
+              height="44"
+              loading="lazy"
+            >
+          </div>
+          <div class="travel-chatbot-header-info">
+            <h3 id="travel-chatbot-title-{{ section.id }}" class="travel-chatbot-header-title">
+              {{ section.settings.bot_name | default: 'Speak to our Experts' }}
+            </h3>
+            <span class="travel-chatbot-header-sub">Online • Instant Travel Support</span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="travel-chatbot-btn-minimize"
+          aria-label="Minimize Chat"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages Body -->
+      <div class="travel-chatbot-body">
+        <!-- Initial Welcome Message from Bot -->
+        <div class="travel-chatbot-msg bot">
+          <div class="travel-chatbot-msg-author">
+            <img src="{{ bot_avatar_url }}" alt="Travel Wings Expert" class="travel-chatbot-msg-avatar" width="26" height="26">
+            <span class="travel-chatbot-msg-author-name">Wings Travel Expert</span>
+          </div>
+          <div class="travel-chatbot-bubble">
+            👋 <strong>Hello! Welcome to Tour & Travel Wings!</strong><br><br>
+            I'm your AI Travel Expert. Which destination are you dreaming of, or how can I assist in tailoring your journey today?
+          </div>
+          <div class="travel-chatbot-msg-time">Just now</div>
+
+          <!-- Quick Action Prompt Chips -->
+          <div class="travel-chatbot-chips">
+            <button type="button" class="travel-chatbot-chip" data-query="Bali Escape">🌴 Bali Escape</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Swiss Alps">🏔️ Swiss Alps</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Thailand Discovery">🛕 Thailand</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Dubai Getaway">✨ Dubai Getaway</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Maldives Packages">🏝️ Maldives</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Vietnam Tour">⛵ Vietnam</button>
+            <button type="button" class="travel-chatbot-chip" data-query="Speak to an Expert">📞 Contact Expert</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Footer -->
+      <div class="travel-chatbot-footer">
+        <form class="travel-chatbot-form" autocomplete="off">
+          <input
+            type="text"
+            class="travel-chatbot-input"
+            placeholder="{{ section.settings.input_placeholder | default: 'Ask about tours, pricing, dates...' }}"
+            aria-label="Type your message"
+          >
+          <button type="submit" class="travel-chatbot-send-btn" aria-label="Send message">
+            <svg viewBox="0 0 24 24">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Travel Chatbot",
+  "class": "section-travel-chatbot",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_chatbot",
+      "label": "Enable Travel AI Chatbot",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bot_avatar",
+      "label": "Custom Bot Avatar Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Label",
+      "default": "Speak to our Experts"
+    },
+    {
+      "type": "text",
+      "id": "bot_name",
+      "label": "Bot Name",
+      "default": "Speak to our Experts"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show Greeting Badge Prompt",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Prompt Text",
+      "default": "Need help planning? Chat with us!"
+    },
+    {
+      "type": "text",
+      "id": "input_placeholder",
+      "label": "Input Placeholder",
+      "default": "Ask about tours, destinations, dates..."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Travel Chatbot"
+    }
+  ]
+}
+{% endschema %}
+
