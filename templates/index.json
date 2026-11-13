@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_G7CAX9": {
@@ -1138,6 +1147,63 @@
         "padding_bottom": 20
       }
     },
+    "vmi_arch_collections_njKKwm": {
+      "type": "vmi-arch-collections",
+      "blocks": {
+        "collection_card_PMHQaf": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "AJRAK"
+          }
+        },
+        "collection_card_FcQHGh": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "AJRAK"
+          }
+        },
+        "collection_card_J8ygG6": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "BANARASI",
+            "image": "shopify://shop_images/Ancient_Temples_Amidst_Lush_Landscapes.png",
+            "mobile_bg_image": "shopify://shop_images/Tropical_Coastal_Temple_Paradise.png"
+          }
+        },
+        "collection_card_Gjka7h": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "KANJIVARAM"
+          }
+        },
+        "collection_card_y7eYWC": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "CHANDERI"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_PMHQaf",
+        "collection_card_FcQHGh",
+        "collection_card_J8ygG6",
+        "collection_card_Gjka7h",
+        "collection_card_y7eYWC"
+      ],
+      "name": "VMI Arch Collections",
+      "settings": {
+        "enable_section": true,
+        "heading": "Sangrah",
+        "logo_max_width": 220,
+        "subtitle": "COLLECTIONS",
+        "text_color": "#401F28"
+      }
+    },
     "travel_promo_reviews_rJBwH9": {
       "type": "travel-promo-reviews",
       "blocks": {
@@ -1196,6 +1262,76 @@
     },
     "gallery_showcase": {
       "type": "gallery-showcase",
+      "blocks": {
+        "item_1": {
+          "type": "image",
+          "settings": {
+            "fallback_image": "hero-santorini.jpg",
+            "kicker": "GREECE",
+            "title": "Santorini Caldera",
+            "caption": "Iconic cobalt blue domes overlooking the deep Aegean sea.",
+            "link": ""
+          }
+        },
+        "item_2": {
+          "type": "image",
+          "settings": {
+            "fallback_image": "tour-bali.jpg",
+            "kicker": "INDONESIA",
+            "title": "Bali Island Haven",
+            "caption": "Lush tropical terraces, volcanic peaks, and serene beach temples.",
+            "link": ""
+          }
+        },
+        "item_3": {
+          "type": "image",
+          "settings": {
+            "fallback_image": "tour-swiss-alps.jpg",
+            "kicker": "SWITZERLAND",
+            "title": "Swiss Alpine Peaks",
+            "caption": "Majestic snow-dusted summits, alpine meadows, and wooden chalets.",
+            "link": ""
+          }
+        },
+        "item_4": {
+          "type": "image",
+          "settings": {
+            "fallback_image": "hero-maldives.jpg",
+            "kicker": "MALDIVES",
+            "title": "Overwater Luxury",
+            "caption": "Private turquoise lagoons and pure powdery coral sand beaches.",
+            "link": ""
+          }
+        },
+        "item_5": {
+          "type": "image",
+          "settings": {
+            "fallback_image": "tour-dubai.jpg",
+            "kicker": "UAE",
+            "title": "Dubai Oasis & Skyline",
+            "caption": "Golden desert dune safaris meeting futuristic architectural wonder.",
+            "link": ""
+          }
+        },
+        "item_6": {
+          "type": "image",
+          "settings": {
+            "fallback_image": "tour-thailand.jpg",
+            "kicker": "THAILAND",
+            "title": "Phuket & Krabi Bays",
+            "caption": "Limestone karst islands rising from emerald waters.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6"
+      ],
       "settings": {
         "subheading": "EXPLORE â€¢ DISCOVER â€¢ CAPTURE",
         "heading": "Moments Beyond Destinations",
@@ -1217,71 +1353,7 @@
         "autoplay_speed": 4,
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "blocks": {
-        "item_1": {
-          "type": "image",
-          "settings": {
-            "fallback_image": "hero-santorini.jpg",
-            "kicker": "GREECE",
-            "title": "Santorini Caldera",
-            "caption": "Iconic cobalt blue domes overlooking the deep Aegean sea."
-          }
-        },
-        "item_2": {
-          "type": "image",
-          "settings": {
-            "fallback_image": "tour-bali.jpg",
-            "kicker": "INDONESIA",
-            "title": "Bali Island Haven",
-            "caption": "Lush tropical terraces, volcanic peaks, and serene beach temples."
-          }
-        },
-        "item_3": {
-          "type": "image",
-          "settings": {
-            "fallback_image": "tour-swiss-alps.jpg",
-            "kicker": "SWITZERLAND",
-            "title": "Swiss Alpine Peaks",
-            "caption": "Majestic snow-dusted summits, alpine meadows, and wooden chalets."
-          }
-        },
-        "item_4": {
-          "type": "image",
-          "settings": {
-            "fallback_image": "hero-maldives.jpg",
-            "kicker": "MALDIVES",
-            "title": "Overwater Luxury",
-            "caption": "Private turquoise lagoons and pure powdery coral sand beaches."
-          }
-        },
-        "item_5": {
-          "type": "image",
-          "settings": {
-            "fallback_image": "tour-dubai.jpg",
-            "kicker": "UAE",
-            "title": "Dubai Oasis & Skyline",
-            "caption": "Golden desert dune safaris meeting futuristic architectural wonder."
-          }
-        },
-        "item_6": {
-          "type": "image",
-          "settings": {
-            "fallback_image": "tour-thailand.jpg",
-            "kicker": "THAILAND",
-            "title": "Phuket & Krabi Bays",
-            "caption": "Limestone karst islands rising from emerald waters."
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3",
-        "item_4",
-        "item_5",
-        "item_6"
-      ]
+      }
     }
   },
   "order": [
@@ -1294,6 +1366,7 @@
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
     "popular_tours",
+    "vmi_arch_collections_njKKwm",
     "travel_promo_reviews_rJBwH9",
     "gallery_showcase"
   ]
