@@ -1059,6 +1059,94 @@
         "show_features": true
       }
     },
+    "festive_collection_GqybH3": {
+      "type": "festive-collection",
+      "blocks": {
+        "collection_card_AVEbGT": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_6YqHpD": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_LnUaRy": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_ha7jFd": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_U8enmX": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        },
+        "collection_card_MnHteJ": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "tag_text": "CLASSIC SILK PAITHANI",
+            "title": "Festive",
+            "subtitle": "Collection",
+            "button_text": "Shop Now",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_AVEbGT",
+        "collection_card_6YqHpD",
+        "collection_card_LnUaRy",
+        "collection_card_ha7jFd",
+        "collection_card_U8enmX",
+        "collection_card_MnHteJ"
+      ],
+      "name": "Festive Collection Grid",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "show_hover_text": true,
+        "desktop_columns": 3,
+        "mobile_columns": 3,
+        "heading": "Season Finest: Festive Collection",
+        "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
+      }
+    },
     "popular_tours": {
       "type": "popular-tours",
       "blocks": {
@@ -1202,7 +1290,7 @@
         "heading": "Sangrah",
         "logo_max_width": 220,
         "subtitle": "COLLECTIONS",
-        "text_color": "#401F28"
+        "text_color": "#401f28"
       }
     },
     "travel_promo_reviews_rJBwH9": {
@@ -1426,6 +1514,7 @@
     "collection_list_3ejxRy",
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
+    "festive_collection_GqybH3",
     "popular_tours",
     "vmi_arch_collections_njKKwm",
     "travel_promo_reviews_rJBwH9",
