@@ -165,12 +165,13 @@
   max-width: 1280px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 32px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 65px;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 .travel-hero-text-block {
@@ -357,13 +358,15 @@
   z-index: 25;
   width: 100%;
   margin: -90px auto 20px auto;
-  padding: 0 40px;
+  padding: 0 32px;
   pointer-events: auto;
+  box-sizing: border-box;
 }
 
 .travel-search-bar-container {
   max-width: 1280px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .travel-search-form {
@@ -1033,10 +1036,11 @@
 .travel-features-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 32px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
+  box-sizing: border-box;
 }
 
 .travel-feature-item {
@@ -1182,7 +1186,7 @@
     position: relative;
     z-index: 25;
     margin: -40px auto 24px auto;
-    padding: 0 28px;
+    padding: 0 24px;
     max-width: 100%;
   }
 

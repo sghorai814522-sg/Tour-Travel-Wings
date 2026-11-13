@@ -12,7 +12,7 @@
   data-show-hover="{{ section.settings.show_hover_text }}"
   style="--fc-bg-color: {{ section.settings.background_color | default: '#ffffff' }};"
 >
-  <div class="vmi-container">
+  <div class="fc-container">
     {%- if section.settings.heading != blank or section.settings.subtitle != blank -%}
       <div class="fc-header">
         {%- if section.settings.heading != blank -%}
@@ -50,20 +50,22 @@
             <div class="fc-image-wrapper">
               {%- if card_image != blank -%}
                 {{ card_image | image_url: width: 800 | image_tag: class: 'fc-image', loading: 'lazy', alt: title_text }}
+              {%- elsif block.settings.fallback_image != blank -%}
+                <img class="fc-image" loading="lazy" src="{{ block.settings.fallback_image | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
               {%- else -%}
                 {%- case forloop.index -%}
                   {%- when 1 -%}
-                    <img class="fc-image" loading="lazy" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                    <img class="fc-image" loading="lazy" src="{{ 'tour-thailand.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
                   {%- when 2 -%}
-                    <img class="fc-image" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                    <img class="fc-image" loading="lazy" src="{{ 'tour-bali.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
                   {%- when 3 -%}
-                    <img class="fc-image" loading="lazy" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                    <img class="fc-image" loading="lazy" src="{{ 'tour-swiss-alps.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
                   {%- when 4 -%}
-                    <img class="fc-image" loading="lazy" src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                    <img class="fc-image" loading="lazy" src="{{ 'hero-maldives.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
                   {%- when 5 -%}
-                    <img class="fc-image" loading="lazy" src="https://images.unsplash.com/photo-1610030469668-98e550d6193c?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                    <img class="fc-image" loading="lazy" src="{{ 'tour-vietnam.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
                   {%- when 6 -%}
-                    <img class="fc-image" loading="lazy" src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?q=80&w=800&auto=format&fit=crop" alt="{{ title_text }}">
+                    <img class="fc-image" loading="lazy" src="{{ 'tour-dubai.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
                   {%- else -%}
                     {{ 'collection-1' | placeholder_svg_tag: 'fc-image' }}
                 {%- endcase -%}
@@ -172,6 +174,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Custom Image (Overrides collection image)"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "Fallback Asset Image Filename"
         },
         {
           "type": "text",

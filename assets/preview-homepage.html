@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour and Travel Wings - Home</title>
+  <link rel="stylesheet" href="travel-hero-slider.css">
+  <link rel="stylesheet" href="festive-collection.css">
+  <link rel="stylesheet" href="popular-tours.css">
+  <link rel="stylesheet" href="travel-promo-reviews.css">
+  <link rel="stylesheet" href="gallery-showcase.css">
+  <link rel="stylesheet" href="journal-accordion.css">
+  <link rel="stylesheet" href="travel-footer.css">
+  <script src="journal-accordion.js" defer></script>
+  <style>
+    /* Reset & Page Base */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    /* Section 1: Announcement Bar */
+    .mock-announcement {
+      background: #734c38;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 11.5px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Section 2: Header */
+    .mock-header {
+      width: 100%;
+      height: 70px;
+      background: #ffffff;
+      border-bottom: 1px solid #edf2f7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .mock-header-inner {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mock-logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mock-nav a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #334155;
+      padding: 6px 0;
+      transition: color 0.2s;
+    }
+
+    .mock-nav a.active, .mock-nav a:hover {
+      color: #0a2e5c;
+      font-weight: 700;
+    }
+
+    .mock-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #334155;
+    }
+
+    .mock-actions svg {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .mock-nav { display: none; }
+      .mock-header { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Announcement Bar -->
+  <div class="mock-announcement">
+    EXPLORE • DISCOVER • EXPERIENCE THE WORLD WITH TOUR & TRAVEL WINGS
+  </div>
+
+  <!-- Section 2: Header -->
+  <header class="mock-header">
+    <div class="mock-header-inner">
+      <a href="#" class="mock-logo">
+        <img src="tour-travel-logo.png" alt="Tour and Travel Wings" width="260" height="48">
+      </a>
+
+      <ul class="mock-nav">
+        <li><a href="preview-homepage.html" class="active">Home</a></li>
+        <li><a href="preview-travel-about.html">About Us</a></li>
+        <li><a href="#">Catalog</a></li>
+        <li><a href="preview-travel-contact.html">Contact</a></li>
+      </ul>
+
+      <div class="mock-actions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 3: Hero Banner -->
+  <div class="travel-hero-section" style="--ths-desktop-height: 660px; --ths-mobile-height: 540px;">
+    <div class="travel-hero-slider">
+      <div class="travel-hero-slides-wrapper">
+        <div class="travel-hero-slide is-active">
+          <div class="travel-hero-slide-bg" style="background-image: url('hero-maldives.jpg');"></div>
+          <div class="travel-hero-slide-overlay" style="opacity: 0.25;"></div>
+
+          <div class="travel-hero-content-container">
+            <div class="travel-hero-text-block">
+              <div class="travel-hero-kicker">
+                <span>ESCAPE</span><span class="travel-hero-kicker-dot"></span><span>DISCOVER</span><span class="travel-hero-kicker-dot"></span><span>INDULGE</span>
+              </div>
+              <h1 class="travel-hero-heading">
+                <span class="travel-hero-heading-line1">Tropical Paradise</span>
+                <span class="travel-hero-heading-line2" style="color: #f5a623;">Getaways</span>
+              </h1>
+              <div class="travel-hero-heading-accent-line" style="background-color: #f5a623;"></div>
+              <p class="travel-hero-description">
+                Unwind on pristine beaches, explore exotic islands and create unforgettable travel memories.
+              </p>
+              <div class="travel-hero-btns-wrap">
+                <a href="#" class="travel-hero-slide-btn">
+                  <span>Explore Destinations</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wave decoration -->
+      <div class="travel-hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 700 160" preserveAspectRatio="none" fill="none">
+          <defs>
+            <linearGradient id="thsBlueGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#072042" /><stop offset="100%" stop-color="#1467bd" />
+            </linearGradient>
+            <linearGradient id="thsGoldGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#d98914" /><stop offset="100%" stop-color="#ffd058" />
+            </linearGradient>
+          </defs>
+          <path d="M-20 180 L-20 40 C 120 70, 240 130, 480 148 C 580 155, 660 158, 720 160 L 720 180 Z" fill="url(#thsBlueGrad)"/>
+          <path d="M-20 40 C 130 68, 260 126, 510 144 C 600 150, 670 154, 720 156 L 720 160 C 660 158, 580 154, 480 147 C 240 128, 110 66, -20 36 Z" fill="url(#thsGoldGrad)"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Booking Search Bar -->
+    <div class="travel-search-bar-wrapper">
+      <div class="travel-search-bar-container">
+        <div class="travel-search-form">
+          <!-- Destination -->
+          <div class="travel-search-field">
+            <div class="travel-search-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="travel-search-text-group">
+              <span class="travel-search-label">Destination</span>
+              <span class="travel-search-value">Where to?</span>
+            </div>
+          </div>
+          <div class="travel-search-divider"></div>
+
+          <!-- Travel Dates -->
+          <div class="travel-search-field">
+            <div class="travel-search-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="travel-search-text-group">
+              <span class="travel-search-label">Travel Dates</span>
+              <span class="travel-search-value">Select dates</span>
+            </div>
+          </div>
+          <div class="travel-search-divider"></div>
+
+          <!-- Travelers -->
+          <div class="travel-search-field">
+            <div class="travel-search-icon">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="travel-search-text-group">
+              <span class="travel-search-label">Travelers</span>
+              <span class="travel-search-value">2 Adults</span>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="button" class="travel-search-submit-btn">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span>Search Tours</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Trust / USP Bar -->
+    <div class="travel-features-bar">
+      <div class="travel-features-container">
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3.5c-.5-.5-2.5 0-4 1.5L13.5 8.5 5.3 6.7c-.9-.2-1.8.1-2.4.7l-.4.4c-.6.6-.6 1.6 0 2.2l5.7 4.1L6 16.5l-2.4-.6c-.5-.1-1.1.1-1.5.5l-.3.3c-.4.4-.4 1.1 0 1.5l2.8 2.8c.4.4 1.1.4 1.5 0l.3-.3c.4-.4.6-1 .5-1.5L6.3 16.8l2.4-2.2 4.1 5.7c.6.6 1.6.6 2.2 0l.4-.4c.6-.6.9-1.5.7-2.4l-.3-.3z"/></svg></div>
+          <div class="travel-feature-content"><span class="travel-feature-title">Best Price Guarantee</span><span class="travel-feature-sub">Get the best deal on your money.</span></div>
+        </div>
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <div class="travel-feature-content"><span class="travel-feature-title">Safe & Secure</span><span class="travel-feature-sub">Your safety is our priority.</span></div>
+        </div>
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/><text x="12" y="14" font-size="7" font-weight="bold" fill="currentColor" text-anchor="middle">24/7</text></svg></div>
+          <div class="travel-feature-content"><span class="travel-feature-title">24/7 Support</span><span class="travel-feature-sub">We're here for you, always.</span></div>
+        </div>
+        <div class="travel-feature-item">
+          <div class="travel-feature-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="travel-feature-content"><span class="travel-feature-title">Trusted by Travelers</span><span class="travel-feature-sub">Thousands of happy customers.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5: Season Finest: Festive Collection -->
+  <div class="festive-collection-section" style="padding-top: 40px; padding-bottom: 20px;">
+    <div class="fc-container">
+      <div class="fc-header">
+        <h2 class="section-title">Season Finest: Festive Collection</h2>
+        <p class="section-subtitle">Every fête has its colour, and every colour has its wonder – from island vibes to majestic peaks.</p>
+        <div class="fc-divider"></div>
+      </div>
+
+      <div class="fc-grid" style="--desktop-cols: 3; --mobile-cols: 3;">
+        <!-- 1. Thailand -->
+        <a href="#" class="fc-card">
+          <div class="fc-image-wrapper"><img class="fc-image" src="tour-thailand.jpg" alt="Thailand" width="800" height="1000"></div>
+          <div class="fc-glass-bar"><div class="fc-bar-tag">POPULAR</div><h3 class="fc-bar-title">Thailand</h3><div class="fc-bar-subtitle">Temples & Tropical Bays</div></div>
+        </a>
+        <!-- 2. Bali -->
+        <a href="#" class="fc-card">
+          <div class="fc-image-wrapper"><img class="fc-image" src="tour-bali.jpg" alt="Bali" width="800" height="1000"></div>
+          <div class="fc-glass-bar"><div class="fc-bar-tag">TRENDING</div><h3 class="fc-bar-title">Bali</h3><div class="fc-bar-subtitle">Island of the Gods</div></div>
+        </a>
+        <!-- 3. Switzerland -->
+        <a href="#" class="fc-card">
+          <div class="fc-image-wrapper"><img class="fc-image" src="tour-swiss-alps.jpg" alt="Switzerland" width="800" height="1000"></div>
+          <div class="fc-glass-bar"><div class="fc-bar-tag">TOP RATED</div><h3 class="fc-bar-title">Switzerland</h3><div class="fc-bar-subtitle">Alpine Peaks & Chalets</div></div>
+        </a>
+        <!-- 4. Maldives -->
+        <a href="#" class="fc-card">
+          <div class="fc-image-wrapper"><img class="fc-image" src="hero-maldives.jpg" alt="Maldives" width="800" height="1000"></div>
+          <div class="fc-glass-bar"><div class="fc-bar-tag">LUXURY</div><h3 class="fc-bar-title">Maldives</h3><div class="fc-bar-subtitle">Overwater Villa Paradise</div></div>
+        </a>
+        <!-- 5. Vietnam -->
+        <a href="#" class="fc-card">
+          <div class="fc-image-wrapper"><img class="fc-image" src="tour-vietnam.jpg" alt="Vietnam" width="800" height="1000"></div>
+          <div class="fc-glass-bar"><div class="fc-bar-tag">EXOTIC</div><h3 class="fc-bar-title">Vietnam</h3><div class="fc-bar-subtitle">Karst Bays & Historic Towns</div></div>
+        </a>
+        <!-- 6. Dubai -->
+        <a href="#" class="fc-card">
+          <div class="fc-image-wrapper"><img class="fc-image" src="tour-dubai.jpg" alt="Dubai" width="800" height="1000"></div>
+          <div class="fc-glass-bar"><div class="fc-bar-tag">MODERN</div><h3 class="fc-bar-title">Dubai</h3><div class="fc-bar-subtitle">Desert Safari & Skyline</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 6: Popular Tours -->
+  <div class="popular-tours-section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="popular-tours-container">
+      <div class="popular-tours-header">
+        <h2 class="popular-tours-title">Popular Tours</h2>
+        <a href="#" class="popular-tours-view-all"><span>View All Tours</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="popular-tours-grid">
+        <!-- Bali Escape -->
+        <div class="popular-tour-card">
+          <div class="popular-tour-media-wrap"><img src="tour-bali.jpg" alt="Bali Escape" class="popular-tour-image" width="600" height="400"></div>
+          <div class="popular-tour-content">
+            <h3 class="popular-tour-title"><a href="#">Bali Escape</a></h3>
+            <div class="popular-tour-meta"><span class="popular-tour-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Indonesia</span><span class="popular-tour-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7 Days / 6 Nights</span></div>
+            <div class="popular-tour-footer"><div class="popular-tour-price-wrap"><span class="popular-tour-price">$799</span></div><a href="#" class="popular-tour-book-btn">Book Now</a></div>
+          </div>
+        </div>
+
+        <!-- Swiss Alps Adventure -->
+        <div class="popular-tour-card">
+          <div class="popular-tour-media-wrap"><img src="tour-swiss-alps.jpg" alt="Swiss Alps Adventure" class="popular-tour-image" width="600" height="400"></div>
+          <div class="popular-tour-content">
+            <h3 class="popular-tour-title"><a href="#">Swiss Alps Adventure</a></h3>
+            <div class="popular-tour-meta"><span class="popular-tour-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Switzerland</span><span class="popular-tour-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>9 Days / 8 Nights</span></div>
+            <div class="popular-tour-footer"><div class="popular-tour-price-wrap"><span class="popular-tour-price">$1,299</span></div><a href="#" class="popular-tour-book-btn">Book Now</a></div>
+          </div>
+        </div>
+
+        <!-- Dubai Getaway -->
+        <div class="popular-tour-card">
+          <div class="popular-tour-media-wrap"><img src="tour-dubai.jpg" alt="Dubai Getaway" class="popular-tour-image" width="600" height="400"></div>
+          <div class="popular-tour-content">
+            <h3 class="popular-tour-title"><a href="#">Dubai Getaway</a></h3>
+            <div class="popular-tour-meta"><span class="popular-tour-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>UAE</span><span class="popular-tour-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>5 Days / 4 Nights</span></div>
+            <div class="popular-tour-footer"><div class="popular-tour-price-wrap"><span class="popular-tour-price">$899</span></div><a href="#" class="popular-tour-book-btn">Book Now</a></div>
+          </div>
+        </div>
+
+        <!-- Thailand Discovery -->
+        <div class="popular-tour-card">
+          <div class="popular-tour-media-wrap"><img src="tour-thailand.jpg" alt="Thailand Discovery" class="popular-tour-image" width="600" height="400"></div>
+          <div class="popular-tour-content">
+            <h3 class="popular-tour-title"><a href="#">Thailand Discovery</a></h3>
+            <div class="popular-tour-meta"><span class="popular-tour-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Thailand</span><span class="popular-tour-duration"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>6 Days / 5 Nights</span></div>
+            <div class="popular-tour-footer"><div class="popular-tour-price-wrap"><span class="popular-tour-price">$749</span></div><a href="#" class="popular-tour-book-btn">Book Now</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 8 & 9: Promotional Banner & Reviews -->
+  <div class="travel-promo-reviews-section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="travel-promo-reviews-container">
+      <!-- Section 8: Banner -->
+      <div class="travel-promo-banner-wrap">
+        <div class="travel-promo-banner" style="background-image: url('promo-banner-bg.jpg');">
+          <div class="travel-promo-banner-overlay"></div>
+          <div class="travel-promo-banner-content">
+            <span class="travel-promo-badge">SPECIAL OFFER</span>
+            <h2 class="travel-promo-heading">Up to 20% Off on Selected Tours</h2>
+            <p class="travel-promo-subheading">Explore more, spend less. Make it happen.</p>
+          </div>
+          <div class="travel-promo-banner-cta">
+            <a href="#" class="travel-promo-btn">View Offers</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 9: What Our Travelers Say -->
+      <div class="travel-reviews-block">
+        <h2 class="travel-reviews-heading">What Our Travelers Say</h2>
+        <div class="travel-reviews-grid">
+          <!-- Review 1 -->
+          <div class="travel-review-card">
+            <div class="travel-review-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+            <p class="travel-review-text">An incredible journey from start to finish! Everything was seamless, perfectly planned and unforgettable.</p>
+            <div class="travel-review-author">
+              <div class="travel-review-avatar-wrap"><img src="avatar-priya.jpg" alt="Priya Sharma" class="travel-review-avatar" width="48" height="48"></div>
+              <div class="travel-review-author-info"><h4 class="travel-review-name">Priya Sharma</h4><span class="travel-review-location">Mumbai, India</span><div class="travel-review-stars">★★★★★</div></div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="travel-review-card">
+            <div class="travel-review-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+            <p class="travel-review-text">Tour and Travel Wings took care of every single detail. Best vacation we have ever taken!</p>
+            <div class="travel-review-author">
+              <div class="travel-review-avatar-wrap"><img src="avatar-rahul.jpg" alt="Rahul Mehta" class="travel-review-avatar" width="48" height="48"></div>
+              <div class="travel-review-author-info"><h4 class="travel-review-name">Rahul Mehta</h4><span class="travel-review-location">Delhi, India</span><div class="travel-review-stars">★★★★★</div></div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="travel-review-card">
+            <div class="travel-review-quote-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+            <p class="travel-review-text">Exceptional service, friendly guides and 24/7 support throughout. Will book with them again!</p>
+            <div class="travel-review-author">
+              <div class="travel-review-avatar-wrap"><img src="avatar-sneha.jpg" alt="Sneha Patel" class="travel-review-avatar" width="48" height="48"></div>
+              <div class="travel-review-author-info"><h4 class="travel-review-name">Sneha Patel</h4><span class="travel-review-location">Bangalore, India</span><div class="travel-review-stars">★★★★★</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 10: Moments Beyond Destinations -->
+  <div class="gallery-showcase-section" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="gallery-showcase-container is-page-width">
+      <div class="gallery-showcase-header">
+        <div class="gallery-showcase-subheading">EXPLORE THE WORLD IN PICTURES</div>
+        <h2 class="gallery-showcase-heading">Moments Beyond Destinations</h2>
+        <p class="gallery-showcase-desc">A visual showcase of unforgettable travel highlights and breathtaking locations from around the globe.</p>
+      </div>
+
+      <div class="gallery-showcase-grid-wrapper">
+        <div class="gallery-showcase-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <!-- Item 1 -->
+          <div class="gallery-showcase-card" style="border-radius: 16px; overflow: hidden; position: relative;">
+            <img src="hero-santorini.jpg" alt="Santorini Caldera" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(10,46,92,0.9), transparent); color: #fff;">
+              <span style="font-size: 11px; letter-spacing: 1px; color: #f5a623; font-weight: 700;">GREECE</span>
+              <h3 style="margin: 4px 0; font-size: 18px;">Santorini Caldera</h3>
+              <p style="margin: 0; font-size: 13px; opacity: 0.9;">Iconic cobalt blue domes overlooking the deep Aegean sea.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="gallery-showcase-card" style="border-radius: 16px; overflow: hidden; position: relative;">
+            <img src="tour-bali.jpg" alt="Bali Island Haven" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(10,46,92,0.9), transparent); color: #fff;">
+              <span style="font-size: 11px; letter-spacing: 1px; color: #f5a623; font-weight: 700;">INDONESIA</span>
+              <h3 style="margin: 4px 0; font-size: 18px;">Bali Island Haven</h3>
+              <p style="margin: 0; font-size: 13px; opacity: 0.9;">Lush tropical terraces, volcanic peaks, and serene beach temples.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="gallery-showcase-card" style="border-radius: 16px; overflow: hidden; position: relative;">
+            <img src="tour-swiss-alps.jpg" alt="Swiss Alpine Peaks" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(10,46,92,0.9), transparent); color: #fff;">
+              <span style="font-size: 11px; letter-spacing: 1px; color: #f5a623; font-weight: 700;">SWITZERLAND</span>
+              <h3 style="margin: 4px 0; font-size: 18px;">Swiss Alpine Peaks</h3>
+              <p style="margin: 0; font-size: 13px; opacity: 0.9;">Majestic snow-dusted summits, alpine meadows, and wooden chalets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 11: The Journal -->
+  <div class="journal-accordion-section" style="padding-top: 20px; padding-bottom: 40px;">
+    <div class="journal-accordion-outer">
+      <div class="journal-header">
+        <h2 class="journal-title">The Journal</h2>
+        <p class="journal-subtitle">Inspiring travel stories, destination guides, and insider tips from our global explorers.</p>
+        <div class="journal-divider"></div>
+      </div>
+
+      <div class="journal-accordion-wrapper">
+        <!-- Story 1: Thailand -->
+        <div class="journal-item active">
+          <div class="journal-item-bg"><img src="tour-thailand.jpg" alt="Hidden Temples of Thailand" width="1200" height="800"></div>
+          <div class="journal-item-overlay"></div>
+          <div class="journal-item-content">
+            <div class="journal-item-subtitle">Travel Guide • 4 Min Read</div>
+            <h3 class="journal-item-title">Hidden Temples of Thailand</h3>
+            <p class="journal-item-desc">From the dawn serenity of Bangkok's Wat Arun to ancient forest pagodas, immerse yourself in Siam's sacred art and spiritual traditions.</p>
+            <a href="#" class="journal-item-link">Read the Story <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Story 2: Bali -->
+        <div class="journal-item">
+          <div class="journal-item-bg"><img src="tour-bali.jpg" alt="The Sacred Heart of Bali" width="1200" height="800"></div>
+          <div class="journal-item-overlay"></div>
+          <div class="journal-item-content">
+            <div class="journal-item-subtitle">Island Life • 5 Min Read</div>
+            <h3 class="journal-item-title">The Sacred Heart of Bali</h3>
+            <p class="journal-item-desc">Wander through mist-veiled mountain lakes, ancient water shrines, and emerald rice terraces steeped in Balinese cultural harmony.</p>
+            <a href="#" class="journal-item-link">Read the Story <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Story 3: Dubai -->
+        <div class="journal-item">
+          <div class="journal-item-bg"><img src="tour-dubai.jpg" alt="Dubai: Tradition Meets Tomorrow" width="1200" height="800"></div>
+          <div class="journal-item-overlay"></div>
+          <div class="journal-item-content">
+            <div class="journal-item-subtitle">City Guide • 3 Min Read</div>
+            <h3 class="journal-item-title">Dubai: Tradition Meets Tomorrow</h3>
+            <p class="journal-item-desc">Where historic spice souks and timeless desert dunes meet the pinnacle of modern architecture and Arabian luxury.</p>
+            <a href="#" class="journal-item-link">Read the Story <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Story 4: Swiss Alps -->
+        <div class="journal-item">
+          <div class="journal-item-bg"><img src="tour-swiss-alps.jpg" alt="Chasing Alpine Solitude" width="1200" height="800"></div>
+          <div class="journal-item-overlay"></div>
+          <div class="journal-item-content">
+            <div class="journal-item-subtitle">Adventure • 6 Min Read</div>
+            <h3 class="journal-item-title">Chasing Alpine Solitude</h3>
+            <p class="journal-item-desc">Wake up to crisp mountain air, pristine turquoise glacial waters, and secluded timber chalets under Switzerland's grandest summits.</p>
+            <a href="#" class="journal-item-link">Read the Story <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 12: Footer -->
+  <footer class="travel-footer">
+    <div class="travel-footer__container">
+      <div class="travel-footer__grid">
+        <div class="travel-footer__col travel-footer__col--brand">
+          <a href="#" class="mock-logo"><img src="tour-travel-logo.png" alt="Tour and Travel Wings" width="240" height="44" style="filter: brightness(0) invert(1);"></a>
+          <p class="travel-footer__tagline">Journeys Beyond Destinations. Handcrafted holidays, luxury getaways, and unforgettable adventures around the globe.</p>
+        </div>
+        <div class="travel-footer__col">
+          <h4 class="travel-footer__heading">Quick Links</h4>
+          <ul class="travel-footer__links"><li><a href="#">Home</a></li><li><a href="#">Tours</a></li><li><a href="#">Destinations</a></li><li><a href="preview-travel-about.html">About Us</a></li><li><a href="preview-travel-contact.html">Contact</a></li></ul>
+        </div>
+        <div class="travel-footer__col">
+          <h4 class="travel-footer__heading">Customer Care</h4>
+          <ul class="travel-footer__links"><li><a href="#">FAQ</a></li><li><a href="#">Terms and Conditions</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Privacy Policy</a></li></ul>
+        </div>
+        <div class="travel-footer__col">
+          <h4 class="travel-footer__heading">Follow Us</h4>
+          <div class="travel-footer__social"><a href="#" class="travel-footer__social-link">f</a><a href="#" class="travel-footer__social-link">ig</a><a href="#" class="travel-footer__social-link">in</a><a href="#" class="travel-footer__social-link">x</a></div>
+        </div>
+        <div class="travel-footer__col travel-footer__col--newsletter">
+          <h4 class="travel-footer__heading">Subscribe & Get 10% Off</h4>
+          <form class="travel-footer__newsletter"><input type="email" placeholder="Enter your email" class="travel-footer__input"><button type="submit" class="travel-footer__btn">Subscribe</button></form>
+        </div>
+      </div>
+      <div class="travel-footer__bottom">
+        <p class="travel-footer__copyright">&copy; 2026 Tour and Travel Wings. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

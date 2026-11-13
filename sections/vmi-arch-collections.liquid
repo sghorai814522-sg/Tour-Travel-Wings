@@ -17,13 +17,13 @@
     {%- if section.settings.desktop_bg_image != blank -%}
       --vmi-desktop-bg: url('{{ section.settings.desktop_bg_image | image_url: width: 2200 }}');
     {%- else -%}
-      --vmi-desktop-bg: url('{{ 'vmi-sangrah-bg-desktop.png' | asset_url }}');
+      --vmi-desktop-bg: url('{{ 'hero-alps.jpg' | asset_url }}');
     {%- endif -%}
     --vmi-text-color: {{ section.settings.text_color | default: '#401F28' }};
   "
 >
   {%- comment -%} Mobile Dynamic Background Layer {%- endcomment -%}
-  {%- assign initial_bg_url = 'vmi-sangrah-bg-desktop.png' | asset_url -%}
+  {%- assign initial_bg_url = 'hero-alps.jpg' | asset_url -%}
   {%- if section.settings.desktop_bg_image != blank -%}
     {%- assign initial_bg_url = section.settings.desktop_bg_image | image_url: width: 1400 -%}
   {%- endif -%}
@@ -111,8 +111,18 @@
                       </defs>
                       {%- if card_img != blank -%}
                         <image href="{{ card_img | image_url: width: 800 }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
+                      {%- elsif block.settings.fallback_image != blank -%}
+                        <image href="{{ block.settings.fallback_image | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
                       {%- else -%}
-                        <image href="{{ 'vmi-sangrah-banarasi.png' | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
+                        {%- assign arch_fb = 'tour-thailand.jpg' -%}
+                        {%- case forloop.index -%}
+                          {%- when 1 -%}{%- assign arch_fb = 'tour-thailand.jpg' -%}
+                          {%- when 2 -%}{%- assign arch_fb = 'tour-swiss-alps.jpg' -%}
+                          {%- when 3 -%}{%- assign arch_fb = 'tour-bali.jpg' -%}
+                          {%- when 4 -%}{%- assign arch_fb = 'tour-dubai.jpg' -%}
+                          {%- when 5 -%}{%- assign arch_fb = 'hero-maldives.jpg' -%}
+                        {%- endcase -%}
+                        <image href="{{ arch_fb | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
                       {%- endif -%}
                     </svg>
 

@@ -6,7 +6,7 @@
 <script src="{{ 'journal-accordion.js' | asset_url }}" defer="defer"></script>
 
 <div class="journal-accordion-section" id="JournalAccordion-{{ section.id }}">
-  <div class="page-width">
+  <div class="journal-accordion-outer">
     <div class="journal-header">
       {%- if section.settings.title != blank -%}
         <h2 class="journal-title">{{ section.settings.title }}</h2>
@@ -17,18 +17,30 @@
       <div class="journal-divider"></div>
     </div>
 
-    <div class="journal-accordion-outer">
-      <div class="journal-accordion-wrapper">
-        {%- for block in section.blocks -%}
-          <div class="journal-item" {{ block.shopify_attributes }}>
-            
-            <div class="journal-item-bg">
-              {%- if block.settings.image != blank -%}
-                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
-              {%- else -%}
-                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              {%- endif -%}
-            </div>
+    <div class="journal-accordion-wrapper">
+      {%- for block in section.blocks -%}
+        <div class="journal-item" {{ block.shopify_attributes }}>
+          
+          <div class="journal-item-bg">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+            {%- elsif block.settings.fallback_image != blank -%}
+              <img src="{{ block.settings.fallback_image | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
+            {%- else -%}
+              {%- case forloop.index -%}
+                {%- when 1 -%}
+                  <img src="{{ 'tour-thailand.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
+                {%- when 2 -%}
+                  <img src="{{ 'tour-bali.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
+                {%- when 3 -%}
+                  <img src="{{ 'tour-dubai.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
+                {%- when 4 -%}
+                  <img src="{{ 'tour-swiss-alps.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
+                {%- else -%}
+                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endcase -%}
+            {%- endif -%}
+          </div>
             
             <div class="journal-item-overlay"></div>
             
@@ -58,7 +70,6 @@
       </div>
     </div>
   </div>
-</div>
 
 {% schema %}
 {
@@ -87,6 +98,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "Fallback Asset Image Filename"
         },
         {
           "type": "text",

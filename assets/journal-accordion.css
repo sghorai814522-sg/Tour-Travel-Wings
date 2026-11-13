@@ -40,15 +40,22 @@
 }
 
 .journal-accordion-outer {
-  max-width: var(--vmi-max-w, 1440px);
+  width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 var(--vmi-px-mobile, 20px);
+  padding: 0 32px;
   box-sizing: border-box;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 1023px) {
   .journal-accordion-outer {
-    padding: 0 var(--vmi-px, 60px);
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .journal-accordion-outer {
+    padding: 0 16px;
   }
 }
 

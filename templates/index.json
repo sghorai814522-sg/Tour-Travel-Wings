@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "hero_G7CAX9": {
@@ -998,53 +989,53 @@
     "travel_hero_slider_rzwgcC": {
       "type": "travel-hero-slider",
       "blocks": {
-        "slide_PkPnnH": {
-          "type": "slide",
-          "settings": {
-            "fallback_image": "hero-santorini.jpg",
-            "overlay_opacity": 25,
-            "kicker": "EXPLORE â€¢ DISCOVER â€¢ EXPERIENCE",
-            "heading_line_1": "Journeys Beyond",
-            "heading_line_2": "Destinations",
-            "heading_accent_color": "#f5a623",
-            "description": "Handpicked tours, unforgettable experiences and destinations that stay with you forever.",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "slide_xi4xHD": {
+        "slide_maldives": {
           "type": "slide",
           "settings": {
             "fallback_image": "hero-maldives.jpg",
             "overlay_opacity": 25,
-            "kicker": "ESCAPE â€¢ UNWIND â€¢ INDULGE",
+            "kicker": "ESCAPE • DISCOVER • INDULGE",
             "heading_line_1": "Tropical Paradise",
             "heading_line_2": "Getaways",
             "heading_accent_color": "#f5a623",
-            "description": "Immerse yourself in crystal turquoise waters, private luxury villas, and breathtaking sunset horizons.",
-            "button_label": "",
-            "button_link": ""
+            "description": "Unwind on pristine beaches, explore exotic islands and create unforgettable travel memories.",
+            "button_label": "Explore Destinations",
+            "button_link": "shopify://collections/all"
           }
         },
-        "slide_AYB6HY": {
+        "slide_santorini": {
+          "type": "slide",
+          "settings": {
+            "fallback_image": "hero-santorini.jpg",
+            "overlay_opacity": 25,
+            "kicker": "JOURNEYS • BEYOND • HORIZONS",
+            "heading_line_1": "Journeys Beyond",
+            "heading_line_2": "Destinations",
+            "heading_accent_color": "#f5a623",
+            "description": "Handpicked tours, unforgettable experiences and destinations that stay with you forever.",
+            "button_label": "Explore Destinations",
+            "button_link": "shopify://collections/all"
+          }
+        },
+        "slide_alps": {
           "type": "slide",
           "settings": {
             "fallback_image": "hero-alps.jpg",
             "overlay_opacity": 25,
-            "kicker": "DISCOVER â€¢ ADVENTURE â€¢ BREATHE",
+            "kicker": "DISCOVER • ADVENTURE • BREATHE",
             "heading_line_1": "Majestic Alpine",
             "heading_line_2": "Adventures",
             "heading_accent_color": "#f5a623",
             "description": "Traverse dramatic mountain passes, panoramic vistas, and alpine lakes crafted for daring explorers.",
-            "button_label": "",
-            "button_link": ""
+            "button_label": "Explore Destinations",
+            "button_link": "shopify://collections/all"
           }
         }
       },
       "block_order": [
-        "slide_PkPnnH",
-        "slide_xi4xHD",
-        "slide_AYB6HY"
+        "slide_maldives",
+        "slide_santorini",
+        "slide_alps"
       ],
       "name": "Travel Hero Slider",
       "settings": {
@@ -1062,86 +1053,86 @@
     "festive_collection_GqybH3": {
       "type": "festive-collection",
       "blocks": {
-        "collection_card_AVEbGT": {
+        "card_thailand": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/Ancient_Temples_Amidst_Lush_Landscapes.png",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
+            "fallback_image": "tour-thailand.jpg",
+            "tag_text": "POPULAR",
+            "title": "Thailand",
+            "subtitle": "Temples & Tropical Bays",
+            "button_text": "Explore",
+            "url": "shopify://collections/all"
           }
         },
-        "collection_card_6YqHpD": {
+        "card_bali": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/Tropical_Coastal_Temple_Paradise.png",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
+            "fallback_image": "tour-bali.jpg",
+            "tag_text": "TRENDING",
+            "title": "Bali",
+            "subtitle": "Island of the Gods",
+            "button_text": "Explore",
+            "url": "shopify://collections/all"
           }
         },
-        "collection_card_LnUaRy": {
+        "card_switzerland": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/Turquoise_Alpine_Lake_and_Snowy_Peaks_1.png",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
+            "fallback_image": "tour-swiss-alps.jpg",
+            "tag_text": "TOP RATED",
+            "title": "Switzerland",
+            "subtitle": "Alpine Peaks & Chalets",
+            "button_text": "Explore",
+            "url": "shopify://collections/all"
           }
         },
-        "collection_card_ha7jFd": {
+        "card_maldives": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/Turquoise_Bay_with_Limestone_Islands-2.png",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
+            "fallback_image": "hero-maldives.jpg",
+            "tag_text": "LUXURY",
+            "title": "Maldives",
+            "subtitle": "Overwater Villa Paradise",
+            "button_text": "Explore",
+            "url": "shopify://collections/all"
           }
         },
-        "collection_card_U8enmX": {
+        "card_vietnam": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/Tropical_Karst_Island_Escape.png",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
+            "fallback_image": "tour-vietnam.jpg",
+            "tag_text": "EXOTIC",
+            "title": "Vietnam",
+            "subtitle": "Karst Bays & Historic Towns",
+            "button_text": "Explore",
+            "url": "shopify://collections/all"
           }
         },
-        "collection_card_MnHteJ": {
+        "card_dubai": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "image": "shopify://shop_images/Dubai_Skyline_Reflections_at_Sunset.png",
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now",
-            "url": ""
+            "fallback_image": "tour-dubai.jpg",
+            "tag_text": "MODERN",
+            "title": "Dubai",
+            "subtitle": "Desert Safari & Skyline",
+            "button_text": "Explore",
+            "url": "shopify://collections/all"
           }
         }
       },
       "block_order": [
-        "collection_card_AVEbGT",
-        "collection_card_6YqHpD",
-        "collection_card_LnUaRy",
-        "collection_card_ha7jFd",
-        "collection_card_U8enmX",
-        "collection_card_MnHteJ"
+        "card_thailand",
+        "card_bali",
+        "card_switzerland",
+        "card_maldives",
+        "card_vietnam",
+        "card_dubai"
       ],
       "name": "Festive Collection Grid",
       "settings": {
@@ -1150,7 +1141,7 @@
         "desktop_columns": 3,
         "mobile_columns": 3,
         "heading": "Season Finest: Festive Collection",
-        "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
+        "subtitle": "Every fête has its colour, and every colour has its wonder – from island vibes to majestic peaks."
       }
     },
     "popular_tours": {
@@ -1244,51 +1235,53 @@
     "vmi_arch_collections_njKKwm": {
       "type": "vmi-arch-collections",
       "blocks": {
-        "collection_card_PMHQaf": {
+        "arch_thailand": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "AJRAK"
+            "label": "THAILAND",
+            "fallback_image": "tour-thailand.jpg"
           }
         },
-        "collection_card_FcQHGh": {
+        "arch_switzerland": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "AJRAK"
+            "label": "SWITZERLAND",
+            "fallback_image": "tour-swiss-alps.jpg"
           }
         },
-        "collection_card_J8ygG6": {
+        "arch_bali": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "BANARASI",
-            "image": "shopify://shop_images/Ancient_Temples_Amidst_Lush_Landscapes.png",
-            "mobile_bg_image": "shopify://shop_images/Tropical_Coastal_Temple_Paradise.png"
+            "label": "BALI",
+            "fallback_image": "tour-bali.jpg"
           }
         },
-        "collection_card_Gjka7h": {
+        "arch_dubai": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "KANJIVARAM",
-            "image": "shopify://shop_images/Turquoise_Alpine_Lake_and_Snowy_Peaks_1.png"
+            "label": "DUBAI",
+            "fallback_image": "tour-dubai.jpg"
           }
         },
-        "collection_card_y7eYWC": {
+        "arch_maldives": {
           "type": "collection_card",
           "settings": {
             "collection": "",
-            "label": "CHANDERI"
+            "label": "MALDIVES",
+            "fallback_image": "hero-maldives.jpg"
           }
         }
       },
       "block_order": [
-        "collection_card_PMHQaf",
-        "collection_card_FcQHGh",
-        "collection_card_J8ygG6",
-        "collection_card_Gjka7h",
-        "collection_card_y7eYWC"
+        "arch_thailand",
+        "arch_switzerland",
+        "arch_bali",
+        "arch_dubai",
+        "arch_maldives"
       ],
       "name": "VMI Arch Collections",
       "settings": {
@@ -1303,57 +1296,59 @@
     "travel_promo_reviews_rJBwH9": {
       "type": "travel-promo-reviews",
       "blocks": {
-        "review_H8weGb": {
+        "review_priya": {
           "type": "review",
           "settings": {
             "fallback_avatar": "avatar-priya.jpg",
             "reviewer_name": "Priya Sharma",
-            "reviewer_location": "Kolkata, India",
-            "review_text": "An amazing experience! Everything was perfectly organized. Highly recommend Tour and Travel Wings!",
+            "reviewer_location": "Mumbai, India",
+            "review_text": "An incredible journey from start to finish! Everything was seamless, perfectly planned and unforgettable.",
             "rating": 5
           }
         },
-        "review_RnJbLp": {
+        "review_rahul": {
           "type": "review",
           "settings": {
             "fallback_avatar": "avatar-rahul.jpg",
             "reviewer_name": "Rahul Mehta",
             "reviewer_location": "Delhi, India",
-            "review_text": "The team was very helpful and made our Europe trip truly special. Will book again!",
+            "review_text": "Tour and Travel Wings took care of every single detail. Best vacation we have ever taken!",
             "rating": 5
           }
         },
-        "review_PKcqPR": {
+        "review_sneha": {
           "type": "review",
           "settings": {
             "fallback_avatar": "avatar-sneha.jpg",
-            "reviewer_name": "Sneha Das",
-            "reviewer_location": "Mumbai, India",
-            "review_text": "Smooth booking process, great hotels and incredible destinations. Thank you!",
+            "reviewer_name": "Sneha Patel",
+            "reviewer_location": "Bangalore, India",
+            "review_text": "Exceptional service, friendly guides and 24/7 support throughout. Will book with them again!",
             "rating": 5
           }
         }
       },
       "block_order": [
-        "review_H8weGb",
-        "review_RnJbLp",
-        "review_PKcqPR"
+        "review_priya",
+        "review_rahul",
+        "review_sneha"
       ],
       "name": "Promo Banner & Reviews",
       "settings": {
         "show_banner": true,
-        "banner_fallback_image": "promo-mountain-bg.jpg",
+        "banner_fallback_image": "promo-banner-bg.jpg",
         "banner_badge": "SPECIAL OFFER",
         "banner_heading": "Up to 20% Off on Selected Tours",
-        "banner_subheading": "Explore more. Spend less. Make it happen.",
+        "banner_subheading": "Explore more, spend less. Make it happen.",
         "banner_button_text": "View Offers",
-        "banner_button_link": "",
+        "banner_button_link": "shopify://collections/all",
         "reviews_title": "What Our Travelers Say",
         "reviews_title_alignment": "left",
         "reviews_columns_desktop": 3,
         "enable_slider_mobile": true,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "banner_button_label": "View Offers",
+        "reviews_heading": "What Our Travelers Say"
       }
     },
     "gallery_showcase": {
@@ -1429,7 +1424,7 @@
         "item_6"
       ],
       "settings": {
-        "subheading": "EXPLORE â€¢ DISCOVER â€¢ CAPTURE",
+        "subheading": "EXPLORE THE WORLD IN PICTURES",
         "heading": "Moments Beyond Destinations",
         "description": "A visual showcase of unforgettable travel highlights and breathtaking locations from around the globe.",
         "heading_alignment": "left",
@@ -1454,61 +1449,61 @@
     "journal_accordion_JwwcJL": {
       "type": "journal-accordion",
       "blocks": {
-        "journal_entry_m6DmCd": {
+        "journal_1": {
           "type": "journal_entry",
           "settings": {
-            "image": "shopify://shop_images/Ancient_Temples_Amidst_Lush_Landscapes.png",
-            "subtitle": "Weaver Story - 4 Min Read",
-            "title": "The Making of a Paithani",
-            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "fallback_image": "tour-thailand.jpg",
+            "subtitle": "Travel Guide • 4 Min Read",
+            "title": "Hidden Temples of Thailand",
+            "desc": "From the dawn serenity of Bangkok's Wat Arun to ancient forest pagodas, immerse yourself in Siam's sacred art and spiritual traditions.",
             "link_text": "Read the Story",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
-        "journal_entry_FYrfft": {
+        "journal_2": {
           "type": "journal_entry",
           "settings": {
-            "image": "shopify://shop_images/Tropical_Coastal_Temple_Paradise.png",
-            "subtitle": "Weaver Story - 4 Min Read",
-            "title": "The Making of a Paithani",
-            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "fallback_image": "tour-bali.jpg",
+            "subtitle": "Island Life • 5 Min Read",
+            "title": "The Sacred Heart of Bali",
+            "desc": "Wander through mist-veiled mountain lakes, ancient water shrines, and emerald rice terraces steeped in Balinese cultural harmony.",
             "link_text": "Read the Story",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
-        "journal_entry_EWy7CK": {
+        "journal_3": {
           "type": "journal_entry",
           "settings": {
-            "image": "shopify://shop_images/Dubai_Skyline_at_Golden_Hour.png",
-            "subtitle": "Weaver Story - 4 Min Read",
-            "title": "The Making of a Paithani",
-            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "fallback_image": "tour-dubai.jpg",
+            "subtitle": "City Guide • 3 Min Read",
+            "title": "Dubai: Tradition Meets Tomorrow",
+            "desc": "Where historic spice souks and timeless desert dunes meet the pinnacle of modern architecture and Arabian luxury.",
             "link_text": "Read the Story",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         },
-        "journal_entry_UiEYCf": {
+        "journal_4": {
           "type": "journal_entry",
           "settings": {
-            "image": "shopify://shop_images/Turquoise_Alpine_Lake_and_Snowy_Peaks.png",
-            "subtitle": "Weaver Story - 4 Min Read",
-            "title": "The Making of a Paithani",
-            "desc": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe.",
+            "fallback_image": "tour-swiss-alps.jpg",
+            "subtitle": "Adventure • 6 Min Read",
+            "title": "Chasing Alpine Solitude",
+            "desc": "Wake up to crisp mountain air, pristine turquoise glacial waters, and secluded timber chalets under Switzerland's grandest summits.",
             "link_text": "Read the Story",
-            "link": ""
+            "link": "shopify://collections/all"
           }
         }
       },
       "block_order": [
-        "journal_entry_m6DmCd",
-        "journal_entry_FYrfft",
-        "journal_entry_EWy7CK",
-        "journal_entry_UiEYCf"
+        "journal_1",
+        "journal_2",
+        "journal_3",
+        "journal_4"
       ],
       "name": "Journal Accordion",
       "settings": {
         "title": "The Journal",
-        "subtitle": "Weaver Stories, Drape Guides, And The Craft Behind Every Very Much Indian Saree."
+        "subtitle": "Inspiring travel stories, destination guides, and insider tips from our global explorers."
       }
     }
   },
