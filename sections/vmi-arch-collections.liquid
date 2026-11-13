@@ -45,13 +45,13 @@
 
   <div class="vmi-arch__container">
     
-    {%- comment -%} Section Header: Sangrah Logo Calligraphy + COLLECTIONS Subtitle {%- endcomment -%}
+    {%- comment -%} Section Header: Logo Calligraphy + Subtitle + Description {%- endcomment -%}
     <div class="vmi-arch__header">
       <div class="vmi-arch__logo-brand">
         {%- if section.settings.logo_image != blank -%}
           <img
             src="{{ section.settings.logo_image | image_url: width: 400 }}"
-            alt="{{ section.settings.heading | default: 'Sangrah' }}"
+            alt="{{ section.settings.heading | default: 'Signature' }}"
             class="vmi-arch__logo-img"
             width="220"
             height="60"
@@ -59,7 +59,7 @@
             style="max-width: {{ section.settings.logo_max_width | default: 220 }}px;"
           >
         {%- else -%}
-          {%- assign heading_text = section.settings.heading | default: 'Sangrah' -%}
+          {%- assign heading_text = section.settings.heading | default: 'Signature' -%}
           {%- assign s_first_char = heading_text | slice: 0, 1 -%}
           {%- assign s_rest_chars = heading_text | slice: 1, 100 -%}
           <div class="vmi-arch__logo-text">
@@ -70,8 +70,14 @@
       </div>
 
       <div class="vmi-arch__subtitle">
-        {{ section.settings.subtitle | default: 'COLLECTIONS' | upcase }}
+        {{ section.settings.subtitle | default: 'WORLD TRAVEL COLLECTIONS' | upcase }}
       </div>
+
+      {%- if section.settings.description != blank -%}
+        <p class="vmi-arch__description">
+          {{ section.settings.description }}
+        </p>
+      {%- endif -%}
     </div>
 
     {%- comment -%} Arch Collection Cards Track with Infinite Loop {%- endcomment -%}
@@ -380,6 +386,17 @@
     opacity: 0.92;
     text-transform: uppercase;
     margin-top: 0.15rem;
+  }
+
+  .vmi-arch__description {
+    font-family: var(--font-body--family);
+    font-size: 0.95rem;
+    color: var(--vmi-text-color);
+    opacity: 0.85;
+    margin: 0.5rem auto 0 auto;
+    max-width: 580px;
+    text-align: center;
+    line-height: 1.5;
   }
 
   /* ════════════════════════════════
@@ -882,7 +899,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading / Logo text",
-      "default": "Sangrah"
+      "default": "Signature"
     },
     {
       "type": "image_picker",
@@ -904,7 +921,13 @@
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle under logo",
-      "default": "COLLECTIONS"
+      "default": "WORLD TRAVEL COLLECTIONS"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description under subtitle",
+      "default": "Handcrafted luxury holidays across iconic destinations around the globe."
     },
     {
       "type": "header",
@@ -923,7 +946,7 @@
       "type": "color",
       "id": "text_color",
       "label": "Header Text Color",
-      "default": "#401F28"
+      "default": "#0a2e5c"
     }
   ],
   "blocks": [
