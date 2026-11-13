@@ -45,39 +45,29 @@
 
   <div class="vmi-arch__container">
     
-    {%- comment -%} Section Header: Logo Calligraphy + Subtitle + Description {%- endcomment -%}
+    {%- comment -%} Section Header: Title + Subtitle + Gold Gradient Divider {%- endcomment -%}
     <div class="vmi-arch__header">
-      <div class="vmi-arch__logo-brand">
-        {%- if section.settings.logo_image != blank -%}
-          <img
-            src="{{ section.settings.logo_image | image_url: width: 400 }}"
-            alt="{{ section.settings.heading | default: 'Signature' }}"
-            class="vmi-arch__logo-img"
-            width="220"
-            height="60"
-            loading="lazy"
-            style="max-width: {{ section.settings.logo_max_width | default: 220 }}px;"
-          >
-        {%- else -%}
-          {%- assign heading_text = section.settings.heading | default: 'Signature' -%}
-          {%- assign s_first_char = heading_text | slice: 0, 1 -%}
-          {%- assign s_rest_chars = heading_text | slice: 1, 100 -%}
-          <div class="vmi-arch__logo-text">
-            <span class="vmi-arch__first-letter">{{ s_first_char }}</span>
-            <span class="vmi-arch__rest-letters">{{ s_rest_chars }}</span>
-          </div>
-        {%- endif -%}
-      </div>
-
-      <div class="vmi-arch__subtitle">
-        {{ section.settings.subtitle | default: 'WORLD TRAVEL COLLECTIONS' | upcase }}
-      </div>
-
-      {%- if section.settings.description != blank -%}
-        <p class="vmi-arch__description">
-          {{ section.settings.description }}
-        </p>
+      {%- if section.settings.logo_image != blank -%}
+        <img
+          src="{{ section.settings.logo_image | image_url: width: 400 }}"
+          alt="{{ section.settings.heading | default: 'Signature Collections' }}"
+          class="vmi-arch__logo-img"
+          width="220"
+          height="60"
+          loading="lazy"
+          style="max-width: {{ section.settings.logo_max_width | default: 220 }}px;"
+        >
+      {%- elsif section.settings.heading != blank -%}
+        <h2 class="vmi-arch__title">{{ section.settings.heading }}</h2>
       {%- endif -%}
+
+      {%- if section.settings.subtitle != blank -%}
+        <p class="vmi-arch__subtitle">{{ section.settings.subtitle }}</p>
+      {%- elsif section.settings.description != blank -%}
+        <p class="vmi-arch__subtitle">{{ section.settings.description }}</p>
+      {%- endif -%}
+
+      <div class="vmi-arch__divider"></div>
     </div>
 
     {%- comment -%} Arch Collection Cards Track with Infinite Loop {%- endcomment -%}
@@ -283,12 +273,12 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    min-height: 660px;
+    min-height: auto;
     background-image: var(--vmi-desktop-bg) !important;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 4.5rem 0;
+    padding: 40px 0 20px 0;
     box-sizing: border-box;
   }
 
@@ -317,6 +307,7 @@
     .vmi-arch-collections {
       background-image: none !important;
       background-color: #E8E1D5 !important;
+      padding: 30px 0 15px 0;
     }
 
     .vmi-arch__mobile-bg-layer {
@@ -339,64 +330,74 @@
   }
 
   /* ════════════════════════════════
-     HEADER LOGO & SUBTITLE
+     STANDARDIZED HEADER & TYPOGRAPHY
   ════════════════════════════════ */
   .vmi-arch__header {
     text-align: center;
-    margin-bottom: 2.2rem;
+    max-width: 900px;
+    margin: 0 auto 24px auto;
+    padding: 0 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
   }
 
-  .vmi-arch__logo-brand {
-    display: flex;
-    align-items: baseline;
-    line-height: 1;
-  }
-
-  .vmi-arch__first-letter {
-    font-family: var(--font-accent--family);
-    font-size: 4.8rem;
-    line-height: 0.8;
-    color: var(--vmi-text-color);
-    margin-right: -0.06em;
-  }
-
-  .vmi-arch__rest-letters {
-    font-family: var(--font-heading--family);
-    font-size: 2.8rem;
+  .vmi-arch__title {
+    font-family: var(--font-heading--family, 'Playfair Display', Georgia, serif);
+    font-size: 46px;
     font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--vmi-text-color);
+    color: var(--vmi-text-color, #0a2e5c);
+    letter-spacing: 0.02em;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .vmi-arch__subtitle {
+    font-family: var(--font-body--family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: 15px;
+    font-weight: 400;
+    color: #5a6578;
+    line-height: 1.6;
+    margin: 0;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-transform: none;
+    opacity: 1;
+  }
+
+  .vmi-arch__divider {
+    display: block;
+    margin: 18px auto 0 auto;
+    width: 160px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(247, 148, 30, 0) 0%, #f7941e 25%, #e07a3c 50%, #f7941e 75%, rgba(247, 148, 30, 0) 100%);
   }
 
   .vmi-arch__logo-img {
     max-width: 220px;
     height: auto;
     display: block;
+    margin-bottom: 12px;
   }
 
-  .vmi-arch__subtitle {
-    font-family: var(--font-body--family);
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.38em;
-    color: var(--vmi-text-color);
-    opacity: 0.92;
-    text-transform: uppercase;
-    margin-top: 0.15rem;
-  }
-
-  .vmi-arch__description {
-    font-family: var(--font-body--family);
-    font-size: 0.95rem;
-    color: var(--vmi-text-color);
-    opacity: 0.85;
-    margin: 0.5rem auto 0 auto;
-    max-width: 580px;
-    text-align: center;
-    line-height: 1.5;
+  @media (max-width: 749px) {
+    .vmi-arch__header {
+      margin-bottom: 18px;
+    }
+    .vmi-arch__title {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .vmi-arch__subtitle {
+      font-size: 13.5px;
+    }
+    .vmi-arch__divider {
+      width: 120px;
+      margin-top: 14px;
+    }
   }
 
   /* ════════════════════════════════
@@ -414,7 +415,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1.8rem;
-    padding: 3rem 0 2rem;
+    padding: 1.2rem 0 1.5rem;
     box-sizing: border-box;
     will-change: transform;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
@@ -898,8 +899,8 @@
     {
       "type": "text",
       "id": "heading",
-      "label": "Heading / Logo text",
-      "default": "Signature"
+      "label": "Heading",
+      "default": "Signature Collections"
     },
     {
       "type": "image_picker",
@@ -920,13 +921,13 @@
     {
       "type": "text",
       "id": "subtitle",
-      "label": "Subtitle under logo",
-      "default": "WORLD TRAVEL COLLECTIONS"
+      "label": "Subtitle",
+      "default": "Explore handpicked luxury holidays across iconic destinations around the globe."
     },
     {
       "type": "textarea",
       "id": "description",
-      "label": "Description under subtitle",
+      "label": "Description",
       "default": "Handcrafted luxury holidays across iconic destinations around the globe."
     },
     {
