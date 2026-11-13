@@ -1,0 +1,355 @@
+/* festive-collection.css */
+.festive-collection-section {
+  position: relative;
+  width: 100%;
+  /* padding: var(--vmi-section-py-mobile, 40px) 0; */
+  background-color: var(--fc-bg-color, #ffffff);
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .festive-collection-section {
+    /* padding: var(--vmi-section-py, 72px) 0; */
+  }
+}
+
+.fc-container {
+  max-width: var(--vmi-max-w, 1440px);
+  margin: 0 auto;
+  padding: 0 var(--vmi-px-mobile, 20px);
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .fc-container {
+    padding: 0 var(--vmi-px, 60px);
+  }
+}
+
+/* Header */
+.fc-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 44px auto;
+  padding: 0 16px;
+}
+
+.fc-title {
+  font-family: var(--font-heading--family);
+  font-size: 46px;
+  font-weight: 500;
+  color: #242946;
+  letter-spacing: 0.02em;
+  margin: 0 0 14px 0;
+  line-height: 1.2;
+}
+
+.fc-subtitle {
+
+  font-size: 15px;
+  color: #72778e;
+  line-height: 1.6;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.fc-divider {
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 160px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(247, 148, 30, 0) 0%, #f7941e 25%, #e07a3c 50%, #f7941e 75%, rgba(247, 148, 30, 0) 100%);
+}
+
+/* Grid Layout */
+.fc-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--mobile-cols, 3), 1fr);
+  gap: 10px;
+}
+
+/* Collection Card */
+.fc-card {
+  position: relative;
+  border-radius: 6px;
+  border: 1.5px solid #F5C73F;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 1 / 1;
+  background-color: #f0ebe4;
+  text-decoration: none;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.fc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(30, 36, 71, 0.18);
+}
+
+.fc-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.fc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  filter: none !important;
+}
+
+.fc-card:hover .fc-image {
+  transform: scale(1.05);
+}
+
+/* Exact Figma Horizontal Gradient Fading Bar -> Changed to Dark Bottom Gradient to match screenshot */
+.fc-glass-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 2;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.fc-card:hover .fc-glass-bar {
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+}
+
+.fc-bar-tag {
+  display: none;
+}
+
+.fc-bar-title {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.25;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.fc-bar-subtitle {
+  display: none;
+}
+
+/* Lower Position Hover Overlay (Card 2 Design) */
+.fc-hover-overlay {
+  position: absolute;
+  bottom: 24px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 3;
+  color: var(--vmi-navy);
+}
+
+.fc-card:hover .fc-hover-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fc-hover-tag {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--vmi-white);
+  letter-spacing: 0px;
+  margin-bottom: 2px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.fc-hover-title {
+  font-family: var(--font-heading--family);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--vmi-white);
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.fc-hover-subtitle {
+  font-size: 16px;
+  color: #f0ebe4;
+  margin-top: 2px;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+/* White Pill "Shop Now ->" Button */
+.fc-shop-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fc-card:hover .fc-shop-button {
+  transform: scale(1.04);
+}
+
+.fc-shop-button-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--vmi-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.fc-shop-button:hover .fc-shop-button-icon {
+  background-color: var(--vmi-navy);
+}
+
+.fc-shop-button:hover .fc-shop-button-icon svg {
+  stroke: #ffffff;
+}
+
+.fc-shop-button-icon svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--vmi-navy);
+  stroke-width: 2;
+  fill: none;
+  transition: stroke 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (min-width: 481px) {
+  .fc-grid {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .festive-collection-section {
+    /* padding: 50px 0 50px 0; */
+  }
+
+  .fc-grid {
+    grid-template-columns: repeat(var(--desktop-cols, 3), 1fr);
+    gap: 20px;
+  }
+
+  .fc-bar-title {
+    font-size: 16px;
+  }
+
+  .fc-hover-title {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .fc-grid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .fc-hover-overlay {
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .fc-hover-title {
+    font-size: 9px !important;
+  }
+
+  .fc-hover-subtitle {
+    font-size: 11px;
+    padding: 5px;
+  }
+
+  .fc-shop-button .fc-shop-button-icon {
+    display: none;
+  }
+
+  .fc-hover-tag {
+    font-size: 11px;
+  }
+
+  .fc-shop-button {
+    font-size: 10px;
+    padding: 2px 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fc-title {
+    font-size: 28px;
+  }
+
+  .fc-hover-title {
+    font-size: 20px;
+  }
+
+  .fc-container {
+    padding: 0 10px;
+  }
+}
+
+/* Styles when Hover Text and Button is disabled (Clean Layout) */
+.festive-collection-section[data-show-hover="false"] .fc-card {
+  border: none;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+}
+
+.festive-collection-section[data-show-hover="false"] .fc-bar-title {
+  font-family: var(--font-heading--family);
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.festive-collection-section[data-show-hover="false"] .fc-card:hover .fc-glass-bar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+  .festive-collection-section[data-show-hover="false"] .fc-bar-title {
+    font-size: 18px;
+  }
+}
