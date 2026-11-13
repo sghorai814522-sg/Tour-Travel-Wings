@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_G7CAX9": {
@@ -1050,6 +1059,67 @@
         "show_features": true
       }
     },
+    "vmi_arch_collections_njKKwm": {
+      "type": "vmi-arch-collections",
+      "blocks": {
+        "arch_thailand": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "THAILAND",
+            "url": "shopify://collections/all"
+          }
+        },
+        "arch_switzerland": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "SWITZERLAND",
+            "url": "shopify://collections/all"
+          }
+        },
+        "arch_bali": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "BALI",
+            "url": "shopify://collections/all"
+          }
+        },
+        "arch_dubai": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "DUBAI",
+            "url": "shopify://collections/all"
+          }
+        },
+        "arch_maldives": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "MALDIVES",
+            "url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "arch_thailand",
+        "arch_switzerland",
+        "arch_bali",
+        "arch_dubai",
+        "arch_maldives"
+      ],
+      "name": "VMI Arch Collections",
+      "settings": {
+        "enable_section": true,
+        "heading": "Sangrah",
+        "logo_max_width": 130,
+        "subtitle": "COLLECTIONS",
+        "desktop_bg_image": "shopify://shop_images/Snow-Capped_Peaks_Over_Alpine_Lake.png",
+        "text_color": "#401f28"
+      }
+    },
     "festive_collection_GqybH3": {
       "type": "festive-collection",
       "blocks": {
@@ -1232,72 +1302,6 @@
         "padding_bottom": 20
       }
     },
-    "vmi_arch_collections_njKKwm": {
-      "type": "vmi-arch-collections",
-      "blocks": {
-        "arch_thailand": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "label": "THAILAND",
-            "fallback_image": "tour-thailand.jpg",
-            "url": "shopify://collections/all"
-          }
-        },
-        "arch_switzerland": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "label": "SWITZERLAND",
-            "fallback_image": "tour-swiss-alps.jpg",
-            "url": "shopify://collections/all"
-          }
-        },
-        "arch_bali": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "label": "BALI",
-            "fallback_image": "tour-bali.jpg",
-            "url": "shopify://collections/all"
-          }
-        },
-        "arch_dubai": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "label": "DUBAI",
-            "fallback_image": "tour-dubai.jpg",
-            "url": "shopify://collections/all"
-          }
-        },
-        "arch_maldives": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "label": "MALDIVES",
-            "fallback_image": "hero-maldives.jpg",
-            "url": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "arch_thailand",
-        "arch_switzerland",
-        "arch_bali",
-        "arch_dubai",
-        "arch_maldives"
-      ],
-      "name": "VMI Arch Collections",
-      "settings": {
-        "enable_section": true,
-        "heading": "Sangrah",
-        "logo_max_width": 130,
-        "subtitle": "COLLECTIONS",
-        "desktop_bg_image": "shopify://shop_images/Snow-Capped_Peaks_Over_Alpine_Lake.png",
-        "text_color": "#401f28"
-      }
-    },
     "travel_promo_reviews_rJBwH9": {
       "type": "travel-promo-reviews",
       "blocks": {
@@ -1351,9 +1355,7 @@
         "reviews_columns_desktop": 3,
         "enable_slider_mobile": true,
         "padding_top": 20,
-        "padding_bottom": 20,
-        "banner_button_label": "View Offers",
-        "reviews_heading": "What Our Travelers Say"
+        "padding_bottom": 20
       }
     },
     "gallery_showcase": {
@@ -1521,9 +1523,9 @@
     "collection_list_3ejxRy",
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
+    "vmi_arch_collections_njKKwm",
     "festive_collection_GqybH3",
     "popular_tours",
-    "vmi_arch_collections_njKKwm",
     "travel_promo_reviews_rJBwH9",
     "gallery_showcase",
     "journal_accordion_JwwcJL"
