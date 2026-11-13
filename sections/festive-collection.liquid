@@ -16,14 +16,12 @@
     {%- if section.settings.heading != blank or section.settings.subtitle != blank -%}
       <div class="fc-header">
         {%- if section.settings.heading != blank -%}
-          <h2 class="section-title">{{ section.settings.heading }}</h2>
+          <h2 class="section-title fc-title">{{ section.settings.heading }}</h2>
         {%- endif -%}
         
         {%- if section.settings.subtitle != blank -%}
-          <p class="section-subtitle">{{ section.settings.subtitle }}</p>
+          <p class="section-subtitle fc-subtitle">{{ section.settings.subtitle }}</p>
         {%- endif -%}
-        
-        <div class="fc-divider"></div>
       </div>
     {%- endif -%}
 
