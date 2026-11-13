@@ -16,6 +16,7 @@
       "name": "Travel Footer",
       "settings": {
         "background_color": "#071f3f",
+        "logo": "shopify://shop_images/Winged_Globe_Tour_and_Travel_Logo.png",
         "logo_width": 210,
         "tagline": "Journeys Beyond Destinations",
         "quick_links_heading": "Quick Links",

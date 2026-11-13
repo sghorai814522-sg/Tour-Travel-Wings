@@ -1067,7 +1067,6 @@
           "settings": {
             "collection": "",
             "label": "THAILAND",
-            "fallback_image": "tour-thailand.jpg",
             "url": "shopify://collections/all"
           }
         },
@@ -1076,7 +1075,6 @@
           "settings": {
             "collection": "",
             "label": "SWITZERLAND",
-            "fallback_image": "tour-swiss-alps.jpg",
             "url": "shopify://collections/all"
           }
         },
@@ -1085,7 +1083,6 @@
           "settings": {
             "collection": "",
             "label": "BALI",
-            "fallback_image": "tour-bali.jpg",
             "url": "shopify://collections/all"
           }
         },
@@ -1094,7 +1091,6 @@
           "settings": {
             "collection": "",
             "label": "DUBAI",
-            "fallback_image": "tour-dubai.jpg",
             "url": "shopify://collections/all"
           }
         },
@@ -1103,7 +1099,6 @@
           "settings": {
             "collection": "",
             "label": "MALDIVES",
-            "fallback_image": "hero-maldives.jpg",
             "url": "shopify://collections/all"
           }
         }
