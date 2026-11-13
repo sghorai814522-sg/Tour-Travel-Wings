@@ -1,0 +1,135 @@
+{%- comment -%}
+  Journal Accordion Section
+{%- endcomment -%}
+
+{{ 'journal-accordion.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'journal-accordion.js' | asset_url }}" defer="defer"></script>
+
+<div class="journal-accordion-section" id="JournalAccordion-{{ section.id }}">
+  <div class="page-width">
+    <div class="journal-header">
+      {%- if section.settings.title != blank -%}
+        <h2 class="journal-title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="journal-subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+      <div class="journal-divider"></div>
+    </div>
+
+    <div class="journal-accordion-outer">
+      <div class="journal-accordion-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="journal-item" {{ block.shopify_attributes }}>
+            
+            <div class="journal-item-bg">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy' }}
+              {%- else -%}
+                {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            </div>
+            
+            <div class="journal-item-overlay"></div>
+            
+            <div class="journal-item-content">
+              {%- if block.settings.subtitle != blank -%}
+                <div class="journal-item-subtitle">{{ block.settings.subtitle }}</div>
+              {%- endif -%}
+              
+              {%- if block.settings.title != blank -%}
+                <h3 class="journal-item-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              
+              {%- if block.settings.desc != blank -%}
+                <p class="journal-item-desc">{{ block.settings.desc }}</p>
+              {%- endif -%}
+              
+              {%- if block.settings.link_text != blank -%}
+                <a href="{{ block.settings.link | default: '#' }}" class="journal-item-link">
+                  {{ block.settings.link_text }}
+                  <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                </a>
+              {%- endif -%}
+            </div>
+
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Journal Accordion",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "The Journal"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Weaver Stories, Drape Guides, And The Craft Behind Every Very Much Indian Saree."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "journal_entry",
+      "name": "Journal Entry",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Weaver Story - 4 Min Read"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "The Making of a Paithani"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Description",
+          "default": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe."
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Read the Story"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Journal Accordion",
+      "blocks": [
+        { "type": "journal_entry" },
+        { "type": "journal_entry" },
+        { "type": "journal_entry" },
+        { "type": "journal_entry" }
+      ]
+    }
+  ]
+}
+{% endschema %}
