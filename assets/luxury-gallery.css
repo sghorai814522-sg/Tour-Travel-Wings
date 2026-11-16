@@ -55,7 +55,7 @@
 .lg-hero-pattern {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px),
     radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 32px 32px, 16px 16px;
@@ -451,24 +451,20 @@
 .lg-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(5, 17, 32, 0.15) 0%,
-    rgba(5, 17, 32, 0) 35%,
-    rgba(5, 17, 32, 0.6) 65%,
-    rgba(5, 17, 32, 0.94) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(5, 17, 32, 0.15) 0%,
+      rgba(5, 17, 32, 0) 35%,
+      rgba(5, 17, 32, 0.6) 65%,
+      rgba(5, 17, 32, 0.94) 100%);
   transition: opacity 0.4s ease;
 }
 
 .lg-card:hover .lg-card-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(5, 17, 32, 0.25) 0%,
-    rgba(5, 17, 32, 0) 25%,
-    rgba(5, 17, 32, 0.7) 55%,
-    rgba(5, 17, 32, 0.98) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(5, 17, 32, 0.25) 0%,
+      rgba(5, 17, 32, 0) 25%,
+      rgba(5, 17, 32, 0.7) 55%,
+      rgba(5, 17, 32, 0.98) 100%);
 }
 
 /* Top Floating Tag */
