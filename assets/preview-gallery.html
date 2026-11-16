@@ -1,0 +1,2892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Grand Travel Gallery (50 Luxury Escapes) - Tour and Travel Wings</title>
+  <link rel="stylesheet" href="luxury-gallery.css">
+  <link rel="stylesheet" href="travel-chatbot.css">
+  <style>
+    /* Base Mock Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      color: #1e293b;
+    }
+
+    /* Mock Announcement Bar */
+    .mock-announcement {
+      background: #734c38;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Mock Header */
+    .mock-header {
+      width: 100%;
+      height: 72px;
+      background: #ffffff;
+      border-bottom: 1px solid #edf2f7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .mock-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .mock-logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .mock-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mock-nav a {
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #334155;
+      transition: color 0.2s;
+    }
+
+    .mock-nav a:hover,
+    .mock-nav a.active {
+      color: #0a2540;
+      font-weight: 600;
+    }
+
+    .mock-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: #334155;
+    }
+
+    .mock-actions svg {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    /* Mock Footer */
+    .mock-footer {
+      background: #07172b;
+      color: #94a3b8;
+      padding: 60px 40px 30px;
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mock-footer-logo {
+      margin-bottom: 20px;
+    }
+
+    .mock-footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    .mock-footer-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .mock-footer-links a:hover {
+      color: #d4af37;
+    }
+
+    .mock-footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 24px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    @media (max-width: 768px) {
+      .mock-header {
+        padding: 0 20px;
+      }
+      .mock-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mock Announcement Bar -->
+  <div class="mock-announcement">
+    EXPLORE • DISCOVER • EXPERIENCE THE WORLD WITH TOUR & TRAVEL WINGS
+  </div>
+
+  <!-- Mock Navigation Header -->
+  <header class="mock-header">
+    <a href="preview-homepage.html" class="mock-logo">
+      <img src="tour-travel-logo.png" alt="Tour and Travel Wings" width="260" height="48">
+    </a>
+
+    <ul class="mock-nav">
+      <li><a href="preview-homepage.html">Home</a></li>
+      <li><a href="preview-travel-about.html">About Us</a></li>
+      <li><a href="preview-gallery.html" class="active">Gallery (50 Escapes)</a></li>
+      <li><a href="preview-travel-contact.html">Contact</a></li>
+    </ul>
+
+    <div class="mock-actions">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    </div>
+  </header>
+
+  <!-- LUXURY GALLERY SECTION -->
+  <div
+    class="luxury-gallery-page"
+    data-section-type="luxury-gallery"
+  >
+    <!-- 1. Hero Header Banner -->
+    <section class="lg-hero">
+      <div class="lg-hero-pattern" aria-hidden="true"></div>
+      <div class="lg-hero-glow" aria-hidden="true"></div>
+
+      <div class="lg-hero-content">
+        <div class="lg-hero-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          EXCLUSIVELY CURATED ANTHOLOGY
+        </div>
+
+        <h1 class="lg-hero-title">
+          The Grand <span>Travel Gallery</span>
+        </h1>
+
+        <p class="lg-hero-subtitle">
+          An exclusive visual anthology of the world's most breathtaking escapes, private sanctuaries, and timeless wonders — curated by Tour & Travel Wings.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="lg-search-bar">
+          <svg class="lg-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input
+            type="text"
+            id="lgSearchInput"
+            class="lg-search-input"
+            placeholder="Search country, destination, or keyword (e.g. Maldives, Swiss, Safari)..."
+            autocomplete="off"
+            aria-label="Search gallery destinations"
+          >
+          <button type="button" id="lgSearchClear" class="lg-search-clear" aria-label="Clear search">&times;</button>
+        </div>
+
+        <!-- Hero Stats Bar -->
+        <div class="lg-hero-stats">
+          <div class="lg-hero-stat-item">
+            <span class="lg-hero-stat-num">50</span>
+            <span class="lg-hero-stat-lbl">Curated Wonders</span>
+          </div>
+          <div class="lg-hero-stat-item">
+            <span class="lg-hero-stat-num">6</span>
+            <span class="lg-hero-stat-lbl">Continents</span>
+          </div>
+          <div class="lg-hero-stat-item">
+            <span class="lg-hero-stat-num">100%</span>
+            <span class="lg-hero-stat-lbl">Ultra-Luxury Standard</span>
+          </div>
+          <div class="lg-hero-stat-item">
+            <span class="lg-hero-stat-num">24/7</span>
+            <span class="lg-hero-stat-lbl">VIP Concierge</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Sticky Filter & Toolbar -->
+    <div class="lg-toolbar-sticky">
+      <div class="lg-container">
+        <div class="lg-toolbar">
+          <!-- Category Filter Tabs -->
+          <div class="lg-filters" role="tablist" aria-label="Gallery Categories">
+            <button type="button" class="lg-filter-btn active" data-filter="all">
+              <span>All Escapes</span>
+              <span class="lg-filter-count">50</span>
+            </button>
+            <button type="button" class="lg-filter-btn" data-filter="tropical">
+              <span>Tropical & Islands</span>
+              <span class="lg-filter-count">10</span>
+            </button>
+            <button type="button" class="lg-filter-btn" data-filter="alpine">
+              <span>Alpine & Peaks</span>
+              <span class="lg-filter-count">10</span>
+            </button>
+            <button type="button" class="lg-filter-btn" data-filter="heritage">
+              <span>Palaces & Heritage</span>
+              <span class="lg-filter-count">10</span>
+            </button>
+            <button type="button" class="lg-filter-btn" data-filter="modern">
+              <span>Modern Skylines</span>
+              <span class="lg-filter-count">10</span>
+            </button>
+            <button type="button" class="lg-filter-btn" data-filter="desert">
+              <span>Desert & Safari</span>
+              <span class="lg-filter-count">10</span>
+            </button>
+          </div>
+
+          <!-- Controls: View Status & Layout Toggles -->
+          <div class="lg-controls">
+            <div class="lg-view-status" id="lgViewStatus">
+              Showing <strong>16</strong> of <strong>50</strong> escapes
+            </div>
+
+            <div class="lg-layout-toggles">
+              <button type="button" class="lg-layout-btn active" data-cols="4" title="4 Columns Grid" aria-label="4 Columns Grid">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h4v18H3zm7 0h4v18h-4zm7 0h4v18h-4z"/></svg>
+              </button>
+              <button type="button" class="lg-layout-btn" data-cols="3" title="3 Columns Grid" aria-label="3 Columns Grid">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v16H4zm6 0h4v16h-4zm6 0h4v16h-4z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Gallery Grid Section -->
+    <main class="lg-main">
+      <div class="lg-container">
+        <div class="lg-grid" id="lgGrid">
+
+        <article
+          class="lg-card wide"
+          data-index="0"
+          data-category="tropical"
+          data-title="Overwater Villa Serenity"
+          data-location="South Ari Atoll, Maldives"
+          data-desc="Suspended above turquoise crystalline waters with private infinity sundecks and glass-floor ocean observation."
+          data-full-img="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Overwater Villa Serenity"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=85"
+              alt="Overwater Villa Serenity"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">PRIVATE ATOLL</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>South Ari Atoll, Maldives</span>
+            </div>
+
+            <h2 class="lg-card-title">Overwater Villa Serenity</h2>
+            <p class="lg-card-desc">Suspended above turquoise crystalline waters with private infinity sundecks and glass-floor ocean observation.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="1"
+          data-category="tropical"
+          data-title="Bora Bora Coral Lagoon"
+          data-location="French Polynesia"
+          data-desc="Towering volcanic spires reflected in jade lagoons surrounded by protective barrier reefs."
+          data-full-img="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Bora Bora Coral Lagoon"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85"
+              alt="Bora Bora Coral Lagoon"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ISLAND SANCTUARY</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>French Polynesia</span>
+            </div>
+
+            <h2 class="lg-card-title">Bora Bora Coral Lagoon</h2>
+            <p class="lg-card-desc">Towering volcanic spires reflected in jade lagoons surrounded by protective barrier reefs.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="2"
+          data-category="tropical"
+          data-title="Uluwatu Cliffside Haven"
+          data-location="Bali, Indonesia"
+          data-desc="Panoramic ocean vistas, secluded sacred water temples, and terraced tropical rainforest sanctuaries."
+          data-full-img="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Uluwatu Cliffside Haven"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85"
+              alt="Uluwatu Cliffside Haven"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">TROPICAL BLISS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Bali, Indonesia</span>
+            </div>
+
+            <h2 class="lg-card-title">Uluwatu Cliffside Haven</h2>
+            <p class="lg-card-desc">Panoramic ocean vistas, secluded sacred water temples, and terraced tropical rainforest sanctuaries.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="3"
+          data-category="tropical"
+          data-title="Anse Source D'Argent"
+          data-location="La Digue, Seychelles"
+          data-desc="Sculpted pink granite boulders rising from shallow turquoise lagoons and powdery white coral sand."
+          data-full-img="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Anse Source D'Argent"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=85"
+              alt="Anse Source D'Argent"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">PRISTINE SHORES</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>La Digue, Seychelles</span>
+            </div>
+
+            <h2 class="lg-card-title">Anse Source D'Argent</h2>
+            <p class="lg-card-desc">Sculpted pink granite boulders rising from shallow turquoise lagoons and powdery white coral sand.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="4"
+          data-category="tropical"
+          data-title="Positano Coastal Glamour"
+          data-location="Amalfi Coast, Italy"
+          data-desc="Pastel cliffside villas cascading into the azure Tyrrhenian Sea lined with luxury wooden speedboats."
+          data-full-img="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Positano Coastal Glamour"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85"
+              alt="Positano Coastal Glamour"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">MEDITERRANEAN LUXE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Amalfi Coast, Italy</span>
+            </div>
+
+            <h2 class="lg-card-title">Positano Coastal Glamour</h2>
+            <p class="lg-card-desc">Pastel cliffside villas cascading into the azure Tyrrhenian Sea lined with luxury wooden speedboats.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="5"
+          data-category="tropical"
+          data-title="Coral Coast Hideaway"
+          data-location="Viti Levu, Fiji"
+          data-desc="Warm Polynesian hospitality, secluded reef diving, and private beachfront bungalows beneath swaying palms."
+          data-full-img="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Coral Coast Hideaway"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85"
+              alt="Coral Coast Hideaway"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">PACIFIC PARADISE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Viti Levu, Fiji</span>
+            </div>
+
+            <h2 class="lg-card-title">Coral Coast Hideaway</h2>
+            <p class="lg-card-desc">Warm Polynesian hospitality, secluded reef diving, and private beachfront bungalows beneath swaying palms.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="6"
+          data-category="tropical"
+          data-title="Makena Sunset Bay"
+          data-location="Maui, Hawaii"
+          data-desc="Golden sunsets melting into the Pacific horizon with breaching humpback whales and volcanic backdrops."
+          data-full-img="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Makena Sunset Bay"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85"
+              alt="Makena Sunset Bay"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">PACIFIC LUXURY</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Maui, Hawaii</span>
+            </div>
+
+            <h2 class="lg-card-title">Makena Sunset Bay</h2>
+            <p class="lg-card-desc">Golden sunsets melting into the Pacific horizon with breaching humpback whales and volcanic backdrops.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="7"
+          data-category="tropical"
+          data-title="Zanzibar Spice Coast"
+          data-location="Tanzania, Indian Ocean"
+          data-desc="Powder-white beaches, traditional wooden dhows, and crystal-clear turquoise shallows at low tide."
+          data-full-img="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Zanzibar Spice Coast"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85"
+              alt="Zanzibar Spice Coast"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">EXOTIC COAST</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Tanzania, Indian Ocean</span>
+            </div>
+
+            <h2 class="lg-card-title">Zanzibar Spice Coast</h2>
+            <p class="lg-card-desc">Powder-white beaches, traditional wooden dhows, and crystal-clear turquoise shallows at low tide.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="8"
+          data-category="tropical"
+          data-title="Koh Samui Royal Bay"
+          data-location="Gulf of Thailand"
+          data-desc="Bespoke hilltop villas overlooking sheltered cobalt bays fringed with lush coconut groves."
+          data-full-img="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Koh Samui Royal Bay"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85"
+              alt="Koh Samui Royal Bay"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">TROPICAL ESCAPE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Gulf of Thailand</span>
+            </div>
+
+            <h2 class="lg-card-title">Koh Samui Royal Bay</h2>
+            <p class="lg-card-desc">Bespoke hilltop villas overlooking sheltered cobalt bays fringed with lush coconut groves.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="9"
+          data-category="tropical"
+          data-title="El Nido Secret Lagoon"
+          data-location="Palawan, Philippines"
+          data-desc="Soaring limestone karsts enclosing iridescent emerald waters accessible only via natural rock portals."
+          data-full-img="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for El Nido Secret Lagoon"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85"
+              alt="El Nido Secret Lagoon"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">HIDDEN COVE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Palawan, Philippines</span>
+            </div>
+
+            <h2 class="lg-card-title">El Nido Secret Lagoon</h2>
+            <p class="lg-card-desc">Soaring limestone karsts enclosing iridescent emerald waters accessible only via natural rock portals.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="10"
+          data-category="alpine"
+          data-title="Matterhorn Alpine Majesty"
+          data-location="Zermatt, Switzerland"
+          data-desc="The pyramidal crown of the Swiss Alps rising sharply above snow-laden pine forests and luxury timber chalets."
+          data-full-img="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Matterhorn Alpine Majesty"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=85"
+              alt="Matterhorn Alpine Majesty"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ICONIC SUMMIT</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Zermatt, Switzerland</span>
+            </div>
+
+            <h2 class="lg-card-title">Matterhorn Alpine Majesty</h2>
+            <p class="lg-card-desc">The pyramidal crown of the Swiss Alps rising sharply above snow-laden pine forests and luxury timber chalets.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="11"
+          data-category="alpine"
+          data-title="Tre Cime Golden Hour"
+          data-location="Dolomites, Italy"
+          data-desc="Dramatic limestone battlements illuminated in alpine alpenglow above serene wild wildflower valleys."
+          data-full-img="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Tre Cime Golden Hour"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=85"
+              alt="Tre Cime Golden Hour"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">UNESCO PEAKS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Dolomites, Italy</span>
+            </div>
+
+            <h2 class="lg-card-title">Tre Cime Golden Hour</h2>
+            <p class="lg-card-desc">Dramatic limestone battlements illuminated in alpine alpenglow above serene wild wildflower valleys.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="12"
+          data-category="alpine"
+          data-title="Lake Louise Mirror Waters"
+          data-location="Banff, Canada"
+          data-desc="Turquoise glacial waters reflecting Victoria Glacier under crisp sub-zero Canadian Rocky skies."
+          data-full-img="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Lake Louise Mirror Waters"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=85"
+              alt="Lake Louise Mirror Waters"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">GLACIAL WONDER</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Banff, Canada</span>
+            </div>
+
+            <h2 class="lg-card-title">Lake Louise Mirror Waters</h2>
+            <p class="lg-card-desc">Turquoise glacial waters reflecting Victoria Glacier under crisp sub-zero Canadian Rocky skies.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="13"
+          data-category="alpine"
+          data-title="Aspen Snowbound Chalet"
+          data-location="Colorado, USA"
+          data-desc="Ski-in ski-out luxury estates warmed by roaring stone fireplaces amidst frosted aspen forests."
+          data-full-img="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Aspen Snowbound Chalet"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=85"
+              alt="Aspen Snowbound Chalet"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">WINTER LUXE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Colorado, USA</span>
+            </div>
+
+            <h2 class="lg-card-title">Aspen Snowbound Chalet</h2>
+            <p class="lg-card-desc">Ski-in ski-out luxury estates warmed by roaring stone fireplaces amidst frosted aspen forests.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="14"
+          data-category="alpine"
+          data-title="Torres del Paine Spires"
+          data-location="Patagonia, Chile"
+          data-desc="Granite spires piercing the Patagonian sky above sapphire glacial lakes and roaming guanacos."
+          data-full-img="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Torres del Paine Spires"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1200&q=85"
+              alt="Torres del Paine Spires"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">WILD FRONTIER</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Patagonia, Chile</span>
+            </div>
+
+            <h2 class="lg-card-title">Torres del Paine Spires</h2>
+            <p class="lg-card-desc">Granite spires piercing the Patagonian sky above sapphire glacial lakes and roaming guanacos.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="15"
+          data-category="alpine"
+          data-title="Mount Fuji Cherry Blossom"
+          data-location="Honshu, Japan"
+          data-desc="A snow-dusted volcanic cone framed by delicate spring sakura blossoms and crimson pagoda eaves."
+          data-full-img="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Mount Fuji Cherry Blossom"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85"
+              alt="Mount Fuji Cherry Blossom"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">SACRED PEAK</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Honshu, Japan</span>
+            </div>
+
+            <h2 class="lg-card-title">Mount Fuji Cherry Blossom</h2>
+            <p class="lg-card-desc">A snow-dusted volcanic cone framed by delicate spring sakura blossoms and crimson pagoda eaves.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="16"
+          data-category="alpine"
+          data-title="Hallstatt Lakeside Solitude"
+          data-location="Salzkammergut, Austria"
+          data-desc="16th-century Alpine architecture reflected in glass-calm waters surrounded by plunging forested cliffs."
+          data-full-img="https://images.unsplash.com/photo-1520769945061-0a448c4471dd?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Hallstatt Lakeside Solitude"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1520769945061-0a448c4471dd?auto=format&fit=crop&w=1200&q=85"
+              alt="Hallstatt Lakeside Solitude"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">FAIRYTALE LAKE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Salzkammergut, Austria</span>
+            </div>
+
+            <h2 class="lg-card-title">Hallstatt Lakeside Solitude</h2>
+            <p class="lg-card-desc">16th-century Alpine architecture reflected in glass-calm waters surrounded by plunging forested cliffs.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="17"
+          data-category="alpine"
+          data-title="Lake Wakatipu Horizons"
+          data-location="Queenstown, New Zealand"
+          data-desc="Glacial lake blues bounded by the jagged Remarkables mountain range in world-class adventure luxury."
+          data-full-img="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Lake Wakatipu Horizons"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=1200&q=85"
+              alt="Lake Wakatipu Horizons"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">SOUTHERN ALPS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Queenstown, New Zealand</span>
+            </div>
+
+            <h2 class="lg-card-title">Lake Wakatipu Horizons</h2>
+            <p class="lg-card-desc">Glacial lake blues bounded by the jagged Remarkables mountain range in world-class adventure luxury.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="18"
+          data-category="alpine"
+          data-title="Arctic Aurora Sanctuary"
+          data-location="Lapland, Finland"
+          data-desc="Glass igloo luxury beneath ribbons of dancing emerald green Aurora Borealis in subarctic silence."
+          data-full-img="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Arctic Aurora Sanctuary"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1200&q=85"
+              alt="Arctic Aurora Sanctuary"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">NORTHERN LIGHTS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Lapland, Finland</span>
+            </div>
+
+            <h2 class="lg-card-title">Arctic Aurora Sanctuary</h2>
+            <p class="lg-card-desc">Glass igloo luxury beneath ribbons of dancing emerald green Aurora Borealis in subarctic silence.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="19"
+          data-category="alpine"
+          data-title="Mont Blanc High Pinnacle"
+          data-location="Chamonix, France"
+          data-desc="Europe's highest mass of eternal snow and ice towering 4,808 meters over alpine valleys."
+          data-full-img="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Mont Blanc High Pinnacle"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85"
+              alt="Mont Blanc High Pinnacle"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ROOF OF EUROPE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Chamonix, France</span>
+            </div>
+
+            <h2 class="lg-card-title">Mont Blanc High Pinnacle</h2>
+            <p class="lg-card-desc">Europe's highest mass of eternal snow and ice towering 4,808 meters over alpine valleys.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="20"
+          data-category="heritage"
+          data-title="Udaipur Lake Palace Splendor"
+          data-location="Rajasthan, India"
+          data-desc="A floating white marble palace situated in the center of Lake Pichola with Mewar court opulence."
+          data-full-img="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Udaipur Lake Palace Splendor"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=85"
+              alt="Udaipur Lake Palace Splendor"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ROYAL HERITAGE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Rajasthan, India</span>
+            </div>
+
+            <h2 class="lg-card-title">Udaipur Lake Palace Splendor</h2>
+            <p class="lg-card-desc">A floating white marble palace situated in the center of Lake Pichola with Mewar court opulence.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="21"
+          data-category="heritage"
+          data-title="Santorini Blue Dome Caldera"
+          data-location="Oia, Greece"
+          data-desc="Cycladic whitewashed cave suites and cobalt blue church domes high above the Aegean sea."
+          data-full-img="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Santorini Blue Dome Caldera"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85"
+              alt="Santorini Blue Dome Caldera"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">AEGEAN ICON</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Oia, Greece</span>
+            </div>
+
+            <h2 class="lg-card-title">Santorini Blue Dome Caldera</h2>
+            <p class="lg-card-desc">Cycladic whitewashed cave suites and cobalt blue church domes high above the Aegean sea.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="22"
+          data-category="heritage"
+          data-title="Al-Khazneh Rose Treasury"
+          data-location="Petra, Jordan"
+          data-desc="An awe-inspiring Nabataean temple hand-carved directly out of sandstone cliff walls inside the Siq."
+          data-full-img="https://images.unsplash.com/photo-1579606032834-d84177d5b881?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Al-Khazneh Rose Treasury"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1579606032834-d84177d5b881?auto=format&fit=crop&w=1200&q=85"
+              alt="Al-Khazneh Rose Treasury"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ANCIENT WONDER</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Petra, Jordan</span>
+            </div>
+
+            <h2 class="lg-card-title">Al-Khazneh Rose Treasury</h2>
+            <p class="lg-card-desc">An awe-inspiring Nabataean temple hand-carved directly out of sandstone cliff walls inside the Siq.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="23"
+          data-category="heritage"
+          data-title="Grand Versailles Gates"
+          data-location="Versailles, France"
+          data-desc="Gilded golden gates, manicured fountains, and Hall of Mirrors embodying royal French grandeur."
+          data-full-img="https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Grand Versailles Gates"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=1200&q=85"
+              alt="Grand Versailles Gates"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">FRENCH IMPERIAL</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Versailles, France</span>
+            </div>
+
+            <h2 class="lg-card-title">Grand Versailles Gates</h2>
+            <p class="lg-card-desc">Gilded golden gates, manicured fountains, and Hall of Mirrors embodying royal French grandeur.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="24"
+          data-category="heritage"
+          data-title="Taj Mahal Sunrise Serenade"
+          data-location="Agra, India"
+          data-desc="Ivory-white marble mausoleum glowing in pink morning light mirrored along cypress reflecting pools."
+          data-full-img="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Taj Mahal Sunrise Serenade"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85"
+              alt="Taj Mahal Sunrise Serenade"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ETERNAL MONUMENT</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Agra, India</span>
+            </div>
+
+            <h2 class="lg-card-title">Taj Mahal Sunrise Serenade</h2>
+            <p class="lg-card-desc">Ivory-white marble mausoleum glowing in pink morning light mirrored along cypress reflecting pools.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="25"
+          data-category="heritage"
+          data-title="Alhambra Moorish Courtyard"
+          data-location="Granada, Spain"
+          data-desc="Intricate stucco arabesques, trickling courtyard fountains, and reflections of the Court of the Myrtles."
+          data-full-img="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Alhambra Moorish Courtyard"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1200&q=85"
+              alt="Alhambra Moorish Courtyard"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ANDALUSIAN JEWEL</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Granada, Spain</span>
+            </div>
+
+            <h2 class="lg-card-title">Alhambra Moorish Courtyard</h2>
+            <p class="lg-card-desc">Intricate stucco arabesques, trickling courtyard fountains, and reflections of the Court of the Myrtles.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="26"
+          data-category="heritage"
+          data-title="The Roman Colosseum"
+          data-location="Rome, Italy"
+          data-desc="Two millennia of imperial history standing proud against golden hour Italian Mediterranean skies."
+          data-full-img="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for The Roman Colosseum"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=85"
+              alt="The Roman Colosseum"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">IMPERIAL ROME</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Rome, Italy</span>
+            </div>
+
+            <h2 class="lg-card-title">The Roman Colosseum</h2>
+            <p class="lg-card-desc">Two millennia of imperial history standing proud against golden hour Italian Mediterranean skies.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="27"
+          data-category="heritage"
+          data-title="Giza Pyramids Sunset"
+          data-location="Cairo, Egypt"
+          data-desc="Monumental limestone tombs of Pharaohs towering above Sahara sands in dramatic desert twilight."
+          data-full-img="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Giza Pyramids Sunset"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=85"
+              alt="Giza Pyramids Sunset"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">SEVEN WONDERS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Cairo, Egypt</span>
+            </div>
+
+            <h2 class="lg-card-title">Giza Pyramids Sunset</h2>
+            <p class="lg-card-desc">Monumental limestone tombs of Pharaohs towering above Sahara sands in dramatic desert twilight.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="28"
+          data-category="heritage"
+          data-title="Angkor Wat Sunrise"
+          data-location="Siem Reap, Cambodia"
+          data-desc="The world's largest religious monument illuminated with lotus towers reflected in sacred moat waters."
+          data-full-img="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Angkor Wat Sunrise"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
+              alt="Angkor Wat Sunrise"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">SACRED TEMPLE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Siem Reap, Cambodia</span>
+            </div>
+
+            <h2 class="lg-card-title">Angkor Wat Sunrise</h2>
+            <p class="lg-card-desc">The world's largest religious monument illuminated with lotus towers reflected in sacred moat waters.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="29"
+          data-category="heritage"
+          data-title="Arashiyama Bamboo Sanctuary"
+          data-location="Kyoto, Japan"
+          data-desc="Towering green bamboo stalks filtering celestial sunlight along historic cobblestone meditation paths."
+          data-full-img="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Arashiyama Bamboo Sanctuary"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85"
+              alt="Arashiyama Bamboo Sanctuary"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ZEN RETREAT</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Kyoto, Japan</span>
+            </div>
+
+            <h2 class="lg-card-title">Arashiyama Bamboo Sanctuary</h2>
+            <p class="lg-card-desc">Towering green bamboo stalks filtering celestial sunlight along historic cobblestone meditation paths.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="30"
+          data-category="modern"
+          data-title="Dubai Marina Yacht Horizon"
+          data-location="Dubai, UAE"
+          data-desc="Superyacht moorings beneath futuristic glass towers and the world's tallest architectural marvels."
+          data-full-img="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Dubai Marina Yacht Horizon"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85"
+              alt="Dubai Marina Yacht Horizon"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ULTRA LUXURY</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Dubai, UAE</span>
+            </div>
+
+            <h2 class="lg-card-title">Dubai Marina Yacht Horizon</h2>
+            <p class="lg-card-desc">Superyacht moorings beneath futuristic glass towers and the world's tallest architectural marvels.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="31"
+          data-category="modern"
+          data-title="Marina Bay Sands Infinity"
+          data-location="Singapore"
+          data-desc="The world's premier cantilever sky-park spanning three towers 200 meters above the bay."
+          data-full-img="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Marina Bay Sands Infinity"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85"
+              alt="Marina Bay Sands Infinity"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">FUTURISTIC CITY</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Singapore</span>
+            </div>
+
+            <h2 class="lg-card-title">Marina Bay Sands Infinity</h2>
+            <p class="lg-card-desc">The world's premier cantilever sky-park spanning three towers 200 meters above the bay.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="32"
+          data-category="modern"
+          data-title="Tokyo Shinjuku Neon Night"
+          data-location="Tokyo, Japan"
+          data-desc="Vibrant neon reflections, Michelin-starred culinary enclaves, and futuristic subterranean avenues."
+          data-full-img="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Tokyo Shinjuku Neon Night"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=85"
+              alt="Tokyo Shinjuku Neon Night"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">METROPOLIS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Tokyo, Japan</span>
+            </div>
+
+            <h2 class="lg-card-title">Tokyo Shinjuku Neon Night</h2>
+            <p class="lg-card-desc">Vibrant neon reflections, Michelin-starred culinary enclaves, and futuristic subterranean avenues.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="33"
+          data-category="modern"
+          data-title="Manhattan Golden Hour"
+          data-location="New York City, USA"
+          data-desc="The Empire State and One World Trade illuminated by a blazing crimson Atlantic sunset."
+          data-full-img="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Manhattan Golden Hour"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1200&q=85"
+              alt="Manhattan Golden Hour"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ICONIC SKYLINE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>New York City, USA</span>
+            </div>
+
+            <h2 class="lg-card-title">Manhattan Golden Hour</h2>
+            <p class="lg-card-desc">The Empire State and One World Trade illuminated by a blazing crimson Atlantic sunset.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="34"
+          data-category="modern"
+          data-title="Victoria Harbour Illuminations"
+          data-location="Hong Kong"
+          data-desc="Symphony of lights laser spectacular dancing across hundreds of harbourside skyscrapers."
+          data-full-img="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Victoria Harbour Illuminations"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85"
+              alt="Victoria Harbour Illuminations"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">HARBOUR LIGHTS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Hong Kong</span>
+            </div>
+
+            <h2 class="lg-card-title">Victoria Harbour Illuminations</h2>
+            <p class="lg-card-desc">Symphony of lights laser spectacular dancing across hundreds of harbourside skyscrapers.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="35"
+          data-category="modern"
+          data-title="Sydney Harbourside Elegance"
+          data-location="Sydney, Australia"
+          data-desc="Sail-like vaulted shells of the Sydney Opera House overlooking yachts on sparkling blue waters."
+          data-full-img="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Sydney Harbourside Elegance"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85"
+              alt="Sydney Harbourside Elegance"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">HARBOUR ICON</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Sydney, Australia</span>
+            </div>
+
+            <h2 class="lg-card-title">Sydney Harbourside Elegance</h2>
+            <p class="lg-card-desc">Sail-like vaulted shells of the Sydney Opera House overlooking yachts on sparkling blue waters.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="36"
+          data-category="modern"
+          data-title="Tower Bridge Evening Glow"
+          data-location="London, UK"
+          data-desc="Gothic twin towers illuminated over the River Thames with views across the historic City of London."
+          data-full-img="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Tower Bridge Evening Glow"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=85"
+              alt="Tower Bridge Evening Glow"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">THAMES HERITAGE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>London, UK</span>
+            </div>
+
+            <h2 class="lg-card-title">Tower Bridge Evening Glow</h2>
+            <p class="lg-card-desc">Gothic twin towers illuminated over the River Thames with views across the historic City of London.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="37"
+          data-category="modern"
+          data-title="Monte Carlo Port Hercule"
+          data-location="Monaco, French Riviera"
+          data-desc="The world's most exclusive superyacht marina nestled beneath the Prince's Palace and Casino hills."
+          data-full-img="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Monte Carlo Port Hercule"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=85"
+              alt="Monte Carlo Port Hercule"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">RIVIERA GLAMOUR</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Monaco, French Riviera</span>
+            </div>
+
+            <h2 class="lg-card-title">Monte Carlo Port Hercule</h2>
+            <p class="lg-card-desc">The world's most exclusive superyacht marina nestled beneath the Prince's Palace and Casino hills.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="38"
+          data-category="modern"
+          data-title="Shanghai Bund Horizon"
+          data-location="Shanghai, China"
+          data-desc="Colonial neoclassical landmarks gazing across the Huangpu River towards the futuristic Oriental Pearl."
+          data-full-img="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Shanghai Bund Horizon"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85"
+              alt="Shanghai Bund Horizon"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">EAST METROPOLIS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Shanghai, China</span>
+            </div>
+
+            <h2 class="lg-card-title">Shanghai Bund Horizon</h2>
+            <p class="lg-card-desc">Colonial neoclassical landmarks gazing across the Huangpu River towards the futuristic Oriental Pearl.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="39"
+          data-category="modern"
+          data-title="Chicago Riverwalk Architecture"
+          data-location="Chicago, USA"
+          data-desc="Art deco stone high-rises and glass marvels mirrored in the calm emerald Chicago River waters."
+          data-full-img="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Chicago Riverwalk Architecture"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=1200&q=85"
+              alt="Chicago Riverwalk Architecture"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">RIVERFRONT LUXE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Chicago, USA</span>
+            </div>
+
+            <h2 class="lg-card-title">Chicago Riverwalk Architecture</h2>
+            <p class="lg-card-desc">Art deco stone high-rises and glass marvels mirrored in the calm emerald Chicago River waters.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="40"
+          data-category="desert"
+          data-title="Erg Chebbi Luxury Glamping"
+          data-location="Merzouga, Sahara Morocco"
+          data-desc="Silken orange dunes under billion-star canopies with private Berber tents, carpets and fire pits."
+          data-full-img="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Erg Chebbi Luxury Glamping"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85"
+              alt="Erg Chebbi Luxury Glamping"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">DESERT OASIS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Merzouga, Sahara Morocco</span>
+            </div>
+
+            <h2 class="lg-card-title">Erg Chebbi Luxury Glamping</h2>
+            <p class="lg-card-desc">Silken orange dunes under billion-star canopies with private Berber tents, carpets and fire pits.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="41"
+          data-category="desert"
+          data-title="Serengeti Golden Safari"
+          data-location="Serengeti, Tanzania"
+          data-desc="Acacia-studded plains alive with prides of lions and migrating herds during golden African twilights."
+          data-full-img="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Serengeti Golden Safari"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85"
+              alt="Serengeti Golden Safari"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">WILD EXPEDITION</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Serengeti, Tanzania</span>
+            </div>
+
+            <h2 class="lg-card-title">Serengeti Golden Safari</h2>
+            <p class="lg-card-desc">Acacia-studded plains alive with prides of lions and migrating herds during golden African twilights.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="42"
+          data-category="desert"
+          data-title="Cappadocia Sunrise Balloons"
+          data-location="Goreme, Turkey"
+          data-desc="Hundreds of vibrant hot air balloons ascending over sculpted fairy chimneys in ethereal morning mist."
+          data-full-img="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Cappadocia Sunrise Balloons"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85"
+              alt="Cappadocia Sunrise Balloons"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">DREAMSCAPE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Goreme, Turkey</span>
+            </div>
+
+            <h2 class="lg-card-title">Cappadocia Sunrise Balloons</h2>
+            <p class="lg-card-desc">Hundreds of vibrant hot air balloons ascending over sculpted fairy chimneys in ethereal morning mist.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="43"
+          data-category="desert"
+          data-title="Atacama Celestial Stargazing"
+          data-location="San Pedro, Chile"
+          data-desc="The clearest night skies on Earth showing the Milky Way arching over barren volcanic salt deserts."
+          data-full-img="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Atacama Celestial Stargazing"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85"
+              alt="Atacama Celestial Stargazing"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">COSMIC SKY</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>San Pedro, Chile</span>
+            </div>
+
+            <h2 class="lg-card-title">Atacama Celestial Stargazing</h2>
+            <p class="lg-card-desc">The clearest night skies on Earth showing the Milky Way arching over barren volcanic salt deserts.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="44"
+          data-category="desert"
+          data-title="Sossusvlei Dune 45 Crimson"
+          data-location="Namib-Naukluft, Namibia"
+          data-desc="The highest red sand dunes on Earth meeting dead white clay pans and ancient petrified camelthorn trees."
+          data-full-img="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Sossusvlei Dune 45 Crimson"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=85"
+              alt="Sossusvlei Dune 45 Crimson"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ANCIENT SANDS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Namib-Naukluft, Namibia</span>
+            </div>
+
+            <h2 class="lg-card-title">Sossusvlei Dune 45 Crimson</h2>
+            <p class="lg-card-desc">The highest red sand dunes on Earth meeting dead white clay pans and ancient petrified camelthorn trees.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card tall"
+          data-index="45"
+          data-category="desert"
+          data-title="Wadi Rum Martian Canyon"
+          data-location="Aqaba, Jordan"
+          data-desc="Monolithic red granite and sandstone arches carved by wind and weather over millions of years."
+          data-full-img="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Wadi Rum Martian Canyon"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85"
+              alt="Wadi Rum Martian Canyon"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">VALLEY OF THE MOON</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Aqaba, Jordan</span>
+            </div>
+
+            <h2 class="lg-card-title">Wadi Rum Martian Canyon</h2>
+            <p class="lg-card-desc">Monolithic red granite and sandstone arches carved by wind and weather over millions of years.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="46"
+          data-category="desert"
+          data-title="Monument Valley Buttes"
+          data-location="Utah / Arizona, USA"
+          data-desc="Towering red sandstone buttes sculpted into dramatic cathedrals of stone along Navajo horizons."
+          data-full-img="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Monument Valley Buttes"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85"
+              alt="Monument Valley Buttes"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">AMERICAN WEST</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Utah / Arizona, USA</span>
+            </div>
+
+            <h2 class="lg-card-title">Monument Valley Buttes</h2>
+            <p class="lg-card-desc">Towering red sandstone buttes sculpted into dramatic cathedrals of stone along Navajo horizons.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="47"
+          data-category="desert"
+          data-title="Maasai Mara Migration"
+          data-location="Narok, Kenya"
+          data-desc="Luxury canvas tented suites perched above the Mara River with bespoke 4x4 game drive tracking."
+          data-full-img="https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Maasai Mara Migration"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1200&q=85"
+              alt="Maasai Mara Migration"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">SAVANNAH LUXE</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Narok, Kenya</span>
+            </div>
+
+            <h2 class="lg-card-title">Maasai Mara Migration</h2>
+            <p class="lg-card-desc">Luxury canvas tented suites perched above the Mara River with bespoke 4x4 game drive tracking.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card "
+          data-index="48"
+          data-category="desert"
+          data-title="Salar de Uyuni Mirror Salt"
+          data-location="Potosi, Bolivia"
+          data-desc="A seamless reflection of sky and clouds across 10,000 square kilometers of blinding white lithium salt."
+          data-full-img="https://images.unsplash.com/photo-1494548162494-384bba4ab999?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Salar de Uyuni Mirror Salt"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1494548162494-384bba4ab999?auto=format&fit=crop&w=1200&q=85"
+              alt="Salar de Uyuni Mirror Salt"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">MIRROR HORIZON</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Potosi, Bolivia</span>
+            </div>
+
+            <h2 class="lg-card-title">Salar de Uyuni Mirror Salt</h2>
+            <p class="lg-card-desc">A seamless reflection of sky and clouds across 10,000 square kilometers of blinding white lithium salt.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="lg-card wide"
+          data-index="49"
+          data-category="desert"
+          data-title="Dubai Desert Royal Dunes"
+          data-location="Dubai Desert Conservation"
+          data-desc="Private falconry displays, champagne sunset safaris, and luxury Bedouin feasts in rolling red sands."
+          data-full-img="https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=1200&q=85"
+          data-link="preview-travel-contact.html"
+          tabindex="0"
+          role="button"
+          aria-label="View details for Dubai Desert Royal Dunes"
+        >
+          <div class="lg-card-media">
+            <img
+              src="https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=1200&q=85"
+              alt="Dubai Desert Royal Dunes"
+              class="lg-card-img"
+              loading="lazy"
+              width="600"
+              height="750"
+            >
+          </div>
+          <div class="lg-card-overlay"></div>
+
+          <!-- Top Tag & Zoom Icon -->
+          <div class="lg-card-top">
+            <span class="lg-card-category-tag">ARABIAN NIGHTS</span>
+            <div class="lg-card-zoom-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            </div>
+          </div>
+
+          <!-- Bottom Content -->
+          <div class="lg-card-bottom">
+            <div class="lg-card-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Dubai Desert Conservation</span>
+            </div>
+
+            <h2 class="lg-card-title">Dubai Desert Royal Dunes</h2>
+            <p class="lg-card-desc">Private falconry displays, champagne sunset safaris, and luxury Bedouin feasts in rolling red sands.</p>
+
+            <div class="lg-card-footer-action">
+              <span>Explore Escape Details</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </article>
+
+          <!-- Empty Search State -->
+          <div class="lg-empty-state" id="lgEmptyState">
+            <svg class="lg-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            <h3 class="lg-empty-title">No Luxury Escapes Found</h3>
+            <p class="lg-empty-text">We couldn't find any destinations matching your search. Try another query or reset the filter.</p>
+            <button type="button" class="lg-empty-btn" id="lgEmptyResetBtn">Reset All Filters</button>
+          </div>
+        </div>
+
+        <!-- Load More / Progressive Progress Bar -->
+        <div class="lg-load-more-wrap" id="lgLoadMoreWrap">
+          <div class="lg-progress-bar-outer" aria-hidden="true">
+            <div class="lg-progress-bar-fill" id="lgProgressFill" style="width: 32%;"></div>
+          </div>
+          <div class="lg-progress-text" id="lgProgressText">
+            Revealed 16 of 50 wonders
+          </div>
+          <button type="button" class="lg-load-more-btn" id="lgLoadMoreBtn">
+            <span>Reveal More Exclusive Escapes</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 4. Fullscreen Luxury Lightbox Modal -->
+    <div class="lg-lightbox" id="lgLightbox" role="dialog" aria-modal="true" aria-label="Travel Image Preview">
+      <!-- Top Bar -->
+      <div class="lg-lb-topbar">
+        <div class="lg-lb-counter" id="lgLbCounter">1 / 50</div>
+        <div class="lg-lb-actions">
+          <button type="button" class="lg-lb-action-btn" id="lgLbZoom" title="Toggle Zoom" aria-label="Toggle Zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </button>
+          <button type="button" class="lg-lb-action-btn" id="lgLbClose" title="Close (Esc)" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Middle Stage -->
+      <div class="lg-lb-stage">
+        <button type="button" class="lg-lb-nav-btn lg-lb-prev" id="lgLbPrev" title="Previous" aria-label="Previous Escape">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <div class="lg-lb-img-wrap">
+          <img src="" alt="" class="lg-lb-img" id="lgLbImg">
+        </div>
+
+        <button type="button" class="lg-lb-nav-btn lg-lb-next" id="lgLbNext" title="Next" aria-label="Next Escape">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+
+      <!-- Bottom Info Panel -->
+      <div class="lg-lb-info">
+        <div class="lg-lb-info-content">
+          <div class="lg-lb-info-meta">
+            <span class="lg-lb-info-category" id="lgLbCategory">TROPICAL & ISLANDS</span>
+            <span class="lg-lb-info-location" id="lgLbLocation">Maldives</span>
+          </div>
+          <h3 class="lg-lb-info-title" id="lgLbTitle">Overwater Villa Haven</h3>
+          <p class="lg-lb-info-desc" id="lgLbDesc"></p>
+        </div>
+
+        <a href="preview-travel-contact.html" class="lg-lb-inquire-btn" id="lgLbInquireBtn">
+          <span>Inquire About This Escape</span>
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mock Footer -->
+  <footer class="mock-footer">
+    <div class="mock-footer-logo">
+      <img src="tour-travel-logo.png" alt="Tour and Travel Wings" width="220" style="filter: brightness(0) invert(1);">
+    </div>
+    <div class="mock-footer-links">
+      <a href="preview-homepage.html">Home</a>
+      <a href="preview-travel-about.html">About Us</a>
+      <a href="preview-gallery.html">The Gallery</a>
+      <a href="preview-travel-contact.html">Contact & Bookings</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+    <div class="mock-footer-bottom">
+      &copy; 2026 Tour & Travel Wings. All rights reserved. Ultra-Luxury Bespoke Travel Agency.
+    </div>
+  </footer>
+
+  <!-- Floating AI Assistant Pill -->
+  <div class="travel-chat-trigger" id="travelChatTrigger">
+    <img src="travel-bot-mascot.png" alt="Travel Bot" class="travel-chat-bot-mascot">
+    <div class="travel-chat-trigger-btn">
+      <span class="travel-chat-trigger-dot"></span>
+      <span class="travel-chat-trigger-text">Speak to our Experts</span>
+    </div>
+  </div>
+
+  <script src="luxury-gallery.js"></script>
+</body>
+</html>
