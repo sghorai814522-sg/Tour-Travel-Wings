@@ -1,0 +1,82 @@
+{% comment %}
+  Bento Review Card Snippet
+{% endcomment %}
+
+{%- liquid
+  assign c_type = block.settings.card_type | default: default_type | default: 'pastel'
+  assign r_name = block.settings.reviewer_name | default: 'Kanchan T.'
+  assign r_date = block.settings.date | default: '4 November 2025'
+  assign r_text = block.settings.review_text | default: 'An incredible journey from start to finish!'
+  assign r_rating = block.settings.rating | default: 5
+  assign r_bg = block.settings.bg_color | default: '#fce7f3'
+  
+  assign img_url = ''
+  if block.settings.image != blank
+    assign img_url = block.settings.image | image_url: width: 800
+  elsif block.settings.external_image_url != blank
+    assign img_url = block.settings.external_image_url
+  elsif block.settings.fallback_image != blank
+    assign img_url = block.settings.fallback_image | asset_url
+  endif
+-%}
+
+{%- if c_type == 'pastel' -%}
+  <div class="travel-bento-card travel-bento-card--pastel" style="background-color: {{ r_bg }};" {{ block.shopify_attributes }}>
+    <p class="travel-bento-text">
+      {{ r_text }} <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+    </p>
+    <div class="travel-bento-footer">
+      <div class="travel-bento-author-meta">
+        <span class="travel-bento-author-name">{{ r_name }}</span>
+        <span class="travel-bento-date">{{ r_date }}</span>
+      </div>
+      <div class="travel-bento-stars" aria-label="{{ r_rating }} stars">
+        {%- for i in (1..r_rating) -%}★{%- endfor -%}
+      </div>
+    </div>
+  </div>
+
+{%- elsif c_type == 'tall_image' -%}
+  <div class="travel-bento-card travel-bento-card--image travel-bento-card--tall" {{ block.shopify_attributes }}>
+    {%- if img_url != blank -%}
+      <img src="{{ img_url }}" alt="{{ r_name | escape }} Tour Review" class="travel-bento-img" loading="lazy" width="600" height="800">
+    {%- endif -%}
+    <div class="travel-bento-overlay"></div>
+    <div class="travel-bento-overlay-content">
+      <p class="travel-bento-text">
+        {{ r_text }} <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+      </p>
+      <div class="travel-bento-footer">
+        <div class="travel-bento-author-meta">
+          <span class="travel-bento-author-name">{{ r_name }}</span>
+          <span class="travel-bento-date">{{ r_date }}</span>
+        </div>
+        <div class="travel-bento-stars" aria-label="{{ r_rating }} stars">
+          {%- for i in (1..r_rating) -%}★{%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{%- else -%}
+  <div class="travel-bento-card travel-bento-card--image" {{ block.shopify_attributes }}>
+    {%- if img_url != blank -%}
+      <img src="{{ img_url }}" alt="{{ r_name | escape }} Tour Review" class="travel-bento-img" loading="lazy" width="600" height="400">
+    {%- endif -%}
+    <div class="travel-bento-overlay"></div>
+    <div class="travel-bento-overlay-content">
+      <p class="travel-bento-text">
+        {{ r_text }} <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+      </p>
+      <div class="travel-bento-footer">
+        <div class="travel-bento-author-meta">
+          <span class="travel-bento-author-name">{{ r_name }}</span>
+          <span class="travel-bento-date">{{ r_date }}</span>
+        </div>
+        <div class="travel-bento-stars" aria-label="{{ r_rating }} stars">
+          {%- for i in (1..r_rating) -%}★{%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

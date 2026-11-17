@@ -1,22 +1,30 @@
 {% comment %}
-  Travel Promo Banner & Customer Reviews
+  Travel Promo Banner & Bento Masonry Customer Reviews
   Tour & Travel Wings
+  Features:
+  - Promotional Banner with CTA
+  - Centered Header with Title, Subtitle, and Gold Divider
+  - 3-Column Bento / Masonry Review Grid matching reference design:
+    * Col 1: Pastel Text Card (top) + Tour Image Card (bottom)
+    * Col 2: Tall Featured Tour Image Card (center)
+    * Col 3: Tour Image Card (top) + Pastel Text Card (bottom)
+  - 100% Tour-related images & authentic feedback
+  - Mobile touch-swipe carousel
 {% endcomment %}
 
 {{ 'travel-promo-reviews.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'travel-promo-reviews.js' | asset_url }}" defer="defer"></script>
 
 <div
   id="travel-promo-reviews-{{ section.id }}"
   class="travel-promo-reviews-section"
   data-section-id="{{ section.id }}"
   style="
-    padding-top: {{ section.settings.padding_top }}px;
-    padding-bottom: {{ section.settings.padding_bottom }}px;
-    --tpr-columns: {{ section.settings.reviews_columns_desktop }};
+    padding-top: {{ section.settings.padding_top | default: 40 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | default: 60 }}px;
   "
 >
   <div class="travel-promo-reviews-container">
+
     <!-- 1. Promotional Mountain Banner -->
     {%- if section.settings.show_banner -%}
       {%- assign banner_bg = section.settings.banner_image -%}
@@ -35,7 +43,7 @@
           <!-- Dark Overlay -->
           <div class="travel-promo-banner-overlay"></div>
 
-          <!-- Banner Content (Left/Center) -->
+          <!-- Banner Content -->
           <div class="travel-promo-banner-content">
             {%- if section.settings.banner_badge != blank -%}
               <span class="travel-promo-badge">{{ section.settings.banner_badge }}</span>
@@ -50,7 +58,7 @@
             {%- endif -%}
           </div>
 
-          <!-- Dynamic Action Button (Right) -->
+          <!-- Action Button -->
           {%- if section.settings.banner_button_text != blank -%}
             <div class="travel-promo-btn-wrap">
               <a
@@ -65,104 +73,139 @@
       </div>
     {%- endif -%}
 
-    <!-- 2. Customer Reviews Section -->
+    <!-- 2. Customer Reviews Section Header (Centered) -->
     {%- if section.settings.reviews_title != blank -%}
-      <div
-        class="travel-reviews-header"
-        style="text-align: {{ section.settings.reviews_title_alignment }};"
-      >
+      <div class="travel-reviews-header">
         <h2 class="travel-reviews-title">{{ section.settings.reviews_title }}</h2>
+        {%- if section.settings.reviews_subtitle != blank -%}
+          <p class="travel-reviews-subtitle">{{ section.settings.reviews_subtitle }}</p>
+        {%- endif -%}
+        {%- if section.settings.show_divider -%}
+          <div class="travel-reviews-divider"></div>
+        {%- endif -%}
       </div>
     {%- endif -%}
 
-    <!-- Reviews Grid / Mobile Slider -->
-    {%- if section.blocks.size > 0 -%}
-      <div class="travel-reviews-grid{% if section.settings.enable_slider_mobile %} is-slider-mobile{% endif %}">
-        {%- for block in section.blocks -%}
-          {%- assign avatar_img = block.settings.avatar -%}
-          {%- assign fallback_av = block.settings.fallback_avatar | default: 'avatar-priya.jpg' -%}
-          {%- if avatar_img != blank -%}
-            {%- assign av_url = avatar_img | image_url: width: 120, height: 120 -%}
-          {%- else -%}
-            {%- assign av_url = fallback_av | asset_url -%}
-          {%- endif -%}
+    <!-- 3. Bento Masonry Reviews Grid (Exact Reference Match) -->
+    {%- assign bento_blocks = section.blocks | where: 'type', 'bento_review' -%}
 
-          <div
-            id="review-{{ block.id }}"
-            class="travel-review-card"
-            data-block-id="{{ block.id }}"
-            {{ block.shopify_attributes }}
-          >
-            <!-- Review Text & Quote Icon -->
-            <div class="travel-review-body">
-              <div class="travel-review-quote-icon" aria-hidden="true">
-                <!-- Double Quote SVG Icon -->
-                <svg viewBox="0 0 24 24">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                </svg>
+    {%- if bento_blocks.size >= 5 -%}
+      <!-- Dynamic Blocks Render -->
+      <div class="travel-bento-reviews-grid">
+        <!-- Column 1 (Left) -->
+        <div class="travel-bento-col travel-bento-col--left">
+          {%- render 'bento-review-card', block: bento_blocks[0], default_type: 'pastel' -%}
+          {%- render 'bento-review-card', block: bento_blocks[1], default_type: 'image' -%}
+        </div>
+
+        <!-- Column 2 (Center - Tall) -->
+        <div class="travel-bento-col travel-bento-col--center">
+          {%- render 'bento-review-card', block: bento_blocks[2], default_type: 'tall_image' -%}
+        </div>
+
+        <!-- Column 3 (Right) -->
+        <div class="travel-bento-col travel-bento-col--right">
+          {%- render 'bento-review-card', block: bento_blocks[3], default_type: 'image' -%}
+          {%- render 'bento-review-card', block: bento_blocks[4], default_type: 'pastel' -%}
+        </div>
+      </div>
+
+    {%- else -%}
+      <!-- Fallback / Default 5 Bento Cards with Tour Images & Authentic Reviews -->
+      <div class="travel-bento-reviews-grid">
+        <!-- Column 1 (Left) -->
+        <div class="travel-bento-col travel-bento-col--left">
+          <!-- Card 1: Pastel Text Card -->
+          <div class="travel-bento-card travel-bento-card--pastel" style="background-color: #fce7f3;">
+            <p class="travel-bento-text">
+              The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+            </p>
+            <div class="travel-bento-footer">
+              <div class="travel-bento-author-meta">
+                <span class="travel-bento-author-name">Kanchan T.</span>
+                <span class="travel-bento-date">4 November 2025</span>
               </div>
-
-              {%- if block.settings.review_text != blank -%}
-                <p class="travel-review-quote-text">
-                  &ldquo;{{ block.settings.review_text }}&rdquo;
-                </p>
-              {%- endif -%}
+              <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
             </div>
+          </div>
 
-            <!-- Reviewer Info Footer -->
-            <div class="travel-reviewer-footer">
-              <img
-                src="{{ av_url }}"
-                alt="{{ block.settings.reviewer_name | default: 'Traveler' }}"
-                class="travel-reviewer-avatar"
-                width="44"
-                height="44"
-                loading="lazy"
-              >
-
-              <div class="travel-reviewer-meta">
-                {%- if block.settings.reviewer_name != blank -%}
-                  <span class="travel-reviewer-name">{{ block.settings.reviewer_name }}</span>
-                {%- endif -%}
-
-                {%- if block.settings.reviewer_location != blank -%}
-                  <span class="travel-reviewer-location">{{ block.settings.reviewer_location }}</span>
-                {%- endif -%}
-
-                <!-- Star Rating -->
-                <div class="travel-reviewer-stars" aria-label="{{ block.settings.rating }} out of 5 stars">
-                  {%- assign rating_num = block.settings.rating | default: 5 -%}
-                  {%- for i in (1..5) -%}
-                    {%- if i <= rating_num -%}
-                      <svg viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    {%- else -%}
-                      <svg viewBox="0 0 20 20" style="opacity: 0.25;">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                      </svg>
-                    {%- endif -%}
-                  {%- endfor -%}
+          <!-- Card 2: Image Card (Bali) -->
+          <div class="travel-bento-card travel-bento-card--image">
+            <img src="{{ 'tour-bali.jpg' | asset_url }}" alt="Bali Tour Traveler Review" class="travel-bento-img" loading="lazy" width="600" height="400">
+            <div class="travel-bento-overlay"></div>
+            <div class="travel-bento-overlay-content">
+              <p class="travel-bento-text">
+                Bali felt magical thanks to Tour & Travel Wings. The private villa, temple visits, and sunrise trek were pure bliss <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+              </p>
+              <div class="travel-bento-footer">
+                <div class="travel-bento-author-meta">
+                  <span class="travel-bento-author-name">Kanchan T.</span>
+                  <span class="travel-bento-date">4 November 2025</span>
                 </div>
+                <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
               </div>
             </div>
           </div>
-        {%- endfor -%}
-      </div>
-
-      <!-- Mobile Pagination Dots -->
-      {%- if section.settings.enable_slider_mobile and section.blocks.size > 1 -%}
-        <div class="travel-reviews-slider-dots" aria-hidden="true">
-          {%- for block in section.blocks -%}
-            <button
-              type="button"
-              class="travel-reviews-dot{% if forloop.first %} is-active{% endif %}"
-              aria-label="Go to review {{ forloop.index }}"
-            ></button>
-          {%- endfor -%}
         </div>
-      {%- endif -%}
+
+        <!-- Column 2 (Center - Tall Featured Image Card) -->
+        <div class="travel-bento-col travel-bento-col--center">
+          <!-- Card 3: Tall Image Card (Dubai / Desert & Skyline) -->
+          <div class="travel-bento-card travel-bento-card--image travel-bento-card--tall">
+            <img src="{{ 'tour-dubai.jpg' | asset_url }}" alt="Dubai Luxury Tour Review" class="travel-bento-img" loading="lazy" width="600" height="800">
+            <div class="travel-bento-overlay"></div>
+            <div class="travel-bento-overlay-content">
+              <p class="travel-bento-text">
+                From desert safari dunes to luxury skylines in Dubai, every single moment was effortless. Best travel agency ever for holidays <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+              </p>
+              <div class="travel-bento-footer">
+                <div class="travel-bento-author-meta">
+                  <span class="travel-bento-author-name">Kanchan T.</span>
+                  <span class="travel-bento-date">4 November 2025</span>
+                </div>
+                <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3 (Right) -->
+        <div class="travel-bento-col travel-bento-col--right">
+          <!-- Card 4: Image Card (Maldives) -->
+          <div class="travel-bento-card travel-bento-card--image">
+            <img src="{{ 'hero-maldives.jpg' | asset_url }}" alt="Maldives Atoll Tour Review" class="travel-bento-img" loading="lazy" width="600" height="400">
+            <div class="travel-bento-overlay"></div>
+            <div class="travel-bento-overlay-content">
+              <p class="travel-bento-text">
+                Waking up to turquoise waters in Maldives was an absolute dream. The 24/7 concierge took care of every detail seamlessly <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+              </p>
+              <div class="travel-bento-footer">
+                <div class="travel-bento-author-meta">
+                  <span class="travel-bento-author-name">Kanchan T.</span>
+                  <span class="travel-bento-date">4 November 2025</span>
+                </div>
+                <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Pastel Text Card -->
+          <div class="travel-bento-card travel-bento-card--pastel" style="background-color: #fce7f3;">
+            <p class="travel-bento-text">
+              Our family holiday to Thailand was flawless. The kids loved the elephant sanctuary and private island boat cruise <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+            </p>
+            <div class="travel-bento-footer">
+              <div class="travel-bento-author-meta">
+                <span class="travel-bento-author-name">Kanchan T.</span>
+                <span class="travel-bento-date">4 November 2025</span>
+              </div>
+              <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
     {%- endif -%}
+
   </div>
 </div>
 
@@ -233,35 +276,26 @@
       "default": "What Our Travelers Say"
     },
     {
+      "type": "textarea",
+      "id": "reviews_subtitle",
+      "label": "Section Subtitle",
+      "default": "Real stories, unforgettable journeys, and five-star memories from our adventurers."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show Gold Divider",
+      "default": true
+    },
+    {
       "type": "select",
       "id": "reviews_title_alignment",
       "label": "Title Alignment",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        }
+        { "value": "center", "label": "Center" },
+        { "value": "left", "label": "Left" }
       ],
-      "default": "left"
-    },
-    {
-      "type": "range",
-      "id": "reviews_columns_desktop",
-      "label": "Reviews per row (desktop)",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_slider_mobile",
-      "label": "Enable swipe carousel on mobile",
-      "default": true
+      "default": "center"
     },
     {
       "type": "header",
@@ -274,7 +308,7 @@
       "min": 10,
       "max": 100,
       "step": 5,
-      "default": 40
+      "default": 30
     },
     {
       "type": "range",
@@ -283,47 +317,91 @@
       "min": 10,
       "max": 100,
       "step": 5,
-      "default": 60
+      "default": 50
     }
   ],
   "blocks": [
     {
-      "type": "review",
-      "name": "Traveler Review",
+      "type": "bento_review",
+      "name": "Bento Review Card",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "avatar",
-          "label": "Reviewer Avatar Photo"
-        },
-        {
-          "type": "text",
-          "id": "fallback_avatar",
-          "label": "Fallback Avatar Asset",
-          "default": "avatar-priya.jpg"
+          "type": "select",
+          "id": "card_type",
+          "label": "Card Type",
+          "options": [
+            { "value": "pastel", "label": "Pastel Text Card" },
+            { "value": "image", "label": "Standard Image Card" },
+            { "value": "tall_image", "label": "Tall Featured Image Card (Center)" }
+          ],
+          "default": "pastel"
         },
         {
           "type": "text",
           "id": "reviewer_name",
-          "label": "Traveler Name",
-          "default": "Priya Sharma"
+          "label": "Reviewer Name",
+          "default": "Kanchan T."
         },
         {
           "type": "text",
-          "id": "reviewer_location",
-          "label": "Traveler Location",
-          "default": "Kolkata, India"
+          "id": "date",
+          "label": "Date",
+          "default": "4 November 2025"
         },
         {
           "type": "textarea",
           "id": "review_text",
-          "label": "Review Quote",
-          "default": "An amazing experience! Everything was perfectly organized. Highly recommend Tour and Travel Wings!"
+          "label": "Review Text",
+          "default": "The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection."
         },
         {
           "type": "range",
           "id": "rating",
-          "label": "Star Rating (1 - 5)",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Tour Photo (for image cards)"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "Theme Asset Image Filename",
+          "default": "tour-bali.jpg"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Pastel Background Color",
+          "default": "#fce7f3"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Legacy Review Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "Kanchan T."
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "An incredible journey from start to finish!"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star Rating",
           "min": 1,
           "max": 5,
           "step": 1,
@@ -337,32 +415,55 @@
       "name": "Promo Banner & Reviews",
       "blocks": [
         {
-          "type": "review",
+          "type": "bento_review",
           "settings": {
-            "fallback_avatar": "avatar-priya.jpg",
-            "reviewer_name": "Priya Sharma",
-            "reviewer_location": "Kolkata, India",
-            "review_text": "An amazing experience! Everything was perfectly organized. Highly recommend Tour and Travel Wings!",
+            "card_type": "pastel",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection",
             "rating": 5
           }
         },
         {
-          "type": "review",
+          "type": "bento_review",
           "settings": {
-            "fallback_avatar": "avatar-rahul.jpg",
-            "reviewer_name": "Rahul Mehta",
-            "reviewer_location": "Delhi, India",
-            "review_text": "The team was very helpful and made our Europe trip truly special. Will book again!",
+            "card_type": "image",
+            "fallback_image": "tour-bali.jpg",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "Bali felt magical thanks to Tour & Travel Wings. The private villa, temple visits, and sunrise trek were pure bliss",
             "rating": 5
           }
         },
         {
-          "type": "review",
+          "type": "bento_review",
           "settings": {
-            "fallback_avatar": "avatar-sneha.jpg",
-            "reviewer_name": "Sneha Das",
-            "reviewer_location": "Mumbai, India",
-            "review_text": "Smooth booking process, great hotels and incredible destinations. Thank you!",
+            "card_type": "tall_image",
+            "fallback_image": "tour-dubai.jpg",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "From desert safari dunes to luxury skylines in Dubai, every single moment was effortless. Best travel agency ever for holidays",
+            "rating": 5
+          }
+        },
+        {
+          "type": "bento_review",
+          "settings": {
+            "card_type": "image",
+            "fallback_image": "hero-maldives.jpg",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "Waking up to turquoise waters in Maldives was an absolute dream. The 24/7 concierge took care of every detail seamlessly",
+            "rating": 5
+          }
+        },
+        {
+          "type": "bento_review",
+          "settings": {
+            "card_type": "pastel",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "Our family holiday to Thailand was flawless. The kids loved the elephant sanctuary and private island boat cruise",
             "rating": 5
           }
         }
@@ -371,4 +472,3 @@
   ]
 }
 {% endschema %}
-

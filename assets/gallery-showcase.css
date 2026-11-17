@@ -77,9 +77,31 @@
   max-width: 780px;
 }
 
+.gallery-showcase-header.text-center {
+  text-align: center;
+}
+
+.gallery-showcase-header.text-center .gallery-showcase-header-row {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
 .gallery-showcase-header.text-center .gallery-showcase-header-content {
   margin: 0 auto;
   text-align: center;
+  max-width: 840px;
+}
+
+.gallery-showcase-header.text-center .gallery-showcase-heading {
+  text-align: center;
+}
+
+.gallery-showcase-header.text-center .gallery-showcase-description {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .gallery-showcase-header.text-left .gallery-showcase-header-content {

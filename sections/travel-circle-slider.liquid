@@ -1,0 +1,649 @@
+{% comment %}
+  Travel Category Circles Slider
+  Tour & Travel Wings
+  Matches "Shop By Fabric" aesthetic:
+  - 6 full circles visible on desktop, 4 on tablet, 2 on mobile (no awkward half cut-offs!)
+  - Centered heading, subtitle, and elegant gold divider
+  - Soft floating drop shadows
+  - Smooth infinite auto-sliding carousel (pause on hover/touch)
+  - Zero overlapping buttons
+{% endcomment %}
+
+<section
+  id="TravelCircleSlider-{{ section.id }}"
+  class="travel-circle-slider-section"
+  style="
+    --tcs-bg: {{ section.settings.background_color | default: '#ffffff' }};
+    --tcs-padding-top: {{ section.settings.padding_top | default: 55 }}px;
+    --tcs-padding-bottom: {{ section.settings.padding_bottom | default: 55 }}px;
+    --tcs-circle-max-desktop: {{ section.settings.circle_max_size_desktop | default: 155 }}px;
+    --tcs-circle-max-mobile: {{ section.settings.circle_max_size_mobile | default: 125 }}px;
+  "
+>
+  <div class="tcs-container">
+
+    {%- comment -%} Header Section {%- endcomment -%}
+    <div class="tcs-header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="tcs-title">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.subtitle != blank -%}
+        <p class="tcs-subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.show_divider -%}
+        <div class="tcs-divider"></div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Infinite Seamless Viewport & Track (Exactly 6 on desktop, 4 on tablet, 2 on mobile) {%- endcomment -%}
+    <div class="tcs-viewport" id="tcsViewport-{{ section.id }}">
+      <div class="tcs-track" id="tcsTrack-{{ section.id }}">
+
+        {%- for set_idx in (1..2) -%}
+          {%- if section.blocks.size > 0 -%}
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign col = collections[block.settings.collection]
+                assign title = block.settings.title | default: col.title | default: 'Tour Escapes'
+                assign subtitle = block.settings.subtitle | default: ''
+                assign link_url = block.settings.url | default: col.url | default: routes.all_products_collection_url
+
+                assign img_url = ''
+                if block.settings.image != blank
+                  assign img_url = block.settings.image | image_url: width: 400
+                elsif block.settings.external_image_url != blank
+                  assign img_url = block.settings.external_image_url
+                elsif col.featured_image != blank
+                  assign img_url = col.featured_image | image_url: width: 400
+                elsif block.settings.fallback_image != blank
+                  assign img_url = block.settings.fallback_image | asset_url
+                else
+                  case forloop.index
+                    when 1
+                      assign img_url = 'tour-swiss-alps.jpg' | asset_url
+                    when 2
+                      assign img_url = 'tour-bali.jpg' | asset_url
+                    when 3
+                      assign img_url = 'tour-dubai.jpg' | asset_url
+                    when 4
+                      assign img_url = 'hero-maldives.jpg' | asset_url
+                    when 5
+                      assign img_url = 'tour-thailand.jpg' | asset_url
+                    when 6
+                      assign img_url = 'hero-santorini.jpg' | asset_url
+                    when 7
+                      assign img_url = 'tour-vietnam.jpg' | asset_url
+                    when 8
+                      assign img_url = 'promo-mountain-bg.jpg' | asset_url
+                    else
+                      assign img_url = 'tour-bali.jpg' | asset_url
+                  endcase
+                endif
+              -%}
+
+              <div class="tcs-slide" data-index="{{ forloop.index }}" {% if set_idx == 1 %}{{ block.shopify_attributes }}{% endif %}>
+                <a href="{{ link_url }}" class="tcs-item" aria-label="Explore {{ title }}">
+                  <div class="tcs-circle-wrap">
+                    <img
+                      src="{{ img_url }}"
+                      alt="{{ title | escape }}"
+                      class="tcs-circle-img"
+                      loading="lazy"
+                      width="180"
+                      height="180"
+                    >
+                  </div>
+                  <span class="tcs-item-title">{{ title }}</span>
+                  {%- if subtitle != blank -%}
+                    <span class="tcs-item-subtitle">{{ subtitle }}</span>
+                  {%- endif -%}
+                </a>
+              </div>
+            {%- endfor -%}
+
+          {%- else -%}
+            {%- assign default_titles = 'Alpine & Peaks,Island Havens,Modern Skylines,Overwater Atolls,Sacred Temples,Aegean Romance,Emerald Bays,Desert & Safari' | split: ',' -%}
+            {%- assign default_subs = '14 Tours,18 Tours,12 Tours,9 Tours,15 Tours,11 Tours,8 Tours,10 Tours' | split: ',' -%}
+            {%- assign default_imgs = 'tour-swiss-alps.jpg,tour-bali.jpg,tour-dubai.jpg,hero-maldives.jpg,tour-thailand.jpg,hero-santorini.jpg,tour-vietnam.jpg,promo-mountain-bg.jpg' | split: ',' -%}
+
+            {%- for def_title in default_titles -%}
+              {%- assign img_file = default_imgs[forloop.index0] -%}
+              {%- assign sub_text = default_subs[forloop.index0] -%}
+              <div class="tcs-slide" data-index="{{ forloop.index }}">
+                <a href="{{ routes.all_products_collection_url }}" class="tcs-item" aria-label="Explore {{ def_title }}">
+                  <div class="tcs-circle-wrap">
+                    <img
+                      src="{{ img_file | asset_url }}"
+                      alt="{{ def_title }}"
+                      class="tcs-circle-img"
+                      loading="lazy"
+                      width="180"
+                      height="180"
+                    >
+                  </div>
+                  <span class="tcs-item-title">{{ def_title }}</span>
+                  {%- if section.settings.show_subtitles -%}
+                    <span class="tcs-item-subtitle">{{ sub_text }}</span>
+                  {%- endif -%}
+                </a>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .travel-circle-slider-section {
+    background-color: var(--tcs-bg, #ffffff);
+    padding-top: var(--tcs-padding-top, 55px);
+    padding-bottom: var(--tcs-padding-bottom, 55px);
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  .tcs-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* Header - Matches "Shop By Fabric" Reference */
+  .tcs-header {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 38px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tcs-title {
+    font-family: var(--font-heading--family, 'Playfair Display', Georgia, serif);
+    font-size: 34px;
+    font-weight: 600;
+    color: #232247;
+    line-height: 1.25;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+  }
+
+  .tcs-subtitle {
+    font-family: var(--font-body--family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #555879;
+    margin: 0;
+    max-width: 680px;
+    font-weight: 400;
+  }
+
+  .tcs-divider {
+    display: block;
+    margin: 16px auto 0 auto;
+    width: 72px;
+    height: 2px;
+    border-radius: 2px;
+    background: #d4af37;
+  }
+
+  /* Viewport & Track: Exactly 6 items on Desktop, 4 on Tablet, 2 on Mobile */
+  .tcs-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0 20px 0;
+  }
+
+  .tcs-track {
+    display: flex;
+    --tcs-items-per-view: 6;
+    --tcs-gap: 24px;
+    gap: var(--tcs-gap);
+    width: 100%;
+    box-sizing: border-box;
+    will-change: transform;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .tcs-track:active {
+    cursor: grabbing;
+  }
+
+  /* Slide: Sized precisely so NO circle is ever cut in half */
+  .tcs-slide {
+    flex: 0 0 calc((100% - (var(--tcs-items-per-view) - 1) * var(--tcs-gap)) / var(--tcs-items-per-view));
+    width: calc((100% - (var(--tcs-items-per-view) - 1) * var(--tcs-gap)) / var(--tcs-items-per-view));
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tcs-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    outline: none;
+    width: 100%;
+    max-width: var(--tcs-circle-max-desktop, 155px);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* Soft Ambient Floating Circle Shadow (Exactly like reference image) */
+  .tcs-circle-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: var(--tcs-circle-max-desktop, 155px);
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    border: 3.5px solid #ffffff;
+    box-shadow: 0 14px 32px -4px rgba(35, 34, 71, 0.14), 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: #f1f5f9;
+    box-sizing: border-box;
+  }
+
+  .tcs-circle-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 50%;
+    transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* Hover State */
+  .tcs-item:hover .tcs-circle-wrap,
+  .tcs-item:focus-visible .tcs-circle-wrap {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -4px rgba(35, 34, 71, 0.22), 0 0 0 2.5px rgba(212, 175, 55, 0.7);
+  }
+
+  .tcs-item:hover .tcs-circle-img,
+  .tcs-item:focus-visible .tcs-circle-img {
+    transform: scale(1.09);
+  }
+
+  /* Item Title (Matches reference) */
+  .tcs-item-title {
+    font-family: var(--font-body--family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: 15px;
+    font-weight: 500;
+    color: #232247;
+    text-align: center;
+    margin-top: 14px;
+    line-height: 1.35;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .tcs-item:hover .tcs-item-title,
+  .tcs-item:focus-visible .tcs-item-title {
+    color: #b89324;
+  }
+
+  .tcs-item-subtitle {
+    font-family: var(--font-body--family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-size: 12px;
+    color: #8287a5;
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 1024px) {
+    .tcs-track {
+      --tcs-items-per-view: 4;
+      --tcs-gap: 20px;
+    }
+    .tcs-title {
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .travel-circle-slider-section {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+
+    .tcs-container {
+      padding: 0 16px;
+    }
+
+    /* 2 items per row on mobile as requested! */
+    .tcs-track {
+      --tcs-items-per-view: 2;
+      --tcs-gap: 16px;
+    }
+
+    .tcs-item {
+      max-width: var(--tcs-circle-max-mobile, 125px);
+    }
+
+    .tcs-circle-wrap {
+      max-width: var(--tcs-circle-max-mobile, 125px);
+      border-width: 2.5px;
+    }
+
+    .tcs-title {
+      font-size: 26px;
+    }
+
+    .tcs-subtitle {
+      font-size: 13.5px;
+    }
+
+    .tcs-item-title {
+      font-size: 13.5px;
+      margin-top: 10px;
+      white-space: normal;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    function initSteppedCircleSlider() {
+      const viewport = document.getElementById('tcsViewport-{{ section.id }}');
+      const track = document.getElementById('tcsTrack-{{ section.id }}');
+      if (!viewport || !track) return;
+
+      const autoSlideEnabled = {{ section.settings.auto_slide | default: true }};
+      const intervalMs = {{ section.settings.auto_slide_interval | default: 3.5 }} * 1000;
+
+      let isHovered = false;
+      let isDragging = false;
+      let isAnimating = false;
+      let startX = 0;
+      let currentTranslate = 0;
+      let autoSlideTimer = null;
+
+      function getSlideStep() {
+        const firstSlide = track.firstElementChild;
+        if (!firstSlide) return 0;
+        const slideWidth = firstSlide.getBoundingClientRect().width;
+        const gap = parseFloat(getComputedStyle(track).gap) || 24;
+        return slideWidth + gap;
+      }
+
+      function slideNext() {
+        if (isAnimating || !track.firstElementChild) return;
+        isAnimating = true;
+        const step = getSlideStep();
+
+        track.style.transition = 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)';
+        track.style.transform = `translateX(-${step}px)`;
+
+        const onTransitionEnd = function(e) {
+          if (e.target !== track) return;
+          track.removeEventListener('transitionend', onTransitionEnd);
+          track.style.transition = 'none';
+          track.appendChild(track.firstElementChild);
+          track.style.transform = 'translateX(0)';
+          void track.offsetWidth; // force reflow
+          isAnimating = false;
+        };
+
+        track.addEventListener('transitionend', onTransitionEnd);
+      }
+
+      function slidePrev() {
+        if (isAnimating || !track.lastElementChild) return;
+        isAnimating = true;
+        const step = getSlideStep();
+
+        track.style.transition = 'none';
+        track.prepend(track.lastElementChild);
+        track.style.transform = `translateX(-${step}px)`;
+        void track.offsetWidth; // force reflow
+
+        requestAnimationFrame(() => {
+          track.style.transition = 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)';
+          track.style.transform = 'translateX(0)';
+        });
+
+        const onTransitionEnd = function(e) {
+          if (e.target !== track) return;
+          track.removeEventListener('transitionend', onTransitionEnd);
+          track.style.transition = 'none';
+          isAnimating = false;
+        };
+
+        track.addEventListener('transitionend', onTransitionEnd);
+      }
+
+      function startAutoSlide() {
+        if (!autoSlideEnabled) return;
+        stopAutoSlide();
+        autoSlideTimer = setInterval(() => {
+          if (!isHovered && !isDragging && !isAnimating) {
+            slideNext();
+          }
+        }, intervalMs);
+      }
+
+      function stopAutoSlide() {
+        if (autoSlideTimer) {
+          clearInterval(autoSlideTimer);
+          autoSlideTimer = null;
+        }
+      }
+
+      // Hover controls
+      viewport.addEventListener('mouseenter', () => { isHovered = true; });
+      viewport.addEventListener('mouseleave', () => { isHovered = false; });
+
+      // Touch / Swipe Controls (Mobile)
+      viewport.addEventListener('touchstart', (e) => {
+        isHovered = true;
+        isDragging = true;
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+
+      viewport.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = e.changedTouches[0].clientX - startX;
+        if (diffX < -40) {
+          slideNext();
+        } else if (diffX > 40) {
+          slidePrev();
+        }
+        setTimeout(() => { isHovered = false; }, 1500);
+      });
+
+      // Mouse drag controls
+      viewport.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+      });
+
+      window.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diffX = e.clientX - startX;
+        if (diffX < -45) {
+          slideNext();
+        } else if (diffX > 45) {
+          slidePrev();
+        }
+      });
+
+      startAutoSlide();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSteppedCircleSlider);
+    } else {
+      initSteppedCircleSlider();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Travel Circles Slider",
+  "tag": "section",
+  "class": "travel-circle-slider-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Explore By Category"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Handpicked holiday styles across the globe — from tropical atolls to high alpine retreats."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_divider",
+      "label": "Show Gold Divider",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subtitles",
+      "label": "Show Subtitles Below Title",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_slide",
+      "label": "Enable Auto Slide",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "auto_slide_interval",
+      "label": "Auto Slide Interval (Seconds)",
+      "min": 2,
+      "max": 8,
+      "step": 0.5,
+      "default": 3.5
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "circle_max_size_desktop",
+      "label": "Circle Size Desktop (px)",
+      "min": 120,
+      "max": 180,
+      "step": 5,
+      "default": 155
+    },
+    {
+      "type": "range",
+      "id": "circle_max_size_mobile",
+      "label": "Circle Size Mobile (px)",
+      "min": 90,
+      "max": 140,
+      "step": 5,
+      "default": 125
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top (px)",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 55
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom (px)",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "default": 55
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category_circle",
+      "name": "Category Circle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Destination"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle (Optional)",
+          "default": "Tours"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category Image"
+        },
+        {
+          "type": "text",
+          "id": "external_image_url",
+          "label": "External Image URL (Unsplash or CDN)"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "Theme Asset Image Filename"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Custom URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Travel Circles Slider",
+      "blocks": [
+        { "type": "category_circle", "settings": { "title": "Alpine & Peaks", "subtitle": "14 Tours", "fallback_image": "tour-swiss-alps.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Island Havens", "subtitle": "18 Tours", "fallback_image": "tour-bali.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Modern Skylines", "subtitle": "12 Tours", "fallback_image": "tour-dubai.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Overwater Atolls", "subtitle": "9 Tours", "fallback_image": "hero-maldives.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Sacred Temples", "subtitle": "15 Tours", "fallback_image": "tour-thailand.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Aegean Romance", "subtitle": "11 Tours", "fallback_image": "hero-santorini.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Emerald Bays", "subtitle": "8 Tours", "fallback_image": "tour-vietnam.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Desert & Safari", "subtitle": "10 Tours", "fallback_image": "promo-mountain-bg.jpg" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

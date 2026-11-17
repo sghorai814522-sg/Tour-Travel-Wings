@@ -1310,63 +1310,91 @@
         "button_bg_color": "#f5a623",
         "button_hover_bg_color": "#d9921b",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "subtitle": "Explore top-rated travel packages and signature itineraries handcrafted for every journey."
       }
     },
     "travel_promo_reviews_rJBwH9": {
       "type": "travel-promo-reviews",
       "blocks": {
-        "review_priya": {
-          "type": "review",
+        "bento_1": {
+          "type": "bento_review",
           "settings": {
-            "fallback_avatar": "avatar-priya.jpg",
-            "reviewer_name": "Priya Sharma",
-            "reviewer_location": "Mumbai, India",
-            "review_text": "An incredible journey from start to finish! Everything was seamless, perfectly planned and unforgettable.",
+            "card_type": "pastel",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection",
+            "rating": 5,
+            "bg_color": "#fce7f3"
+          }
+        },
+        "bento_2": {
+          "type": "bento_review",
+          "settings": {
+            "card_type": "image",
+            "fallback_image": "tour-bali.jpg",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "Bali felt magical thanks to Tour & Travel Wings. The private villa, temple visits, and sunrise trek were pure bliss",
             "rating": 5
           }
         },
-        "review_rahul": {
-          "type": "review",
+        "bento_3": {
+          "type": "bento_review",
           "settings": {
-            "fallback_avatar": "avatar-rahul.jpg",
-            "reviewer_name": "Rahul Mehta",
-            "reviewer_location": "Delhi, India",
-            "review_text": "Tour and Travel Wings took care of every single detail. Best vacation we have ever taken!",
+            "card_type": "tall_image",
+            "fallback_image": "tour-dubai.jpg",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "From desert safari dunes to luxury skylines in Dubai, every single moment was effortless. Best travel agency ever for holidays",
             "rating": 5
           }
         },
-        "review_sneha": {
-          "type": "review",
+        "bento_4": {
+          "type": "bento_review",
           "settings": {
-            "fallback_avatar": "avatar-sneha.jpg",
-            "reviewer_name": "Sneha Patel",
-            "reviewer_location": "Bangalore, India",
-            "review_text": "Exceptional service, friendly guides and 24/7 support throughout. Will book with them again!",
+            "card_type": "image",
+            "fallback_image": "hero-maldives.jpg",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "Waking up to turquoise waters in Maldives was an absolute dream. The 24/7 concierge took care of every detail seamlessly",
             "rating": 5
+          }
+        },
+        "bento_5": {
+          "type": "bento_review",
+          "settings": {
+            "card_type": "pastel",
+            "reviewer_name": "Kanchan T.",
+            "date": "4 November 2025",
+            "review_text": "Our family holiday to Thailand was flawless. The kids loved the elephant sanctuary and private island boat cruise",
+            "rating": 5,
+            "bg_color": "#fce7f3"
           }
         }
       },
       "block_order": [
-        "review_priya",
-        "review_rahul",
-        "review_sneha"
+        "bento_1",
+        "bento_2",
+        "bento_3",
+        "bento_4",
+        "bento_5"
       ],
       "name": "Promo Banner & Reviews",
       "settings": {
         "show_banner": true,
-        "banner_fallback_image": "promo-banner-bg.jpg",
+        "banner_fallback_image": "promo-mountain-bg.jpg",
         "banner_badge": "SPECIAL OFFER",
         "banner_heading": "Up to 20% Off on Selected Tours",
         "banner_subheading": "Explore more, spend less. Make it happen.",
         "banner_button_text": "View Offers",
         "banner_button_link": "shopify://collections/all",
         "reviews_title": "What Our Travelers Say",
-        "reviews_title_alignment": "left",
-        "reviews_columns_desktop": 3,
-        "enable_slider_mobile": true,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "reviews_subtitle": "Real stories, unforgettable journeys, and five-star memories from our adventurers.",
+        "show_divider": true,
+        "reviews_title_alignment": "center",
+        "padding_top": 30,
+        "padding_bottom": 50
       }
     },
     "gallery_showcase": {
@@ -1445,7 +1473,7 @@
         "subheading": "EXPLORE THE WORLD IN PICTURES",
         "heading": "Moments Beyond Destinations",
         "description": "A visual showcase of unforgettable travel highlights and breathtaking locations from around the globe.",
-        "heading_alignment": "left",
+        "heading_alignment": "center",
         "full_width": false,
         "image_height_desktop": 340,
         "image_height_mobile": 260,
@@ -1523,6 +1551,115 @@
         "title": "The Journal",
         "subtitle": "Inspiring travel stories, destination guides, and insider tips from our global explorers."
       }
+    },
+    "travel_circle_slider": {
+      "type": "travel-circle-slider",
+      "blocks": {
+        "circle_1": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Alpine & Peaks",
+            "subtitle": "14 Tours",
+            "fallback_image": "tour-swiss-alps.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_2": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Island Havens",
+            "subtitle": "18 Tours",
+            "fallback_image": "tour-bali.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_3": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Modern Skylines",
+            "subtitle": "12 Tours",
+            "fallback_image": "tour-dubai.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_4": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Overwater Atolls",
+            "subtitle": "9 Tours",
+            "fallback_image": "hero-maldives.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_5": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Sacred Temples",
+            "subtitle": "15 Tours",
+            "fallback_image": "tour-thailand.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_6": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Aegean Romance",
+            "subtitle": "11 Tours",
+            "fallback_image": "hero-santorini.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_7": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Emerald Bays",
+            "subtitle": "8 Tours",
+            "fallback_image": "tour-vietnam.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_8": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Desert & Safari",
+            "subtitle": "10 Tours",
+            "fallback_image": "promo-mountain-bg.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=600&q=80",
+            "url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "circle_1",
+        "circle_2",
+        "circle_3",
+        "circle_4",
+        "circle_5",
+        "circle_6",
+        "circle_7",
+        "circle_8"
+      ],
+      "name": "Travel Category Circles",
+      "settings": {
+        "heading": "Explore By Category",
+        "subtitle": "Handpicked holiday styles across the globe — from tropical atolls to high alpine retreats.",
+        "show_divider": true,
+        "show_subtitles": false,
+        "auto_slide": true,
+        "auto_slide_interval": 3.5,
+        "background_color": "#ffffff",
+        "circle_max_size_desktop": 155,
+        "circle_max_size_mobile": 125,
+        "padding_top": 55,
+        "padding_bottom": 55
+      }
     }
   },
   "order": [
@@ -1535,6 +1672,7 @@
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
     "vmi_arch_collections_njKKwm",
+    "travel_circle_slider",
     "festive_collection_GqybH3",
     "popular_tours",
     "travel_promo_reviews_rJBwH9",
