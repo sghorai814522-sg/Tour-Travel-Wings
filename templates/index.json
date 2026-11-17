@@ -1309,8 +1309,8 @@
         "card_background": "#ffffff",
         "button_bg_color": "#f5a623",
         "button_hover_bg_color": "#d9921b",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 50,
+        "padding_bottom": 50,
         "subtitle": "Explore top-rated travel packages and signature itineraries handcrafted for every journey."
       }
     },
@@ -1393,7 +1393,7 @@
         "reviews_subtitle": "Real stories, unforgettable journeys, and five-star memories from our adventurers.",
         "show_divider": true,
         "reviews_title_alignment": "center",
-        "padding_top": 30,
+        "padding_top": 50,
         "padding_bottom": 50
       }
     },
@@ -1488,8 +1488,8 @@
         "show_progress_bar": true,
         "enable_infinite_autoplay": false,
         "autoplay_speed": 4,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     },
     "journal_accordion_JwwcJL": {
@@ -1657,8 +1657,8 @@
         "background_color": "#ffffff",
         "circle_max_size_desktop": 155,
         "circle_max_size_mobile": 125,
-        "padding_top": 55,
-        "padding_bottom": 55
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     },
     "travel_price_showcase": {
@@ -1757,7 +1757,7 @@
         "show_divider": true,
         "background_color": "#ffffff",
         "padding_top": 50,
-        "padding_bottom": 55
+        "padding_bottom": 50
       }
     }
   },

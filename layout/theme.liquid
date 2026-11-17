@@ -24,6 +24,69 @@
     {%- render 'theme-styles-variables' -%}
     {%- render 'color-palette' -%}
 
+    <!-- Global Brand Typography: Playfair Display + Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <style>
+      /* Unified Global Brand Typography across ALL pages (Home, About Us, Contact Us, Store) */
+      :root {
+        --font-heading--family: 'Playfair Display', Georgia, serif;
+        --font-body--family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-paragraph--family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-h1--family: 'Playfair Display', Georgia, serif;
+        --font-h2--family: 'Playfair Display', Georgia, serif;
+        --font-h3--family: 'Playfair Display', Georgia, serif;
+        --font-h4--family: 'Playfair Display', Georgia, serif;
+        --font-h5--family: 'Playfair Display', Georgia, serif;
+        --font-h6--family: 'Playfair Display', Georgia, serif;
+
+        /* Consistent Section Gap Variable for Home Page */
+        --home-section-gap: 50px;
+        --home-section-gap-mobile: 32px;
+      }
+
+      body, html, input, textarea, select, button, .paragraph, .paragraph:not(.button), p, span, li, a {
+        font-family: var(--font-body--family);
+      }
+
+      h1, h2, h3, h4, h5, h6,
+      .h1, .h2, .h3, .h4, .h5, .h6,
+      .tcs-title, .tps-title, .vac-title, .pt-heading, .popular-tours-title,
+      .fc-title, .travel-reviews-title, .gsc-heading, .journal-title,
+      .travel-hero-heading, .travel-about-heading, .travel-contact-heading,
+      .travel-promo-heading {
+        font-family: var(--font-heading--family) !important;
+      }
+
+      /* Consistent Home Page Section Gaps */
+      .travel-circle-slider-section,
+      .festive-collection-section,
+      .popular-tours-section,
+      .travel-price-showcase-section,
+      .travel-promo-reviews-section,
+      .gallery-showcase-section,
+      .journal-accordion-section {
+        padding-top: var(--home-section-gap, 48px) !important;
+        padding-bottom: var(--home-section-gap, 48px) !important;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 768px) {
+        .travel-circle-slider-section,
+        .festive-collection-section,
+        .popular-tours-section,
+        .travel-price-showcase-section,
+        .travel-promo-reviews-section,
+        .gallery-showcase-section,
+        .journal-accordion-section {
+          padding-top: var(--home-section-gap-mobile, 32px) !important;
+          padding-bottom: var(--home-section-gap-mobile, 32px) !important;
+        }
+      }
+    </style>
+
     {% if request.design_mode %}
       {%- render 'theme-editor' -%}
     {% endif %}

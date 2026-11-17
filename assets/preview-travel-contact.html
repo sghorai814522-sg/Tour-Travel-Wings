@@ -4,14 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Tour and Travel Wings</title>
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="travel-contact.css">
   <style>
     /* Reset & Base Preview Styles */
+    :root {
+      --font-heading--family: 'Playfair Display', Georgia, serif;
+      --font-body--family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body, html, input, button, select, textarea, p, span, a, li {
+      font-family: var(--font-body--family);
+    }
+    h1, h2, h3, h4, h5, h6,
+    .travel-contact-hero-title, .travel-contact-form-title, .travel-contact-item-title,
+    .travel-contact-sidebar-card-title, .travel-contact-faq-title {
+      font-family: var(--font-heading--family) !important;
+    }
     body {
       margin: 0;
       padding: 0;
       background-color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       color: #1e293b;
     }

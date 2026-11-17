@@ -2,14 +2,16 @@
 .festive-collection-section {
   position: relative;
   width: 100%;
-  /* padding: var(--vmi-section-py-mobile, 40px) 0; */
+  padding-top: var(--home-section-gap, 50px);
+  padding-bottom: var(--home-section-gap, 50px);
   background-color: var(--fc-bg-color, #ffffff);
   box-sizing: border-box;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
   .festive-collection-section {
-    /* padding: var(--vmi-section-py, 72px) 0; */
+    padding-top: var(--home-section-gap-mobile, 32px);
+    padding-bottom: var(--home-section-gap-mobile, 32px);
   }
 }
 

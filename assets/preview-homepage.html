@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tour and Travel Wings - Home</title>
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="travel-hero-slider.css">
   <link rel="stylesheet" href="festive-collection.css">
   <link rel="stylesheet" href="popular-tours.css">
@@ -18,11 +22,25 @@
   <style>
     /* Reset & Page Base */
     * { box-sizing: border-box; }
+    :root {
+      --font-heading--family: 'Playfair Display', Georgia, serif;
+      --font-body--family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --home-section-gap: 50px;
+      --home-section-gap-mobile: 32px;
+    }
+    body, html, input, button, select, textarea, p, span, a, li {
+      font-family: var(--font-body--family);
+    }
+    h1, h2, h3, h4, h5, h6,
+    .tcs-title, .tps-title, .vac-title, .pt-heading, .popular-tours-title,
+    .fc-title, .travel-reviews-title, .gsc-heading, .gallery-showcase-heading, .journal-title,
+    .travel-hero-heading, .travel-promo-heading {
+      font-family: var(--font-heading--family) !important;
+    }
     body {
       margin: 0;
       padding: 0;
       background-color: #ffffff;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       color: #1e293b;
       overflow-x: hidden;
@@ -116,7 +134,7 @@
     .travel-price-showcase-section {
       background-color: #ffffff;
       padding-top: 50px;
-      padding-bottom: 55px;
+      padding-bottom: 50px;
       overflow: hidden;
       position: relative;
       box-sizing: border-box;
@@ -2124,8 +2142,8 @@
   <style>
     .travel-circle-slider-section {
       background-color: #ffffff;
-      padding-top: 55px;
-      padding-bottom: 55px;
+      padding-top: 50px;
+      padding-bottom: 50px;
       overflow: hidden;
       position: relative;
       box-sizing: border-box;
@@ -2450,7 +2468,7 @@
   </script>
 
   <!-- Section 5: Season Finest: Festive Collection -->
-  <div class="festive-collection-section" style="padding-top: 40px; padding-bottom: 20px;">
+  <div class="festive-collection-section" style="padding-top: 50px; padding-bottom: 50px;">
     <div class="fc-container">
       <div class="fc-header">
         <h2 class="section-title fc-title">World’s Finest Destinations</h2>
@@ -2529,7 +2547,7 @@
   </div>
 
   <!-- Section 6: Popular Tours -->
-  <div class="popular-tours-section" style="padding-top: 20px; padding-bottom: 20px;">
+  <div class="popular-tours-section" style="padding-top: 50px; padding-bottom: 50px;">
     <div class="popular-tours-container">
       <div class="popular-tours-header">
         <h2 class="popular-tours-title">Popular Tours</h2>
@@ -2782,7 +2800,7 @@
   </section>
 
   <!-- Section 8 & 9: Promotional Banner & Reviews -->
-  <div class="travel-promo-reviews-section" style="padding-top: 20px; padding-bottom: 20px;">
+  <div class="travel-promo-reviews-section" style="padding-top: 50px; padding-bottom: 50px;">
     <div class="travel-promo-reviews-container">
       <!-- Section 8: Banner -->
       <div class="travel-promo-banner-wrap">
@@ -2902,7 +2920,7 @@
   </div>
 
   <!-- Section 10: Moments Beyond Destinations -->
-  <div class="gallery-showcase-section" style="padding-top: 20px; padding-bottom: 20px;">
+  <div class="gallery-showcase-section" style="padding-top: 50px; padding-bottom: 50px;">
     <div class="gallery-showcase-container is-page-width">
       <div class="gallery-showcase-header text-center">
         <span class="gallery-showcase-kicker">EXPLORE THE WORLD IN PICTURES</span>
@@ -2947,7 +2965,7 @@
   </div>
 
   <!-- Section 11: The Journal -->
-  <div class="journal-accordion-section" style="padding-top: 20px; padding-bottom: 40px;">
+  <div class="journal-accordion-section" style="padding-top: 50px; padding-bottom: 50px;">
     <div class="journal-accordion-outer">
       <div class="journal-header">
         <h2 class="journal-title">The Journal</h2>

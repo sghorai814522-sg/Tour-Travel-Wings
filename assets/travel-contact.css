@@ -4,8 +4,8 @@
    ========================================================================== */
 
 :root {
-  --tc-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --tc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --tc-font-heading: var(--font-heading--family, 'Playfair Display', Georgia, 'Times New Roman', serif);
+  --tc-font-sans: var(--font-body--family, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif);
   --tc-color-navy: #0a2e5c;
   --tc-color-navy-dark: #071f3f;
   --tc-color-gold: #f5a623;

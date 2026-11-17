@@ -4,14 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Grand Bento Travel Gallery (50 Curated Escapes) - Tour & Travel Wings</title>
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="luxury-gallery.css">
   <link rel="stylesheet" href="travel-chatbot.css">
   <style>
+    :root {
+      --font-heading--family: 'Playfair Display', Georgia, serif;
+      --font-body--family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body, html, input, button, select, p, span, a, li {
+      font-family: var(--font-body--family);
+    }
+    h1, h2, h3, h4, h5, h6, .lg-hero-title, .lg-filter-pill {
+      font-family: var(--font-heading--family);
+    }
     body {
       margin: 0;
       padding: 0;
       background-color: #f1f3f8;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
     .demo-nav {
       background: #07172b;

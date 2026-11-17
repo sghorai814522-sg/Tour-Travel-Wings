@@ -4,8 +4,8 @@
    ========================================================================== */
 
 :root {
-  --gsc-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --gsc-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --gsc-font-heading: var(--font-heading--family, 'Playfair Display', Georgia, 'Times New Roman', serif);
+  --gsc-font-sans: var(--font-body--family, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif);
   --gsc-color-navy: #0a2e5c;
   --gsc-color-navy-dark: #071f3f;
   --gsc-color-gold: #f5a623;

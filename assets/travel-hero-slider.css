@@ -5,8 +5,8 @@
 
 /* --- Custom Properties & Variables --- */
 :root {
-  --ths-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --ths-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --ths-font-heading: var(--font-heading--family, 'Playfair Display', Georgia, 'Times New Roman', serif);
+  --ths-font-sans: var(--font-body--family, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif);
   --ths-color-navy: #0a2e5c;
   --ths-color-navy-dark: #071f3f;
   --ths-color-navy-light: #154580;
