@@ -1067,7 +1067,9 @@
           "settings": {
             "collection": "",
             "label": "THAILAND",
-            "url": "shopify://collections/all"
+            "url": "shopify://collections/all",
+            "external_desktop_bg": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=2200&q=85",
+            "external_mobile_bg": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1080&q=85"
           }
         },
         "arch_switzerland": {
@@ -1075,7 +1077,9 @@
           "settings": {
             "collection": "",
             "label": "SWITZERLAND",
-            "url": "shopify://collections/all"
+            "url": "shopify://collections/all",
+            "external_desktop_bg": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2200&q=85",
+            "external_mobile_bg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&q=85"
           }
         },
         "arch_bali": {
@@ -1083,7 +1087,9 @@
           "settings": {
             "collection": "",
             "label": "BALI",
-            "url": "shopify://collections/all"
+            "url": "shopify://collections/all",
+            "external_desktop_bg": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2200&q=85",
+            "external_mobile_bg": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1080&q=85"
           }
         },
         "arch_dubai": {
@@ -1091,7 +1097,9 @@
           "settings": {
             "collection": "",
             "label": "DUBAI",
-            "url": "shopify://collections/all"
+            "url": "shopify://collections/all",
+            "external_desktop_bg": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2200&q=85",
+            "external_mobile_bg": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1080&q=85"
           }
         },
         "arch_maldives": {
@@ -1099,7 +1107,9 @@
           "settings": {
             "collection": "",
             "label": "MALDIVES",
-            "url": "shopify://collections/all"
+            "url": "shopify://collections/all",
+            "external_desktop_bg": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=2200&q=85",
+            "external_mobile_bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1080&q=85"
           }
         }
       },

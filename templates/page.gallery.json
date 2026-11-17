@@ -12,7 +12,7 @@
     "main": {
       "type": "luxury-gallery-page",
       "blocks": {
-        "escape_1": {
+        "bento_1": {
           "type": "gallery_item",
           "settings": {
             "title": "Overwater Villa Serenity",
@@ -21,11 +21,11 @@
             "tag": "PRIVATE ATOLL",
             "description": "Suspended above turquoise crystalline waters with private infinity sundecks and glass-floor ocean observation.",
             "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_2": {
+        "bento_2": {
           "type": "gallery_item",
           "settings": {
             "title": "Bora Bora Coral Lagoon",
@@ -34,11 +34,11 @@
             "tag": "ISLAND SANCTUARY",
             "description": "Towering volcanic spires reflected in jade lagoons surrounded by protective barrier reefs.",
             "external_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-5",
             "link": "/pages/contact"
           }
         },
-        "escape_3": {
+        "bento_3": {
           "type": "gallery_item",
           "settings": {
             "title": "Uluwatu Cliffside Haven",
@@ -47,11 +47,11 @@
             "tag": "TROPICAL BLISS",
             "description": "Panoramic ocean vistas, secluded sacred water temples, and terraced tropical rainforest sanctuaries.",
             "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-3",
             "link": "/pages/contact"
           }
         },
-        "escape_4": {
+        "bento_4": {
           "type": "gallery_item",
           "settings": {
             "title": "Anse Source D'Argent",
@@ -60,11 +60,11 @@
             "tag": "PRISTINE SHORES",
             "description": "Sculpted pink granite boulders rising from shallow turquoise lagoons and powdery white coral sand.",
             "external_image_url": "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_5": {
+        "bento_5": {
           "type": "gallery_item",
           "settings": {
             "title": "Positano Coastal Glamour",
@@ -73,11 +73,11 @@
             "tag": "MEDITERRANEAN LUXE",
             "description": "Pastel cliffside villas cascading into the azure Tyrrhenian Sea lined with luxury wooden speedboats.",
             "external_image_url": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_6": {
+        "bento_6": {
           "type": "gallery_item",
           "settings": {
             "title": "Coral Coast Hideaway",
@@ -86,11 +86,11 @@
             "tag": "PACIFIC PARADISE",
             "description": "Warm Polynesian hospitality, secluded reef diving, and private beachfront bungalows beneath swaying palms.",
             "external_image_url": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_7": {
+        "bento_7": {
           "type": "gallery_item",
           "settings": {
             "title": "Makena Sunset Bay",
@@ -99,11 +99,11 @@
             "tag": "PACIFIC LUXURY",
             "description": "Golden sunsets melting into the Pacific horizon with breaching humpback whales and volcanic backdrops.",
             "external_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-3",
             "link": "/pages/contact"
           }
         },
-        "escape_8": {
+        "bento_8": {
           "type": "gallery_item",
           "settings": {
             "title": "Zanzibar Spice Coast",
@@ -112,11 +112,11 @@
             "tag": "EXOTIC COAST",
             "description": "Powder-white beaches, traditional wooden dhows, and crystal-clear turquoise shallows at low tide.",
             "external_image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-6",
             "link": "/pages/contact"
           }
         },
-        "escape_9": {
+        "bento_9": {
           "type": "gallery_item",
           "settings": {
             "title": "Koh Samui Royal Bay",
@@ -125,11 +125,11 @@
             "tag": "TROPICAL ESCAPE",
             "description": "Bespoke hilltop villas overlooking sheltered cobalt bays fringed with lush coconut groves.",
             "external_image_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-3",
             "link": "/pages/contact"
           }
         },
-        "escape_10": {
+        "bento_10": {
           "type": "gallery_item",
           "settings": {
             "title": "El Nido Secret Lagoon",
@@ -138,11 +138,11 @@
             "tag": "HIDDEN COVE",
             "description": "Soaring limestone karsts enclosing iridescent emerald waters accessible only via natural rock portals.",
             "external_image_url": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-7",
             "link": "/pages/contact"
           }
         },
-        "escape_11": {
+        "bento_11": {
           "type": "gallery_item",
           "settings": {
             "title": "Matterhorn Alpine Majesty",
@@ -151,11 +151,11 @@
             "tag": "ICONIC SUMMIT",
             "description": "The pyramidal crown of the Swiss Alps rising sharply above snow-laden pine forests and luxury timber chalets.",
             "external_image_url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-5",
             "link": "/pages/contact"
           }
         },
-        "escape_12": {
+        "bento_12": {
           "type": "gallery_item",
           "settings": {
             "title": "Tre Cime Golden Hour",
@@ -164,11 +164,11 @@
             "tag": "UNESCO PEAKS",
             "description": "Dramatic limestone battlements illuminated in alpine alpenglow above serene wild wildflower valleys.",
             "external_image_url": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_13": {
+        "bento_13": {
           "type": "gallery_item",
           "settings": {
             "title": "Lake Louise Mirror Waters",
@@ -177,11 +177,11 @@
             "tag": "GLACIAL WONDER",
             "description": "Turquoise glacial waters reflecting Victoria Glacier under crisp sub-zero Canadian Rocky skies.",
             "external_image_url": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_14": {
+        "bento_14": {
           "type": "gallery_item",
           "settings": {
             "title": "Aspen Snowbound Chalet",
@@ -190,11 +190,11 @@
             "tag": "WINTER LUXE",
             "description": "Ski-in ski-out luxury estates warmed by roaring stone fireplaces amidst frosted aspen forests.",
             "external_image_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_15": {
+        "bento_15": {
           "type": "gallery_item",
           "settings": {
             "title": "Torres del Paine Spires",
@@ -203,11 +203,11 @@
             "tag": "WILD FRONTIER",
             "description": "Granite spires piercing the Patagonian sky above sapphire glacial lakes and roaming guanacos.",
             "external_image_url": "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-5",
             "link": "/pages/contact"
           }
         },
-        "escape_16": {
+        "bento_16": {
           "type": "gallery_item",
           "settings": {
             "title": "Mount Fuji Cherry Blossom",
@@ -216,11 +216,11 @@
             "tag": "SACRED PEAK",
             "description": "A snow-dusted volcanic cone framed by delicate spring sakura blossoms and crimson pagoda eaves.",
             "external_image_url": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-7",
             "link": "/pages/contact"
           }
         },
-        "escape_17": {
+        "bento_17": {
           "type": "gallery_item",
           "settings": {
             "title": "Hallstatt Lakeside Solitude",
@@ -229,11 +229,11 @@
             "tag": "FAIRYTALE LAKE",
             "description": "16th-century Alpine architecture reflected in glass-calm waters surrounded by plunging forested cliffs.",
             "external_image_url": "https://images.unsplash.com/photo-1520769945061-0a448c4471dd?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-6",
             "link": "/pages/contact"
           }
         },
-        "escape_18": {
+        "bento_18": {
           "type": "gallery_item",
           "settings": {
             "title": "Lake Wakatipu Horizons",
@@ -242,11 +242,11 @@
             "tag": "SOUTHERN ALPS",
             "description": "Glacial lake blues bounded by the jagged Remarkables mountain range in world-class adventure luxury.",
             "external_image_url": "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-6",
             "link": "/pages/contact"
           }
         },
-        "escape_19": {
+        "bento_19": {
           "type": "gallery_item",
           "settings": {
             "title": "Arctic Aurora Sanctuary",
@@ -255,11 +255,11 @@
             "tag": "NORTHERN LIGHTS",
             "description": "Glass igloo luxury beneath ribbons of dancing emerald green Aurora Borealis in subarctic silence.",
             "external_image_url": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_20": {
+        "bento_20": {
           "type": "gallery_item",
           "settings": {
             "title": "Mont Blanc High Pinnacle",
@@ -268,11 +268,11 @@
             "tag": "ROOF OF EUROPE",
             "description": "Europe's highest mass of eternal snow and ice towering 4,808 meters over alpine valleys.",
             "external_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-8",
             "link": "/pages/contact"
           }
         },
-        "escape_21": {
+        "bento_21": {
           "type": "gallery_item",
           "settings": {
             "title": "Udaipur Lake Palace Splendor",
@@ -281,11 +281,11 @@
             "tag": "ROYAL HERITAGE",
             "description": "A floating white marble palace situated in the center of Lake Pichola with Mewar court opulence.",
             "external_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-8",
             "link": "/pages/contact"
           }
         },
-        "escape_22": {
+        "bento_22": {
           "type": "gallery_item",
           "settings": {
             "title": "Santorini Blue Dome Caldera",
@@ -294,11 +294,11 @@
             "tag": "AEGEAN ICON",
             "description": "Cycladic whitewashed cave suites and cobalt blue church domes high above the Aegean sea.",
             "external_image_url": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_23": {
+        "bento_23": {
           "type": "gallery_item",
           "settings": {
             "title": "Al-Khazneh Rose Treasury",
@@ -307,11 +307,11 @@
             "tag": "ANCIENT WONDER",
             "description": "An awe-inspiring Nabataean temple hand-carved directly out of sandstone cliff walls inside the Siq.",
             "external_image_url": "https://images.unsplash.com/photo-1579606032834-d84177d5b881?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_24": {
+        "bento_24": {
           "type": "gallery_item",
           "settings": {
             "title": "Grand Versailles Gates",
@@ -320,11 +320,11 @@
             "tag": "FRENCH IMPERIAL",
             "description": "Gilded golden gates, manicured fountains, and Hall of Mirrors embodying royal French grandeur.",
             "external_image_url": "https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_25": {
+        "bento_25": {
           "type": "gallery_item",
           "settings": {
             "title": "Taj Mahal Sunrise Serenade",
@@ -333,11 +333,11 @@
             "tag": "ETERNAL MONUMENT",
             "description": "Ivory-white marble mausoleum glowing in pink morning light mirrored along cypress reflecting pools.",
             "external_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_26": {
+        "bento_26": {
           "type": "gallery_item",
           "settings": {
             "title": "Alhambra Moorish Courtyard",
@@ -346,11 +346,11 @@
             "tag": "ANDALUSIAN JEWEL",
             "description": "Intricate stucco arabesques, trickling courtyard fountains, and reflections of the Court of the Myrtles.",
             "external_image_url": "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_27": {
+        "bento_27": {
           "type": "gallery_item",
           "settings": {
             "title": "The Roman Colosseum",
@@ -359,11 +359,11 @@
             "tag": "IMPERIAL ROME",
             "description": "Two millennia of imperial history standing proud against golden hour Italian Mediterranean skies.",
             "external_image_url": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-5",
             "link": "/pages/contact"
           }
         },
-        "escape_28": {
+        "bento_28": {
           "type": "gallery_item",
           "settings": {
             "title": "Giza Pyramids Sunset",
@@ -372,11 +372,11 @@
             "tag": "SEVEN WONDERS",
             "description": "Monumental limestone tombs of Pharaohs towering above Sahara sands in dramatic desert twilight.",
             "external_image_url": "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-3",
             "link": "/pages/contact"
           }
         },
-        "escape_29": {
+        "bento_29": {
           "type": "gallery_item",
           "settings": {
             "title": "Angkor Wat Sunrise",
@@ -385,11 +385,11 @@
             "tag": "SACRED TEMPLE",
             "description": "The world's largest religious monument illuminated with lotus towers reflected in sacred moat waters.",
             "external_image_url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_30": {
+        "bento_30": {
           "type": "gallery_item",
           "settings": {
             "title": "Arashiyama Bamboo Sanctuary",
@@ -398,11 +398,11 @@
             "tag": "ZEN RETREAT",
             "description": "Towering green bamboo stalks filtering celestial sunlight along historic cobblestone meditation paths.",
             "external_image_url": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_31": {
+        "bento_31": {
           "type": "gallery_item",
           "settings": {
             "title": "Dubai Marina Yacht Horizon",
@@ -411,11 +411,11 @@
             "tag": "ULTRA LUXURY",
             "description": "Superyacht moorings beneath futuristic glass towers and the world's tallest architectural marvels.",
             "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_32": {
+        "bento_32": {
           "type": "gallery_item",
           "settings": {
             "title": "Marina Bay Sands Infinity",
@@ -424,11 +424,11 @@
             "tag": "FUTURISTIC CITY",
             "description": "The world's premier cantilever sky-park spanning three towers 200 meters above the bay.",
             "external_image_url": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-3",
             "link": "/pages/contact"
           }
         },
-        "escape_33": {
+        "bento_33": {
           "type": "gallery_item",
           "settings": {
             "title": "Tokyo Shinjuku Neon Night",
@@ -437,11 +437,11 @@
             "tag": "METROPOLIS",
             "description": "Vibrant neon reflections, Michelin-starred culinary enclaves, and futuristic subterranean avenues.",
             "external_image_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-6",
             "link": "/pages/contact"
           }
         },
-        "escape_34": {
+        "bento_34": {
           "type": "gallery_item",
           "settings": {
             "title": "Manhattan Golden Hour",
@@ -450,11 +450,11 @@
             "tag": "ICONIC SKYLINE",
             "description": "The Empire State and One World Trade illuminated by a blazing crimson Atlantic sunset.",
             "external_image_url": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-3",
             "link": "/pages/contact"
           }
         },
-        "escape_35": {
+        "bento_35": {
           "type": "gallery_item",
           "settings": {
             "title": "Victoria Harbour Illuminations",
@@ -463,11 +463,11 @@
             "tag": "HARBOUR LIGHTS",
             "description": "Symphony of lights laser spectacular dancing across hundreds of harbourside skyscrapers.",
             "external_image_url": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-7",
             "link": "/pages/contact"
           }
         },
-        "escape_36": {
+        "bento_36": {
           "type": "gallery_item",
           "settings": {
             "title": "Sydney Harbourside Elegance",
@@ -476,11 +476,11 @@
             "tag": "HARBOUR ICON",
             "description": "Sail-like vaulted shells of the Sydney Opera House overlooking yachts on sparkling blue waters.",
             "external_image_url": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-5",
             "link": "/pages/contact"
           }
         },
-        "escape_37": {
+        "bento_37": {
           "type": "gallery_item",
           "settings": {
             "title": "Tower Bridge Evening Glow",
@@ -489,11 +489,11 @@
             "tag": "THAMES HERITAGE",
             "description": "Gothic twin towers illuminated over the River Thames with views across the historic City of London.",
             "external_image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_38": {
+        "bento_38": {
           "type": "gallery_item",
           "settings": {
             "title": "Monte Carlo Port Hercule",
@@ -502,11 +502,11 @@
             "tag": "RIVIERA GLAMOUR",
             "description": "The world's most exclusive superyacht marina nestled beneath the Prince's Palace and Casino hills.",
             "external_image_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_39": {
+        "bento_39": {
           "type": "gallery_item",
           "settings": {
             "title": "Shanghai Bund Horizon",
@@ -515,11 +515,11 @@
             "tag": "EAST METROPOLIS",
             "description": "Colonial neoclassical landmarks gazing across the Huangpu River towards the futuristic Oriental Pearl.",
             "external_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_40": {
+        "bento_40": {
           "type": "gallery_item",
           "settings": {
             "title": "Chicago Riverwalk Architecture",
@@ -528,11 +528,11 @@
             "tag": "RIVERFRONT LUXE",
             "description": "Art deco stone high-rises and glass marvels mirrored in the calm emerald Chicago River waters.",
             "external_image_url": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-5",
             "link": "/pages/contact"
           }
         },
-        "escape_41": {
+        "bento_41": {
           "type": "gallery_item",
           "settings": {
             "title": "Erg Chebbi Luxury Glamping",
@@ -541,11 +541,11 @@
             "tag": "DESERT OASIS",
             "description": "Silken orange dunes under billion-star canopies with private Berber tents, carpets and fire pits.",
             "external_image_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-7",
             "link": "/pages/contact"
           }
         },
-        "escape_42": {
+        "bento_42": {
           "type": "gallery_item",
           "settings": {
             "title": "Serengeti Golden Safari",
@@ -554,11 +554,11 @@
             "tag": "WILD EXPEDITION",
             "description": "Acacia-studded plains alive with prides of lions and migrating herds during golden African twilights.",
             "external_image_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-6",
             "link": "/pages/contact"
           }
         },
-        "escape_43": {
+        "bento_43": {
           "type": "gallery_item",
           "settings": {
             "title": "Cappadocia Sunrise Balloons",
@@ -567,11 +567,11 @@
             "tag": "DREAMSCAPE",
             "description": "Hundreds of vibrant hot air balloons ascending over sculpted fairy chimneys in ethereal morning mist.",
             "external_image_url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-6",
             "link": "/pages/contact"
           }
         },
-        "escape_44": {
+        "bento_44": {
           "type": "gallery_item",
           "settings": {
             "title": "Atacama Celestial Stargazing",
@@ -580,11 +580,11 @@
             "tag": "COSMIC SKY",
             "description": "The clearest night skies on Earth showing the Milky Way arching over barren volcanic salt deserts.",
             "external_image_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_45": {
+        "bento_45": {
           "type": "gallery_item",
           "settings": {
             "title": "Sossusvlei Dune 45 Crimson",
@@ -593,11 +593,11 @@
             "tag": "ANCIENT SANDS",
             "description": "The highest red sand dunes on Earth meeting dead white clay pans and ancient petrified camelthorn trees.",
             "external_image_url": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-8",
             "link": "/pages/contact"
           }
         },
-        "escape_46": {
+        "bento_46": {
           "type": "gallery_item",
           "settings": {
             "title": "Wadi Rum Martian Canyon",
@@ -606,11 +606,11 @@
             "tag": "VALLEY OF THE MOON",
             "description": "Monolithic red granite and sandstone arches carved by wind and weather over millions of years.",
             "external_image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "tall",
+            "bento_span": "span-8",
             "link": "/pages/contact"
           }
         },
-        "escape_47": {
+        "bento_47": {
           "type": "gallery_item",
           "settings": {
             "title": "Monument Valley Buttes",
@@ -619,11 +619,11 @@
             "tag": "AMERICAN WEST",
             "description": "Towering red sandstone buttes sculpted into dramatic cathedrals of stone along Navajo horizons.",
             "external_image_url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_48": {
+        "bento_48": {
           "type": "gallery_item",
           "settings": {
             "title": "Maasai Mara Migration",
@@ -632,11 +632,11 @@
             "tag": "SAVANNAH LUXE",
             "description": "Luxury canvas tented suites perched above the Mara River with bespoke 4x4 game drive tracking.",
             "external_image_url": "https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_49": {
+        "bento_49": {
           "type": "gallery_item",
           "settings": {
             "title": "Salar de Uyuni Mirror Salt",
@@ -645,11 +645,11 @@
             "tag": "MIRROR HORIZON",
             "description": "A seamless reflection of sky and clouds across 10,000 square kilometers of blinding white lithium salt.",
             "external_image_url": "https://images.unsplash.com/photo-1494548162494-384bba4ab999?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "standard",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         },
-        "escape_50": {
+        "bento_50": {
           "type": "gallery_item",
           "settings": {
             "title": "Dubai Desert Royal Dunes",
@@ -658,69 +658,74 @@
             "tag": "ARABIAN NIGHTS",
             "description": "Private falconry displays, champagne sunset safaris, and luxury Bedouin feasts in rolling red sands.",
             "external_image_url": "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=1200&q=85",
-            "aspect_ratio": "wide",
+            "bento_span": "span-4",
             "link": "/pages/contact"
           }
         }
       },
       "block_order": [
-        "escape_1",
-        "escape_2",
-        "escape_3",
-        "escape_4",
-        "escape_5",
-        "escape_6",
-        "escape_7",
-        "escape_8",
-        "escape_9",
-        "escape_10",
-        "escape_11",
-        "escape_12",
-        "escape_13",
-        "escape_14",
-        "escape_15",
-        "escape_16",
-        "escape_17",
-        "escape_18",
-        "escape_19",
-        "escape_20",
-        "escape_21",
-        "escape_22",
-        "escape_23",
-        "escape_24",
-        "escape_25",
-        "escape_26",
-        "escape_27",
-        "escape_28",
-        "escape_29",
-        "escape_30",
-        "escape_31",
-        "escape_32",
-        "escape_33",
-        "escape_34",
-        "escape_35",
-        "escape_36",
-        "escape_37",
-        "escape_38",
-        "escape_39",
-        "escape_40",
-        "escape_41",
-        "escape_42",
-        "escape_43",
-        "escape_44",
-        "escape_45",
-        "escape_46",
-        "escape_47",
-        "escape_48",
-        "escape_49",
-        "escape_50"
+        "bento_1",
+        "bento_2",
+        "bento_3",
+        "bento_4",
+        "bento_5",
+        "bento_6",
+        "bento_7",
+        "bento_8",
+        "bento_9",
+        "bento_10",
+        "bento_11",
+        "bento_12",
+        "bento_13",
+        "bento_14",
+        "bento_15",
+        "bento_16",
+        "bento_17",
+        "bento_18",
+        "bento_19",
+        "bento_20",
+        "bento_21",
+        "bento_22",
+        "bento_23",
+        "bento_24",
+        "bento_25",
+        "bento_26",
+        "bento_27",
+        "bento_28",
+        "bento_29",
+        "bento_30",
+        "bento_31",
+        "bento_32",
+        "bento_33",
+        "bento_34",
+        "bento_35",
+        "bento_36",
+        "bento_37",
+        "bento_38",
+        "bento_39",
+        "bento_40",
+        "bento_41",
+        "bento_42",
+        "bento_43",
+        "bento_44",
+        "bento_45",
+        "bento_46",
+        "bento_47",
+        "bento_48",
+        "bento_49",
+        "bento_50"
       ],
       "settings": {
-        "hero_badge": "EXCLUSIVELY CURATED ANTHOLOGY",
-        "hero_title": "The Grand Travel Gallery",
-        "hero_subtitle": "An exclusive visual anthology of the world's most breathtaking escapes, private sanctuaries, and timeless wonders.",
+        "hero_badge": "CURATED LUXURY WONDERS",
+        "hero_title": "The Grand Bento Travel Gallery",
+        "hero_subtitle": "Discover fifty breathtaking sanctuaries, private atolls, alpine summits, and historic palaces arranged in a modern modular showcase.",
         "show_search": true,
-        "show_stats": true
+        "show_filters": true,
+        "show_stats": true,
+        "enable_lightbox": true,
+        "external_image_desktop": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=85",
+        "external_image_mobile": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1080&q=85",
+        "overlay_opacity": 75
       }
     }
   },

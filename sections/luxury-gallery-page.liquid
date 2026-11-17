@@ -1,10 +1,9 @@
 {% comment %}
-  The Grand Travel Gallery - Luxury Edition
+  The Grand Bento Travel Gallery - Luxury Edition
   Tour & Travel Wings
 {% endcomment %}
 
 {{ 'luxury-gallery.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'luxury-gallery.js' | asset_url }}" defer="defer"></script>
 
 <div
   id="LuxuryGallery-{{ section.id }}"
@@ -14,19 +13,49 @@
 >
   <!-- 1. Hero Header Banner -->
   <section class="lg-hero">
-    <div class="lg-hero-pattern" aria-hidden="true"></div>
+    <picture class="lg-hero-bg-picture">
+      {%- liquid
+        assign mobile_bg = ''
+        if section.settings.image_mobile != blank
+          assign mobile_bg = section.settings.image_mobile | image_url: width: 1080
+        elsif section.settings.external_image_mobile != blank
+          assign mobile_bg = section.settings.external_image_mobile
+        else
+          assign mobile_bg = 'hero-maldives.jpg' | asset_url
+        endif
+
+        assign desktop_bg = ''
+        if section.settings.image_desktop != blank
+          assign desktop_bg = section.settings.image_desktop | image_url: width: 2200
+        elsif section.settings.external_image_desktop != blank
+          assign desktop_bg = section.settings.external_image_desktop
+        else
+          assign desktop_bg = 'hero-santorini.jpg' | asset_url
+        endif
+      -%}
+      <source media="(max-width: 768px)" srcset="{{ mobile_bg }}">
+      <img
+        class="lg-hero-bg-img"
+        src="{{ desktop_bg }}"
+        alt="{{ section.settings.hero_title | default: 'Travel Gallery Hero Background' | escape }}"
+        loading="eager"
+        width="1920"
+        height="700"
+      >
+    </picture>
+    <div class="lg-hero-overlay" style="opacity: {{ section.settings.overlay_opacity | default: 78 | divided_by: 100.0 }};"></div>
     <div class="lg-hero-glow" aria-hidden="true"></div>
 
     <div class="lg-hero-content">
       {%- if section.settings.hero_badge != blank -%}
         <div class="lg-hero-badge">
-          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           {{ section.settings.hero_badge }}
         </div>
       {%- endif -%}
 
       <h1 class="lg-hero-title">
-        {{ section.settings.hero_title | default: 'The Grand Travel Gallery' }}
+        {{ section.settings.hero_title | default: 'The Grand Bento Travel Gallery' }}
       </h1>
 
       {%- if section.settings.hero_subtitle != blank -%}
@@ -53,7 +82,7 @@
       {%- if section.settings.show_stats -%}
         <div class="lg-hero-stats">
           <div class="lg-hero-stat-item">
-            <span class="lg-hero-stat-num">50+</span>
+            <span class="lg-hero-stat-num">50</span>
             <span class="lg-hero-stat-lbl">Curated Wonders</span>
           </div>
           <div class="lg-hero-stat-item">
@@ -74,55 +103,44 @@
   </section>
 
   <!-- 2. Sticky Filter & Toolbar -->
-  <div class="lg-toolbar-sticky">
-    <div class="lg-container">
-      <div class="lg-toolbar">
-        <!-- Category Filter Tabs -->
-        <div class="lg-filters" role="tablist" aria-label="Gallery Categories">
-          <button type="button" class="lg-filter-btn active" data-filter="all">
-            <span>All Escapes</span>
-            <span class="lg-filter-count">{{ section.blocks.size }}</span>
-          </button>
-          <button type="button" class="lg-filter-btn" data-filter="tropical">
-            <span>Tropical & Islands</span>
-          </button>
-          <button type="button" class="lg-filter-btn" data-filter="alpine">
-            <span>Alpine & Peaks</span>
-          </button>
-          <button type="button" class="lg-filter-btn" data-filter="heritage">
-            <span>Palaces & Heritage</span>
-          </button>
-          <button type="button" class="lg-filter-btn" data-filter="modern">
-            <span>Modern Skylines</span>
-          </button>
-          <button type="button" class="lg-filter-btn" data-filter="desert">
-            <span>Desert & Safari</span>
-          </button>
-        </div>
-
-        <!-- Controls: View Status & Layout Toggles -->
-        <div class="lg-controls">
-          <div class="lg-view-status" id="lgViewStatus">
-            Showing <strong>16</strong> of <strong>{{ section.blocks.size }}</strong> escapes
+  {%- if section.settings.show_filters -%}
+    <div class="lg-toolbar-sticky">
+      <div class="lg-container">
+        <div class="lg-toolbar">
+          <div class="lg-filter-tabs" id="lgFilterTabs">
+            <button type="button" class="lg-tab-btn active" data-filter="all">
+              <span>All Escapes</span>
+              <span class="lg-tab-count">{{ section.blocks.size }}</span>
+            </button>
+            <button type="button" class="lg-tab-btn" data-filter="tropical">
+              <span>Tropical &amp; Islands</span>
+            </button>
+            <button type="button" class="lg-tab-btn" data-filter="alpine">
+              <span>Alpine &amp; Peaks</span>
+            </button>
+            <button type="button" class="lg-tab-btn" data-filter="heritage">
+              <span>Palaces &amp; Heritage</span>
+            </button>
+            <button type="button" class="lg-tab-btn" data-filter="modern">
+              <span>Modern Skylines</span>
+            </button>
+            <button type="button" class="lg-tab-btn" data-filter="desert">
+              <span>Desert &amp; Safari</span>
+            </button>
           </div>
 
-          <div class="lg-layout-toggles">
-            <button type="button" class="lg-layout-btn active" data-cols="4" title="4 Columns Grid" aria-label="4 Columns Grid">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h4v18H3zm7 0h4v18h-4zm7 0h4v18h-4z"/></svg>
-            </button>
-            <button type="button" class="lg-layout-btn" data-cols="3" title="3 Columns Grid" aria-label="3 Columns Grid">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h4v16H4zm6 0h4v16h-4zm6 0h4v16h-4z"/></svg>
-            </button>
+          <div class="lg-view-status" id="lgViewStatus">
+            Showing <strong id="lgVisibleCount">{{ section.blocks.size }}</strong> of <strong>{{ section.blocks.size }}</strong> destinations
           </div>
         </div>
       </div>
     </div>
-  </div>
+  {%- endif -%}
 
-  <!-- 3. Gallery Grid Section -->
+  <!-- 3. Bento Grid Section (50 Escapes) -->
   <main class="lg-main">
     <div class="lg-container">
-      <div class="lg-grid" id="lgGrid">
+      <div class="lg-bento-grid" id="lgBentoGrid">
         {%- for block in section.blocks -%}
           {%- liquid
             assign img_url = ''
@@ -132,16 +150,11 @@
               assign img_url = block.settings.external_image_url
             endif
 
-            assign aspect_class = ''
-            if block.settings.aspect_ratio == 'tall'
-              assign aspect_class = 'tall'
-            elsif block.settings.aspect_ratio == 'wide'
-              assign aspect_class = 'wide'
-            endif
+            assign bento_span = block.settings.bento_span | default: 'span-4'
           -%}
 
           <article
-            class="lg-card {{ aspect_class }}"
+            class="lg-dest-card {{ bento_span }}"
             data-index="{{ forloop.index0 }}"
             data-category="{{ block.settings.category | default: 'tropical' }}"
             data-title="{{ block.settings.title | escape }}"
@@ -154,168 +167,323 @@
             aria-label="View details for {{ block.settings.title }}"
             {{ block.shopify_attributes }}
           >
-            <div class="lg-card-media">
-              <img
-                src="{{ img_url }}"
-                alt="{{ block.settings.title | escape }}"
-                class="lg-card-img"
-                loading="lazy"
-                width="600"
-                height="750"
-              >
-            </div>
-            <div class="lg-card-overlay"></div>
+            <img
+              src="{{ img_url }}"
+              alt="{{ block.settings.title | escape }}"
+              class="lg-dest-img"
+              loading="lazy"
+              width="600"
+              height="450"
+            >
+            <div class="lg-dest-overlay"></div>
 
-            <!-- Top Tag & Zoom Icon -->
-            <div class="lg-card-top">
-              <span class="lg-card-category-tag">
-                {{ block.settings.tag | default: block.settings.category | upcase }}
-              </span>
-              <div class="lg-card-zoom-btn" aria-hidden="true">
+            <!-- Top Badges -->
+            <div class="lg-dest-top">
+              <span class="lg-dest-category-badge">{{ block.settings.tag | default: block.settings.category | upcase }}</span>
+              <div class="lg-dest-zoom-btn" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
               </div>
             </div>
 
             <!-- Bottom Content -->
-            <div class="lg-card-bottom">
-              {%- if block.settings.location != blank -%}
-                <div class="lg-card-location">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  <span>{{ block.settings.location }}</span>
-                </div>
-              {%- endif -%}
+            <div class="lg-dest-bottom">
+              <div class="lg-dest-location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>{{ block.settings.location }}</span>
+              </div>
 
-              <h2 class="lg-card-title">{{ block.settings.title }}</h2>
+              <h2 class="lg-dest-title">{{ block.settings.title }}</h2>
+              <p class="lg-dest-desc">{{ block.settings.description }}</p>
 
-              {%- if block.settings.description != blank -%}
-                <p class="lg-card-desc">{{ block.settings.description }}</p>
-              {%- endif -%}
-
-              <div class="lg-card-footer-action">
-                <span>Explore Details</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <div class="lg-dest-action">
+                <span>Explore Escape</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </div>
           </article>
         {%- endfor -%}
 
-        <!-- Empty Search State -->
-        <div class="lg-empty-state" id="lgEmptyState">
-          <svg class="lg-empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-          <h3 class="lg-empty-title">No Luxury Escapes Found</h3>
-          <p class="lg-empty-text">We couldn't find any destinations matching your search. Try another query or reset the filter.</p>
-          <button type="button" class="lg-empty-btn" id="lgEmptyResetBtn">Reset All Filters</button>
-        </div>
-      </div>
-
-      <!-- Load More / Progressive Progress Bar -->
-      <div class="lg-load-more-wrap" id="lgLoadMoreWrap">
-        <div class="lg-progress-bar-outer" aria-hidden="true">
-          <div class="lg-progress-bar-fill" id="lgProgressFill" style="width: 32%;"></div>
-        </div>
-        <div class="lg-progress-text" id="lgProgressText">
-          Revealed 16 of {{ section.blocks.size }} wonders
-        </div>
-        <button type="button" class="lg-load-more-btn" id="lgLoadMoreBtn">
-          <span>Reveal More Exclusive Escapes</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
       </div>
     </div>
   </main>
 
-  <!-- 4. Fullscreen Luxury Lightbox Modal -->
-  <div class="lg-lightbox" id="lgLightbox" role="dialog" aria-modal="true" aria-label="Travel Image Preview">
-    <!-- Top Bar -->
-    <div class="lg-lb-topbar">
-      <div class="lg-lb-counter" id="lgLbCounter">1 / 50</div>
-      <div class="lg-lb-actions">
-        <button type="button" class="lg-lb-action-btn" id="lgLbZoom" title="Toggle Zoom" aria-label="Toggle Zoom">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-        </button>
-        <button type="button" class="lg-lb-action-btn" id="lgLbClose" title="Close (Esc)" aria-label="Close">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-    </div>
+  <!-- 4. Interactive Lightbox Modal -->
+  {%- if section.settings.enable_lightbox -%}
+    <div id="lgModal" class="lg-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="lg-modal-container">
+        <button type="button" class="lg-modal-close" id="lgModalClose" aria-label="Close modal">&times;</button>
+        <button type="button" class="lg-modal-nav lg-modal-prev" id="lgModalPrev" aria-label="Previous escape">&#10094;</button>
+        <button type="button" class="lg-modal-nav lg-modal-next" id="lgModalNext" aria-label="Next escape">&#10095;</button>
 
-    <!-- Middle Stage -->
-    <div class="lg-lb-stage">
-      <button type="button" class="lg-lb-nav-btn lg-lb-prev" id="lgLbPrev" title="Previous" aria-label="Previous Escape">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-
-      <div class="lg-lb-img-wrap">
-        <img src="" alt="" class="lg-lb-img" id="lgLbImg">
-      </div>
-
-      <button type="button" class="lg-lb-nav-btn lg-lb-next" id="lgLbNext" title="Next" aria-label="Next Escape">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-    </div>
-
-    <!-- Bottom Info Panel -->
-    <div class="lg-lb-info">
-      <div class="lg-lb-info-content">
-        <div class="lg-lb-info-meta">
-          <span class="lg-lb-info-category" id="lgLbCategory">TROPICAL & ISLANDS</span>
-          <span class="lg-lb-info-location" id="lgLbLocation">Maldives</span>
+        <div class="lg-modal-image-col">
+          <img id="lgModalImg" class="lg-modal-img" src="" alt="Destination Escape">
         </div>
-        <h3 class="lg-lb-info-title" id="lgLbTitle">Overwater Villa Haven</h3>
-        <p class="lg-lb-info-desc" id="lgLbDesc"></p>
-      </div>
 
-      <a href="#" class="lg-lb-inquire-btn" id="lgLbInquireBtn">
-        <span>Inquire About This Escape</span>
-        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+        <div class="lg-modal-info-col">
+          <div>
+            <span id="lgModalTag" class="lg-modal-tag"></span>
+            <h3 id="lgModalTitle" class="lg-modal-title"></h3>
+            <div id="lgModalLoc" class="lg-modal-loc">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span></span>
+            </div>
+            <p id="lgModalDesc" class="lg-modal-desc"></p>
+          </div>
+
+          <div>
+            <a id="lgModalCta" href="/pages/contact" class="lg-modal-cta">
+              <span>Reserve This Escape</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  {%- endif -%}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const grid = document.getElementById('lgBentoGrid');
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll('.lg-dest-card'));
+  const filterTabs = document.querySelectorAll('#lgFilterTabs .lg-tab-btn');
+  const searchInput = document.getElementById('lgSearchInput');
+  const searchClear = document.getElementById('lgSearchClear');
+  const visibleCount = document.getElementById('lgVisibleCount');
+
+  // Filter functionality
+  let currentFilter = 'all';
+  let searchQuery = '';
+
+  function applyFilters() {
+    let count = 0;
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const title = (card.getAttribute('data-title') || '').toLowerCase();
+      const loc = (card.getAttribute('data-location') || '').toLowerCase();
+
+      const matchCat = (currentFilter === 'all' || cat === currentFilter);
+      const matchSearch = (!searchQuery || title.includes(searchQuery) || loc.includes(searchQuery));
+
+      if (matchCat && matchSearch) {
+        card.style.display = '';
+        count++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (visibleCount) {
+      visibleCount.textContent = count;
+    }
+  }
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      currentFilter = this.getAttribute('data-filter') || 'all';
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      searchQuery = this.value.trim().toLowerCase();
+      if (searchClear) {
+        searchClear.style.display = searchQuery ? 'block' : 'none';
+      }
+      applyFilters();
+    });
+  }
+
+  if (searchClear) {
+    searchClear.addEventListener('click', function() {
+      if (searchInput) {
+        searchInput.value = '';
+        searchQuery = '';
+        this.style.display = 'none';
+        applyFilters();
+      }
+    });
+  }
+
+  // Lightbox Modal
+  const modal = document.getElementById('lgModal');
+  const modalImg = document.getElementById('lgModalImg');
+  const modalTitle = document.getElementById('lgModalTitle');
+  const modalLoc = document.getElementById('lgModalLoc');
+  const modalTag = document.getElementById('lgModalTag');
+  const modalDesc = document.getElementById('lgModalDesc');
+  const modalClose = document.getElementById('lgModalClose');
+  const modalPrev = document.getElementById('lgModalPrev');
+  const modalNext = document.getElementById('lgModalNext');
+  const modalCta = document.getElementById('lgModalCta');
+
+  let activeIndex = 0;
+  const visibleCards = () => cards.filter(c => c.style.display !== 'none');
+
+  function openModal(card) {
+    if (!modal) return;
+    const img = card.getAttribute('data-full-img');
+    const title = card.getAttribute('data-title');
+    const loc = card.getAttribute('data-location');
+    const tag = card.querySelector('.lg-dest-category-badge')?.textContent || '';
+    const desc = card.getAttribute('data-desc');
+    const link = card.getAttribute('data-link');
+
+    if (modalImg) modalImg.src = img;
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalLoc) modalLoc.querySelector('span').textContent = loc;
+    if (modalTag) modalTag.textContent = tag;
+    if (modalDesc) modalDesc.textContent = desc;
+    if (modalCta && link) modalCta.href = link;
+
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      const vis = visibleCards();
+      activeIndex = vis.indexOf(this);
+      openModal(this);
+    });
+  });
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  if (modalPrev) {
+    modalPrev.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const vis = visibleCards();
+      if (!vis.length) return;
+      activeIndex = (activeIndex - 1 + vis.length) % vis.length;
+      openModal(vis[activeIndex]);
+    });
+  }
+
+  if (modalNext) {
+    modalNext.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const vis = visibleCards();
+      if (!vis.length) return;
+      activeIndex = (activeIndex + 1) % vis.length;
+      openModal(vis[activeIndex]);
+    });
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (!modal || !modal.classList.contains('active')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft' && modalPrev) modalPrev.click();
+    if (e.key === 'ArrowRight' && modalNext) modalNext.click();
+  });
+});
+</script>
 
 {% schema %}
 {
-  "name": "Luxury Gallery Page",
+  "name": "Luxury Bento Gallery",
+  "tag": "section",
+  "class": "luxury-bento-gallery-section",
   "settings": [
-    {
-      "type": "header",
-      "content": "Hero Banner Settings"
-    },
     {
       "type": "text",
       "id": "hero_badge",
-      "label": "Badge Text",
-      "default": "EXCLUSIVELY CURATED ANTHOLOGY"
+      "label": "Hero Badge Text",
+      "default": "CURATED LUXURY WONDERS"
     },
     {
       "type": "text",
       "id": "hero_title",
-      "label": "Hero Heading",
-      "default": "The Grand Travel Gallery"
+      "label": "Hero Title",
+      "default": "The Grand Bento Travel Gallery"
     },
     {
       "type": "textarea",
       "id": "hero_subtitle",
       "label": "Hero Subtitle",
-      "default": "An exclusive visual anthology of the world's most breathtaking escapes, private sanctuaries, and timeless wonders."
+      "default": "Discover fifty breathtaking sanctuaries, private atolls, alpine summits, and historic palaces arranged in a modern modular showcase."
+    },
+    {
+      "type": "header",
+      "content": "Hero Background Images (Desktop & Mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop Hero Background Image"
+    },
+    {
+      "type": "url",
+      "id": "external_image_desktop",
+      "label": "External Desktop Background Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Hero Background Image"
+    },
+    {
+      "type": "url",
+      "id": "external_image_mobile",
+      "label": "External Mobile Background Image URL"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Hero Overlay Darkness %",
+      "min": 30,
+      "max": 95,
+      "step": 1,
+      "unit": "%",
+      "default": 75
     },
     {
       "type": "checkbox",
       "id": "show_search",
-      "label": "Enable Live Destination Search",
+      "label": "Show Live Search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "label": "Show Category Filters",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_stats",
-      "label": "Show Luxury Stats Bar",
+      "label": "Show Stats Bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_lightbox",
+      "label": "Enable Fullscreen Lightbox",
       "default": true
     }
   ],
   "blocks": [
     {
       "type": "gallery_item",
-      "name": "Gallery Escape",
+      "name": "Bento Destination Card",
       "settings": [
         {
           "type": "text",
@@ -326,13 +494,13 @@
         {
           "type": "text",
           "id": "location",
-          "label": "Country / Location",
+          "label": "Location",
           "default": "South Ari Atoll, Maldives"
         },
         {
           "type": "select",
           "id": "category",
-          "label": "Category Tab",
+          "label": "Category",
           "options": [
             { "value": "tropical", "label": "Tropical & Islands" },
             { "value": "alpine", "label": "Alpine & Peaks" },
@@ -345,699 +513,46 @@
         {
           "type": "text",
           "id": "tag",
-          "label": "Floating Tag (e.g. PRIVATE ATOLL)",
-          "default": "EXCLUSIVE"
+          "label": "Category Tag / Badge",
+          "default": "PRIVATE ATOLL"
         },
         {
           "type": "textarea",
           "id": "description",
-          "label": "Narrative Description",
-          "default": "Handcrafted luxury holiday experience across extraordinary landscapes."
+          "label": "Short Description",
+          "default": "Suspended above turquoise waters with infinity sundecks."
         },
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Shopify Image (Overrides CDN URL)"
+          "label": "Upload Image"
         },
         {
-          "type": "text",
+          "type": "url",
           "id": "external_image_url",
-          "label": "High-Res Image CDN URL"
+          "label": "External Image URL"
         },
         {
           "type": "select",
-          "id": "aspect_ratio",
-          "label": "Tile Aspect Ratio",
+          "id": "bento_span",
+          "label": "Bento Grid Span",
           "options": [
-            { "value": "standard", "label": "Standard (4:5)" },
-            { "value": "tall", "label": "Tall Masonry (2 Rows)" },
-            { "value": "wide", "label": "Wide Feature (2 Cols)" }
+            { "value": "span-3", "label": "Compact (3 cols)" },
+            { "value": "span-4", "label": "Standard (4 cols)" },
+            { "value": "span-5", "label": "Wide (5 cols)" },
+            { "value": "span-6", "label": "Half Row (6 cols)" },
+            { "value": "span-7", "label": "Large (7 cols)" },
+            { "value": "span-8", "label": "Extra Wide (8 cols)" },
+            { "value": "span-12", "label": "Full Row (12 cols)" }
           ],
-          "default": "standard"
+          "default": "span-4"
         },
         {
           "type": "url",
           "id": "link",
-          "label": "Inquiry / Tour Link URL"
+          "label": "Custom Destination Link"
         }
       ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Luxury Travel Gallery (50 Escapes)",
-      "blocks": [
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Overwater Villa Serenity",
-                  "location": "South Ari Atoll, Maldives",
-                  "category": "tropical",
-                  "tag": "PRIVATE ATOLL",
-                  "description": "Suspended above turquoise crystalline waters with private infinity sundecks and glass-floor ocean observation.",
-                  "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Bora Bora Coral Lagoon",
-                  "location": "French Polynesia",
-                  "category": "tropical",
-                  "tag": "ISLAND SANCTUARY",
-                  "description": "Towering volcanic spires reflected in jade lagoons surrounded by protective barrier reefs.",
-                  "external_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Uluwatu Cliffside Haven",
-                  "location": "Bali, Indonesia",
-                  "category": "tropical",
-                  "tag": "TROPICAL BLISS",
-                  "description": "Panoramic ocean vistas, secluded sacred water temples, and terraced tropical rainforest sanctuaries.",
-                  "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Anse Source D'Argent",
-                  "location": "La Digue, Seychelles",
-                  "category": "tropical",
-                  "tag": "PRISTINE SHORES",
-                  "description": "Sculpted pink granite boulders rising from shallow turquoise lagoons and powdery white coral sand.",
-                  "external_image_url": "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Positano Coastal Glamour",
-                  "location": "Amalfi Coast, Italy",
-                  "category": "tropical",
-                  "tag": "MEDITERRANEAN LUXE",
-                  "description": "Pastel cliffside villas cascading into the azure Tyrrhenian Sea lined with luxury wooden speedboats.",
-                  "external_image_url": "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Coral Coast Hideaway",
-                  "location": "Viti Levu, Fiji",
-                  "category": "tropical",
-                  "tag": "PACIFIC PARADISE",
-                  "description": "Warm Polynesian hospitality, secluded reef diving, and private beachfront bungalows beneath swaying palms.",
-                  "external_image_url": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Makena Sunset Bay",
-                  "location": "Maui, Hawaii",
-                  "category": "tropical",
-                  "tag": "PACIFIC LUXURY",
-                  "description": "Golden sunsets melting into the Pacific horizon with breaching humpback whales and volcanic backdrops.",
-                  "external_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Zanzibar Spice Coast",
-                  "location": "Tanzania, Indian Ocean",
-                  "category": "tropical",
-                  "tag": "EXOTIC COAST",
-                  "description": "Powder-white beaches, traditional wooden dhows, and crystal-clear turquoise shallows at low tide.",
-                  "external_image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Koh Samui Royal Bay",
-                  "location": "Gulf of Thailand",
-                  "category": "tropical",
-                  "tag": "TROPICAL ESCAPE",
-                  "description": "Bespoke hilltop villas overlooking sheltered cobalt bays fringed with lush coconut groves.",
-                  "external_image_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "El Nido Secret Lagoon",
-                  "location": "Palawan, Philippines",
-                  "category": "tropical",
-                  "tag": "HIDDEN COVE",
-                  "description": "Soaring limestone karsts enclosing iridescent emerald waters accessible only via natural rock portals.",
-                  "external_image_url": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Matterhorn Alpine Majesty",
-                  "location": "Zermatt, Switzerland",
-                  "category": "alpine",
-                  "tag": "ICONIC SUMMIT",
-                  "description": "The pyramidal crown of the Swiss Alps rising sharply above snow-laden pine forests and luxury timber chalets.",
-                  "external_image_url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Tre Cime Golden Hour",
-                  "location": "Dolomites, Italy",
-                  "category": "alpine",
-                  "tag": "UNESCO PEAKS",
-                  "description": "Dramatic limestone battlements illuminated in alpine alpenglow above serene wild wildflower valleys.",
-                  "external_image_url": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Lake Louise Mirror Waters",
-                  "location": "Banff, Canada",
-                  "category": "alpine",
-                  "tag": "GLACIAL WONDER",
-                  "description": "Turquoise glacial waters reflecting Victoria Glacier under crisp sub-zero Canadian Rocky skies.",
-                  "external_image_url": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Aspen Snowbound Chalet",
-                  "location": "Colorado, USA",
-                  "category": "alpine",
-                  "tag": "WINTER LUXE",
-                  "description": "Ski-in ski-out luxury estates warmed by roaring stone fireplaces amidst frosted aspen forests.",
-                  "external_image_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Torres del Paine Spires",
-                  "location": "Patagonia, Chile",
-                  "category": "alpine",
-                  "tag": "WILD FRONTIER",
-                  "description": "Granite spires piercing the Patagonian sky above sapphire glacial lakes and roaming guanacos.",
-                  "external_image_url": "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Mount Fuji Cherry Blossom",
-                  "location": "Honshu, Japan",
-                  "category": "alpine",
-                  "tag": "SACRED PEAK",
-                  "description": "A snow-dusted volcanic cone framed by delicate spring sakura blossoms and crimson pagoda eaves.",
-                  "external_image_url": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Hallstatt Lakeside Solitude",
-                  "location": "Salzkammergut, Austria",
-                  "category": "alpine",
-                  "tag": "FAIRYTALE LAKE",
-                  "description": "16th-century Alpine architecture reflected in glass-calm waters surrounded by plunging forested cliffs.",
-                  "external_image_url": "https://images.unsplash.com/photo-1520769945061-0a448c4471dd?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Lake Wakatipu Horizons",
-                  "location": "Queenstown, New Zealand",
-                  "category": "alpine",
-                  "tag": "SOUTHERN ALPS",
-                  "description": "Glacial lake blues bounded by the jagged Remarkables mountain range in world-class adventure luxury.",
-                  "external_image_url": "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Arctic Aurora Sanctuary",
-                  "location": "Lapland, Finland",
-                  "category": "alpine",
-                  "tag": "NORTHERN LIGHTS",
-                  "description": "Glass igloo luxury beneath ribbons of dancing emerald green Aurora Borealis in subarctic silence.",
-                  "external_image_url": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Mont Blanc High Pinnacle",
-                  "location": "Chamonix, France",
-                  "category": "alpine",
-                  "tag": "ROOF OF EUROPE",
-                  "description": "Europe's highest mass of eternal snow and ice towering 4,808 meters over alpine valleys.",
-                  "external_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Udaipur Lake Palace Splendor",
-                  "location": "Rajasthan, India",
-                  "category": "heritage",
-                  "tag": "ROYAL HERITAGE",
-                  "description": "A floating white marble palace situated in the center of Lake Pichola with Mewar court opulence.",
-                  "external_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Santorini Blue Dome Caldera",
-                  "location": "Oia, Greece",
-                  "category": "heritage",
-                  "tag": "AEGEAN ICON",
-                  "description": "Cycladic whitewashed cave suites and cobalt blue church domes high above the Aegean sea.",
-                  "external_image_url": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Al-Khazneh Rose Treasury",
-                  "location": "Petra, Jordan",
-                  "category": "heritage",
-                  "tag": "ANCIENT WONDER",
-                  "description": "An awe-inspiring Nabataean temple hand-carved directly out of sandstone cliff walls inside the Siq.",
-                  "external_image_url": "https://images.unsplash.com/photo-1579606032834-d84177d5b881?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Grand Versailles Gates",
-                  "location": "Versailles, France",
-                  "category": "heritage",
-                  "tag": "FRENCH IMPERIAL",
-                  "description": "Gilded golden gates, manicured fountains, and Hall of Mirrors embodying royal French grandeur.",
-                  "external_image_url": "https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Taj Mahal Sunrise Serenade",
-                  "location": "Agra, India",
-                  "category": "heritage",
-                  "tag": "ETERNAL MONUMENT",
-                  "description": "Ivory-white marble mausoleum glowing in pink morning light mirrored along cypress reflecting pools.",
-                  "external_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Alhambra Moorish Courtyard",
-                  "location": "Granada, Spain",
-                  "category": "heritage",
-                  "tag": "ANDALUSIAN JEWEL",
-                  "description": "Intricate stucco arabesques, trickling courtyard fountains, and reflections of the Court of the Myrtles.",
-                  "external_image_url": "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "The Roman Colosseum",
-                  "location": "Rome, Italy",
-                  "category": "heritage",
-                  "tag": "IMPERIAL ROME",
-                  "description": "Two millennia of imperial history standing proud against golden hour Italian Mediterranean skies.",
-                  "external_image_url": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Giza Pyramids Sunset",
-                  "location": "Cairo, Egypt",
-                  "category": "heritage",
-                  "tag": "SEVEN WONDERS",
-                  "description": "Monumental limestone tombs of Pharaohs towering above Sahara sands in dramatic desert twilight.",
-                  "external_image_url": "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Angkor Wat Sunrise",
-                  "location": "Siem Reap, Cambodia",
-                  "category": "heritage",
-                  "tag": "SACRED TEMPLE",
-                  "description": "The world's largest religious monument illuminated with lotus towers reflected in sacred moat waters.",
-                  "external_image_url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Arashiyama Bamboo Sanctuary",
-                  "location": "Kyoto, Japan",
-                  "category": "heritage",
-                  "tag": "ZEN RETREAT",
-                  "description": "Towering green bamboo stalks filtering celestial sunlight along historic cobblestone meditation paths.",
-                  "external_image_url": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Dubai Marina Yacht Horizon",
-                  "location": "Dubai, UAE",
-                  "category": "modern",
-                  "tag": "ULTRA LUXURY",
-                  "description": "Superyacht moorings beneath futuristic glass towers and the world's tallest architectural marvels.",
-                  "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Marina Bay Sands Infinity",
-                  "location": "Singapore",
-                  "category": "modern",
-                  "tag": "FUTURISTIC CITY",
-                  "description": "The world's premier cantilever sky-park spanning three towers 200 meters above the bay.",
-                  "external_image_url": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Tokyo Shinjuku Neon Night",
-                  "location": "Tokyo, Japan",
-                  "category": "modern",
-                  "tag": "METROPOLIS",
-                  "description": "Vibrant neon reflections, Michelin-starred culinary enclaves, and futuristic subterranean avenues.",
-                  "external_image_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Manhattan Golden Hour",
-                  "location": "New York City, USA",
-                  "category": "modern",
-                  "tag": "ICONIC SKYLINE",
-                  "description": "The Empire State and One World Trade illuminated by a blazing crimson Atlantic sunset.",
-                  "external_image_url": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Victoria Harbour Illuminations",
-                  "location": "Hong Kong",
-                  "category": "modern",
-                  "tag": "HARBOUR LIGHTS",
-                  "description": "Symphony of lights laser spectacular dancing across hundreds of harbourside skyscrapers.",
-                  "external_image_url": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Sydney Harbourside Elegance",
-                  "location": "Sydney, Australia",
-                  "category": "modern",
-                  "tag": "HARBOUR ICON",
-                  "description": "Sail-like vaulted shells of the Sydney Opera House overlooking yachts on sparkling blue waters.",
-                  "external_image_url": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Tower Bridge Evening Glow",
-                  "location": "London, UK",
-                  "category": "modern",
-                  "tag": "THAMES HERITAGE",
-                  "description": "Gothic twin towers illuminated over the River Thames with views across the historic City of London.",
-                  "external_image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Monte Carlo Port Hercule",
-                  "location": "Monaco, French Riviera",
-                  "category": "modern",
-                  "tag": "RIVIERA GLAMOUR",
-                  "description": "The world's most exclusive superyacht marina nestled beneath the Prince's Palace and Casino hills.",
-                  "external_image_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Shanghai Bund Horizon",
-                  "location": "Shanghai, China",
-                  "category": "modern",
-                  "tag": "EAST METROPOLIS",
-                  "description": "Colonial neoclassical landmarks gazing across the Huangpu River towards the futuristic Oriental Pearl.",
-                  "external_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Chicago Riverwalk Architecture",
-                  "location": "Chicago, USA",
-                  "category": "modern",
-                  "tag": "RIVERFRONT LUXE",
-                  "description": "Art deco stone high-rises and glass marvels mirrored in the calm emerald Chicago River waters.",
-                  "external_image_url": "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Erg Chebbi Luxury Glamping",
-                  "location": "Merzouga, Sahara Morocco",
-                  "category": "desert",
-                  "tag": "DESERT OASIS",
-                  "description": "Silken orange dunes under billion-star canopies with private Berber tents, carpets and fire pits.",
-                  "external_image_url": "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Serengeti Golden Safari",
-                  "location": "Serengeti, Tanzania",
-                  "category": "desert",
-                  "tag": "WILD EXPEDITION",
-                  "description": "Acacia-studded plains alive with prides of lions and migrating herds during golden African twilights.",
-                  "external_image_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Cappadocia Sunrise Balloons",
-                  "location": "Goreme, Turkey",
-                  "category": "desert",
-                  "tag": "DREAMSCAPE",
-                  "description": "Hundreds of vibrant hot air balloons ascending over sculpted fairy chimneys in ethereal morning mist.",
-                  "external_image_url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Atacama Celestial Stargazing",
-                  "location": "San Pedro, Chile",
-                  "category": "desert",
-                  "tag": "COSMIC SKY",
-                  "description": "The clearest night skies on Earth showing the Milky Way arching over barren volcanic salt deserts.",
-                  "external_image_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Sossusvlei Dune 45 Crimson",
-                  "location": "Namib-Naukluft, Namibia",
-                  "category": "desert",
-                  "tag": "ANCIENT SANDS",
-                  "description": "The highest red sand dunes on Earth meeting dead white clay pans and ancient petrified camelthorn trees.",
-                  "external_image_url": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Wadi Rum Martian Canyon",
-                  "location": "Aqaba, Jordan",
-                  "category": "desert",
-                  "tag": "VALLEY OF THE MOON",
-                  "description": "Monolithic red granite and sandstone arches carved by wind and weather over millions of years.",
-                  "external_image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "tall",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Monument Valley Buttes",
-                  "location": "Utah / Arizona, USA",
-                  "category": "desert",
-                  "tag": "AMERICAN WEST",
-                  "description": "Towering red sandstone buttes sculpted into dramatic cathedrals of stone along Navajo horizons.",
-                  "external_image_url": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Maasai Mara Migration",
-                  "location": "Narok, Kenya",
-                  "category": "desert",
-                  "tag": "SAVANNAH LUXE",
-                  "description": "Luxury canvas tented suites perched above the Mara River with bespoke 4x4 game drive tracking.",
-                  "external_image_url": "https://images.unsplash.com/photo-1547970810-dc1eac37d174?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Salar de Uyuni Mirror Salt",
-                  "location": "Potosi, Bolivia",
-                  "category": "desert",
-                  "tag": "MIRROR HORIZON",
-                  "description": "A seamless reflection of sky and clouds across 10,000 square kilometers of blinding white lithium salt.",
-                  "external_image_url": "https://images.unsplash.com/photo-1494548162494-384bba4ab999?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "standard",
-                  "link": "/pages/contact"
-            }
-      },
-      {
-            "type": "gallery_item",
-            "settings": {
-                  "title": "Dubai Desert Royal Dunes",
-                  "location": "Dubai Desert Conservation",
-                  "category": "desert",
-                  "tag": "ARABIAN NIGHTS",
-                  "description": "Private falconry displays, champagne sunset safaris, and luxury Bedouin feasts in rolling red sands.",
-                  "external_image_url": "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=1200&q=85",
-                  "aspect_ratio": "wide",
-                  "link": "/pages/contact"
-            }
-      }
-]
     }
   ]
 }
