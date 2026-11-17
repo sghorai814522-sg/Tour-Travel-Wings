@@ -1660,6 +1660,105 @@
         "padding_top": 55,
         "padding_bottom": 55
       }
+    },
+    "travel_price_showcase": {
+      "type": "travel-price-showcase",
+      "blocks": {
+        "card_1": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "5K - 10K",
+            "category_label": "Boutique Hotel",
+            "title": "Boutique City Hotel",
+            "fallback_image": "tour-bali.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_2": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "10K - 20K",
+            "category_label": "Hilltop Resort",
+            "title": "Scenic Hillside Resort",
+            "fallback_image": "tour-thailand.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_3": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "20K - 30K",
+            "category_label": "Beachfront Resort",
+            "title": "Oceanfront Pool Resort",
+            "fallback_image": "tour-dubai.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_4": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "30K - 40K",
+            "category_label": "Heritage Palace",
+            "title": "Royal Heritage Palace Hotel",
+            "fallback_image": "tour-swiss-alps.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_5": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "40K - 50K",
+            "category_label": "5-Star Luxury Suite",
+            "title": "Cliffside Luxury Ocean Suite",
+            "fallback_image": "hero-santorini.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_6": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "Premium",
+            "category_label": "Private Pool Villa",
+            "title": "Exclusive Luxury Pool Villa",
+            "fallback_image": "hero-maldives.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_7": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "Luxury",
+            "category_label": "Overwater Villa",
+            "title": "Presidential Lagoon Atoll Villa",
+            "fallback_image": "tour-vietnam.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6",
+        "card_7"
+      ],
+      "settings": {
+        "heading": "Shop By Price",
+        "subtitle": "Handpicked boutique hotels, beachfront resorts & ultra-luxury private villas for every budget.",
+        "show_divider": true,
+        "background_color": "#ffffff",
+        "padding_top": 50,
+        "padding_bottom": 55
+      }
     }
   },
   "order": [
@@ -1675,6 +1774,7 @@
     "travel_circle_slider",
     "festive_collection_GqybH3",
     "popular_tours",
+    "travel_price_showcase",
     "travel_promo_reviews_rJBwH9",
     "gallery_showcase",
     "journal_accordion_JwwcJL"

@@ -388,11 +388,14 @@
         isAnimating = true;
         const step = getSlideStep();
 
-        track.style.transition = 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)';
-        track.style.transform = `translateX(-${step}px)`;
+        let done = false;
+        let fallbackTimer = null;
 
         const onTransitionEnd = function(e) {
-          if (e.target !== track) return;
+          if (done) return;
+          if (e && e.target !== track) return;
+          done = true;
+          if (fallbackTimer) clearTimeout(fallbackTimer);
           track.removeEventListener('transitionend', onTransitionEnd);
           track.style.transition = 'none';
           track.appendChild(track.firstElementChild);
@@ -402,6 +405,10 @@
         };
 
         track.addEventListener('transitionend', onTransitionEnd);
+        fallbackTimer = setTimeout(onTransitionEnd, 750);
+
+        track.style.transition = 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)';
+        track.style.transform = `translateX(-${step}px)`;
       }
 
       function slidePrev() {
@@ -414,19 +421,28 @@
         track.style.transform = `translateX(-${step}px)`;
         void track.offsetWidth; // force reflow
 
-        requestAnimationFrame(() => {
-          track.style.transition = 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)';
-          track.style.transform = 'translateX(0)';
-        });
+        let done = false;
+        let fallbackTimer = null;
 
         const onTransitionEnd = function(e) {
-          if (e.target !== track) return;
+          if (done) return;
+          if (e && e.target !== track) return;
+          done = true;
+          if (fallbackTimer) clearTimeout(fallbackTimer);
           track.removeEventListener('transitionend', onTransitionEnd);
           track.style.transition = 'none';
           isAnimating = false;
         };
 
         track.addEventListener('transitionend', onTransitionEnd);
+        fallbackTimer = setTimeout(onTransitionEnd, 750);
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            track.style.transition = 'transform 0.65s cubic-bezier(0.25, 1, 0.5, 1)';
+            track.style.transform = 'translateX(0)';
+          });
+        });
       }
 
       function startAutoSlide() {
