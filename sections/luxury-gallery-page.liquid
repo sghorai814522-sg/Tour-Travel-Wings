@@ -21,7 +21,7 @@
         elsif section.settings.external_image_mobile != blank
           assign mobile_bg = section.settings.external_image_mobile
         else
-          assign mobile_bg = 'hero-maldives.jpg' | asset_url
+          assign mobile_bg = 'india-kashmir.jpg' | asset_url
         endif
 
         assign desktop_bg = ''
@@ -30,7 +30,7 @@
         elsif section.settings.external_image_desktop != blank
           assign desktop_bg = section.settings.external_image_desktop
         else
-          assign desktop_bg = 'hero-santorini.jpg' | asset_url
+          assign desktop_bg = 'india-udaipur.jpg' | asset_url
         endif
       -%}
       <source media="(max-width: 768px)" srcset="{{ mobile_bg }}">
@@ -55,7 +55,7 @@
       {%- endif -%}
 
       <h1 class="lg-hero-title">
-        {{ section.settings.hero_title | default: 'The Grand Bento Travel Gallery' }}
+        {{ section.settings.hero_title | default: 'The Grand Incredible India Gallery' }}
       </h1>
 
       {%- if section.settings.hero_subtitle != blank -%}
@@ -71,7 +71,7 @@
             type="text"
             id="lgSearchInput"
             class="lg-search-input"
-            placeholder="Search country, destination, or keyword (e.g. Maldives, Swiss, Safari)..."
+            placeholder="Search Indian destination, state, or experience (e.g. Kashmir, Jaipur, Goa, Kerala)..."
             autocomplete="off"
             aria-label="Search gallery destinations"
           >
@@ -82,20 +82,20 @@
       {%- if section.settings.show_stats -%}
         <div class="lg-hero-stats">
           <div class="lg-hero-stat-item">
-            <span class="lg-hero-stat-num">50</span>
-            <span class="lg-hero-stat-lbl">Curated Wonders</span>
+            <span class="lg-hero-stat-num">{{ section.blocks.size }}</span>
+            <span class="lg-hero-stat-lbl">Indian Wonders</span>
           </div>
           <div class="lg-hero-stat-item">
-            <span class="lg-hero-stat-num">6</span>
-            <span class="lg-hero-stat-lbl">Continents</span>
+            <span class="lg-hero-stat-num">20+</span>
+            <span class="lg-hero-stat-lbl">States &amp; UTs</span>
           </div>
           <div class="lg-hero-stat-item">
             <span class="lg-hero-stat-num">100%</span>
-            <span class="lg-hero-stat-lbl">Ultra-Luxury Standard</span>
+            <span class="lg-hero-stat-lbl">Luxury Standard</span>
           </div>
           <div class="lg-hero-stat-item">
             <span class="lg-hero-stat-num">24/7</span>
-            <span class="lg-hero-stat-lbl">VIP Concierge</span>
+            <span class="lg-hero-stat-lbl">India Concierge</span>
           </div>
         </div>
       {%- endif -%}
@@ -113,19 +113,19 @@
               <span class="lg-tab-count">{{ section.blocks.size }}</span>
             </button>
             <button type="button" class="lg-tab-btn" data-filter="tropical">
-              <span>Tropical &amp; Islands</span>
+              <span>Beaches &amp; Backwaters</span>
             </button>
             <button type="button" class="lg-tab-btn" data-filter="alpine">
-              <span>Alpine &amp; Peaks</span>
+              <span>Himalayas &amp; Hills</span>
             </button>
             <button type="button" class="lg-tab-btn" data-filter="heritage">
               <span>Palaces &amp; Heritage</span>
             </button>
             <button type="button" class="lg-tab-btn" data-filter="modern">
-              <span>Modern Skylines</span>
+              <span>Iconic Cities</span>
             </button>
             <button type="button" class="lg-tab-btn" data-filter="desert">
-              <span>Desert &amp; Safari</span>
+              <span>Desert &amp; Wildlife</span>
             </button>
           </div>
 
@@ -137,7 +137,7 @@
     </div>
   {%- endif -%}
 
-  <!-- 3. Bento Grid Section (50 Escapes) -->
+  <!-- 3. Bento Grid Section -->
   <main class="lg-main">
     <div class="lg-container">
       <div class="lg-bento-grid" id="lgBentoGrid">
@@ -148,6 +148,10 @@
               assign img_url = block.settings.image | image_url: width: 1200
             elsif block.settings.external_image_url != blank
               assign img_url = block.settings.external_image_url
+            elsif block.settings.fallback_image != blank
+              assign img_url = block.settings.fallback_image | asset_url
+            else
+              assign img_url = 'india-jaipur.jpg' | asset_url
             endif
 
             assign bento_span = block.settings.bento_span | default: 'span-4'
@@ -407,19 +411,19 @@ document.addEventListener('DOMContentLoaded', function() {
       "type": "text",
       "id": "hero_badge",
       "label": "Hero Badge Text",
-      "default": "CURATED LUXURY WONDERS"
+      "default": "INCREDIBLE INDIA LUXURY EDITION"
     },
     {
       "type": "text",
       "id": "hero_title",
       "label": "Hero Title",
-      "default": "The Grand Bento Travel Gallery"
+      "default": "The Grand Incredible India Gallery"
     },
     {
       "type": "textarea",
       "id": "hero_subtitle",
       "label": "Hero Subtitle",
-      "default": "Discover fifty breathtaking sanctuaries, private atolls, alpine summits, and historic palaces arranged in a modern modular showcase."
+      "default": "Discover forty breathtaking Indian sanctuaries — from Himalayan snow peaks and emerald backwaters to royal palaces and pristine coral islands."
     },
     {
       "type": "header",
@@ -489,43 +493,49 @@ document.addEventListener('DOMContentLoaded', function() {
           "type": "text",
           "id": "title",
           "label": "Destination Title",
-          "default": "Overwater Villa Serenity"
+          "default": "Taj Mahal Sunrise Serenade"
         },
         {
           "type": "text",
           "id": "location",
           "label": "Location",
-          "default": "South Ari Atoll, Maldives"
+          "default": "Agra, Uttar Pradesh"
         },
         {
           "type": "select",
           "id": "category",
           "label": "Category",
           "options": [
-            { "value": "tropical", "label": "Tropical & Islands" },
-            { "value": "alpine", "label": "Alpine & Peaks" },
+            { "value": "tropical", "label": "Beaches & Backwaters" },
+            { "value": "alpine", "label": "Himalayas & Hills" },
             { "value": "heritage", "label": "Palaces & Heritage" },
-            { "value": "modern", "label": "Modern Skylines" },
-            { "value": "desert", "label": "Desert & Safari" }
+            { "value": "modern", "label": "Iconic Cities" },
+            { "value": "desert", "label": "Desert & Wildlife" }
           ],
-          "default": "tropical"
+          "default": "heritage"
         },
         {
           "type": "text",
           "id": "tag",
           "label": "Category Tag / Badge",
-          "default": "PRIVATE ATOLL"
+          "default": "ICONIC WONDER"
         },
         {
           "type": "textarea",
           "id": "description",
           "label": "Short Description",
-          "default": "Suspended above turquoise waters with infinity sundecks."
+          "default": "Iconic white marble mausoleum glowing softly in golden sunrise light beside tranquil reflecting pools."
         },
         {
           "type": "image_picker",
           "id": "image",
           "label": "Upload Image"
+        },
+        {
+          "type": "text",
+          "id": "fallback_image",
+          "label": "Theme Asset Image Filename",
+          "default": "india-agra.jpg"
         },
         {
           "type": "url",

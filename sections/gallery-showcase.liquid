@@ -82,7 +82,33 @@
       >
         {%- for block in section.blocks -%}
           {%- assign item_image = block.settings.image -%}
-          {%- assign fallback_img = block.settings.fallback_image | default: 'hero-santorini.jpg' -%}
+          {%- assign fallback_img = block.settings.fallback_image -%}
+          {%- if fallback_img == blank -%}
+            {%- assign down_g = block.settings.title | append: ' ' | append: block.settings.kicker | downcase -%}
+            {%- if down_g contains 'amritsar' or down_g contains 'golden temple' or down_g contains 'punjab' -%}
+              {%- assign fallback_img = 'india-amritsar.jpg' -%}
+            {%- elsif down_g contains 'spiti' or down_g contains 'monastery' -%}
+              {%- assign fallback_img = 'india-spiti.jpg' -%}
+            {%- elsif down_g contains 'meghalaya' or down_g contains 'nohkalikai' -%}
+              {%- assign fallback_img = 'india-meghalaya.jpg' -%}
+            {%- elsif down_g contains 'mysore' -%}
+              {%- assign fallback_img = 'india-mysore.jpg' -%}
+            {%- elsif down_g contains 'jodhpur' or down_g contains 'mehrangarh' -%}
+              {%- assign fallback_img = 'india-jodhpur.jpg' -%}
+            {%- elsif down_g contains 'nainital' or down_g contains 'naini' -%}
+              {%- assign fallback_img = 'india-nainital.jpg' -%}
+            {%- else -%}
+              {%- case forloop.index -%}
+                {%- when 1 -%}{%- assign fallback_img = 'india-amritsar.jpg' -%}
+                {%- when 2 -%}{%- assign fallback_img = 'india-spiti.jpg' -%}
+                {%- when 3 -%}{%- assign fallback_img = 'india-meghalaya.jpg' -%}
+                {%- when 4 -%}{%- assign fallback_img = 'india-mysore.jpg' -%}
+                {%- when 5 -%}{%- assign fallback_img = 'india-jodhpur.jpg' -%}
+                {%- when 6 -%}{%- assign fallback_img = 'india-nainital.jpg' -%}
+                {%- else -%}{%- assign fallback_img = 'india-amritsar.jpg' -%}
+              {%- endcase -%}
+            {%- endif -%}
+          {%- endif -%}
           {%- if item_image != blank -%}
             {%- assign img_url = item_image | image_url: width: 1400 -%}
             {%- assign full_url = item_image | image_url: width: 2200 -%}
@@ -238,19 +264,19 @@
       "type": "text",
       "id": "subheading",
       "label": "Kicker / Subheading",
-      "default": "EXPLORE • DISCOVER • CAPTURE"
+      "default": "EXPLORE INDIA IN PICTURES"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Moments Beyond Destinations"
+      "default": "Discover Incredible India, Your Way"
     },
     {
       "type": "textarea",
       "id": "description",
       "label": "Description",
-      "default": "A visual showcase of unforgettable travel highlights and breathtaking locations from around the globe."
+      "default": "A visual showcase of unforgettable travel highlights and breathtaking locations across India."
     },
     {
       "type": "select",
@@ -438,25 +464,25 @@
           "type": "text",
           "id": "fallback_image",
           "label": "Fallback Asset Name",
-          "default": "hero-santorini.jpg"
+          "default": "india-amritsar.jpg"
         },
         {
           "type": "text",
           "id": "kicker",
           "label": "Tag / Category",
-          "default": "GREECE"
+          "default": "PUNJAB"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Destination Title",
-          "default": "Santorini, Greece"
+          "default": "Golden Temple, Amritsar"
         },
         {
           "type": "text",
           "id": "caption",
           "label": "Caption / Short Description",
-          "default": "Iconic blue domes overlooking the deep Aegean caldera."
+          "default": "Sacred Harmandir Sahib glowing in pure gold over the serene Amrit Sarovar."
         },
         {
           "type": "url",
@@ -473,55 +499,55 @@
         {
           "type": "image",
           "settings": {
-            "fallback_image": "hero-santorini.jpg",
-            "kicker": "GREECE",
-            "title": "Santorini Caldera",
-            "caption": "Iconic cobalt blue domes overlooking the deep Aegean sea."
+            "fallback_image": "india-amritsar.jpg",
+            "kicker": "PUNJAB",
+            "title": "Golden Temple, Amritsar",
+            "caption": "Sacred Harmandir Sahib glowing in pure gold over the serene Amrit Sarovar."
           }
         },
         {
           "type": "image",
           "settings": {
-            "fallback_image": "tour-bali.jpg",
-            "kicker": "INDONESIA",
-            "title": "Bali Island Haven",
-            "caption": "Lush tropical terraces, volcanic peaks, and serene beach temples."
+            "fallback_image": "india-spiti.jpg",
+            "kicker": "HIMACHAL PRADESH",
+            "title": "Key Monastery, Spiti Valley",
+            "caption": "Thousand-year-old Himalayan monastery perched high above snow-draped valleys."
           }
         },
         {
           "type": "image",
           "settings": {
-            "fallback_image": "tour-swiss-alps.jpg",
-            "kicker": "SWITZERLAND",
-            "title": "Swiss Alpine Peaks",
-            "caption": "Majestic snow-dusted summits, alpine meadows, and wooden chalets."
+            "fallback_image": "india-meghalaya.jpg",
+            "kicker": "MEGHALAYA",
+            "title": "Nohkalikai Falls",
+            "caption": "India's tallest plunge waterfall cascading into an emerald rainforest lagoon."
           }
         },
         {
           "type": "image",
           "settings": {
-            "fallback_image": "hero-maldives.jpg",
-            "kicker": "MALDIVES",
-            "title": "Overwater Luxury",
-            "caption": "Private turquoise lagoons and pure powdery coral sand beaches."
+            "fallback_image": "india-mysore.jpg",
+            "kicker": "KARNATAKA",
+            "title": "Mysore Royal Palace",
+            "caption": "Iconic Indo-Saracenic royal palace illuminated by thousands of golden lights."
           }
         },
         {
           "type": "image",
           "settings": {
-            "fallback_image": "tour-dubai.jpg",
-            "kicker": "UAE",
-            "title": "Dubai Oasis & Skyline",
-            "caption": "Golden desert dune safaris meeting futuristic architectural wonder."
+            "fallback_image": "india-jodhpur.jpg",
+            "kicker": "RAJASTHAN",
+            "title": "Mehrangarh & Blue City",
+            "caption": "Towering sandstone citadel overlooking Jodhpur's vivid indigo-blue lanes."
           }
         },
         {
           "type": "image",
           "settings": {
-            "fallback_image": "tour-thailand.jpg",
-            "kicker": "THAILAND",
-            "title": "Phuket & Krabi Bays",
-            "caption": "Limestone karst islands rising from emerald waters."
+            "fallback_image": "india-nainital.jpg",
+            "kicker": "UTTARAKHAND",
+            "title": "Naini Lake, Nainital",
+            "caption": "Charming emerald Himalayan lake dotted with colorful boats and pine slopes."
           }
         }
       ]

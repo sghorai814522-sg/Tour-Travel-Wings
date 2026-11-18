@@ -60,26 +60,53 @@
                 elsif block.settings.fallback_image != blank
                   assign img_url = block.settings.fallback_image | asset_url
                 else
-                  case forloop.index
-                    when 1
-                      assign img_url = 'tour-swiss-alps.jpg' | asset_url
-                    when 2
-                      assign img_url = 'tour-bali.jpg' | asset_url
-                    when 3
-                      assign img_url = 'tour-dubai.jpg' | asset_url
-                    when 4
-                      assign img_url = 'hero-maldives.jpg' | asset_url
-                    when 5
-                      assign img_url = 'tour-thailand.jpg' | asset_url
-                    when 6
-                      assign img_url = 'hero-santorini.jpg' | asset_url
-                    when 7
-                      assign img_url = 'tour-vietnam.jpg' | asset_url
-                    when 8
-                      assign img_url = 'promo-mountain-bg.jpg' | asset_url
-                    else
-                      assign img_url = 'tour-bali.jpg' | asset_url
-                  endcase
+                  assign down_t = title | downcase
+                  if down_t contains 'kashmir'
+                    assign img_url = 'india-kashmir.jpg' | asset_url
+                  elsif down_t contains 'munnar'
+                    assign img_url = 'india-munnar.jpg' | asset_url
+                  elsif down_t contains 'jaipur'
+                    assign img_url = 'india-jaipur.jpg' | asset_url
+                  elsif down_t contains 'ladakh' or down_t contains 'leh'
+                    assign img_url = 'india-ladakh.jpg' | asset_url
+                  elsif down_t contains 'goa'
+                    assign img_url = 'india-goa.jpg' | asset_url
+                  elsif down_t contains 'udaipur'
+                    assign img_url = 'india-udaipur.jpg' | asset_url
+                  elsif down_t contains 'varanasi' or down_t contains 'kashi'
+                    assign img_url = 'india-varanasi.jpg' | asset_url
+                  elsif down_t contains 'andaman' or down_t contains 'havelock'
+                    assign img_url = 'india-andaman.jpg' | asset_url
+                  elsif down_t contains 'agra' or down_t contains 'taj'
+                    assign img_url = 'india-agra.jpg' | asset_url
+                  elsif down_t contains 'kerala'
+                    assign img_url = 'india-kerala.jpg' | asset_url
+                  elsif down_t contains 'manali' or down_t contains 'himachal'
+                    assign img_url = 'india-manali.jpg' | asset_url
+                  elsif down_t contains 'darjeeling'
+                    assign img_url = 'india-darjeeling.jpg' | asset_url
+                  else
+                    case forloop.index
+                      when 1
+                        assign img_url = 'india-kashmir.jpg' | asset_url
+                      when 2
+                        assign img_url = 'india-munnar.jpg' | asset_url
+                      when 3
+                        assign img_url = 'india-jaipur.jpg' | asset_url
+                      when 4
+                        assign img_url = 'india-ladakh.jpg' | asset_url
+                      when 5
+                        assign img_url = 'india-goa.jpg' | asset_url
+                      when 6
+                        assign img_url = 'india-udaipur.jpg' | asset_url
+                      when 7
+                        assign img_url = 'india-varanasi.jpg' | asset_url
+                      when 8
+                        assign img_url = 'india-andaman.jpg' | asset_url
+                      else
+                        assign img_url = 'india-jaipur.jpg' | asset_url
+                    endcase
+                  endif
                 endif
               -%}
 
@@ -104,9 +131,9 @@
             {%- endfor -%}
 
           {%- else -%}
-            {%- assign default_titles = 'Alpine & Peaks,Island Havens,Modern Skylines,Overwater Atolls,Sacred Temples,Aegean Romance,Emerald Bays,Desert & Safari' | split: ',' -%}
+            {%- assign default_titles = 'Kashmir,Munnar,Jaipur,Ladakh,Goa,Udaipur,Varanasi,Andaman' | split: ',' -%}
             {%- assign default_subs = '14 Tours,18 Tours,12 Tours,9 Tours,15 Tours,11 Tours,8 Tours,10 Tours' | split: ',' -%}
-            {%- assign default_imgs = 'tour-swiss-alps.jpg,tour-bali.jpg,tour-dubai.jpg,hero-maldives.jpg,tour-thailand.jpg,hero-santorini.jpg,tour-vietnam.jpg,promo-mountain-bg.jpg' | split: ',' -%}
+            {%- assign default_imgs = 'india-kashmir.jpg,india-munnar.jpg,india-jaipur.jpg,india-ladakh.jpg,india-goa.jpg,india-udaipur.jpg,india-varanasi.jpg,india-andaman.jpg' | split: ',' -%}
 
             {%- for def_title in default_titles -%}
               {%- assign img_file = default_imgs[forloop.index0] -%}
@@ -523,13 +550,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Explore By Category"
+      "default": "Explore Top Indian Destinations"
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Handpicked holiday styles across the globe — from tropical atolls to high alpine retreats."
+      "default": "Handpicked holiday escapes across India — from misty Himalayan valleys and royal palaces to emerald backwaters and coral islands."
     },
     {
       "type": "checkbox",
@@ -650,14 +677,14 @@
     {
       "name": "Travel Circles Slider",
       "blocks": [
-        { "type": "category_circle", "settings": { "title": "Alpine & Peaks", "subtitle": "14 Tours", "fallback_image": "tour-swiss-alps.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Island Havens", "subtitle": "18 Tours", "fallback_image": "tour-bali.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Modern Skylines", "subtitle": "12 Tours", "fallback_image": "tour-dubai.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Overwater Atolls", "subtitle": "9 Tours", "fallback_image": "hero-maldives.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Sacred Temples", "subtitle": "15 Tours", "fallback_image": "tour-thailand.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Aegean Romance", "subtitle": "11 Tours", "fallback_image": "hero-santorini.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Emerald Bays", "subtitle": "8 Tours", "fallback_image": "tour-vietnam.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Desert & Safari", "subtitle": "10 Tours", "fallback_image": "promo-mountain-bg.jpg" } }
+        { "type": "category_circle", "settings": { "title": "Kashmir", "subtitle": "14 Tours", "fallback_image": "india-kashmir.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Munnar", "subtitle": "18 Tours", "fallback_image": "india-munnar.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Jaipur", "subtitle": "12 Tours", "fallback_image": "india-jaipur.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Ladakh", "subtitle": "9 Tours", "fallback_image": "india-ladakh.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Goa", "subtitle": "15 Tours", "fallback_image": "india-goa.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Udaipur", "subtitle": "11 Tours", "fallback_image": "india-udaipur.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Varanasi", "subtitle": "8 Tours", "fallback_image": "india-varanasi.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Andaman", "subtitle": "10 Tours", "fallback_image": "india-andaman.jpg" } }
       ]
     }
   ]

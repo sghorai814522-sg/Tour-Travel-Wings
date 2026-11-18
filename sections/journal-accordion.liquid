@@ -26,18 +26,25 @@
             {%- elsif block.settings.fallback_image != blank -%}
               <img src="{{ block.settings.fallback_image | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
             {%- else -%}
-              {%- case forloop.index -%}
-                {%- when 1 -%}
-                  <img src="{{ 'tour-thailand.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
-                {%- when 2 -%}
-                  <img src="{{ 'tour-bali.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
-                {%- when 3 -%}
-                  <img src="{{ 'tour-dubai.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
-                {%- when 4 -%}
-                  <img src="{{ 'tour-swiss-alps.jpg' | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
-                {%- else -%}
-                  {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              {%- endcase -%}
+              {%- assign down_j = block.settings.title | append: ' ' | append: block.settings.desc | downcase -%}
+              {%- if down_j contains 'ellora' or down_j contains 'kailasa' -%}
+                {%- assign j_fallback = 'india-ellora.jpg' -%}
+              {%- elsif down_j contains 'konark' or down_j contains 'odisha' -%}
+                {%- assign j_fallback = 'india-konark.jpg' -%}
+              {%- elsif down_j contains 'valley of flowers' or down_j contains 'uttarakhand' -%}
+                {%- assign j_fallback = 'india-valley-of-flowers.jpg' -%}
+              {%- elsif down_j contains 'coorg' or down_j contains 'kodagu' or down_j contains 'abbey' -%}
+                {%- assign j_fallback = 'india-coorg.jpg' -%}
+              {%- else -%}
+                {%- case forloop.index -%}
+                  {%- when 1 -%}{%- assign j_fallback = 'india-ellora.jpg' -%}
+                  {%- when 2 -%}{%- assign j_fallback = 'india-konark.jpg' -%}
+                  {%- when 3 -%}{%- assign j_fallback = 'india-valley-of-flowers.jpg' -%}
+                  {%- when 4 -%}{%- assign j_fallback = 'india-coorg.jpg' -%}
+                  {%- else -%}{%- assign j_fallback = 'india-ellora.jpg' -%}
+                {%- endcase -%}
+              {%- endif -%}
+              <img src="{{ j_fallback | asset_url }}" loading="lazy" alt="{{ block.settings.title }}" width="1200" height="800">
             {%- endif -%}
           </div>
             
@@ -79,13 +86,13 @@
       "type": "text",
       "id": "title",
       "label": "Section Title",
-      "default": "The Journal"
+      "default": "Experience Luxury & Comfort"
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Section Subtitle",
-      "default": "Weaver Stories, Drape Guides, And The Craft Behind Every Very Much Indian Saree."
+      "default": "Inspiring Indian travel stories, heritage guides, and insider tips from our explorers across India."
     }
   ],
   "blocks": [
@@ -107,19 +114,19 @@
           "type": "text",
           "id": "subtitle",
           "label": "Subtitle",
-          "default": "Weaver Story - 4 Min Read"
+          "default": "Heritage Guide • 5 Min Read"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Title",
-          "default": "The Making of a Paithani"
+          "default": "Kailasa Temple of Ellora"
         },
         {
           "type": "textarea",
           "id": "desc",
           "label": "Description",
-          "default": "Why The Queen Of Maharashtra's Looms Takes Over A Hundred Patient Hours — And What That Means For The Saree In Your Wardrobe."
+          "default": "Carved top-down from a single basalt mountain cliff, explore Maharashtra's 8th-century rock-cut wonder and ancient cave sanctuaries."
         },
         {
           "type": "text",
@@ -139,10 +146,46 @@
     {
       "name": "Journal Accordion",
       "blocks": [
-        { "type": "journal_entry" },
-        { "type": "journal_entry" },
-        { "type": "journal_entry" },
-        { "type": "journal_entry" }
+        {
+          "type": "journal_entry",
+          "settings": {
+            "fallback_image": "india-ellora.jpg",
+            "subtitle": "Heritage Guide • 5 Min Read",
+            "title": "Kailasa Temple of Ellora",
+            "desc": "Carved top-down from a single basalt mountain cliff, explore Maharashtra's 8th-century rock-cut wonder and ancient cave sanctuaries.",
+            "link_text": "Read the Story"
+          }
+        },
+        {
+          "type": "journal_entry",
+          "settings": {
+            "fallback_image": "india-konark.jpg",
+            "subtitle": "Architectural Marvel • 4 Min Read",
+            "title": "The Sun Chariot of Konark",
+            "desc": "Discover Odisha's 13th-century UNESCO temple shaped like Surya's colossal stone chariot, adorned with intricately carved wheels and sculptures.",
+            "link_text": "Read the Story"
+          }
+        },
+        {
+          "type": "journal_entry",
+          "settings": {
+            "fallback_image": "india-valley-of-flowers.jpg",
+            "subtitle": "Himalayan Trek • 6 Min Read",
+            "title": "Uttarakhand's Valley of Flowers",
+            "desc": "Trek through mist-veiled Garhwal alpine meadows, glacial streams, and rare Himalayan wildflowers beneath towering snow peaks.",
+            "link_text": "Read the Story"
+          }
+        },
+        {
+          "type": "journal_entry",
+          "settings": {
+            "fallback_image": "india-coorg.jpg",
+            "subtitle": "Nature Retreat • 4 Min Read",
+            "title": "Misty Coffee Trails of Coorg",
+            "desc": "Wake up to aromatic spice estates, cascading Abbey Falls, and emerald rainforest hills in Karnataka's timeless Scotland of India.",
+            "link_text": "Read the Story"
+          }
+        }
       ]
     }
   ]

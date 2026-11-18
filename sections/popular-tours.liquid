@@ -141,7 +141,26 @@
           {%- elsif fallback_img != blank -%}
             {%- assign img_url = fallback_img | asset_url -%}
           {%- else -%}
-            {%- assign img_url = 'hero-santorini.jpg' | asset_url -%}
+            {%- assign down_tour = block.settings.title | append: ' ' | append: block.settings.location | downcase -%}
+            {%- if down_tour contains 'rishikesh' -%}
+              {%- assign img_url = 'india-rishikesh.jpg' | asset_url -%}
+            {%- elsif down_tour contains 'jaisalmer' -%}
+              {%- assign img_url = 'india-jaisalmer.jpg' | asset_url -%}
+            {%- elsif down_tour contains 'hampi' -%}
+              {%- assign img_url = 'india-hampi.jpg' | asset_url -%}
+            {%- elsif down_tour contains 'shimla' -%}
+              {%- assign img_url = 'india-shimla.jpg' | asset_url -%}
+            {%- elsif down_tour contains 'mysore' -%}
+              {%- assign img_url = 'india-mysore.jpg' | asset_url -%}
+            {%- else -%}
+              {%- case forloop.index -%}
+                {%- when 1 -%}{%- assign img_url = 'india-rishikesh.jpg' | asset_url -%}
+                {%- when 2 -%}{%- assign img_url = 'india-jaisalmer.jpg' | asset_url -%}
+                {%- when 3 -%}{%- assign img_url = 'india-hampi.jpg' | asset_url -%}
+                {%- when 4 -%}{%- assign img_url = 'india-shimla.jpg' | asset_url -%}
+                {%- else -%}{%- assign img_url = 'india-mysore.jpg' | asset_url -%}
+              {%- endcase -%}
+            {%- endif -%}
           {%- endif -%}
 
           <div
@@ -254,13 +273,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Popular Tours"
+      "default": "Popular Indian Tours"
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle / Description",
-      "default": "Explore top-rated travel packages and signature itineraries handcrafted for every journey."
+      "default": "Explore top-rated travel packages and signature itineraries handcrafted across incredible India."
     },
     {
       "type": "text",
@@ -391,7 +410,7 @@
           "type": "text",
           "id": "fallback_image",
           "label": "Fallback Asset Image",
-          "default": "tour-bali.jpg",
+          "default": "india-rishikesh.jpg",
           "info": "Filename from assets folder if no image is uploaded."
         },
         {
@@ -404,37 +423,37 @@
           "type": "text",
           "id": "title",
           "label": "Tour Name",
-          "default": "Bali Escape"
+          "default": "Rishikesh Yoga & Ganga Retreat"
         },
         {
           "type": "text",
           "id": "location",
           "label": "Destination / Location",
-          "default": "Indonesia"
+          "default": "Rishikesh, Uttarakhand"
         },
         {
           "type": "text",
           "id": "days",
           "label": "Days",
-          "default": "7 Days"
+          "default": "5 Days"
         },
         {
           "type": "text",
           "id": "nights",
           "label": "Nights",
-          "default": "6 Nights"
+          "default": "4 Nights"
         },
         {
           "type": "text",
           "id": "price",
           "label": "Price",
-          "default": "$799"
+          "default": "₹18,999"
         },
         {
           "type": "text",
           "id": "compare_price",
           "label": "Original Price (Optional)",
-          "info": "Strikethrough discount price, e.g. $999"
+          "info": "Strikethrough discount price, e.g. ₹22,999"
         },
         {
           "type": "text",
@@ -457,48 +476,48 @@
         {
           "type": "tour_card",
           "settings": {
-            "title": "Bali Escape",
-            "location": "Indonesia",
-            "days": "7 Days",
-            "nights": "6 Nights",
-            "price": "$799",
-            "fallback_image": "tour-bali.jpg",
-            "button_label": "Book Now"
-          }
-        },
-        {
-          "type": "tour_card",
-          "settings": {
-            "title": "Swiss Alps Adventure",
-            "location": "Switzerland",
-            "days": "9 Days",
-            "nights": "7 Nights",
-            "price": "$1,299",
-            "fallback_image": "tour-swiss-alps.jpg",
-            "button_label": "Book Now"
-          }
-        },
-        {
-          "type": "tour_card",
-          "settings": {
-            "title": "Dubai Getaway",
-            "location": "UAE",
+            "title": "Rishikesh Yoga & Ganga Retreat",
+            "location": "Rishikesh, Uttarakhand",
             "days": "5 Days",
             "nights": "4 Nights",
-            "price": "$899",
-            "fallback_image": "tour-dubai.jpg",
+            "price": "₹18,999",
+            "fallback_image": "india-rishikesh.jpg",
             "button_label": "Book Now"
           }
         },
         {
           "type": "tour_card",
           "settings": {
-            "title": "Thailand Discovery",
-            "location": "Thailand",
+            "title": "Jaisalmer Golden Desert Safari",
+            "location": "Jaisalmer, Rajasthan",
+            "days": "5 Days",
+            "nights": "4 Nights",
+            "price": "₹21,499",
+            "fallback_image": "india-jaisalmer.jpg",
+            "button_label": "Book Now"
+          }
+        },
+        {
+          "type": "tour_card",
+          "settings": {
+            "title": "Hampi Ancient Heritage Trail",
+            "location": "Hampi, Karnataka",
+            "days": "4 Days",
+            "nights": "3 Nights",
+            "price": "₹16,499",
+            "fallback_image": "india-hampi.jpg",
+            "button_label": "Book Now"
+          }
+        },
+        {
+          "type": "tour_card",
+          "settings": {
+            "title": "Shimla Snow Hills Escape",
+            "location": "Shimla, Himachal Pradesh",
             "days": "6 Days",
             "nights": "5 Nights",
-            "price": "$749",
-            "fallback_image": "tour-thailand.jpg",
+            "price": "₹22,999",
+            "fallback_image": "india-shimla.jpg",
             "button_label": "Book Now"
           }
         }

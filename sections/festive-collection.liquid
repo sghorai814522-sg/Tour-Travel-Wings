@@ -30,10 +30,10 @@
         {%- for block in collection_blocks -%}
           {%- liquid
             assign target_collection = block.settings.collection
-            assign tag_text = block.settings.tag_text | default: 'CLASSIC SILK PAITHANI'
-            assign title_text = block.settings.title | default: target_collection.title | default: 'Festive'
-            assign subtitle_text = block.settings.subtitle | default: 'Collection'
-            assign button_text = block.settings.button_text | default: 'Shop Now'
+            assign tag_text = block.settings.tag_text | default: 'POPULAR'
+            assign title_text = block.settings.title | default: target_collection.title | default: 'India'
+            assign subtitle_text = block.settings.subtitle | default: 'Handcrafted Getaway'
+            assign button_text = block.settings.button_text | default: 'Explore'
             assign card_url = block.settings.url | default: target_collection.url | default: routes.all_products_collection_url
             
             assign card_image = null
@@ -41,6 +41,49 @@
               assign card_image = block.settings.image
             elsif target_collection != blank and target_collection.featured_image != blank
               assign card_image = target_collection.featured_image
+            endif
+
+            assign down_title = title_text | downcase
+            assign default_asset_img = ''
+            if down_title contains 'agra' or down_title contains 'taj'
+              assign default_asset_img = 'india-agra.jpg'
+            elsif down_title contains 'udaipur'
+              assign default_asset_img = 'india-udaipur.jpg'
+            elsif down_title contains 'manali' or down_title contains 'himachal'
+              assign default_asset_img = 'india-manali.jpg'
+            elsif down_title contains 'varanasi' or down_title contains 'kashi'
+              assign default_asset_img = 'india-varanasi.jpg'
+            elsif down_title contains 'darjeeling' or down_title contains 'sikkim'
+              assign default_asset_img = 'india-darjeeling.jpg'
+            elsif down_title contains 'andaman' or down_title contains 'havelock'
+              assign default_asset_img = 'india-andaman.jpg'
+            elsif down_title contains 'kashmir'
+              assign default_asset_img = 'india-kashmir.jpg'
+            elsif down_title contains 'kerala'
+              assign default_asset_img = 'india-kerala.jpg'
+            elsif down_title contains 'jaipur'
+              assign default_asset_img = 'india-jaipur.jpg'
+            elsif down_title contains 'ladakh'
+              assign default_asset_img = 'india-ladakh.jpg'
+            elsif down_title contains 'goa'
+              assign default_asset_img = 'india-goa.jpg'
+            else
+              case forloop.index
+                when 1
+                  assign default_asset_img = 'india-agra.jpg'
+                when 2
+                  assign default_asset_img = 'india-udaipur.jpg'
+                when 3
+                  assign default_asset_img = 'india-manali.jpg'
+                when 4
+                  assign default_asset_img = 'india-varanasi.jpg'
+                when 5
+                  assign default_asset_img = 'india-darjeeling.jpg'
+                when 6
+                  assign default_asset_img = 'india-andaman.jpg'
+                else
+                  assign default_asset_img = 'india-agra.jpg'
+              endcase
             endif
           -%}
 
@@ -51,22 +94,7 @@
               {%- elsif block.settings.fallback_image != blank -%}
                 <img class="fc-image" loading="lazy" src="{{ block.settings.fallback_image | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
               {%- else -%}
-                {%- case forloop.index -%}
-                  {%- when 1 -%}
-                    <img class="fc-image" loading="lazy" src="{{ 'tour-thailand.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
-                  {%- when 2 -%}
-                    <img class="fc-image" loading="lazy" src="{{ 'tour-bali.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
-                  {%- when 3 -%}
-                    <img class="fc-image" loading="lazy" src="{{ 'tour-swiss-alps.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
-                  {%- when 4 -%}
-                    <img class="fc-image" loading="lazy" src="{{ 'hero-maldives.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
-                  {%- when 5 -%}
-                    <img class="fc-image" loading="lazy" src="{{ 'tour-vietnam.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
-                  {%- when 6 -%}
-                    <img class="fc-image" loading="lazy" src="{{ 'tour-dubai.jpg' | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
-                  {%- else -%}
-                    {{ 'collection-1' | placeholder_svg_tag: 'fc-image' }}
-                {%- endcase -%}
+                <img class="fc-image" loading="lazy" src="{{ default_asset_img | asset_url }}" alt="{{ title_text }}" width="800" height="1000">
               {%- endif -%}
             </div>
 
@@ -149,13 +177,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading Title",
-      "default": "World’s Finest Destinations"
+      "default": "India’s Finest Destinations"
     },
     {
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle Line",
-      "default": "Discover extraordinary landscapes, pristine beaches, and vibrant cultures — handcrafted holiday getaways across the globe."
+      "default": "Discover majestic Himalayas, royal palaces, sacred rivers, lush hills, and turquoise islands — handcrafted holiday getaways across India."
     }
   ],
   "blocks": [
@@ -182,25 +210,25 @@
           "type": "text",
           "id": "tag_text",
           "label": "Sub-tag Text",
-          "default": "CLASSIC SILK PAITHANI"
+          "default": "POPULAR"
         },
         {
           "type": "text",
           "id": "title",
           "label": "Card Main Title",
-          "default": "Festive"
+          "default": "Agra"
         },
         {
           "type": "text",
           "id": "subtitle",
           "label": "Card Subtitle",
-          "default": "Collection"
+          "default": "Taj Mahal & Mughal Heritage"
         },
         {
           "type": "text",
           "id": "button_text",
           "label": "Hover Button Text",
-          "default": "Shop Now"
+          "default": "Explore"
         },
         {
           "type": "url",
@@ -215,62 +243,68 @@
     {
       "name": "Festive Collection Grid",
       "settings": {
-        "heading": "Season Finest: Festive Collection",
-        "subtitle": "Every Rite Has Its Colour, And Every Colour Has Its Weave — From The Haldi Yellow To The Maroon Kept For The Puja Room."
+        "heading": "India’s Finest Destinations",
+        "subtitle": "Discover majestic Himalayas, royal palaces, sacred rivers, lush hills, and turquoise islands — handcrafted holiday getaways across India."
       },
       "blocks": [
         {
           "type": "collection_card",
           "settings": {
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now"
+            "fallback_image": "india-agra.jpg",
+            "tag_text": "ICONIC WONDER",
+            "title": "Agra",
+            "subtitle": "Taj Mahal & Mughal Heritage",
+            "button_text": "Explore"
           }
         },
         {
           "type": "collection_card",
           "settings": {
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now"
+            "fallback_image": "india-udaipur.jpg",
+            "tag_text": "ROYAL LUXURY",
+            "title": "Udaipur",
+            "subtitle": "City of Lakes & Palaces",
+            "button_text": "Explore"
           }
         },
         {
           "type": "collection_card",
           "settings": {
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now"
+            "fallback_image": "india-manali.jpg",
+            "tag_text": "HIMALAYAN ESCAPE",
+            "title": "Manali",
+            "subtitle": "Snow Peaks & Pine Valleys",
+            "button_text": "Explore"
           }
         },
         {
           "type": "collection_card",
           "settings": {
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now"
+            "fallback_image": "india-varanasi.jpg",
+            "tag_text": "SPIRITUAL SOUL",
+            "title": "Varanasi",
+            "subtitle": "Sacred Ghats & Eternal Ganga",
+            "button_text": "Explore"
           }
         },
         {
           "type": "collection_card",
           "settings": {
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now"
+            "fallback_image": "india-darjeeling.jpg",
+            "tag_text": "SCENIC HILLS",
+            "title": "Darjeeling",
+            "subtitle": "Tea Gardens & Kanchenjunga",
+            "button_text": "Explore"
           }
         },
         {
           "type": "collection_card",
           "settings": {
-            "tag_text": "CLASSIC SILK PAITHANI",
-            "title": "Festive",
-            "subtitle": "Collection",
-            "button_text": "Shop Now"
+            "fallback_image": "india-andaman.jpg",
+            "tag_text": "ISLAND PARADISE",
+            "title": "Andaman",
+            "subtitle": "Turquoise Lagoons & Coral Reefs",
+            "button_text": "Explore"
           }
         }
       ]

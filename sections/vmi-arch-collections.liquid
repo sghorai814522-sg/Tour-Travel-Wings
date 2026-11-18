@@ -18,7 +18,7 @@
   "
 >
   {%- comment -%} Dynamic Dual-Layer Section Background (Desktop & Mobile with cross-fade) {%- endcomment -%}
-  {%- assign initial_bg_url = 'tour-dubai.jpg' | asset_url -%}
+  {%- assign initial_bg_url = 'india-jaipur.jpg' | asset_url -%}
   {%- if section.settings.desktop_bg_image != blank -%}
     {%- assign initial_bg_url = section.settings.desktop_bg_image | image_url: width: 2200 -%}
   {%- endif -%}
@@ -26,17 +26,21 @@
     {%- assign active_index = 2 -%}
     {%- if section.blocks.size < 3 -%}{%- assign active_index = 0 -%}{%- endif -%}
     {%- assign init_block = section.blocks[active_index] -%}
-    {%- assign init_label = init_block.settings.label | default: 'DUBAI' | downcase -%}
-    {%- if init_label contains 'thailand' -%}
-      {%- assign initial_bg_url = 'tour-thailand.jpg' | asset_url -%}
-    {%- elsif init_label contains 'swiss' or init_label contains 'alps' -%}
-      {%- assign initial_bg_url = 'tour-swiss-alps.jpg' | asset_url -%}
-    {%- elsif init_label contains 'bali' -%}
-      {%- assign initial_bg_url = 'tour-bali.jpg' | asset_url -%}
-    {%- elsif init_label contains 'dubai' -%}
-      {%- assign initial_bg_url = 'tour-dubai.jpg' | asset_url -%}
-    {%- elsif init_label contains 'maldives' -%}
-      {%- assign initial_bg_url = 'hero-maldives.jpg' | asset_url -%}
+    {%- assign init_label = init_block.settings.label | default: 'JAIPUR' | downcase -%}
+    {%- if init_block.settings.desktop_bg_image != blank -%}
+      {%- assign initial_bg_url = init_block.settings.desktop_bg_image | image_url: width: 2200 -%}
+    {%- elsif init_block.settings.external_desktop_bg != blank -%}
+      {%- assign initial_bg_url = init_block.settings.external_desktop_bg -%}
+    {%- elsif init_label contains 'kashmir' -%}
+      {%- assign initial_bg_url = 'india-kashmir.jpg' | asset_url -%}
+    {%- elsif init_label contains 'kerala' -%}
+      {%- assign initial_bg_url = 'india-kerala.jpg' | asset_url -%}
+    {%- elsif init_label contains 'jaipur' or init_label contains 'rajasthan' -%}
+      {%- assign initial_bg_url = 'india-jaipur.jpg' | asset_url -%}
+    {%- elsif init_label contains 'ladakh' or init_label contains 'leh' -%}
+      {%- assign initial_bg_url = 'india-ladakh.jpg' | asset_url -%}
+    {%- elsif init_label contains 'goa' -%}
+      {%- assign initial_bg_url = 'india-goa.jpg' | asset_url -%}
     {%- endif -%}
   {%- endif -%}
   <div class="vmi-arch__bg-layer vmi-arch__bg-layer--active" id="vmi-arch-bg-a-{{ section.id }}" style="background-image: url('{{ initial_bg_url }}');"></div>
@@ -82,31 +86,28 @@
               {%- assign card_img = block.settings.image | default: col.featured_image -%}
 
               {%- assign down_label = card_label | downcase -%}
-              {%- if down_label contains 'thailand' -%}
-                {%- assign def_desk_bg = 'tour-thailand.jpg' | asset_url -%}
-                {%- assign def_mob_bg = 'tour-thailand.jpg' | asset_url -%}
-              {%- elsif down_label contains 'swiss' or down_label contains 'alps' -%}
-                {%- assign def_desk_bg = 'tour-swiss-alps.jpg' | asset_url -%}
-                {%- assign def_mob_bg = 'tour-swiss-alps.jpg' | asset_url -%}
-              {%- elsif down_label contains 'bali' -%}
-                {%- assign def_desk_bg = 'tour-bali.jpg' | asset_url -%}
-                {%- assign def_mob_bg = 'tour-bali.jpg' | asset_url -%}
-              {%- elsif down_label contains 'dubai' -%}
-                {%- assign def_desk_bg = 'tour-dubai.jpg' | asset_url -%}
-                {%- assign def_mob_bg = 'tour-dubai.jpg' | asset_url -%}
-              {%- elsif down_label contains 'maldives' -%}
-                {%- assign def_desk_bg = 'hero-maldives.jpg' | asset_url -%}
-                {%- assign def_mob_bg = 'hero-maldives.jpg' | asset_url -%}
+              {%- if down_label contains 'kashmir' -%}
+                {%- assign def_asset_file = 'india-kashmir.jpg' -%}
+              {%- elsif down_label contains 'kerala' -%}
+                {%- assign def_asset_file = 'india-kerala.jpg' -%}
+              {%- elsif down_label contains 'jaipur' or down_label contains 'rajasthan' -%}
+                {%- assign def_asset_file = 'india-jaipur.jpg' -%}
+              {%- elsif down_label contains 'ladakh' or down_label contains 'leh' -%}
+                {%- assign def_asset_file = 'india-ladakh.jpg' -%}
+              {%- elsif down_label contains 'goa' -%}
+                {%- assign def_asset_file = 'india-goa.jpg' -%}
               {%- else -%}
                 {%- case forloop.index -%}
-                  {%- when 1 -%}{%- assign def_desk_bg = 'tour-swiss-alps.jpg' | asset_url -%}{%- assign def_mob_bg = 'tour-swiss-alps.jpg' | asset_url -%}
-                  {%- when 2 -%}{%- assign def_desk_bg = 'tour-bali.jpg' | asset_url -%}{%- assign def_mob_bg = 'tour-bali.jpg' | asset_url -%}
-                  {%- when 3 -%}{%- assign def_desk_bg = 'tour-dubai.jpg' | asset_url -%}{%- assign def_mob_bg = 'tour-dubai.jpg' | asset_url -%}
-                  {%- when 4 -%}{%- assign def_desk_bg = 'hero-maldives.jpg' | asset_url -%}{%- assign def_mob_bg = 'hero-maldives.jpg' | asset_url -%}
-                  {%- when 5 -%}{%- assign def_desk_bg = 'tour-thailand.jpg' | asset_url -%}{%- assign def_mob_bg = 'tour-thailand.jpg' | asset_url -%}
-                  {%- else -%}{%- assign def_desk_bg = 'hero-alps.jpg' | asset_url -%}{%- assign def_mob_bg = 'hero-alps.jpg' | asset_url -%}
+                  {%- when 1 -%}{%- assign def_asset_file = 'india-kashmir.jpg' -%}
+                  {%- when 2 -%}{%- assign def_asset_file = 'india-kerala.jpg' -%}
+                  {%- when 3 -%}{%- assign def_asset_file = 'india-jaipur.jpg' -%}
+                  {%- when 4 -%}{%- assign def_asset_file = 'india-ladakh.jpg' -%}
+                  {%- when 5 -%}{%- assign def_asset_file = 'india-goa.jpg' -%}
+                  {%- else -%}{%- assign def_asset_file = 'india-jaipur.jpg' -%}
                 {%- endcase -%}
               {%- endif -%}
+              {%- assign def_desk_bg = def_asset_file | asset_url -%}
+              {%- assign def_mob_bg = def_asset_file | asset_url -%}
 
               {%- assign desk_bg_url = '' -%}
               {%- if block.settings.desktop_bg_image != blank -%}
@@ -150,15 +151,7 @@
                       {%- elsif block.settings.fallback_image != blank -%}
                         <image href="{{ block.settings.fallback_image | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
                       {%- else -%}
-                        {%- assign arch_fb = 'tour-thailand.jpg' -%}
-                        {%- case forloop.index -%}
-                          {%- when 1 -%}{%- assign arch_fb = 'tour-thailand.jpg' -%}
-                          {%- when 2 -%}{%- assign arch_fb = 'tour-swiss-alps.jpg' -%}
-                          {%- when 3 -%}{%- assign arch_fb = 'tour-bali.jpg' -%}
-                          {%- when 4 -%}{%- assign arch_fb = 'tour-dubai.jpg' -%}
-                          {%- when 5 -%}{%- assign arch_fb = 'hero-maldives.jpg' -%}
-                        {%- endcase -%}
-                        <image href="{{ arch_fb | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
+                        <image href="{{ def_asset_file | asset_url }}" x="0" y="0" width="400" height="720" clip-path="url(#archPhotoClip-{{ section.id }}-{{ block.id }}-s{{ set_i }})" preserveAspectRatio="xMidYMid slice" />
                       {%- endif -%}
                     </svg>
 
@@ -220,8 +213,8 @@
           {%- endfor -%}
         {%- else -%}
           {%- comment -%} Default Demo Blocks {%- endcomment -%}
-          {%- assign demo_labels = 'SWITZERLAND,BALI,DUBAI,MALDIVES,THAILAND' | split: ',' -%}
-          {%- assign demo_images = 'tour-swiss-alps.jpg,tour-bali.jpg,tour-dubai.jpg,hero-maldives.jpg,tour-thailand.jpg' | split: ',' -%}
+          {%- assign demo_labels = 'KASHMIR,KERALA,JAIPUR,LADAKH,GOA' | split: ',' -%}
+          {%- assign demo_images = 'india-kashmir.jpg,india-kerala.jpg,india-jaipur.jpg,india-ladakh.jpg,india-goa.jpg' | split: ',' -%}
           {%- for set_i in (1..3) -%}
             {%- for label in demo_labels -%}
               {%- assign img_file = demo_images[forloop.index0] -%}
@@ -246,7 +239,7 @@
                     </svg>
 
                     {%- comment -%} Inactive frame overlay (dark navy) {%- endcomment -%}
-                    <img src="{{ 'vmi-arch-inactive.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--inactive" aria-hidden="true" />
+                    <img src="{{ 'vmi-arch-inactive .svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--inactive" aria-hidden="true" />
 
                     {%- comment -%} Active frame overlay (white/cream) {%- endcomment -%}
                     <img src="{{ 'vmi-arch-active.svg' | asset_url }}" class="vmi-arch-frame-img vmi-arch-frame-img--active" aria-hidden="true" />
@@ -1020,13 +1013,13 @@
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Explore handpicked luxury holidays across iconic destinations around the globe."
+      "default": "Explore handpicked luxury holidays across India's most iconic destinations."
     },
     {
       "type": "textarea",
       "id": "description",
       "label": "Description",
-      "default": "Handcrafted luxury holidays across iconic destinations around the globe."
+      "default": "Handcrafted luxury holidays across India's most breathtaking destinations."
     },
     {
       "type": "header",
@@ -1061,7 +1054,7 @@
         {
           "type": "text",
           "id": "label",
-          "label": "Collection Label (e.g. BANARASI, AJRAK)",
+          "label": "Destination Name (e.g. KASHMIR, KERALA, JAIPUR)",
           "info": "Defaults to collection title if blank."
         },
         {
@@ -1107,23 +1100,23 @@
       "blocks": [
         {
           "type": "collection_card",
-          "settings": { "label": "AJRAK" }
+          "settings": { "label": "KASHMIR" }
         },
         {
           "type": "collection_card",
-          "settings": { "label": "AJRAK" }
+          "settings": { "label": "KERALA" }
         },
         {
           "type": "collection_card",
-          "settings": { "label": "BANARASI" }
+          "settings": { "label": "JAIPUR" }
         },
         {
           "type": "collection_card",
-          "settings": { "label": "KANJIVARAM" }
+          "settings": { "label": "LADAKH" }
         },
         {
           "type": "collection_card",
-          "settings": { "label": "CHANDERI" }
+          "settings": { "label": "GOA" }
         }
       ]
     }
