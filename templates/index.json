@@ -1062,24 +1062,14 @@
     "vmi_arch_collections_njKKwm": {
       "type": "vmi-arch-collections",
       "blocks": {
-        "arch_thailand": {
-          "type": "collection_card",
-          "settings": {
-            "collection": "",
-            "label": "THAILAND",
-            "url": "shopify://collections/all",
-            "external_desktop_bg": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=2200&q=85",
-            "external_mobile_bg": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1080&q=85"
-          }
-        },
         "arch_switzerland": {
           "type": "collection_card",
           "settings": {
             "collection": "",
             "label": "SWITZERLAND",
-            "url": "shopify://collections/all",
             "external_desktop_bg": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=2200&q=85",
-            "external_mobile_bg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&q=85"
+            "external_mobile_bg": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1080&q=85",
+            "url": "shopify://collections/all"
           }
         },
         "arch_bali": {
@@ -1087,9 +1077,9 @@
           "settings": {
             "collection": "",
             "label": "BALI",
-            "url": "shopify://collections/all",
             "external_desktop_bg": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2200&q=85",
-            "external_mobile_bg": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1080&q=85"
+            "external_mobile_bg": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1080&q=85",
+            "url": "shopify://collections/all"
           }
         },
         "arch_dubai": {
@@ -1097,9 +1087,9 @@
           "settings": {
             "collection": "",
             "label": "DUBAI",
-            "url": "shopify://collections/all",
             "external_desktop_bg": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2200&q=85",
-            "external_mobile_bg": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1080&q=85"
+            "external_mobile_bg": "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1080&q=85",
+            "url": "shopify://collections/all"
           }
         },
         "arch_maldives": {
@@ -1107,9 +1097,19 @@
           "settings": {
             "collection": "",
             "label": "MALDIVES",
-            "url": "shopify://collections/all",
             "external_desktop_bg": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=2200&q=85",
-            "external_mobile_bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1080&q=85"
+            "external_mobile_bg": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1080&q=85",
+            "url": "shopify://collections/all"
+          }
+        },
+        "arch_thailand": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "THAILAND",
+            "external_desktop_bg": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=2200&q=85",
+            "external_mobile_bg": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1080&q=85",
+            "url": "shopify://collections/all"
           }
         }
       },
@@ -1225,6 +1225,123 @@
         "subtitle": "Discover extraordinary landscapes, pristine beaches, and vibrant cultures — handcrafted holiday getaways across the globe."
       }
     },
+    "travel_circle_slider": {
+      "type": "travel-circle-slider",
+      "blocks": {
+        "circle_1": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Alpine & Peaks",
+            "subtitle": "14 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "tour-swiss-alps.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_2": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Island Havens",
+            "subtitle": "18 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "tour-bali.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_3": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Modern Skylines",
+            "subtitle": "12 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "tour-dubai.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_4": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Overwater Atolls",
+            "subtitle": "9 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "hero-maldives.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_5": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Sacred Temples",
+            "subtitle": "15 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "tour-thailand.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_6": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Aegean Romance",
+            "subtitle": "11 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "hero-santorini.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_7": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Emerald Bays",
+            "subtitle": "8 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "tour-vietnam.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        },
+        "circle_8": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Desert & Safari",
+            "subtitle": "10 Tours",
+            "external_image_url": "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=600&q=80",
+            "fallback_image": "promo-mountain-bg.jpg",
+            "collection": "",
+            "url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "circle_1",
+        "circle_2",
+        "circle_3",
+        "circle_4",
+        "circle_5",
+        "circle_6",
+        "circle_7",
+        "circle_8"
+      ],
+      "name": "Travel Category Circles",
+      "settings": {
+        "heading": "Explore By Category",
+        "subtitle": "Handpicked holiday styles across the globe — from tropical atolls to high alpine retreats.",
+        "show_divider": true,
+        "show_subtitles": false,
+        "auto_slide": true,
+        "auto_slide_interval": 3.5,
+        "background_color": "#ffffff",
+        "circle_max_size_desktop": 155,
+        "circle_max_size_mobile": 125,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
     "popular_tours": {
       "type": "popular-tours",
       "blocks": {
@@ -1297,6 +1414,7 @@
       ],
       "settings": {
         "heading": "Popular Tours",
+        "subtitle": "Explore top-rated travel packages and signature itineraries handcrafted for every journey.",
         "view_all_text": "View All Tours",
         "view_all_link": "shopify://collections/all",
         "source": "collection",
@@ -1310,8 +1428,106 @@
         "button_bg_color": "#f5a623",
         "button_hover_bg_color": "#d9921b",
         "padding_top": 50,
-        "padding_bottom": 50,
-        "subtitle": "Explore top-rated travel packages and signature itineraries handcrafted for every journey."
+        "padding_bottom": 50
+      }
+    },
+    "travel_price_showcase": {
+      "type": "travel-price-showcase",
+      "blocks": {
+        "card_1": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "5K - 10K",
+            "category_label": "Boutique Hotel",
+            "title": "Boutique City Hotel",
+            "fallback_image": "tour-bali.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_2": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "10K - 20K",
+            "category_label": "Hilltop Resort",
+            "title": "Scenic Hillside Resort",
+            "fallback_image": "tour-thailand.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_3": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "20K - 30K",
+            "category_label": "Beachfront Resort",
+            "title": "Oceanfront Pool Resort",
+            "fallback_image": "tour-dubai.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_4": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "30K - 40K",
+            "category_label": "Heritage Palace",
+            "title": "Royal Heritage Palace Hotel",
+            "fallback_image": "tour-swiss-alps.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_5": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "40K - 50K",
+            "category_label": "5-Star Luxury Suite",
+            "title": "Cliffside Luxury Ocean Suite",
+            "fallback_image": "hero-santorini.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_6": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "Premium",
+            "category_label": "Private Pool Villa",
+            "title": "Exclusive Luxury Pool Villa",
+            "fallback_image": "hero-maldives.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        },
+        "card_7": {
+          "type": "price_card",
+          "settings": {
+            "price_badge": "Luxury",
+            "category_label": "Overwater Villa",
+            "title": "Presidential Lagoon Atoll Villa",
+            "fallback_image": "tour-vietnam.jpg",
+            "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80",
+            "url": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6",
+        "card_7"
+      ],
+      "settings": {
+        "heading": "Shop By Price",
+        "subtitle": "Handpicked boutique hotels, beachfront resorts & ultra-luxury private villas for every budget.",
+        "show_divider": true,
+        "background_color": "#ffffff",
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     },
     "travel_promo_reviews_rJBwH9": {
@@ -1325,6 +1541,7 @@
             "date": "4 November 2025",
             "review_text": "The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection",
             "rating": 5,
+            "fallback_image": "tour-bali.jpg",
             "bg_color": "#fce7f3"
           }
         },
@@ -1332,33 +1549,36 @@
           "type": "bento_review",
           "settings": {
             "card_type": "image",
-            "fallback_image": "tour-bali.jpg",
             "reviewer_name": "Kanchan T.",
             "date": "4 November 2025",
             "review_text": "Bali felt magical thanks to Tour & Travel Wings. The private villa, temple visits, and sunrise trek were pure bliss",
-            "rating": 5
+            "rating": 5,
+            "fallback_image": "tour-bali.jpg",
+            "bg_color": "#fce7f3"
           }
         },
         "bento_3": {
           "type": "bento_review",
           "settings": {
             "card_type": "tall_image",
-            "fallback_image": "tour-dubai.jpg",
             "reviewer_name": "Kanchan T.",
             "date": "4 November 2025",
             "review_text": "From desert safari dunes to luxury skylines in Dubai, every single moment was effortless. Best travel agency ever for holidays",
-            "rating": 5
+            "rating": 5,
+            "fallback_image": "tour-dubai.jpg",
+            "bg_color": "#fce7f3"
           }
         },
         "bento_4": {
           "type": "bento_review",
           "settings": {
             "card_type": "image",
-            "fallback_image": "hero-maldives.jpg",
             "reviewer_name": "Kanchan T.",
             "date": "4 November 2025",
             "review_text": "Waking up to turquoise waters in Maldives was an absolute dream. The 24/7 concierge took care of every detail seamlessly",
-            "rating": 5
+            "rating": 5,
+            "fallback_image": "hero-maldives.jpg",
+            "bg_color": "#fce7f3"
           }
         },
         "bento_5": {
@@ -1369,6 +1589,7 @@
             "date": "4 November 2025",
             "review_text": "Our family holiday to Thailand was flawless. The kids loved the elephant sanctuary and private island boat cruise",
             "rating": 5,
+            "fallback_image": "tour-bali.jpg",
             "bg_color": "#fce7f3"
           }
         }
@@ -1551,214 +1772,6 @@
         "title": "The Journal",
         "subtitle": "Inspiring travel stories, destination guides, and insider tips from our global explorers."
       }
-    },
-    "travel_circle_slider": {
-      "type": "travel-circle-slider",
-      "blocks": {
-        "circle_1": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Alpine & Peaks",
-            "subtitle": "14 Tours",
-            "fallback_image": "tour-swiss-alps.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "circle_2": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Island Havens",
-            "subtitle": "18 Tours",
-            "fallback_image": "tour-bali.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "circle_3": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Modern Skylines",
-            "subtitle": "12 Tours",
-            "fallback_image": "tour-dubai.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "circle_4": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Overwater Atolls",
-            "subtitle": "9 Tours",
-            "fallback_image": "hero-maldives.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "circle_5": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Sacred Temples",
-            "subtitle": "15 Tours",
-            "fallback_image": "tour-thailand.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "circle_6": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Aegean Romance",
-            "subtitle": "11 Tours",
-            "fallback_image": "hero-santorini.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "circle_7": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Emerald Bays",
-            "subtitle": "8 Tours",
-            "fallback_image": "tour-vietnam.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "circle_8": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Desert & Safari",
-            "subtitle": "10 Tours",
-            "fallback_image": "promo-mountain-bg.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?auto=format&fit=crop&w=600&q=80",
-            "url": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "circle_1",
-        "circle_2",
-        "circle_3",
-        "circle_4",
-        "circle_5",
-        "circle_6",
-        "circle_7",
-        "circle_8"
-      ],
-      "name": "Travel Category Circles",
-      "settings": {
-        "heading": "Explore By Category",
-        "subtitle": "Handpicked holiday styles across the globe — from tropical atolls to high alpine retreats.",
-        "show_divider": true,
-        "show_subtitles": false,
-        "auto_slide": true,
-        "auto_slide_interval": 3.5,
-        "background_color": "#ffffff",
-        "circle_max_size_desktop": 155,
-        "circle_max_size_mobile": 125,
-        "padding_top": 50,
-        "padding_bottom": 50
-      }
-    },
-    "travel_price_showcase": {
-      "type": "travel-price-showcase",
-      "blocks": {
-        "card_1": {
-          "type": "price_card",
-          "settings": {
-            "price_badge": "5K - 10K",
-            "category_label": "Boutique Hotel",
-            "title": "Boutique City Hotel",
-            "fallback_image": "tour-bali.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "card_2": {
-          "type": "price_card",
-          "settings": {
-            "price_badge": "10K - 20K",
-            "category_label": "Hilltop Resort",
-            "title": "Scenic Hillside Resort",
-            "fallback_image": "tour-thailand.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "card_3": {
-          "type": "price_card",
-          "settings": {
-            "price_badge": "20K - 30K",
-            "category_label": "Beachfront Resort",
-            "title": "Oceanfront Pool Resort",
-            "fallback_image": "tour-dubai.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "card_4": {
-          "type": "price_card",
-          "settings": {
-            "price_badge": "30K - 40K",
-            "category_label": "Heritage Palace",
-            "title": "Royal Heritage Palace Hotel",
-            "fallback_image": "tour-swiss-alps.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "card_5": {
-          "type": "price_card",
-          "settings": {
-            "price_badge": "40K - 50K",
-            "category_label": "5-Star Luxury Suite",
-            "title": "Cliffside Luxury Ocean Suite",
-            "fallback_image": "hero-santorini.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "card_6": {
-          "type": "price_card",
-          "settings": {
-            "price_badge": "Premium",
-            "category_label": "Private Pool Villa",
-            "title": "Exclusive Luxury Pool Villa",
-            "fallback_image": "hero-maldives.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
-          }
-        },
-        "card_7": {
-          "type": "price_card",
-          "settings": {
-            "price_badge": "Luxury",
-            "category_label": "Overwater Villa",
-            "title": "Presidential Lagoon Atoll Villa",
-            "fallback_image": "tour-vietnam.jpg",
-            "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4",
-        "card_5",
-        "card_6",
-        "card_7"
-      ],
-      "settings": {
-        "heading": "Shop By Price",
-        "subtitle": "Handpicked boutique hotels, beachfront resorts & ultra-luxury private villas for every budget.",
-        "show_divider": true,
-        "background_color": "#ffffff",
-        "padding_top": 50,
-        "padding_bottom": 50
-      }
     }
   },
   "order": [
@@ -1771,12 +1784,12 @@
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
     "vmi_arch_collections_njKKwm",
-    "travel_circle_slider",
     "festive_collection_GqybH3",
+    "travel_circle_slider",
     "popular_tours",
-    "travel_price_showcase",
     "travel_promo_reviews_rJBwH9",
     "gallery_showcase",
+    "travel_price_showcase",
     "journal_accordion_JwwcJL"
   ]
 }
