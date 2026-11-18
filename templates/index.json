@@ -1413,7 +1413,7 @@
         "tour_thailand"
       ],
       "settings": {
-        "heading": "Popular Tours",
+        "heading": "Book Your Stay, Explore the World",
         "subtitle": "Explore top-rated travel packages and signature itineraries handcrafted for every journey.",
         "view_all_text": "View All Tours",
         "view_all_link": "shopify://collections/all",
@@ -1593,7 +1593,7 @@
       ],
       "settings": {
         "subheading": "EXPLORE THE WORLD IN PICTURES",
-        "heading": "Moments Beyond Destinations",
+        "heading": "Discover the World, Your Way",
         "description": "A visual showcase of unforgettable travel highlights and breathtaking locations from around the globe.",
         "heading_alignment": "center",
         "full_width": false,
@@ -1769,7 +1769,7 @@
       ],
       "name": "Journal Accordion",
       "settings": {
-        "title": "The Journal",
+        "title": "Experience Luxury & Comfort",
         "subtitle": "Inspiring travel stories, destination guides, and insider tips from our global explorers."
       }
     }
