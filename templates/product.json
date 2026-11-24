@@ -583,6 +583,7 @@
       "block_order": [
         "text_R8dDRK"
       ],
+      "disabled": true,
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -769,6 +770,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.media_with_text",
       "settings": {
         "media_position": "right",
