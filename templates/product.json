@@ -373,6 +373,15 @@
                 "accordion_row_HUWbDi",
                 "accordion_row_GTWFgP"
               ]
+            },
+            "estimator_button_Kx92aL": {
+              "type": "estimator-button",
+              "settings": {
+                "button_text": "Book Now",
+                "sender_email": "ayan.bluehorse@gmail.com",
+                "recipient_email": "amandal25526@gmail.com",
+                "heading": "Book Your Dream Tour"
+              }
             }
           },
           "block_order": [
@@ -380,6 +389,7 @@
             "reviews",
             "price_a7krng",
             "variant_picker_R3rGDr",
+            "estimator_button_Kx92aL",
             "buy_buttons_eYQEYi",
             "accordion_Yd4U4w"
           ]

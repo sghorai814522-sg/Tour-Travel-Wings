@@ -368,3 +368,338 @@
 .popular-tour-btn:active {
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   POPULAR TOURS BOOKING MODAL
+   ========================================================================== */
+.pt-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483647 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pt-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(7, 31, 63, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+.pt-modal-dialog {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 530px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 30px;
+  box-shadow: 0 25px 50px -12px rgba(10, 46, 92, 0.35);
+  z-index: 2;
+  margin: auto;
+  box-sizing: border-box;
+  animation: ptModalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ptModalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pt-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: #f1f5f9;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #64748b;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.pt-modal-close:hover {
+  background: #e2e8f0;
+  color: #0a2e5c;
+}
+
+.pt-modal-header h3 {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0a2e5c;
+  font-family: inherit;
+}
+
+.pt-modal-header p {
+  margin: 0 0 18px 0;
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.pt-product-summary {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+.pt-product-img img {
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+
+.pt-product-info {
+  flex: 1;
+}
+
+.pt-product-title {
+  margin: 0 0 4px 0;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0a2e5c;
+}
+
+.pt-variant-badge {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.pt-price-badge {
+  font-size: 15px;
+  font-weight: 800;
+  color: #f5a623;
+  margin-top: 4px;
+}
+
+.pt-field-group {
+  margin-bottom: 14px;
+}
+
+.pt-field-row {
+  display: flex;
+  gap: 12px;
+}
+
+.pt-field-row .pt-field-group {
+  flex: 1;
+}
+
+.pt-field-group label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.pt-field-group .required {
+  color: #e53e3e;
+}
+
+.pt-field-group input,
+.pt-field-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13.5px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.pt-field-group input:focus,
+.pt-field-group textarea:focus {
+  outline: none;
+  border-color: #0a2e5c;
+  box-shadow: 0 0 0 3px rgba(10, 46, 92, 0.12);
+}
+
+.pt-stepper-wrap {
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+  width: 100%;
+}
+
+.pt-stepper-btn {
+  background: #f8fafc;
+  border: none;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a2e5c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pt-stepper-btn:hover {
+  background: #e2e8f0;
+}
+
+.pt-stepper-input {
+  flex: 1;
+  border: none !important;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  height: 38px;
+  padding: 0 !important;
+  -moz-appearance: textfield;
+}
+
+.pt-stepper-input::-webkit-outer-spin-button,
+.pt-stepper-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pt-alert {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.pt-alert--error {
+  background: #fff5f5;
+  color: #c53030;
+  border: 1px solid #feb2b2;
+}
+
+.pt-alert--success {
+  background: #f0fff4;
+  color: #276749;
+  border: 1px solid #9ae6b4;
+  text-align: center;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.pt-actions {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.pt-submit-btn {
+  width: 100%;
+  padding: 13px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5a623;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.4);
+  transition: all 0.2s ease;
+}
+
+.pt-submit-btn:hover {
+  background: #d9921b;
+}
+
+.pt-security-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #64748b;
+  text-align: center;
+}
+
+.pt-spinner-svg {
+  animation: ptRotate 1.5s linear infinite;
+  width: 18px;
+  height: 18px;
+  margin-left: 8px;
+}
+
+.pt-spinner-svg .path {
+  stroke: #ffffff;
+  stroke-linecap: round;
+  animation: ptDash 1.5s ease-in-out infinite;
+}
+
+@keyframes ptRotate {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes ptDash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@media (max-width: 600px) {
+  .pt-modal-dialog {
+    padding: 22px 18px;
+  }
+  .pt-field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
