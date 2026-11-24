@@ -1149,16 +1149,19 @@
       "type": "vmi-trust",
       "settings": {
         "enable_section": true,
+        "bg_fallback_image": "",
         "bg_gradient": "linear-gradient(135deg, #CFDAE5 0%, #7B90A3 45%, #2B3E52 100%)",
         "heading": "Sankalp",
+        "logo_max_width": 240,
         "subtitle": "OUR SACRED PROMISE TO OUR TRAVELERS",
+        "left_image_url": "",
         "left_fallback_image": "india-agra.jpg",
         "small_heading": "Celebrating Incredible India's Wonders",
         "mission": "<p>At Tour & Travel Wings, our sacred promise (Sankalp) is to deliver unparalleled luxury, authentic cultural encounters, and deeply soul-stirring journeys across Incredible India. From the snow-laden peaks of Kashmir and the royal palaces of Rajasthan to the serene backwaters of Kerala, every itinerary is handcrafted with passion.</p><p>When you journey with us, you experience world-class hospitality, empower local heritage communities, and create treasured travel memories that endure for a lifetime.</p>",
         "button_label": "Explore Our Journeys",
         "button_link": "#",
-        "card_bg_color": "#F4EFE6",
-        "text_color": "#1E354D"
+        "card_bg_color": "#f4efe6",
+        "text_color": "#1e354d"
       }
     },
     "festive_collection_GqybH3": {
@@ -1255,123 +1258,6 @@
         "subtitle": "Discover majestic Himalayas, royal palaces, sacred rivers, lush hills, and turquoise islands — handcrafted holiday getaways across India."
       }
     },
-    "travel_circle_slider": {
-      "type": "travel-circle-slider",
-      "blocks": {
-        "circle_1": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Sedan Taxi",
-            "subtitle": "4 Seater AC",
-            "external_image_url": "",
-            "fallback_image": "taxi-sedan.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        },
-        "circle_2": {
-          "type": "category_circle",
-          "settings": {
-            "title": "SUV / Innova",
-            "subtitle": "6-7 Seater AC",
-            "external_image_url": "",
-            "fallback_image": "taxi-suv.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        },
-        "circle_3": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Luxury Cab",
-            "subtitle": "Chauffeur VIP",
-            "external_image_url": "",
-            "fallback_image": "taxi-luxury.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        },
-        "circle_4": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Hatchback",
-            "subtitle": "Economy 4 Seater",
-            "external_image_url": "",
-            "fallback_image": "taxi-hatchback.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        },
-        "circle_5": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Tempo Traveller",
-            "subtitle": "12-16 Seater",
-            "external_image_url": "",
-            "fallback_image": "taxi-traveller.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        },
-        "circle_6": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Electric EV",
-            "subtitle": "Eco Green Cab",
-            "external_image_url": "",
-            "fallback_image": "taxi-ev.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        },
-        "circle_7": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Airport Express",
-            "subtitle": "Flight Pickup",
-            "external_image_url": "",
-            "fallback_image": "taxi-airport.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        },
-        "circle_8": {
-          "type": "category_circle",
-          "settings": {
-            "title": "Outstation Taxi",
-            "subtitle": "Round Trips",
-            "external_image_url": "",
-            "fallback_image": "taxi-outstation.jpg",
-            "collection": "",
-            "url": "#"
-          }
-        }
-      },
-      "block_order": [
-        "circle_1",
-        "circle_2",
-        "circle_3",
-        "circle_4",
-        "circle_5",
-        "circle_6",
-        "circle_7",
-        "circle_8"
-      ],
-      "name": "Travel Category Circles",
-      "settings": {
-        "heading": "Premium Taxi & Cab Fleet",
-        "subtitle": "Choose from our wide range of comfortable, reliable, and air-conditioned cabs for city travel, airport transfers, and outstation tours across India.",
-        "show_divider": true,
-        "show_subtitles": true,
-        "auto_slide": true,
-        "auto_slide_interval": 3.5,
-        "background_color": "#ffffff",
-        "circle_max_size_desktop": 155,
-        "circle_max_size_mobile": 125,
-        "padding_top": 50,
-        "padding_bottom": 50
-      }
-    },
     "popular_tours": {
       "type": "popular-tours",
       "blocks": {
@@ -1458,7 +1344,15 @@
         "button_bg_color": "#f5a623",
         "button_hover_bg_color": "#d9921b",
         "padding_top": 50,
-        "padding_bottom": 50
+        "padding_bottom": 50,
+        "brevo_api_key": "",
+        "sender_email": "ayan.bluehorse@gmail.com",
+        "sender_name": "Tour & Travel Wings",
+        "recipient_email": "amandal25526@gmail.com",
+        "recipient_name": "Tour & Travel Wings Admin",
+        "modal_heading": "Book Your Dream Tour",
+        "modal_subheading": "Fill out your travel details below and our luxury travel specialists will reserve your itinerary.",
+        "modal_success_message": "Thank you! Your booking request has been submitted successfully. A confirmation has been sent to your email and our concierge will contact you shortly."
       }
     },
     "travel_promo_reviews_rJBwH9": {
@@ -1644,6 +1538,123 @@
         "padding_bottom": 50
       }
     },
+    "travel_circle_slider": {
+      "type": "travel-circle-slider",
+      "blocks": {
+        "circle_1": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Sedan Taxi",
+            "subtitle": "4 Seater AC",
+            "external_image_url": "",
+            "fallback_image": "taxi-sedan.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        },
+        "circle_2": {
+          "type": "category_circle",
+          "settings": {
+            "title": "SUV / Innova",
+            "subtitle": "6-7 Seater AC",
+            "external_image_url": "",
+            "fallback_image": "taxi-suv.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        },
+        "circle_3": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Luxury Cab",
+            "subtitle": "Chauffeur VIP",
+            "external_image_url": "",
+            "fallback_image": "taxi-luxury.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        },
+        "circle_4": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Hatchback",
+            "subtitle": "Economy 4 Seater",
+            "external_image_url": "",
+            "fallback_image": "taxi-hatchback.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        },
+        "circle_5": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Tempo Traveller",
+            "subtitle": "12-16 Seater",
+            "external_image_url": "",
+            "fallback_image": "taxi-traveller.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        },
+        "circle_6": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Electric EV",
+            "subtitle": "Eco Green Cab",
+            "external_image_url": "",
+            "fallback_image": "taxi-ev.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        },
+        "circle_7": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Airport Express",
+            "subtitle": "Flight Pickup",
+            "external_image_url": "",
+            "fallback_image": "taxi-airport.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        },
+        "circle_8": {
+          "type": "category_circle",
+          "settings": {
+            "title": "Outstation Taxi",
+            "subtitle": "Round Trips",
+            "external_image_url": "",
+            "fallback_image": "taxi-outstation.jpg",
+            "collection": "",
+            "url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "circle_1",
+        "circle_2",
+        "circle_3",
+        "circle_4",
+        "circle_5",
+        "circle_6",
+        "circle_7",
+        "circle_8"
+      ],
+      "name": "Travel Category Circles",
+      "settings": {
+        "heading": "Premium Taxi & Cab Fleet",
+        "subtitle": "Choose from our wide range of comfortable, reliable, and air-conditioned cabs for city travel, airport transfers, and outstation tours across India.",
+        "show_divider": true,
+        "show_subtitles": true,
+        "auto_slide": true,
+        "auto_slide_interval": 3.5,
+        "background_color": "#ffffff",
+        "circle_max_size_desktop": 155,
+        "circle_max_size_mobile": 125,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
     "travel_price_showcase": {
       "type": "travel-price-showcase",
       "blocks": {
@@ -1816,11 +1827,11 @@
     "vmi_arch_collections_njKKwm",
     "vmi_trust",
     "festive_collection_GqybH3",
-    "travel_circle_slider",
+    "travel_price_showcase",
     "popular_tours",
     "travel_promo_reviews_rJBwH9",
     "gallery_showcase",
-    "travel_price_showcase",
+    "travel_circle_slider",
     "journal_accordion_JwwcJL"
   ]
 }
