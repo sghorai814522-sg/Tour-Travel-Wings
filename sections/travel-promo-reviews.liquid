@@ -28,7 +28,7 @@
     <!-- 1. Promotional Mountain Banner -->
     {%- if section.settings.show_banner -%}
       {%- assign banner_bg = section.settings.banner_image -%}
-      {%- assign fallback_bg = section.settings.banner_fallback_image | default: 'promo-mountain-bg.jpg' -%}
+      {%- assign fallback_bg = section.settings.banner_fallback_image | default: 'india-manali.jpg' -%}
       {%- if banner_bg != blank -%}
         {%- assign banner_url = banner_bg | image_url: width: 2400 -%}
       {%- else -%}
@@ -62,7 +62,7 @@
           {%- if section.settings.banner_button_text != blank -%}
             <div class="travel-promo-btn-wrap">
               <a
-                href="{{ section.settings.banner_button_link | default: routes.all_products_collection_url }}"
+                href="{{ section.settings.banner_button_link | default: '#' }}"
                 class="travel-promo-btn"
               >
                 {{ section.settings.banner_button_text }}
@@ -118,29 +118,29 @@
           <!-- Card 1: Pastel Text Card -->
           <div class="travel-bento-card travel-bento-card--pastel" style="background-color: #fce7f3;">
             <p class="travel-bento-text">
-              The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+              Our Kashmir holiday was pure magic. Gliding on Dal Lake in a Shikara at sunrise and the snow-capped gondola ride in Gulmarg exceeded every dream! <a href="#" class="travel-bento-readmore">... Read More</a>
             </p>
             <div class="travel-bento-footer">
               <div class="travel-bento-author-meta">
-                <span class="travel-bento-author-name">Kanchan T.</span>
-                <span class="travel-bento-date">4 November 2025</span>
+                <span class="travel-bento-author-name">Aarav Sharma</span>
+                <span class="travel-bento-date">12 November 2025</span>
               </div>
               <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
             </div>
           </div>
 
-          <!-- Card 2: Image Card (Bali) -->
+          <!-- Card 2: Image Card (Kerala) -->
           <div class="travel-bento-card travel-bento-card--image">
-            <img src="{{ 'tour-bali.jpg' | asset_url }}" alt="Bali Tour Traveler Review" class="travel-bento-img" loading="lazy" width="600" height="400">
+            <img src="{{ 'india-kerala.jpg' | asset_url }}" alt="Kerala Luxury Houseboat Tour Review" class="travel-bento-img" loading="lazy" width="600" height="400">
             <div class="travel-bento-overlay"></div>
             <div class="travel-bento-overlay-content">
               <p class="travel-bento-text">
-                Bali felt magical thanks to Tour & Travel Wings. The private villa, temple visits, and sunrise trek were pure bliss <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+                Drifting through Alleppey backwaters on a private luxury houseboat with authentic Kerala delicacies was pure bliss. Unforgettable hospitality! <a href="#" class="travel-bento-readmore">... Read More</a>
               </p>
               <div class="travel-bento-footer">
                 <div class="travel-bento-author-meta">
-                  <span class="travel-bento-author-name">Kanchan T.</span>
-                  <span class="travel-bento-date">4 November 2025</span>
+                  <span class="travel-bento-author-name">Priya Nair</span>
+                  <span class="travel-bento-date">8 November 2025</span>
                 </div>
                 <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
               </div>
@@ -150,18 +150,18 @@
 
         <!-- Column 2 (Center - Tall Featured Image Card) -->
         <div class="travel-bento-col travel-bento-col--center">
-          <!-- Card 3: Tall Image Card (Dubai / Desert & Skyline) -->
+          <!-- Card 3: Tall Image Card (Jaipur / Royal Rajasthan) -->
           <div class="travel-bento-card travel-bento-card--image travel-bento-card--tall">
-            <img src="{{ 'tour-dubai.jpg' | asset_url }}" alt="Dubai Luxury Tour Review" class="travel-bento-img" loading="lazy" width="600" height="800">
+            <img src="{{ 'india-jaipur.jpg' | asset_url }}" alt="Royal Rajasthan Luxury Tour Review" class="travel-bento-img" loading="lazy" width="600" height="800">
             <div class="travel-bento-overlay"></div>
             <div class="travel-bento-overlay-content">
               <p class="travel-bento-text">
-                From desert safari dunes to luxury skylines in Dubai, every single moment was effortless. Best travel agency ever for holidays <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+                Experiencing the grand palaces of Jaipur and royal heritage forts was breathtaking. Tour & Travel Wings treated us like royalty every single day! <a href="#" class="travel-bento-readmore">... Read More</a>
               </p>
               <div class="travel-bento-footer">
                 <div class="travel-bento-author-meta">
-                  <span class="travel-bento-author-name">Kanchan T.</span>
-                  <span class="travel-bento-date">4 November 2025</span>
+                  <span class="travel-bento-author-name">Rohan Kapoor</span>
+                  <span class="travel-bento-date">5 November 2025</span>
                 </div>
                 <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
               </div>
@@ -171,33 +171,33 @@
 
         <!-- Column 3 (Right) -->
         <div class="travel-bento-col travel-bento-col--right">
-          <!-- Card 4: Image Card (Maldives) -->
+          <!-- Card 4: Image Card (Goa) -->
           <div class="travel-bento-card travel-bento-card--image">
-            <img src="{{ 'hero-maldives.jpg' | asset_url }}" alt="Maldives Atoll Tour Review" class="travel-bento-img" loading="lazy" width="600" height="400">
+            <img src="{{ 'india-goa.jpg' | asset_url }}" alt="Goa Luxury Coastal Tour Review" class="travel-bento-img" loading="lazy" width="600" height="400">
             <div class="travel-bento-overlay"></div>
             <div class="travel-bento-overlay-content">
               <p class="travel-bento-text">
-                Waking up to turquoise waters in Maldives was an absolute dream. The 24/7 concierge took care of every detail seamlessly <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+                Sunsets at Palolem Beach, private coastal cruising, and heritage Portuguese boutique stays in Goa made our vacation sheer perfection! <a href="#" class="travel-bento-readmore">... Read More</a>
               </p>
               <div class="travel-bento-footer">
                 <div class="travel-bento-author-meta">
-                  <span class="travel-bento-author-name">Kanchan T.</span>
-                  <span class="travel-bento-date">4 November 2025</span>
+                  <span class="travel-bento-author-name">Sneha Patel</span>
+                  <span class="travel-bento-date">2 November 2025</span>
                 </div>
                 <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
               </div>
             </div>
           </div>
 
-          <!-- Card 5: Pastel Text Card -->
+          <!-- Card 5: Pastel Text Card (Ladakh) -->
           <div class="travel-bento-card travel-bento-card--pastel" style="background-color: #fce7f3;">
             <p class="travel-bento-text">
-              Our family holiday to Thailand was flawless. The kids loved the elephant sanctuary and private island boat cruise <a href="{{ routes.all_products_collection_url }}" class="travel-bento-readmore">... Read More</a>
+              Crossing Khardung La pass and stargazing by the crystal azure waters of Pangong Lake in Ladakh was a soul-stirring adventure. Flawlessly organized! <a href="#" class="travel-bento-readmore">... Read More</a>
             </p>
             <div class="travel-bento-footer">
               <div class="travel-bento-author-meta">
-                <span class="travel-bento-author-name">Kanchan T.</span>
-                <span class="travel-bento-date">4 November 2025</span>
+                <span class="travel-bento-author-name">Vikramaditya Das</span>
+                <span class="travel-bento-date">28 October 2025</span>
               </div>
               <div class="travel-bento-stars" aria-label="5 stars">★★★★★</div>
             </div>
@@ -234,7 +234,7 @@
       "type": "text",
       "id": "banner_fallback_image",
       "label": "Fallback Asset Name",
-      "default": "promo-mountain-bg.jpg"
+      "default": "india-manali.jpg"
     },
     {
       "type": "text",
@@ -372,7 +372,7 @@
           "type": "text",
           "id": "fallback_image",
           "label": "Theme Asset Image Filename",
-          "default": "tour-bali.jpg"
+          "default": "india-kerala.jpg"
         },
         {
           "type": "color",
@@ -418,9 +418,9 @@
           "type": "bento_review",
           "settings": {
             "card_type": "pastel",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection",
+            "reviewer_name": "Aarav Sharma",
+            "date": "12 November 2025",
+            "review_text": "Our Kashmir holiday was pure magic. Gliding on Dal Lake in a Shikara at sunrise and the snow-capped gondola ride in Gulmarg exceeded every dream!",
             "rating": 5
           }
         },
@@ -428,10 +428,10 @@
           "type": "bento_review",
           "settings": {
             "card_type": "image",
-            "fallback_image": "tour-bali.jpg",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "Bali felt magical thanks to Tour & Travel Wings. The private villa, temple visits, and sunrise trek were pure bliss",
+            "fallback_image": "india-kerala.jpg",
+            "reviewer_name": "Priya Nair",
+            "date": "8 November 2025",
+            "review_text": "Drifting through Alleppey backwaters on a private luxury houseboat with authentic Kerala delicacies was pure bliss. Unforgettable hospitality!",
             "rating": 5
           }
         },
@@ -439,10 +439,10 @@
           "type": "bento_review",
           "settings": {
             "card_type": "tall_image",
-            "fallback_image": "tour-dubai.jpg",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "From desert safari dunes to luxury skylines in Dubai, every single moment was effortless. Best travel agency ever for holidays",
+            "fallback_image": "india-jaipur.jpg",
+            "reviewer_name": "Rohan Kapoor",
+            "date": "5 November 2025",
+            "review_text": "Experiencing the grand palaces of Jaipur and royal heritage forts was breathtaking. Tour & Travel Wings treated us like royalty every single day!",
             "rating": 5
           }
         },
@@ -450,10 +450,10 @@
           "type": "bento_review",
           "settings": {
             "card_type": "image",
-            "fallback_image": "hero-maldives.jpg",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "Waking up to turquoise waters in Maldives was an absolute dream. The 24/7 concierge took care of every detail seamlessly",
+            "fallback_image": "india-goa.jpg",
+            "reviewer_name": "Sneha Patel",
+            "date": "2 November 2025",
+            "review_text": "Sunsets at Palolem Beach, private coastal cruising, and heritage Portuguese boutique stays in Goa made our vacation sheer perfection!",
             "rating": 5
           }
         },
@@ -461,9 +461,9 @@
           "type": "bento_review",
           "settings": {
             "card_type": "pastel",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "Our family holiday to Thailand was flawless. The kids loved the elephant sanctuary and private island boat cruise",
+            "reviewer_name": "Vikramaditya Das",
+            "date": "28 October 2025",
+            "review_text": "Crossing Khardung La pass and stargazing by the crystal azure waters of Pangong Lake in Ladakh was a soul-stirring adventure. Flawlessly organized!",
             "rating": 5
           }
         }

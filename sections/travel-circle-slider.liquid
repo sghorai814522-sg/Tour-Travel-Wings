@@ -48,7 +48,7 @@
                 assign col = collections[block.settings.collection]
                 assign title = block.settings.title | default: col.title | default: 'Tour Escapes'
                 assign subtitle = block.settings.subtitle | default: ''
-                assign link_url = block.settings.url | default: col.url | default: routes.all_products_collection_url
+                assign link_url = block.settings.url | default: col.url | default: '#'
 
                 assign img_url = ''
                 if block.settings.image != blank
@@ -61,50 +61,42 @@
                   assign img_url = block.settings.fallback_image | asset_url
                 else
                   assign down_t = title | downcase
-                  if down_t contains 'kashmir'
-                    assign img_url = 'india-kashmir.jpg' | asset_url
-                  elsif down_t contains 'munnar'
-                    assign img_url = 'india-munnar.jpg' | asset_url
-                  elsif down_t contains 'jaipur'
-                    assign img_url = 'india-jaipur.jpg' | asset_url
-                  elsif down_t contains 'ladakh' or down_t contains 'leh'
-                    assign img_url = 'india-ladakh.jpg' | asset_url
-                  elsif down_t contains 'goa'
-                    assign img_url = 'india-goa.jpg' | asset_url
-                  elsif down_t contains 'udaipur'
-                    assign img_url = 'india-udaipur.jpg' | asset_url
-                  elsif down_t contains 'varanasi' or down_t contains 'kashi'
-                    assign img_url = 'india-varanasi.jpg' | asset_url
-                  elsif down_t contains 'andaman' or down_t contains 'havelock'
-                    assign img_url = 'india-andaman.jpg' | asset_url
-                  elsif down_t contains 'agra' or down_t contains 'taj'
-                    assign img_url = 'india-agra.jpg' | asset_url
-                  elsif down_t contains 'kerala'
-                    assign img_url = 'india-kerala.jpg' | asset_url
-                  elsif down_t contains 'manali' or down_t contains 'himachal'
-                    assign img_url = 'india-manali.jpg' | asset_url
-                  elsif down_t contains 'darjeeling'
-                    assign img_url = 'india-darjeeling.jpg' | asset_url
+                  if down_t contains 'sedan' or down_t contains 'dzire' or down_t contains 'etios'
+                    assign img_url = 'taxi-sedan.jpg' | asset_url
+                  elsif down_t contains 'suv' or down_t contains 'innova' or down_t contains 'ertiga'
+                    assign img_url = 'taxi-suv.jpg' | asset_url
+                  elsif down_t contains 'luxury' or down_t contains 'vip' or down_t contains 'mercedes' or down_t contains 'bmw'
+                    assign img_url = 'taxi-luxury.jpg' | asset_url
+                  elsif down_t contains 'hatchback' or down_t contains 'wagonr' or down_t contains 'mini'
+                    assign img_url = 'taxi-hatchback.jpg' | asset_url
+                  elsif down_t contains 'traveller' or down_t contains 'tempo' or down_t contains 'van' or down_t contains 'bus'
+                    assign img_url = 'taxi-traveller.jpg' | asset_url
+                  elsif down_t contains 'ev' or down_t contains 'electric' or down_t contains 'green'
+                    assign img_url = 'taxi-ev.jpg' | asset_url
+                  elsif down_t contains 'airport' or down_t contains 'flight' or down_t contains 'pickup'
+                    assign img_url = 'taxi-airport.jpg' | asset_url
+                  elsif down_t contains 'outstation' or down_t contains 'highway' or down_t contains 'intercity'
+                    assign img_url = 'taxi-outstation.jpg' | asset_url
                   else
                     case forloop.index
                       when 1
-                        assign img_url = 'india-kashmir.jpg' | asset_url
+                        assign img_url = 'taxi-sedan.jpg' | asset_url
                       when 2
-                        assign img_url = 'india-munnar.jpg' | asset_url
+                        assign img_url = 'taxi-suv.jpg' | asset_url
                       when 3
-                        assign img_url = 'india-jaipur.jpg' | asset_url
+                        assign img_url = 'taxi-luxury.jpg' | asset_url
                       when 4
-                        assign img_url = 'india-ladakh.jpg' | asset_url
+                        assign img_url = 'taxi-hatchback.jpg' | asset_url
                       when 5
-                        assign img_url = 'india-goa.jpg' | asset_url
+                        assign img_url = 'taxi-traveller.jpg' | asset_url
                       when 6
-                        assign img_url = 'india-udaipur.jpg' | asset_url
+                        assign img_url = 'taxi-ev.jpg' | asset_url
                       when 7
-                        assign img_url = 'india-varanasi.jpg' | asset_url
+                        assign img_url = 'taxi-airport.jpg' | asset_url
                       when 8
-                        assign img_url = 'india-andaman.jpg' | asset_url
+                        assign img_url = 'taxi-outstation.jpg' | asset_url
                       else
-                        assign img_url = 'india-jaipur.jpg' | asset_url
+                        assign img_url = 'taxi-sedan.jpg' | asset_url
                     endcase
                   endif
                 endif
@@ -131,15 +123,15 @@
             {%- endfor -%}
 
           {%- else -%}
-            {%- assign default_titles = 'Kashmir,Munnar,Jaipur,Ladakh,Goa,Udaipur,Varanasi,Andaman' | split: ',' -%}
-            {%- assign default_subs = '14 Tours,18 Tours,12 Tours,9 Tours,15 Tours,11 Tours,8 Tours,10 Tours' | split: ',' -%}
-            {%- assign default_imgs = 'india-kashmir.jpg,india-munnar.jpg,india-jaipur.jpg,india-ladakh.jpg,india-goa.jpg,india-udaipur.jpg,india-varanasi.jpg,india-andaman.jpg' | split: ',' -%}
+            {%- assign default_titles = 'Sedan Taxi,SUV / Innova,Luxury Cab,Hatchback,Tempo Traveller,Electric EV,Airport Express,Outstation Taxi' | split: ',' -%}
+            {%- assign default_subs = '4 Seater AC,6-7 Seater AC,Chauffeur VIP,Economy 4 Seater,12-16 Seater,Eco Green Cab,Flight Pickup,Round Trips' | split: ',' -%}
+            {%- assign default_imgs = 'taxi-sedan.jpg,taxi-suv.jpg,taxi-luxury.jpg,taxi-hatchback.jpg,taxi-traveller.jpg,taxi-ev.jpg,taxi-airport.jpg,taxi-outstation.jpg' | split: ',' -%}
 
             {%- for def_title in default_titles -%}
               {%- assign img_file = default_imgs[forloop.index0] -%}
               {%- assign sub_text = default_subs[forloop.index0] -%}
               <div class="tcs-slide" data-index="{{ forloop.index }}">
-                <a href="{{ routes.all_products_collection_url }}" class="tcs-item" aria-label="Explore {{ def_title }}">
+                <a href="#" class="tcs-item" aria-label="Explore {{ def_title }}">
                   <div class="tcs-circle-wrap">
                     <img
                       src="{{ img_file | asset_url }}"
@@ -550,13 +542,13 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Explore Top Indian Destinations"
+      "default": "Premium Taxi & Cab Fleet"
     },
     {
       "type": "textarea",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "Handpicked holiday escapes across India — from misty Himalayan valleys and royal palaces to emerald backwaters and coral islands."
+      "default": "Comfortable, air-conditioned taxis and luxury chauffeur-driven vehicles for local city rides, airport transfers, and outstation tours."
     },
     {
       "type": "checkbox",
@@ -677,14 +669,14 @@
     {
       "name": "Travel Circles Slider",
       "blocks": [
-        { "type": "category_circle", "settings": { "title": "Kashmir", "subtitle": "14 Tours", "fallback_image": "india-kashmir.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Munnar", "subtitle": "18 Tours", "fallback_image": "india-munnar.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Jaipur", "subtitle": "12 Tours", "fallback_image": "india-jaipur.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Ladakh", "subtitle": "9 Tours", "fallback_image": "india-ladakh.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Goa", "subtitle": "15 Tours", "fallback_image": "india-goa.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Udaipur", "subtitle": "11 Tours", "fallback_image": "india-udaipur.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Varanasi", "subtitle": "8 Tours", "fallback_image": "india-varanasi.jpg" } },
-        { "type": "category_circle", "settings": { "title": "Andaman", "subtitle": "10 Tours", "fallback_image": "india-andaman.jpg" } }
+        { "type": "category_circle", "settings": { "title": "Sedan Taxi", "subtitle": "4 Seater AC", "fallback_image": "taxi-sedan.jpg" } },
+        { "type": "category_circle", "settings": { "title": "SUV / Innova", "subtitle": "6-7 Seater AC", "fallback_image": "taxi-suv.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Luxury Cab", "subtitle": "Chauffeur VIP", "fallback_image": "taxi-luxury.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Hatchback", "subtitle": "Economy 4 Seater", "fallback_image": "taxi-hatchback.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Tempo Traveller", "subtitle": "12-16 Seater", "fallback_image": "taxi-traveller.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Electric EV", "subtitle": "Eco Green Cab", "fallback_image": "taxi-ev.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Airport Express", "subtitle": "Flight Pickup", "fallback_image": "taxi-airport.jpg" } },
+        { "type": "category_circle", "settings": { "title": "Outstation Taxi", "subtitle": "Round Trips", "fallback_image": "taxi-outstation.jpg" } }
       ]
     }
   ]

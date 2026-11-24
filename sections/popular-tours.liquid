@@ -33,7 +33,7 @@
 
       {%- if section.settings.view_all_text != blank -%}
         <a
-          href="{{ section.settings.view_all_link | default: routes.all_products_collection_url }}"
+          href="{{ section.settings.view_all_link | default: '#' }}"
           class="popular-tours-view-all"
         >
           <span>{{ section.settings.view_all_text }}</span>
@@ -198,7 +198,7 @@
               <!-- Title -->
               <div class="popular-tour-title-wrap">
                 <h3 class="popular-tour-title">
-                  <a href="{{ block.settings.button_link | default: routes.all_products_collection_url }}">
+                  <a href="{{ block.settings.button_link | default: '#' }}">
                     {{ block.settings.title }}
                   </a>
                 </h3>

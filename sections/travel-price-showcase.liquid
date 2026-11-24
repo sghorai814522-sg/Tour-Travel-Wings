@@ -62,7 +62,7 @@
                   assign card_title = block.settings.title | default: 'Luxury Hotel'
                   assign card_price = block.settings.price_badge | default: '5K - 10K'
                   assign card_category = block.settings.category_label | default: 'Boutique Hotel'
-                  assign card_link = block.settings.url | default: routes.all_products_collection_url
+                  assign card_link = block.settings.url | default: '#'
 
                   assign img_url = ''
                   if block.settings.image != blank
@@ -129,7 +129,7 @@
                 {%- assign cat_label = default_cats[forloop.index0] -%}
 
                 <div class="tps-slide">
-                  <a href="{{ routes.all_products_collection_url }}" class="tps-card" aria-label="Explore {{ cat_label }} - {{ price_label }}">
+                  <a href="#" class="tps-card" aria-label="Explore {{ cat_label }} - {{ price_label }}">
                     <div class="tps-card-media">
                       <img
                         src="{{ img_url }}"

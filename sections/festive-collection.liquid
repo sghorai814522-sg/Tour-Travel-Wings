@@ -34,7 +34,7 @@
             assign title_text = block.settings.title | default: target_collection.title | default: 'India'
             assign subtitle_text = block.settings.subtitle | default: 'Handcrafted Getaway'
             assign button_text = block.settings.button_text | default: 'Explore'
-            assign card_url = block.settings.url | default: target_collection.url | default: routes.all_products_collection_url
+            assign card_url = block.settings.url | default: target_collection.url | default: '#'
             
             assign card_image = null
             if block.settings.image != blank

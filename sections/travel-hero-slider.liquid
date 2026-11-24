@@ -27,7 +27,7 @@
         
         {% comment %} Determine image: uploaded image or fallback {% endcomment %}
         {%- assign bg_image = block.settings.image -%}
-        {%- assign fallback_img = block.settings.fallback_image | default: 'hero-santorini.jpg' -%}
+        {%- assign fallback_img = block.settings.fallback_image | default: 'india-kashmir.jpg' -%}
         {%- if bg_image != blank -%}
           {%- assign img_url = bg_image | image_url: width: 2400 -%}
         {%- else -%}
@@ -238,74 +238,74 @@
               <div class="travel-dest-category-title">Popular Destinations</div>
 
               <ul class="travel-dest-list">
-                <li class="travel-dest-item" data-name="Thailand" data-search="Thailand" data-country="Asia • Tropical Bays & Temples">
-                  <div class="travel-dest-item-icon">🛕</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Thailand</span>
-                    <span class="travel-dest-country">Phuket • Bangkok • Krabi</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Bali" data-search="Bali" data-country="Indonesia • Tropical Bliss">
-                  <div class="travel-dest-item-icon">🌺</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Bali</span>
-                    <span class="travel-dest-country">Indonesia • Island of the Gods</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Swiss Alps" data-search="Swiss" data-country="Switzerland • Zermatt & Peaks">
+                <li class="travel-dest-item" data-name="Kashmir" data-search="Kashmir" data-country="India • Srinagar • Gulmarg • Dal Lake">
                   <div class="travel-dest-item-icon">🏔️</div>
                   <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Swiss Alps</span>
-                    <span class="travel-dest-country">Switzerland • Alpine Chalets</span>
+                    <span class="travel-dest-name">Kashmir</span>
+                    <span class="travel-dest-country">Srinagar • Gulmarg • Pahalgam</span>
                   </div>
                 </li>
-                <li class="travel-dest-item" data-name="Maldives" data-country="Indian Ocean • Coral Reefs" data-search="Maldives">
+                <li class="travel-dest-item" data-name="Agra" data-search="Agra" data-country="India • Taj Mahal • Mughal Heritage">
+                  <div class="travel-dest-item-icon">🕌</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Agra & Taj Mahal</span>
+                    <span class="travel-dest-country">Uttar Pradesh • Mughal Marvels</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Kerala" data-search="Kerala" data-country="India • Backwaters • Munnar Tea Hills">
+                  <div class="travel-dest-item-icon">🌴</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Kerala</span>
+                    <span class="travel-dest-country">Alleppey • Munnar • Backwaters</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Rajasthan" data-country="India • Palaces & Forts" data-search="Rajasthan">
+                  <div class="travel-dest-item-icon">🏰</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Rajasthan</span>
+                    <span class="travel-dest-country">Jaipur • Udaipur • Jaisalmer</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Ladakh" data-search="Ladakh" data-country="India • High Passes & Pangong Lake">
+                  <div class="travel-dest-item-icon">🗻</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Ladakh</span>
+                    <span class="travel-dest-country">Pangong Tso • Leh • Nubra Valley</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Goa" data-search="Goa" data-country="India • Coastal Sunsets & Beaches">
+                  <div class="travel-dest-item-icon">🏖️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Goa</span>
+                    <span class="travel-dest-country">Palolem • Baga • Coastal Sunsets</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Varanasi" data-search="Varanasi" data-country="India • Spiritual Ganga Ghats">
+                  <div class="travel-dest-item-icon">🪔</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Varanasi</span>
+                    <span class="travel-dest-country">Ganga Ghats • Kashi • Ganga Aarti</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Manali" data-search="Manali" data-country="India • Himachal Pradesh • Solang Valley">
+                  <div class="travel-dest-item-icon">❄️</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Manali</span>
+                    <span class="travel-dest-country">Himachal Pradesh • Solang Valley</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Rishikesh" data-search="Rishikesh" data-country="India • Yoga Capital & River Rafting">
+                  <div class="travel-dest-item-icon">🧘</div>
+                  <div class="travel-dest-item-info">
+                    <span class="travel-dest-name">Rishikesh</span>
+                    <span class="travel-dest-country">Uttarakhand • Yoga & Ganga Rafting</span>
+                  </div>
+                </li>
+                <li class="travel-dest-item" data-name="Andaman" data-search="Andaman" data-country="India • Radhanagar Beach & Coral Reefs">
                   <div class="travel-dest-item-icon">🏝️</div>
                   <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Maldives</span>
-                    <span class="travel-dest-country">Overwater Villas & Turquoise Lagoons</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Vietnam" data-search="Vietnam" data-country="Southeast Asia • Karst Bays">
-                  <div class="travel-dest-item-icon">⛵</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Vietnam</span>
-                    <span class="travel-dest-country">Ha Long Bay • Da Nang • Hoi An</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Dubai" data-search="Dubai" data-country="UAE • Luxury & Desert Safari">
-                  <div class="travel-dest-item-icon">✨</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Dubai</span>
-                    <span class="travel-dest-country">UAE • Burj Khalifa & Desert Dunes</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Santorini" data-search="Santorini" data-country="Greece • Aegean Sea">
-                  <div class="travel-dest-item-icon">🏛️</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Santorini</span>
-                    <span class="travel-dest-country">Greece • Aegean Sea</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Amalfi Coast" data-search="Amalfi" data-country="Italy • Mediterranean">
-                  <div class="travel-dest-item-icon">🍋</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Amalfi Coast</span>
-                    <span class="travel-dest-country">Italy • Mediterranean</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Paris" data-search="Paris" data-country="France • City of Lights">
-                  <div class="travel-dest-item-icon">🗼</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Paris</span>
-                    <span class="travel-dest-country">France • City of Lights</span>
-                  </div>
-                </li>
-                <li class="travel-dest-item" data-name="Kyoto" data-search="Kyoto" data-country="Japan • Historic Shrines">
-                  <div class="travel-dest-item-icon">⛩️</div>
-                  <div class="travel-dest-item-info">
-                    <span class="travel-dest-name">Kyoto</span>
-                    <span class="travel-dest-country">Japan • Historic Shrines</span>
+                    <span class="travel-dest-name">Andaman</span>
+                    <span class="travel-dest-country">Havelock • Radhanagar Beach</span>
                   </div>
                 </li>
               </ul>
@@ -655,8 +655,8 @@
           "type": "text",
           "id": "fallback_image",
           "label": "Fallback Asset Name",
-          "info": "Used if no custom image is selected (e.g. hero-santorini.jpg, hero-maldives.jpg, hero-alps.jpg)",
-          "default": "hero-santorini.jpg"
+          "info": "Used if no custom image is selected (e.g. india-kashmir.jpg, india-agra.jpg, india-kerala.jpg, india-ladakh.jpg)",
+          "default": "india-kashmir.jpg"
         },
         {
           "type": "range",
@@ -671,19 +671,19 @@
           "type": "text",
           "id": "kicker",
           "label": "Subheading / Kicker",
-          "default": "EXPLORE • DISCOVER • EXPERIENCE"
+          "default": "PARADISE ON EARTH • HIMALAYAN SERENITY"
         },
         {
           "type": "text",
           "id": "heading_line_1",
           "label": "Heading Line 1",
-          "default": "Journeys Beyond"
+          "default": "Heaven in the"
         },
         {
           "type": "text",
           "id": "heading_line_2",
           "label": "Heading Line 2 (Highlighted)",
-          "default": "Destinations"
+          "default": "Kashmir Valley"
         },
         {
           "type": "color",
@@ -695,7 +695,7 @@
           "type": "textarea",
           "id": "description",
           "label": "Description",
-          "default": "Handpicked tours, unforgettable experiences and destinations that stay with you forever."
+          "default": "Glide on tranquil Dal Lake shikaras, gaze upon snow-capped peaks, and immerse yourself in the timeless beauty of Kashmir."
         },
         {
           "type": "text",
@@ -717,34 +717,45 @@
         {
           "type": "slide",
           "settings": {
-            "fallback_image": "hero-santorini.jpg",
-            "kicker": "EXPLORE • DISCOVER • EXPERIENCE",
-            "heading_line_1": "Journeys Beyond",
-            "heading_line_2": "Destinations",
+            "fallback_image": "india-kashmir.jpg",
+            "kicker": "PARADISE ON EARTH • HIMALAYAN SERENITY",
+            "heading_line_1": "Heaven in the",
+            "heading_line_2": "Kashmir Valley",
             "heading_accent_color": "#f5a623",
-            "description": "Handpicked tours, unforgettable experiences and destinations that stay with you forever."
+            "description": "Glide on tranquil Dal Lake shikaras, gaze upon snow-capped peaks, and immerse yourself in the timeless beauty of Kashmir."
           }
         },
         {
           "type": "slide",
           "settings": {
-            "fallback_image": "hero-maldives.jpg",
-            "kicker": "ESCAPE • UNWIND • INDULGE",
-            "heading_line_1": "Tropical Paradise",
-            "heading_line_2": "Getaways",
+            "fallback_image": "india-agra.jpg",
+            "kicker": "ROYAL HERITAGE • TIMELESS WONDERS",
+            "heading_line_1": "Splendors of the",
+            "heading_line_2": "Taj Mahal & Agra",
             "heading_accent_color": "#f5a623",
-            "description": "Immerse yourself in crystal turquoise waters, private luxury villas, and breathtaking sunset horizons."
+            "description": "Marvel at golden sunrise over the iconic Taj Mahal, discover grand Mughal palaces, and experience centuries of timeless royal romance."
           }
         },
         {
           "type": "slide",
           "settings": {
-            "fallback_image": "hero-alps.jpg",
-            "kicker": "DISCOVER • ADVENTURE • BREATHE",
-            "heading_line_1": "Majestic Alpine",
-            "heading_line_2": "Adventures",
+            "fallback_image": "india-kerala.jpg",
+            "kicker": "GOD'S OWN COUNTRY • EMERALD ESCAPES",
+            "heading_line_1": "Tranquil Waters of",
+            "heading_line_2": "Kerala Backwaters",
             "heading_accent_color": "#f5a623",
-            "description": "Traverse dramatic mountain passes, panoramic vistas, and alpine lakes crafted for daring explorers."
+            "description": "Cruise serene palm-fringed lagoons on luxury houseboats, wander misty Munnar tea hills, and rejuvenate in coastal tranquility."
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "fallback_image": "india-ladakh.jpg",
+            "kicker": "LAND OF HIGH PASSES • MYSTIC MOUNTAINS",
+            "heading_line_1": "Untamed Wonders of",
+            "heading_line_2": "Ladakh & Pangong",
+            "heading_accent_color": "#f5a623",
+            "description": "Discover azure high-altitude lakes, cliffside ancient monasteries, and dramatic Himalayan passes under crystal clear skies."
           }
         }
       ]

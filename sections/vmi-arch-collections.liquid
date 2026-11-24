@@ -127,7 +127,7 @@
                 {%- assign mob_bg_url = def_mob_bg -%}
               {%- endif -%}
 
-              {%- assign card_link = block.settings.url | default: col.url | default: routes.all_products_collection_url -%}
+              {%- assign card_link = block.settings.url | default: col.url | default: '#' -%}
               <div
                 class="vmi-arch-card {% if set_i == 2 and forloop.index == 3 or set_i == 2 and forloop.first and section.blocks.size < 3 %}active{% endif %}"
                 data-real-index="{{ forloop.index0 }}"

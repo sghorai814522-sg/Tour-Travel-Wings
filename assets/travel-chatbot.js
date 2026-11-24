@@ -268,7 +268,7 @@
           cta: `
             <div class="travel-chatbot-cta-card">
               <span class="travel-chatbot-cta-card-title">Browse Full Collection</span>
-              <a href="/collections/all" class="travel-chatbot-cta-btn">Explore All 10 Packages</a>
+              <a href="#" class="travel-chatbot-cta-btn">Explore All 10 Packages</a>
               <a href="https://wa.me/919876543210?text=Hi%2C%20can%20you%20help%20me%20choose%20the%20best%20package%3F" target="_blank" class="travel-chatbot-cta-btn whatsapp-btn">Get Customized Quote</a>
             </div>
           `,
@@ -287,7 +287,7 @@
         cta: `
           <div class="travel-chatbot-cta-card">
             <span class="travel-chatbot-cta-card-title">Explore Featured Tours</span>
-            <a href="/collections/all" class="travel-chatbot-cta-btn">Browse All Tour Packages</a>
+            <a href="#" class="travel-chatbot-cta-btn">Browse All Tour Packages</a>
             <a href="https://wa.me/919876543210?text=Hello%20Tour%20%26%20Travel%20Wings%2C%20I%20have%20a%20query%20about%20travel%20plans." target="_blank" class="travel-chatbot-cta-btn whatsapp-btn">Chat with Travel Expert</a>
           </div>
         `,

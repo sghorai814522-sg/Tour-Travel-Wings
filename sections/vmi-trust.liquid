@@ -1,17 +1,39 @@
 {%- comment -%}
-  VMI Trust Section — Sankalp (Our Promise to the Artisans)
-  Left side: Seamless artisan weaver graphic with botanical block-print artwork.
-  Right side: Sankalp script & serif logo, subtitle, and cream 4-sided scalloped box with mission text.
+  VMI Trust Section — Sankalp (Our Sacred Promise to Travelers in Incredible India)
+  Left side: Iconic Indian tourist destination photography (Taj Mahal, Jaipur, Kashmir).
+  Right side: Sankalp script & serif logo, subtitle, and cream 4-sided scalloped box with tourist mission text.
   Full section background image or gradient options.
 {%- endcomment -%}
 
 {%- if section.settings.enable_section -%}
+
+{%- liquid
+  assign sec_subtitle = section.settings.subtitle
+  if sec_subtitle == blank or sec_subtitle contains 'ARTISAN' or sec_subtitle contains 'Artisan'
+    assign sec_subtitle = 'OUR SACRED PROMISE TO OUR TRAVELERS'
+  endif
+
+  assign sec_small_heading = section.settings.small_heading
+  if sec_small_heading == blank or sec_small_heading contains 'Craftsmanship' or sec_small_heading contains 'craftsmanship'
+    assign sec_small_heading = "Celebrating Incredible India's Wonders"
+  endif
+
+  assign sec_mission = section.settings.mission
+  if sec_mission == blank or sec_mission contains 'Very Much Indian' or sec_mission contains 'weaves' or sec_mission contains 'artisans'
+    assign sec_mission = '<p>At Tour &amp; Travel Wings, our sacred promise (Sankalp) is to curate extraordinary travel experiences across Incredible India. From the snow-capped Himalayan peaks of Kashmir to the royal palaces of Rajasthan and the tranquil backwaters of Kerala, we believe every journey should inspire, delight, and leave an everlasting memory.</p><p>When you journey with us, you experience world-class hospitality, empower local heritage custodians, and create treasured travel memories that endure for a lifetime.</p>'
+  endif
+-%}
+
 <section
   class="vmi-trust vmi-section--full"
   id="vmi-trust-{{ section.id }}"
   style="
     {%- if section.settings.bg_image != blank -%}
       background-image: url('{{ section.settings.bg_image | image_url: width: 2000 }}');
+      background-size: cover;
+      background-position: center;
+    {%- elsif section.settings.bg_fallback_image != blank -%}
+      background-image: url('{{ section.settings.bg_fallback_image | asset_url }}');
       background-size: cover;
       background-position: center;
     {%- else -%}
@@ -23,26 +45,29 @@
 >
   <div class="vmi-trust__split">
 
-    {%- comment -%} LEFT COLUMN: Seamless Artisan Weaver Artwork {%- endcomment -%}
+    {%- comment -%} LEFT COLUMN: Indian Heritage Tourist Destination Photography {%- endcomment -%}
     <div class="vmi-trust__left-media">
-      {%- if section.settings.left_image != blank -%}
-        <img
-          src="{{ section.settings.left_image | image_url: width: 1200 }}"
-          alt="{{ section.settings.heading | escape }}"
-          loading="lazy"
-          class="vmi-trust__weaver-img"
-        >
-      {%- else -%}
-        <img
-          src="{{ 'vmi-sankalp-artisan-seamless.png' | asset_url }}"
-          alt="Sankalp Artisan Weaver"
-          loading="lazy"
-          class="vmi-trust__weaver-img"
-        >
-      {%- endif -%}
+      {%- liquid
+        assign left_img_src = ''
+        if section.settings.left_image != blank
+          assign left_img_src = section.settings.left_image | image_url: width: 1200
+        elsif section.settings.left_image_url != blank
+          assign left_img_src = section.settings.left_image_url
+        else
+          assign fallback_filename = section.settings.left_fallback_image | default: 'india-agra.jpg'
+          assign left_img_src = fallback_filename | asset_url
+        endif
+      -%}
+      <img
+        src="{{ left_img_src }}"
+        alt="{{ section.settings.heading | default: 'Taj Mahal - Incredible India Heritage' | escape }}"
+        loading="lazy"
+        class="vmi-trust__weaver-img"
+        onerror="if (this.src !== 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80') this.src = 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80';"
+      >
     </div>
 
-    {%- comment -%} RIGHT COLUMN: Sankalp Header & Scalloped Mission Box {%- endcomment -%}
+    {%- comment -%} RIGHT COLUMN: Sankalp Header & Scalloped Tourist Mission Box {%- endcomment -%}
     <div class="vmi-trust__right-content">
 
       {%- comment -%} Sankalp Logo & Subtitle {%- endcomment -%}
@@ -63,38 +88,51 @@
           {%- endif -%}
         </div>
 
-        {%- if section.settings.subtitle != blank -%}
+        {%- if sec_subtitle != blank -%}
           <div class="vmi-trust__subtitle">
-            {{ section.settings.subtitle | upcase }}
+            {{ sec_subtitle | upcase }}
           </div>
         {%- endif -%}
       </div>
 
-      {%- comment -%} Exact SVG Scalloped Frame {%- endcomment -%}
-      {% comment %} <div class="vmi-trust__scalloped-box">
-        <img
-          src="{{ 'decorative_frame_bg_exact.svg' | asset_url }}"
-          alt=""
-          loading="lazy"
-          class="vmi-trust__scallop-svg"
-        > {% endcomment %}
-<div 
-  class="vmi-trust__scalloped-box"
-  style="background-image: url('https://cdn.shopify.com/s/files/1/0993/9274/9871/files/ChatGPT_Image_Jul_25_2026_07_10_52_AM_1.png?v=1786622256');"
->
+      {%- comment -%} Scalloped Frame Box with Tourist Mission Statement {%- endcomment -%}
+      {%- assign scallop_bg = section.settings.scallop_bg_image | image_url: width: 1000 -%}
+      {%- if scallop_bg == blank -%}
+        {%- assign scallop_bg = 'https://cdn.shopify.com/s/files/1/0993/9274/9871/files/ChatGPT_Image_Jul_25_2026_07_10_52_AM_1.png?v=1786622256' -%}
+      {%- endif -%}
+
+      <div 
+        class="vmi-trust__scalloped-box"
+        style="background-image: url('{{ scallop_bg }}');"
+      >
         <div class="vmi-trust__scallop-inner">
-          {%- if section.settings.small_heading != blank -%}
+          {%- if sec_small_heading != blank -%}
             <div class="vmi-trust__small-heading">
-              {{ section.settings.small_heading }}
+              {{ sec_small_heading }}
             </div>
           {%- endif -%}
 
-          {%- if section.settings.mission != blank -%}
+          {%- if sec_mission != blank -%}
             <div class="vmi-trust__mission-wrapper">
               <div class="vmi-trust__mission-text" id="vmi-trust-mission-{{ section.id }}">
-                {{ section.settings.mission }}
+                {{ sec_mission }}
               </div>
               <button type="button" class="vmi-trust__read-more-btn" onclick="toggleVmiTrustText('{{ section.id }}')">Read More</button>
+            </div>
+          {%- endif -%}
+
+          {%- if section.settings.button_label != blank -%}
+            <div class="vmi-trust__btn-wrap">
+              <a
+                href="{{ section.settings.button_link | default: '#' }}"
+                class="vmi-trust__btn"
+              >
+                <span>{{ section.settings.button_label }}</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
             </div>
           {%- endif -%}
         </div>
@@ -110,7 +148,7 @@
     overflow: hidden;
     width: 100%;
     position: relative;
-    margin-top:50px;
+    margin-top: 50px;
   }
 
   .vmi-trust__split {
@@ -122,29 +160,33 @@
   }
 
   /* ════════════════════════════════
-     LEFT COLUMN: SEAMLESS ARTISAN GRAPHIC
+     LEFT COLUMN: INDIAN DESTINATION PHOTOGRAPHY
   ════════════════════════════════ */
   .vmi-trust__left-media {
     position: relative;
     width: 100%;
     height: 100%;
-    min-height: 580px;
+    min-height: 520px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 2rem 1rem 0 2rem;
+    padding: 2.5rem 2rem 2.5rem 3rem;
     box-sizing: border-box;
   }
 
   .vmi-trust__weaver-img {
     max-width: 100%;
-    max-height: 780px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
+    max-height: 560px;
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    object-fit: cover;
+    border-radius: 24px;
     display: block;
-    filter: drop-shadow(0 8px 24px rgba(15, 30, 45, 0.25));
+    box-shadow: 0 16px 40px rgba(15, 30, 45, 0.25);
+    border: 4px solid rgba(255, 255, 255, 0.6);
+    background: #e2e8f0;
   }
 
   /* ════════════════════════════════
@@ -170,7 +212,7 @@
     align-items: center;
   }
 
-  /* Logo Typography: Pinyon Script First Letter + Playfair Display Rest */
+  /* Logo Typography: Script First Letter + Serif Rest */
   .vmi-trust__logo-brand {
     position: relative;
     display: inline-flex;
@@ -204,7 +246,6 @@
     width: 92%;
     height: 10px;
     margin-top: -4px;
-
   }
 
   .vmi-trust__logo-img {
@@ -216,7 +257,7 @@
   .vmi-trust__subtitle {
     font-family: var(--font-body--family);
     font-size: 0.76rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.32em;
     color: var(--vmi-trust-text);
     text-transform: uppercase;
@@ -226,13 +267,15 @@
 
   /* Scalloped Card */
   .vmi-trust__scalloped-box {
- position: relative;
+    position: relative;
     max-width: 650px;
     width: 100%;
     height: 600px;
     padding: 6.2rem 7rem 3rem 7rem;
     box-sizing: border-box;
-    background-size: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 
   .vmi-trust__scallop-svg {
@@ -252,15 +295,15 @@
   }
 
   .vmi-trust__small-heading {
-  font-family: var(--font-heading--family);
+    font-family: var(--font-heading--family);
     font-size: 23px;
     color: #333333;
     margin-bottom: 1.25rem;
     letter-spacing: 0.01em;
-    max-width: 300px;
-    font-weight: 400;
+    max-width: 340px;
+    font-weight: 500;
     margin: 0 auto 0px;
-    line-height: normal;
+    line-height: 1.3;
   }
 
   .vmi-trust__mission-text {
@@ -268,7 +311,7 @@
     font-size: 0.92rem;
     line-height: 1.75;
     color: #3A3A3A;
-        text-align: justify;
+    text-align: justify;
     font-weight: 400;
   }
 
@@ -313,6 +356,51 @@
     opacity: 0.7;
   }
 
+  /* Dynamic Call to Action Button */
+  .vmi-trust__btn-wrap {
+    margin-top: 1.25rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .vmi-trust__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--vmi-trust-text, #1E354D);
+    color: #ffffff !important;
+    font-family: var(--font-body--family);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.75rem 1.8rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 14px rgba(30, 53, 77, 0.22);
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  .vmi-trust__btn:hover {
+    background-color: #0b1724;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(30, 53, 77, 0.32);
+    color: #ffffff !important;
+  }
+
+  .vmi-trust__btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+  }
+
+  .vmi-trust__btn:hover svg {
+    transform: translateX(3px);
+  }
+
   /* ════════════════════════════════
      RESPONSIVE
   ════════════════════════════════ */
@@ -321,8 +409,8 @@
       padding: 2.5rem 1.8rem;
     }
     .vmi-trust__small-heading{
-    margin-bottom:0 !important;
-  }
+      margin-bottom: 0 !important;
+    }
 
     .vmi-trust__scalloped-box {      
       position: relative;
@@ -338,30 +426,33 @@
   }
 
   @media (max-width: 749px) {
- 
-    .vmi-trust{
-        margin-top:40px;
-     }
+    .vmi-trust {
+      margin-top: 40px;
+    }
     .vmi-trust__split {
       grid-template-columns: 1fr;
       min-height: auto;
     }
 
     .vmi-trust__left-media {
-      min-height: 380px;
+      min-height: 340px;
       padding: 1.5rem 1rem 0;
     }
 
     .vmi-trust__weaver-img {
       max-height: 360px;
+      min-height: 260px;
+      width: 100%;
     }
 
     .vmi-trust__right-content {
-      padding: 2.5rem 0;
+      padding: 2.5rem 1rem;
     }
 
     .vmi-trust__scalloped-box {
       max-width: 100%;
+      padding: 3.5rem 2.2rem 3rem;
+      height: auto;
     }
 
     .vmi-trust__mission-text {
@@ -380,19 +471,29 @@
     .vmi-trust__read-more-btn {
       display: inline-block;
     }
+
+    .vmi-trust__btn-wrap {
+      margin-top: 1rem;
+    }
+
+    .vmi-trust__btn {
+      padding: 0.68rem 1.5rem;
+      font-size: 0.8rem;
+    }
   }
 </style>
 
 <script>
   function toggleVmiTrustText(sectionId) {
     var textContainer = document.getElementById('vmi-trust-mission-' + sectionId);
+    if (!textContainer) return;
     var btn = textContainer.nextElementSibling;
     if (textContainer.classList.contains('is-expanded')) {
       textContainer.classList.remove('is-expanded');
-      btn.innerText = 'Read More';
+      if (btn) btn.innerText = 'Read More';
     } else {
       textContainer.classList.add('is-expanded');
-      btn.innerText = 'Read Less';
+      if (btn) btn.innerText = 'Read Less';
     }
   }
 </script>
@@ -418,6 +519,11 @@
       "type": "image_picker",
       "id": "bg_image",
       "label": "Full section background image (optional)"
+    },
+    {
+      "type": "text",
+      "id": "bg_fallback_image",
+      "label": "Background Asset Filename (optional)"
     },
     {
       "type": "text",
@@ -455,32 +561,64 @@
       "type": "text",
       "id": "subtitle",
       "label": "Subtitle",
-      "default": "OUR PROMISE TO THE ARTISANS"
+      "default": "OUR SACRED PROMISE TO OUR TRAVELERS"
     },
     {
       "type": "header",
-      "content": "Left Side Artwork"
+      "content": "Left Side Tourist Place Artwork"
     },
     {
       "type": "image_picker",
       "id": "left_image",
-      "label": "Left side artisan weaver graphic"
+      "label": "Left side tourist place photo"
+    },
+    {
+      "type": "text",
+      "id": "left_image_url",
+      "label": "Left side image direct URL (optional)"
+    },
+    {
+      "type": "text",
+      "id": "left_fallback_image",
+      "label": "Fallback Asset Image",
+      "info": "e.g. india-agra.jpg, india-jaipur.jpg, india-kashmir.jpg",
+      "default": "india-agra.jpg"
     },
     {
       "type": "header",
       "content": "Mission Box & Content"
     },
     {
+      "type": "image_picker",
+      "id": "scallop_bg_image",
+      "label": "Custom Scalloped Card Frame Image"
+    },
+    {
       "type": "text",
       "id": "small_heading",
       "label": "Small card heading",
-      "default": "Celebrating India's Craftsmanship"
+      "default": "Celebrating Incredible India's Wonders"
     },
     {
       "type": "richtext",
       "id": "mission",
       "label": "Mission statement text",
-      "default": "<p>At Very Much Indian, we revive traditional weaves and empower artisans, ensuring every piece tells a story and sustains a legacy. When you choose us, you support the hands that create, the communities that thrive, and the heritage that endures.</p>"
+      "default": "<p>At Tour & Travel Wings, our sacred promise (Sankalp) is to deliver unparalleled luxury, authentic cultural encounters, and deeply soul-stirring journeys across Incredible India. From the snow-capped peaks of Kashmir to the royal palaces of Rajasthan and the serene backwaters of Kerala, every itinerary is handcrafted with passion.</p><p>When you journey with us, you experience world-class hospitality, empower local heritage custodians, and create treasured travel memories that endure for a lifetime.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Action Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Explore Our Journeys"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
     },
     {
       "type": "header",

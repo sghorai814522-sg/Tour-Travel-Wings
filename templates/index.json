@@ -42,7 +42,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "SHOP NOW",
-            "link": "shopify://collections/all",
+            "link": "#",
             "open_in_new_tab": false,
             "style_class": "button-unstyled",
             "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -128,7 +128,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "LEARN MORE",
-            "link": "shopify://collections/all",
+            "link": "#",
             "open_in_new_tab": false,
             "style_class": "button-unstyled",
             "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -494,7 +494,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "VIEW ALL",
-            "link": "shopify://collections/all",
+            "link": "#",
             "open_in_new_tab": false,
             "style_class": "button-unstyled",
             "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -960,7 +960,7 @@
               "type": "button",
               "settings": {
                 "label": "SHOP NOW",
-                "link": "shopify://collections/all",
+                "link": "#",
                 "open_in_new_tab": false,
                 "style_class": "button-unstyled",
                 "custom_button_background": "{{ settings.color_palette.foreground }}",
@@ -998,53 +998,68 @@
     "travel_hero_slider_rzwgcC": {
       "type": "travel-hero-slider",
       "blocks": {
-        "slide_maldives": {
+        "slide_kashmir": {
           "type": "slide",
           "settings": {
-            "fallback_image": "hero-maldives.jpg",
+            "fallback_image": "india-kashmir.jpg",
             "overlay_opacity": 25,
-            "kicker": "ESCAPE • DISCOVER • INDULGE",
-            "heading_line_1": "Tropical Paradise",
-            "heading_line_2": "Getaways",
+            "kicker": "PARADISE ON EARTH • HIMALAYAN SERENITY",
+            "heading_line_1": "Heaven in the",
+            "heading_line_2": "Kashmir Valley",
             "heading_accent_color": "#f5a623",
-            "description": "Unwind on pristine beaches, explore exotic islands and create unforgettable travel memories.",
-            "button_label": "Explore Destinations",
-            "button_link": "shopify://collections/all"
+            "description": "Glide on tranquil Dal Lake shikaras, gaze upon snow-capped peaks, and immerse yourself in the timeless beauty of Kashmir.",
+            "button_label": "Explore Kashmir Tours",
+            "button_link": "#"
           }
         },
-        "slide_santorini": {
+        "slide_agra": {
           "type": "slide",
           "settings": {
-            "fallback_image": "hero-santorini.jpg",
+            "fallback_image": "india-agra.jpg",
             "overlay_opacity": 25,
-            "kicker": "JOURNEYS • BEYOND • HORIZONS",
-            "heading_line_1": "Journeys Beyond",
-            "heading_line_2": "Destinations",
+            "kicker": "ROYAL HERITAGE • TIMELESS WONDERS",
+            "heading_line_1": "Splendors of the",
+            "heading_line_2": "Taj Mahal & Agra",
             "heading_accent_color": "#f5a623",
-            "description": "Handpicked tours, unforgettable experiences and destinations that stay with you forever.",
-            "button_label": "Explore Destinations",
-            "button_link": "shopify://collections/all"
+            "description": "Marvel at golden sunrise over the iconic Taj Mahal, discover grand Mughal palaces, and experience centuries of timeless royal romance.",
+            "button_label": "Explore Heritage Tours",
+            "button_link": "#"
           }
         },
-        "slide_alps": {
+        "slide_kerala": {
           "type": "slide",
           "settings": {
-            "fallback_image": "hero-alps.jpg",
+            "fallback_image": "india-kerala.jpg",
             "overlay_opacity": 25,
-            "kicker": "DISCOVER • ADVENTURE • BREATHE",
-            "heading_line_1": "Majestic Alpine",
-            "heading_line_2": "Adventures",
+            "kicker": "GOD'S OWN COUNTRY • EMERALD ESCAPES",
+            "heading_line_1": "Tranquil Waters of",
+            "heading_line_2": "Kerala Backwaters",
             "heading_accent_color": "#f5a623",
-            "description": "Traverse dramatic mountain passes, panoramic vistas, and alpine lakes crafted for daring explorers.",
-            "button_label": "Explore Destinations",
-            "button_link": "shopify://collections/all"
+            "description": "Cruise serene palm-fringed lagoons on luxury houseboats, wander misty Munnar tea hills, and rejuvenate in coastal tranquility.",
+            "button_label": "Explore Kerala Tours",
+            "button_link": "#"
+          }
+        },
+        "slide_ladakh": {
+          "type": "slide",
+          "settings": {
+            "fallback_image": "india-ladakh.jpg",
+            "overlay_opacity": 25,
+            "kicker": "LAND OF HIGH PASSES • MYSTIC MOUNTAINS",
+            "heading_line_1": "Untamed Wonders of",
+            "heading_line_2": "Ladakh & Pangong",
+            "heading_accent_color": "#f5a623",
+            "description": "Discover azure high-altitude lakes, cliffside ancient monasteries, and dramatic Himalayan passes under crystal clear skies.",
+            "button_label": "Explore Ladakh Tours",
+            "button_link": "#"
           }
         }
       },
       "block_order": [
-        "slide_maldives",
-        "slide_santorini",
-        "slide_alps"
+        "slide_kashmir",
+        "slide_agra",
+        "slide_kerala",
+        "slide_ladakh"
       ],
       "name": "Travel Hero Slider",
       "settings": {
@@ -1069,7 +1084,7 @@
             "label": "KASHMIR",
             "external_desktop_bg": "",
             "external_mobile_bg": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "arch_kerala": {
@@ -1079,7 +1094,7 @@
             "label": "KERALA",
             "external_desktop_bg": "",
             "external_mobile_bg": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "arch_jaipur": {
@@ -1089,7 +1104,7 @@
             "label": "JAIPUR",
             "external_desktop_bg": "",
             "external_mobile_bg": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "arch_ladakh": {
@@ -1099,7 +1114,7 @@
             "label": "LADAKH",
             "external_desktop_bg": "",
             "external_mobile_bg": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "arch_goa": {
@@ -1109,7 +1124,7 @@
             "label": "GOA",
             "external_desktop_bg": "",
             "external_mobile_bg": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         }
       },
@@ -1130,6 +1145,22 @@
         "text_color": "#0a2e5c"
       }
     },
+    "vmi_trust": {
+      "type": "vmi-trust",
+      "settings": {
+        "enable_section": true,
+        "bg_gradient": "linear-gradient(135deg, #CFDAE5 0%, #7B90A3 45%, #2B3E52 100%)",
+        "heading": "Sankalp",
+        "subtitle": "OUR SACRED PROMISE TO OUR TRAVELERS",
+        "left_fallback_image": "india-agra.jpg",
+        "small_heading": "Celebrating Incredible India's Wonders",
+        "mission": "<p>At Tour & Travel Wings, our sacred promise (Sankalp) is to deliver unparalleled luxury, authentic cultural encounters, and deeply soul-stirring journeys across Incredible India. From the snow-laden peaks of Kashmir and the royal palaces of Rajasthan to the serene backwaters of Kerala, every itinerary is handcrafted with passion.</p><p>When you journey with us, you experience world-class hospitality, empower local heritage communities, and create treasured travel memories that endure for a lifetime.</p>",
+        "button_label": "Explore Our Journeys",
+        "button_link": "#",
+        "card_bg_color": "#F4EFE6",
+        "text_color": "#1E354D"
+      }
+    },
     "festive_collection_GqybH3": {
       "type": "festive-collection",
       "blocks": {
@@ -1142,7 +1173,7 @@
             "title": "Agra",
             "subtitle": "Taj Mahal & Mughal Heritage",
             "button_text": "Explore",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_udaipur": {
@@ -1154,7 +1185,7 @@
             "title": "Udaipur",
             "subtitle": "City of Lakes & Palaces",
             "button_text": "Explore",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_manali": {
@@ -1166,7 +1197,7 @@
             "title": "Manali",
             "subtitle": "Snow Peaks & Pine Valleys",
             "button_text": "Explore",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_varanasi": {
@@ -1178,7 +1209,7 @@
             "title": "Varanasi",
             "subtitle": "Sacred Ghats & Eternal Ganga",
             "button_text": "Explore",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_darjeeling": {
@@ -1190,7 +1221,7 @@
             "title": "Darjeeling",
             "subtitle": "Tea Gardens & Kanchenjunga",
             "button_text": "Explore",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_andaman": {
@@ -1202,7 +1233,7 @@
             "title": "Andaman",
             "subtitle": "Turquoise Lagoons & Coral Reefs",
             "button_text": "Explore",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         }
       },
@@ -1230,89 +1261,89 @@
         "circle_1": {
           "type": "category_circle",
           "settings": {
-            "title": "Kashmir",
-            "subtitle": "14 Tours",
+            "title": "Sedan Taxi",
+            "subtitle": "4 Seater AC",
             "external_image_url": "",
-            "fallback_image": "india-kashmir.jpg",
+            "fallback_image": "taxi-sedan.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "circle_2": {
           "type": "category_circle",
           "settings": {
-            "title": "Munnar",
-            "subtitle": "18 Tours",
+            "title": "SUV / Innova",
+            "subtitle": "6-7 Seater AC",
             "external_image_url": "",
-            "fallback_image": "india-munnar.jpg",
+            "fallback_image": "taxi-suv.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "circle_3": {
           "type": "category_circle",
           "settings": {
-            "title": "Jaipur",
-            "subtitle": "12 Tours",
+            "title": "Luxury Cab",
+            "subtitle": "Chauffeur VIP",
             "external_image_url": "",
-            "fallback_image": "india-jaipur.jpg",
+            "fallback_image": "taxi-luxury.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "circle_4": {
           "type": "category_circle",
           "settings": {
-            "title": "Ladakh",
-            "subtitle": "9 Tours",
+            "title": "Hatchback",
+            "subtitle": "Economy 4 Seater",
             "external_image_url": "",
-            "fallback_image": "india-ladakh.jpg",
+            "fallback_image": "taxi-hatchback.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "circle_5": {
           "type": "category_circle",
           "settings": {
-            "title": "Goa",
-            "subtitle": "15 Tours",
+            "title": "Tempo Traveller",
+            "subtitle": "12-16 Seater",
             "external_image_url": "",
-            "fallback_image": "india-goa.jpg",
+            "fallback_image": "taxi-traveller.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "circle_6": {
           "type": "category_circle",
           "settings": {
-            "title": "Udaipur",
-            "subtitle": "11 Tours",
+            "title": "Electric EV",
+            "subtitle": "Eco Green Cab",
             "external_image_url": "",
-            "fallback_image": "india-udaipur.jpg",
+            "fallback_image": "taxi-ev.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "circle_7": {
           "type": "category_circle",
           "settings": {
-            "title": "Varanasi",
-            "subtitle": "8 Tours",
+            "title": "Airport Express",
+            "subtitle": "Flight Pickup",
             "external_image_url": "",
-            "fallback_image": "india-varanasi.jpg",
+            "fallback_image": "taxi-airport.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "circle_8": {
           "type": "category_circle",
           "settings": {
-            "title": "Andaman",
-            "subtitle": "10 Tours",
+            "title": "Outstation Taxi",
+            "subtitle": "Round Trips",
             "external_image_url": "",
-            "fallback_image": "india-andaman.jpg",
+            "fallback_image": "taxi-outstation.jpg",
             "collection": "",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         }
       },
@@ -1328,10 +1359,10 @@
       ],
       "name": "Travel Category Circles",
       "settings": {
-        "heading": "Explore Top Indian Destinations",
-        "subtitle": "Handpicked holiday escapes across India — from misty Himalayan valleys and royal palaces to emerald backwaters and coral islands.",
+        "heading": "Premium Taxi & Cab Fleet",
+        "subtitle": "Choose from our wide range of comfortable, reliable, and air-conditioned cabs for city travel, airport transfers, and outstation tours across India.",
         "show_divider": true,
-        "show_subtitles": false,
+        "show_subtitles": true,
         "auto_slide": true,
         "auto_slide_interval": 3.5,
         "background_color": "#ffffff",
@@ -1356,7 +1387,7 @@
             "price": "₹18,999",
             "compare_price": "",
             "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
+            "button_link": "#"
           }
         },
         "tour_jaisalmer": {
@@ -1371,7 +1402,7 @@
             "price": "₹21,499",
             "compare_price": "",
             "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
+            "button_link": "#"
           }
         },
         "tour_hampi": {
@@ -1386,7 +1417,7 @@
             "price": "₹16,499",
             "compare_price": "",
             "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
+            "button_link": "#"
           }
         },
         "tour_shimla": {
@@ -1401,7 +1432,7 @@
             "price": "₹22,999",
             "compare_price": "",
             "button_label": "Book Now",
-            "button_link": "shopify://collections/all"
+            "button_link": "#"
           }
         }
       },
@@ -1415,7 +1446,7 @@
         "heading": "Book Your Stay, Explore Incredible India",
         "subtitle": "Explore top-rated travel packages and signature itineraries handcrafted across India.",
         "view_all_text": "View All Tours",
-        "view_all_link": "shopify://collections/all",
+        "view_all_link": "#",
         "source": "blocks",
         "collection": "",
         "products_to_show": 4,
@@ -1437,11 +1468,11 @@
           "type": "bento_review",
           "settings": {
             "card_type": "pastel",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "The Swiss Alps tour exceeded every dream. Every chalet, scenic train ride, and mountain peak was planned to perfection",
+            "reviewer_name": "Aarav Sharma",
+            "date": "12 November 2025",
+            "review_text": "Our Kashmir holiday was pure magic. Gliding on Dal Lake in a Shikara at sunrise and the snow-capped gondola ride in Gulmarg exceeded every dream!",
             "rating": 5,
-            "fallback_image": "tour-bali.jpg",
+            "fallback_image": "india-kashmir.jpg",
             "bg_color": "#fce7f3"
           }
         },
@@ -1449,11 +1480,11 @@
           "type": "bento_review",
           "settings": {
             "card_type": "image",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "Bali felt magical thanks to Tour & Travel Wings. The private villa, temple visits, and sunrise trek were pure bliss",
+            "reviewer_name": "Priya Nair",
+            "date": "8 November 2025",
+            "review_text": "Drifting through Alleppey backwaters on a private luxury houseboat with authentic Kerala delicacies was pure bliss. Unforgettable hospitality!",
             "rating": 5,
-            "fallback_image": "tour-bali.jpg",
+            "fallback_image": "india-kerala.jpg",
             "bg_color": "#fce7f3"
           }
         },
@@ -1461,11 +1492,11 @@
           "type": "bento_review",
           "settings": {
             "card_type": "tall_image",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "From desert safari dunes to luxury skylines in Dubai, every single moment was effortless. Best travel agency ever for holidays",
+            "reviewer_name": "Rohan Kapoor",
+            "date": "5 November 2025",
+            "review_text": "Experiencing the grand palaces of Jaipur and royal heritage forts was breathtaking. Tour & Travel Wings treated us like royalty every single day!",
             "rating": 5,
-            "fallback_image": "tour-dubai.jpg",
+            "fallback_image": "india-jaipur.jpg",
             "bg_color": "#fce7f3"
           }
         },
@@ -1473,11 +1504,11 @@
           "type": "bento_review",
           "settings": {
             "card_type": "image",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "Waking up to turquoise waters in Maldives was an absolute dream. The 24/7 concierge took care of every detail seamlessly",
+            "reviewer_name": "Sneha Patel",
+            "date": "2 November 2025",
+            "review_text": "Sunsets at Palolem Beach, private coastal cruising, and heritage Portuguese boutique stays in Goa made our vacation sheer perfection!",
             "rating": 5,
-            "fallback_image": "hero-maldives.jpg",
+            "fallback_image": "india-goa.jpg",
             "bg_color": "#fce7f3"
           }
         },
@@ -1485,11 +1516,11 @@
           "type": "bento_review",
           "settings": {
             "card_type": "pastel",
-            "reviewer_name": "Kanchan T.",
-            "date": "4 November 2025",
-            "review_text": "Our family holiday to Thailand was flawless. The kids loved the elephant sanctuary and private island boat cruise",
+            "reviewer_name": "Vikramaditya Das",
+            "date": "28 October 2025",
+            "review_text": "Crossing Khardung La pass and stargazing by the crystal azure waters of Pangong Lake in Ladakh was a soul-stirring adventure. Flawlessly organized!",
             "rating": 5,
-            "fallback_image": "tour-bali.jpg",
+            "fallback_image": "india-ladakh.jpg",
             "bg_color": "#fce7f3"
           }
         }
@@ -1504,12 +1535,12 @@
       "name": "Promo Banner & Reviews",
       "settings": {
         "show_banner": true,
-        "banner_fallback_image": "promo-mountain-bg.jpg",
+        "banner_fallback_image": "india-manali.jpg",
         "banner_badge": "SPECIAL OFFER",
         "banner_heading": "Up to 20% Off on Selected Tours",
         "banner_subheading": "Explore more, spend less. Make it happen.",
         "banner_button_text": "View Offers",
-        "banner_button_link": "shopify://collections/all",
+        "banner_button_link": "#",
         "reviews_title": "What Our Travelers Say",
         "reviews_subtitle": "Real stories, unforgettable journeys, and five-star memories from our adventurers.",
         "show_divider": true,
@@ -1528,7 +1559,7 @@
             "kicker": "PUNJAB",
             "title": "Golden Temple, Amritsar",
             "caption": "Sacred Harmandir Sahib glowing in pure gold over the serene Amrit Sarovar.",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "item_2": {
@@ -1538,7 +1569,7 @@
             "kicker": "HIMACHAL PRADESH",
             "title": "Key Monastery, Spiti Valley",
             "caption": "Thousand-year-old Himalayan monastery perched high above snow-draped valleys.",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "item_3": {
@@ -1548,7 +1579,7 @@
             "kicker": "MEGHALAYA",
             "title": "Nohkalikai Falls",
             "caption": "India's tallest plunge waterfall cascading into an emerald rainforest lagoon.",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "item_4": {
@@ -1558,7 +1589,7 @@
             "kicker": "KARNATAKA",
             "title": "Mysore Royal Palace",
             "caption": "Iconic Indo-Saracenic royal palace illuminated by thousands of golden lights.",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "item_5": {
@@ -1568,7 +1599,7 @@
             "kicker": "RAJASTHAN",
             "title": "Mehrangarh & Blue City",
             "caption": "Towering sandstone citadel overlooking Jodhpur's vivid indigo-blue lanes.",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "item_6": {
@@ -1578,7 +1609,7 @@
             "kicker": "UTTARAKHAND",
             "title": "Naini Lake, Nainital",
             "caption": "Charming emerald Himalayan lake dotted with colorful boats and pine slopes.",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         }
       },
@@ -1624,7 +1655,7 @@
             "title": "Boutique City Hotel",
             "fallback_image": "tour-bali.jpg",
             "external_image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_2": {
@@ -1635,7 +1666,7 @@
             "title": "Scenic Hillside Resort",
             "fallback_image": "tour-thailand.jpg",
             "external_image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_3": {
@@ -1646,7 +1677,7 @@
             "title": "Oceanfront Pool Resort",
             "fallback_image": "tour-dubai.jpg",
             "external_image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_4": {
@@ -1657,7 +1688,7 @@
             "title": "Royal Heritage Palace Hotel",
             "fallback_image": "tour-swiss-alps.jpg",
             "external_image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_5": {
@@ -1668,7 +1699,7 @@
             "title": "Cliffside Luxury Ocean Suite",
             "fallback_image": "hero-santorini.jpg",
             "external_image_url": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_6": {
@@ -1679,7 +1710,7 @@
             "title": "Exclusive Luxury Pool Villa",
             "fallback_image": "hero-maldives.jpg",
             "external_image_url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         },
         "card_7": {
@@ -1690,7 +1721,7 @@
             "title": "Presidential Lagoon Atoll Villa",
             "fallback_image": "tour-vietnam.jpg",
             "external_image_url": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80",
-            "url": "shopify://collections/all"
+            "url": "#"
           }
         }
       },
@@ -1723,7 +1754,7 @@
             "title": "Kailasa Temple of Ellora",
             "desc": "Carved top-down from a single basalt mountain cliff, explore Maharashtra's 8th-century rock-cut wonder and ancient cave sanctuaries.",
             "link_text": "Read the Story",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "journal_2": {
@@ -1734,7 +1765,7 @@
             "title": "The Sun Chariot of Konark",
             "desc": "Discover Odisha's 13th-century UNESCO temple shaped like Surya's colossal stone chariot, adorned with intricately carved wheels and sculptures.",
             "link_text": "Read the Story",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "journal_3": {
@@ -1745,7 +1776,7 @@
             "title": "Uttarakhand's Valley of Flowers",
             "desc": "Trek through mist-veiled Garhwal alpine meadows, glacial streams, and rare Himalayan wildflowers beneath towering snow peaks.",
             "link_text": "Read the Story",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         },
         "journal_4": {
@@ -1756,7 +1787,7 @@
             "title": "Misty Coffee Trails of Coorg",
             "desc": "Wake up to aromatic spice estates, cascading Abbey Falls, and emerald rainforest hills in Karnataka's timeless Scotland of India.",
             "link_text": "Read the Story",
-            "link": "shopify://collections/all"
+            "link": "#"
           }
         }
       },
@@ -1783,6 +1814,7 @@
     "media_with_content_HP7Qpp",
     "travel_hero_slider_rzwgcC",
     "vmi_arch_collections_njKKwm",
+    "vmi_trust",
     "festive_collection_GqybH3",
     "travel_circle_slider",
     "popular_tours",

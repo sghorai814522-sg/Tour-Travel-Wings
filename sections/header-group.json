@@ -18,7 +18,7 @@
           "type": "_announcement",
           "settings": {
             "text": "Explore • Discover • Experience the World with Tour & Travel Wings",
-            "link": "shopify://collections/all",
+            "link": "#",
             "font": "var(--font-accent--family)",
             "font_size": "0.75rem",
             "letter_spacing": "loose",
