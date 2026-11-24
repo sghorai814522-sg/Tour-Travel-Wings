@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "product-information",
@@ -168,8 +169,24 @@
               },
               "blocks": {}
             },
+            "estimator_button_Kx92aL": {
+              "type": "estimator-button",
+              "settings": {
+                "button_text": "Book Now",
+                "brevo_api_key": "",
+                "sender_email": "ayan.bluehorse@gmail.com",
+                "sender_name": "Tour & Travel Wings",
+                "recipient_email": "amandal25526@gmail.com",
+                "recipient_name": "Tour & Travel Wings Admin",
+                "heading": "Book Your Dream Tour",
+                "subheading": "Fill out your travel details below and our luxury travel specialists will reserve your itinerary.",
+                "success_message": "Thank you! Your booking request has been submitted successfully. A confirmation has been sent to your email and our concierge will contact you shortly."
+              },
+              "blocks": {}
+            },
             "buy_buttons_eYQEYi": {
               "type": "buy-buttons",
+              "disabled": true,
               "settings": {
                 "stacking": false,
                 "text_color": "",
@@ -373,15 +390,6 @@
                 "accordion_row_HUWbDi",
                 "accordion_row_GTWFgP"
               ]
-            },
-            "estimator_button_Kx92aL": {
-              "type": "estimator-button",
-              "settings": {
-                "button_text": "Book Now",
-                "sender_email": "ayan.bluehorse@gmail.com",
-                "recipient_email": "amandal25526@gmail.com",
-                "heading": "Book Your Dream Tour"
-              }
             }
           },
           "block_order": [
@@ -504,6 +512,7 @@
                 "border_opacity": 100,
                 "border_color": "",
                 "border_radius": 0,
+                "link": "",
                 "open_in_new_tab": false,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
@@ -602,6 +611,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
+            "link": "",
             "video_loop": true,
             "video_autoplay": false,
             "image_position": "cover",
@@ -622,6 +632,7 @@
               "type": "product-card",
               "name": "t:names.product_card",
               "settings": {
+                "product": "",
                 "product_card_gap": 16,
                 "width": "fill",
                 "custom_width": 100,
@@ -685,6 +696,7 @@
                     "border_opacity": 100,
                     "border_color": "",
                     "border_radius": 0,
+                    "link": "",
                     "open_in_new_tab": false,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
